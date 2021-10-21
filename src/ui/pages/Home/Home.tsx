@@ -1,4 +1,4 @@
-import { useState, useEffect, BaseSyntheticEvent } from "react";
+import { useState, useEffect, useCallback, BaseSyntheticEvent } from "react";
 import { Pokemon } from "../../components";
 import { usePokemonSort } from "../../../hooks";
 import { fetchAllPokemons, fetchPokemonsByType } from "../../../services";
@@ -23,7 +23,7 @@ const HomePage = () => {
     fetchAllPokemons().then(setPokemons);
   };
 
-  const getPokemonByType = (type: string) => fetchPokemonsByType(type).then(setPokemons);
+  const getPokemonByType = useCallback((type: string) => fetchPokemonsByType(type).then(setPokemons), []);
 
   useEffect(getFirstGenPokemons, [setPokemons]);
 
