@@ -18,7 +18,7 @@ const HomePage = () => {
 
   useEffect(getFirstGenPokemon, []);
 
-  const renderPokemon = (pokemon: IPokemon) => <Pokemon {...pokemon} />;
+  const renderPokemon = (pokemon: IPokemon) => <Pokemon key={pokemon.id} {...pokemon} />;
 
   const renderPokemons = () => pokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 

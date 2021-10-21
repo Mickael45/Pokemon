@@ -5,7 +5,7 @@ import PokemonType from "../PokemonType/PokemonType";
 import styles from "./Pokemon.module.css";
 
 const Pokemon = ({ name, imageUrl, id, types }: IPokemon) => {
-  const renderType = (type: string) => <PokemonType type={type} onClick={() => {}} id={id} />;
+  const renderType = (type: string) => <PokemonType key={`${id}-${type}`} type={type} onClick={() => {}} />;
   const renderTypes = () => types.split(",").map(renderType);
 
   return (
