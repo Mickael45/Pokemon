@@ -1,0 +1,1 @@
+export { formatNumberToMatchLength } from "./stringManipulation";
