@@ -24,11 +24,9 @@ const HomePage = () => {
     fetchAllPokemons().then(setPokemons);
   };
 
-  const getPokemonByType = useCallback((type: string) => fetchPokemonsByType(type).then(setPokemons), []);
-
   useEffect(getFirstGenPokemons, [setPokemons]);
 
-  const showLoadMoreButton = numberOfPokemonShown < pokemons.length && pokemons.length > 0;
+  const getPokemonByType = useCallback((type: string) => fetchPokemonsByType(type).then(setPokemons), []);
 
   const renderPokemon = (pokemon: IPokemon) => <Pokemon key={pokemon.id} {...pokemon} onTypeClick={getPokemonByType} />;
 
@@ -38,9 +36,7 @@ const HomePage = () => {
     <Page>
       <div className={styles.container}>
         <Dropdown options={sortingTypes} handleOptionSelectionChange={handleOptionSelectionChange} />
-        <FlexboxList onClick={incrementOffsetByPokemonStackSize} showLoadMoreButton={showLoadMoreButton}>
-          {renderPokemons()}
-        </FlexboxList>
+        <FlexboxList showMore={incrementOffsetByPokemonStackSize}>{renderPokemons()}</FlexboxList>
       </div>
     </Page>
   );
