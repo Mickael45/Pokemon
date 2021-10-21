@@ -1,1 +1,1 @@
-export { formatNumberToMatchLength } from "./stringManipulation";
+export { formatNumberToMatchLength, capitalizeFirstLetter } from "./stringManipulation";

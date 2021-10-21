@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Pokemon } from "../../components";
 import { fetchPokemonsByGeneration } from "../../services";
 
 const HomePage = () => {
@@ -13,7 +14,11 @@ const HomePage = () => {
   return (
     <div>
       Home Page
-      <div>{pokemons.map((pokemon) => pokemon.name)}</div>
+      <div>
+        {pokemons.map((pokemon) => (
+          <Pokemon {...pokemon} />
+        ))}
+      </div>
     </div>
   );
 };

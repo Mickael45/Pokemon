@@ -8,6 +8,8 @@ const addNZerosBeforeString = (str: string, n: number) => {
   return `${zeros.join("")}${str}`;
 };
 
+export const capitalizeFirstLetter = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
+
 export const formatNumberToMatchLength = (number: number, length: number = 3) => {
   const stringedNumber = number.toString();
 
