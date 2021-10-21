@@ -10,6 +10,13 @@ const addNZerosBeforeString = (str: string, n: number) => {
 
 export const capitalizeFirstLetter = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
 
+export const compareStrings = (strA: string, strB: string) => {
+  if (strA < strB) {
+    return -1;
+  }
+  return strA > strB ? 1 : 0;
+};
+
 export const formatNumberToMatchLength = (number: number, length: number = 3) => {
   const stringedNumber = number.toString();
 

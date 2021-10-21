@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { getRandomTransformAnimation } from "../../animations";
-import { capitalizeFirstLetter, formatNumberToMatchLength } from "../../utils";
+import { capitalizeFirstLetter, formatNumberToMatchLength } from "../../../utils";
 import PokemonType from "../PokemonType/PokemonType";
 import styles from "./Pokemon.module.css";
 

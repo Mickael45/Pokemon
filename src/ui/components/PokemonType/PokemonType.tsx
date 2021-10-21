@@ -1,5 +1,5 @@
 import { MouseEventHandler } from "react";
-import { capitalizeFirstLetter } from "../../utils";
+import { capitalizeFirstLetter } from "../../../utils";
 import styles from "./PokemonType.module.css";
 
 interface IProps {

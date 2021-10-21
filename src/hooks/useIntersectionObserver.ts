@@ -6,9 +6,7 @@ const useIntersectionObserver = (
 ): IntersectionObserverEntry | undefined => {
   const [entry, setEntry] = useState<IntersectionObserverEntry>();
 
-  const updateEntry = ([newEntry]: IntersectionObserverEntry[]): void => {
-    setEntry(newEntry);
-  };
+  const updateEntry = ([newEntry]: IntersectionObserverEntry[]): void => setEntry(newEntry);
 
   useEffect(() => {
     const node = elementRef?.current;

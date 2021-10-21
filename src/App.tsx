@@ -1,4 +1,4 @@
-import { HomePage } from "./pages";
+import { HomePage } from "./ui/pages";
 
 const App = () => {
   return <HomePage />;
