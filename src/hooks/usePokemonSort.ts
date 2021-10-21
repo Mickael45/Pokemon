@@ -3,6 +3,8 @@ import { sortByNumberFieldAsc, sortByNumberFieldDesc, sortByStringFieldAsc, sort
 
 type FormattingFunction = (array: IPokemon[]) => IPokemon[];
 
+type UpdatePokemonFunction = (pokemons: IPokemon[]) => void;
+
 export const sortingTypesMap = {
   ASCENDING_ID: "asc. number",
   DESCENDING_ID: "desc. number",
@@ -28,27 +30,30 @@ const usePokemonSort = (sortingType: string, filterType: Filter): [IPokemon[], (
   const [manipulatedPokemons, setManipulatedPokemons] = useState<IPokemon[]>([]);
 
   const updatePokemons = (newPokemon: IPokemon[]) => setPokemons(pickFirst900Pokemons(newPokemon));
-
   const updateManipulatedPokemons = () => setManipulatedPokemons(pokemons);
 
-  const sortPokemons = () => updatePokemons(sortingMap[sortingType](pokemons));
-
-  const filterPokemonsByType = (field: FilterField, name: string) =>
-    pokemons.filter((pokemon: IPokemon) => pokemon[field].includes(name));
-
-  const filterPokemons = () => {
-    const newPokemonsList = filterType ? filterPokemonsByType(filterType.field, filterType.name) : pokemons;
-
-    setManipulatedPokemons(newPokemonsList);
-  };
-
-  useEffect(sortPokemons, [sortingType]);
-
-  useEffect(filterPokemons, [filterType]);
-
+  useEffect(() => {
+    sortPokemons(sortingType, pokemons, updatePokemons);
+  }, [sortingType]);
+  useEffect(() => {
+    filterPokemons(filterType, pokemons, updateManipulatedPokemons);
+  }, [filterType]);
   useEffect(updateManipulatedPokemons, [pokemons]);
 
   return [manipulatedPokemons, updatePokemons];
+};
+
+const sortPokemons = (sortingType: string, pokemons: IPokemon[], updatePokemons: UpdatePokemonFunction) => {
+  updatePokemons(sortingMap[sortingType](pokemons));
+};
+
+const filterPokemons = (filteringType: Filter, pokemons: IPokemon[], updatePokemons: UpdatePokemonFunction) => {
+  const filterPokemonsByField = (field: FilterField, name: string) =>
+    pokemons.filter((pokemon: IPokemon) => pokemon[field].includes(name));
+
+  const filteredPokemons = filteringType ? filterPokemonsByField(filteringType.field, filteringType.name) : pokemons;
+
+  updatePokemons(filteredPokemons);
 };
 
 export default usePokemonSort;
