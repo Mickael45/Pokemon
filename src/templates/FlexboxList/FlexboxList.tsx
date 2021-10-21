@@ -1,4 +1,4 @@
-import styles from "./Flexbox.module.css";
+import styles from "./FlexboxList.module.css";
 
 interface IProps {
   children: JSX.Element[];
@@ -6,14 +6,14 @@ interface IProps {
   onClick: () => void;
 }
 
-const FlexboxList = ({ children, showLoadMoreButton, onClick }: IProps) => {
+const FlexboxList = ({ children, showLoadMoreButton = false, onClick }: IProps) => {
   const renderLoadMoreButton = () => (showLoadMoreButton ? <button onClick={onClick}>Load More</button> : null);
 
   return (
-    <div className={styles.flexbox}>
-      {children}
-      {renderLoadMoreButton()}
-    </div>
+    <>
+      <div className={styles.flexbox}>{children}</div>
+      <div>{renderLoadMoreButton()}</div>
+    </>
   );
 };
 

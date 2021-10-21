@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Pokemon, FlexboxList } from "../../components";
+import { Pokemon } from "../../components";
 import { fetchPokemonsByGeneration } from "../../services";
+import { Page, FlexboxList } from "../../templates";
 import styles from "./Home.module.css";
 
 const POKEMON_STACK_SIZE = 12;
@@ -24,11 +25,13 @@ const HomePage = () => {
   const showLoadMoreButton = numberOfPokemonShown < pokemons.length && pokemons.length > 0;
 
   return (
-    <div className={styles.container}>
-      <FlexboxList onClick={incrementOffsetByPokemonStackSize} showLoadMoreButton={showLoadMoreButton}>
-        {renderPokemons()}
-      </FlexboxList>
-    </div>
+    <Page>
+      <div className={styles.container}>
+        <FlexboxList onClick={incrementOffsetByPokemonStackSize} showLoadMoreButton={showLoadMoreButton}>
+          {renderPokemons()}
+        </FlexboxList>
+      </div>
+    </Page>
   );
 };
 

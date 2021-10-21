@@ -1,2 +1,2 @@
 export { default as Pokemon } from "./Pokemon/Pokemon";
-export { default as FlexboxList } from "./FlexboxList/FlexboxList";
+export { default as PokemonType } from "./PokemonType/PokemonType";
