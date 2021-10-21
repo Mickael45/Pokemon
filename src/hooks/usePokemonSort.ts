@@ -23,14 +23,16 @@ const MAX_ID_ALLOWED = 900;
 
 const filterPokemons = (pokemons: IPokemon[]) => pokemons.filter(({ id }: IPokemon) => id < MAX_ID_ALLOWED);
 
-const usePokemonSort = (sortingType: string): [IPokemon[], React.Dispatch<React.SetStateAction<IPokemon[]>>] => {
+const usePokemonSort = (sortingType: string): [IPokemon[], (pokemons: IPokemon[]) => void] => {
   const [pokemons, setPokemons] = useState<IPokemon[]>([]);
 
-  const sortPokemon = () => setPokemons(sortingMap[sortingType](filterPokemons(pokemons)));
+  const updatePokemons = (newPokemon: IPokemon[]) => setPokemons(filterPokemons(newPokemon));
+
+  const sortPokemon = () => updatePokemons(sortingMap[sortingType](pokemons));
 
   useEffect(sortPokemon, [sortingType]);
 
-  return [pokemons, setPokemons];
+  return [pokemons, updatePokemons];
 };
 
 export default usePokemonSort;

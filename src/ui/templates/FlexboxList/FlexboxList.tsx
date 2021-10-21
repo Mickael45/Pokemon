@@ -6,13 +6,20 @@ interface IProps {
   showMore: () => void;
 }
 
-const FlexboxList = ({ children, showMore }: IProps) => (
-  <>
-    <div className={styles.flexbox}>{children}</div>
-    <IntersectionObserver handleIntersection={showMore}>
-      <div>Load More</div>
-    </IntersectionObserver>
-  </>
-);
+const FlexboxList = ({ children, showMore }: IProps) => {
+  const renderIntersectionObserver = () =>
+    children?.length > 0 ? (
+      <IntersectionObserver handleIntersection={showMore}>
+        <div>Loading More...</div>
+      </IntersectionObserver>
+    ) : null;
+
+  return (
+    <>
+      <div className={styles.flexbox}>{children}</div>
+      {renderIntersectionObserver()}
+    </>
+  );
+};
 
 export default FlexboxList;

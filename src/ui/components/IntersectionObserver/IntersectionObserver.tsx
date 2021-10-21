@@ -1,4 +1,4 @@
-import { useRef, useState, memo } from "react";
+import { useRef, useState, useEffect, memo } from "react";
 import { useIntersectionObserver } from "../../../hooks";
 
 interface IProps {
@@ -11,12 +11,16 @@ const IntersectionObserver = ({ children, handleIntersection }: IProps) => {
   const ref = useRef<HTMLSpanElement | null>(null);
   const entry = useIntersectionObserver(ref, { threshold: 0.9 });
 
-  if (entry?.isIntersecting && !isIntersecting) {
-    handleIntersection();
-    setIsIntersecting(true);
-  } else if (!entry?.isIntersecting && isIntersecting) {
-    setIsIntersecting(false);
-  }
+  const updateIsIntersecting = () => {
+    if (entry?.isIntersecting && !isIntersecting) {
+      handleIntersection();
+      setIsIntersecting(true);
+    } else if (!entry?.isIntersecting && isIntersecting) {
+      setIsIntersecting(false);
+    }
+  };
+
+  useEffect(updateIsIntersecting, [entry]);
 
   return <span ref={ref}>{children}</span>;
 };

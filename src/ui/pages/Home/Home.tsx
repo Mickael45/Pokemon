@@ -16,19 +16,31 @@ const HomePage = () => {
   const [pokemons, setPokemons] = usePokemonSort(sortingType);
   const [numberOfPokemonShown, setNumberOfPokemonShown] = useState(POKEMON_STACK_SIZE);
 
-  const incrementOffsetByPokemonStackSize = () => setNumberOfPokemonShown(numberOfPokemonShown + POKEMON_STACK_SIZE);
+  const incrementNumberOfPokemonShown = () => setNumberOfPokemonShown(numberOfPokemonShown + POKEMON_STACK_SIZE);
 
-  const handleOptionSelectionChange = (e: BaseSyntheticEvent) => setSortingType(e.target.value);
+  const resetNumberOfPokemonShown = () => setNumberOfPokemonShown(POKEMON_STACK_SIZE);
 
-  const getFirstGenPokemons = () => {
+  const handleOptionSelectionChange = (e: BaseSyntheticEvent) => {
+    setSortingType(e.target.value);
+    resetNumberOfPokemonShown();
+  };
+
+  const getAllPokemons = () => {
     fetchAllPokemons().then(setPokemons);
   };
 
-  useEffect(getFirstGenPokemons, [setPokemons]);
+  useEffect(getAllPokemons, []);
 
-  const getPokemonByType = useCallback((type: string) => fetchPokemonsByType(type).then(setPokemons), []);
+  const getPokemonByType = (type: string) => {
+    fetchPokemonsByType(type).then(setPokemons);
+    resetNumberOfPokemonShown();
+  };
 
-  const renderPokemon = (pokemon: IPokemon) => <Pokemon key={pokemon.id} {...pokemon} onTypeClick={getPokemonByType} />;
+  const callbackedGetPokemonByType = useCallback(getPokemonByType, []);
+
+  const renderPokemon = (pokemon: IPokemon) => (
+    <Pokemon key={pokemon.id} {...pokemon} onTypeClick={callbackedGetPokemonByType} />
+  );
 
   const renderPokemons = () => pokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 
@@ -36,7 +48,7 @@ const HomePage = () => {
     <Page>
       <div className={styles.container}>
         <Dropdown options={sortingTypes} handleOptionSelectionChange={handleOptionSelectionChange} />
-        <FlexboxList showMore={incrementOffsetByPokemonStackSize}>{renderPokemons()}</FlexboxList>
+        <FlexboxList showMore={incrementNumberOfPokemonShown}>{renderPokemons()}</FlexboxList>
       </div>
     </Page>
   );
