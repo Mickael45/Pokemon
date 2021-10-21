@@ -1,5 +1,11 @@
 import { extractPokemonName, formatPokemon } from "./pokemonFormatting";
 
+type PokemonType = {
+  pokemon: {
+    name: string;
+  };
+};
+
 const POKE_API_URL = "https://pokeapi.co/api/v2/";
 const POKEMON_LIMIT = 2000;
 
@@ -10,6 +16,13 @@ const fetchPokemons = async (url: string) => {
   return jsonResponse;
 };
 
+const fetchPokemonByName = async (name: string): Promise<IPokemon> => {
+  const pokemon = await fetchPokemons(`${POKE_API_URL}pokemon/${name}`);
+  const formattedPokemon = formatPokemon(pokemon);
+
+  return formattedPokemon;
+};
+
 export const fetchAllPokemons = async (): Promise<IPokemon[]> => {
   const pokemonsData = await fetchPokemons(`${POKE_API_URL}pokemon?limit=${POKEMON_LIMIT}`);
   const pokemonsName = pokemonsData.results.map(extractPokemonName);
@@ -17,9 +30,9 @@ export const fetchAllPokemons = async (): Promise<IPokemon[]> => {
   return Promise.all(pokemonsName.map(fetchPokemonByName));
 };
 
-export const fetchPokemonByName = async (name: string): Promise<IPokemon> => {
-  const pokemon = await fetchPokemons(`${POKE_API_URL}pokemon/${name}`);
-  const formattedPokemon = formatPokemon(pokemon);
+export const fetchPokemonsByType = async (type: string): Promise<IPokemon[]> => {
+  const pokemonsData = await fetchPokemons(`${POKE_API_URL}type/${type}`);
+  const pokemonsName = pokemonsData.pokemon.map(({ pokemon }: PokemonType) => pokemon).map(extractPokemonName);
 
-  return formattedPokemon;
+  return Promise.all(pokemonsName.map(fetchPokemonByName));
 };

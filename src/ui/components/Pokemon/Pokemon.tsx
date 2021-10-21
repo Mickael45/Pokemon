@@ -4,8 +4,12 @@ import { capitalizeFirstLetter, formatNumberToMatchLength } from "../../../utils
 import PokemonType from "../PokemonType/PokemonType";
 import styles from "./Pokemon.module.css";
 
-const Pokemon = ({ name, imageUrl, id, types }: IPokemon) => {
-  const renderType = (type: string) => <PokemonType key={`${id}-${type}`} type={type} onClick={() => {}} />;
+type IProps = IPokemon & {
+  onTypeClick: (type: string) => void;
+};
+
+const Pokemon = ({ name, imageUrl, id, types, onTypeClick }: IProps) => {
+  const renderType = (type: string) => <PokemonType key={`${id}-${type}`} type={type} handleClick={onTypeClick} />;
   const renderTypes = () => types.split(",").map(renderType);
 
   return (

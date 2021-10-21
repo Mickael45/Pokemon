@@ -1,7 +1,7 @@
 import { useState, useEffect, BaseSyntheticEvent } from "react";
 import { Pokemon } from "../../components";
 import { usePokemonSort } from "../../../hooks";
-import { fetchAllPokemons } from "../../../services";
+import { fetchAllPokemons, fetchPokemonsByType } from "../../../services";
 import { Page, FlexboxList } from "../../templates";
 import { sortingTypesMap } from "../../../hooks/usePokemonSort";
 import styles from "./Home.module.css";
@@ -23,11 +23,13 @@ const HomePage = () => {
     fetchAllPokemons().then(setPokemons);
   };
 
+  const getPokemonByType = (type: string) => fetchPokemonsByType(type).then(setPokemons);
+
   useEffect(getFirstGenPokemons, [setPokemons]);
 
   const showLoadMoreButton = numberOfPokemonShown < pokemons.length && pokemons.length > 0;
 
-  const renderPokemon = (pokemon: IPokemon) => <Pokemon key={pokemon.id} {...pokemon} />;
+  const renderPokemon = (pokemon: IPokemon) => <Pokemon key={pokemon.id} {...pokemon} onTypeClick={getPokemonByType} />;
 
   const renderPokemons = () => pokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 
