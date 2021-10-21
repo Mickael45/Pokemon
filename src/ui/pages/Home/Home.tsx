@@ -13,12 +13,15 @@ const sortingTypes = Object.values(sortingTypesMap);
 
 const HomePage = () => {
   const [sortingType, setSortingType] = useState<string>(sortingTypes[0]);
-  const [pokemons, setPokemons] = usePokemonSort(sortingType);
+  const [filteringType, setFilteringType] = useState<Filter>(null);
+  const [pokemons, setPokemons] = usePokemonSort(sortingType, filteringType);
   const [numberOfPokemonShown, setNumberOfPokemonShown] = useState(POKEMON_STACK_SIZE);
 
   const incrementNumberOfPokemonShown = () => setNumberOfPokemonShown(numberOfPokemonShown + POKEMON_STACK_SIZE);
 
   const resetNumberOfPokemonShown = () => setNumberOfPokemonShown(POKEMON_STACK_SIZE);
+
+  const resetFilteringType = () => setFilteringType(null);
 
   const handleOptionSelectionChange = (e: BaseSyntheticEvent) => {
     setSortingType(e.target.value);
@@ -32,7 +35,7 @@ const HomePage = () => {
   useEffect(getAllPokemons, []);
 
   const getPokemonByType = (type: string) => {
-    fetchPokemonsByType(type).then(setPokemons);
+    setFilteringType({ name: type, field: "types" });
     resetNumberOfPokemonShown();
   };
 
@@ -47,6 +50,7 @@ const HomePage = () => {
   return (
     <Page>
       <div className={styles.container}>
+        <button onClick={resetFilteringType}>Show All types</button>
         <Dropdown options={sortingTypes} handleOptionSelectionChange={handleOptionSelectionChange} />
         <FlexboxList showMore={incrementNumberOfPokemonShown}>{renderPokemons()}</FlexboxList>
       </div>

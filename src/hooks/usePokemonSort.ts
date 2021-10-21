@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { sortByNumberFieldAsc, sortByNumberFieldDesc, sortByStringFieldAsc, sortByStringFieldDesc } from "../utils";
 
+type FormattingFunction = (array: IPokemon[]) => IPokemon[];
+
 export const sortingTypesMap = {
   ASCENDING_ID: "asc. number",
   DESCENDING_ID: "desc. number",
@@ -10,9 +12,7 @@ export const sortingTypesMap = {
 
 const { ASCENDING_ID, DESCENDING_ID, ASCENDING_NAME, DESCENDING_NAME } = sortingTypesMap;
 
-type SortingFunction = (array: IPokemon[]) => IPokemon[];
-
-const sortingMap: { [key: string]: SortingFunction } = {
+const sortingMap: { [key: string]: FormattingFunction } = {
   [ASCENDING_ID]: (pokemons: IPokemon[]) => sortByNumberFieldAsc(pokemons, "id"),
   [DESCENDING_ID]: (pokemons: IPokemon[]) => sortByNumberFieldDesc(pokemons, "id"),
   [ASCENDING_NAME]: (pokemons: IPokemon[]) => sortByStringFieldAsc(pokemons, "name"),
@@ -21,18 +21,34 @@ const sortingMap: { [key: string]: SortingFunction } = {
 
 const MAX_ID_ALLOWED = 900;
 
-const filterPokemons = (pokemons: IPokemon[]) => pokemons.filter(({ id }: IPokemon) => id < MAX_ID_ALLOWED);
+const pickFirst900Pokemons = (pokemons: IPokemon[]) => pokemons.filter(({ id }: IPokemon) => id < MAX_ID_ALLOWED);
 
-const usePokemonSort = (sortingType: string): [IPokemon[], (pokemons: IPokemon[]) => void] => {
+const usePokemonSort = (sortingType: string, filterType: Filter): [IPokemon[], (pokemons: IPokemon[]) => void] => {
   const [pokemons, setPokemons] = useState<IPokemon[]>([]);
+  const [manipulatedPokemons, setManipulatedPokemons] = useState<IPokemon[]>([]);
 
-  const updatePokemons = (newPokemon: IPokemon[]) => setPokemons(filterPokemons(newPokemon));
+  const updatePokemons = (newPokemon: IPokemon[]) => setPokemons(pickFirst900Pokemons(newPokemon));
 
-  const sortPokemon = () => updatePokemons(sortingMap[sortingType](pokemons));
+  const updateManipulatedPokemons = () => setManipulatedPokemons(pokemons);
 
-  useEffect(sortPokemon, [sortingType]);
+  const sortPokemons = () => updatePokemons(sortingMap[sortingType](pokemons));
 
-  return [pokemons, updatePokemons];
+  const filterPokemonsByType = (field: FilterField, name: string) =>
+    pokemons.filter((pokemon: IPokemon) => pokemon[field].includes(name));
+
+  const filterPokemons = () => {
+    const newPokemonsList = filterType ? filterPokemonsByType(filterType.field, filterType.name) : pokemons;
+
+    setManipulatedPokemons(newPokemonsList);
+  };
+
+  useEffect(sortPokemons, [sortingType]);
+
+  useEffect(filterPokemons, [filterType]);
+
+  useEffect(updateManipulatedPokemons, [pokemons]);
+
+  return [manipulatedPokemons, updatePokemons];
 };
 
 export default usePokemonSort;
