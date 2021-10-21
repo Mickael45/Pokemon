@@ -5,6 +5,7 @@ import { fetchAllPokemons, fetchPokemonsByType } from "../../../services";
 import { Page, FlexboxList } from "../../templates";
 import { sortingTypesMap } from "../../../hooks/usePokemonSort";
 import styles from "./Home.module.css";
+import Dropdown from "../../components/Dropdown/Dropdown";
 
 const POKEMON_STACK_SIZE = 12;
 
@@ -17,7 +18,7 @@ const HomePage = () => {
 
   const incrementOffsetByPokemonStackSize = () => setNumberOfPokemonShown(numberOfPokemonShown + POKEMON_STACK_SIZE);
 
-  const onSortingTypeChange = (e: BaseSyntheticEvent) => setSortingType(e.target.value);
+  const handleOptionSelectionChange = (e: BaseSyntheticEvent) => setSortingType(e.target.value);
 
   const getFirstGenPokemons = () => {
     fetchAllPokemons().then(setPokemons);
@@ -33,18 +34,10 @@ const HomePage = () => {
 
   const renderPokemons = () => pokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 
-  const renderSortingType = (sortingType: string) => (
-    <option key={sortingType} value={sortingType}>
-      {sortingType}
-    </option>
-  );
-
-  const renderOptions = () => sortingTypes.map(renderSortingType);
-
   return (
     <Page>
       <div className={styles.container}>
-        <select onChange={onSortingTypeChange}>{renderOptions()}</select>
+        <Dropdown options={sortingTypes} handleOptionSelectionChange={handleOptionSelectionChange} />
         <FlexboxList onClick={incrementOffsetByPokemonStackSize} showLoadMoreButton={showLoadMoreButton}>
           {renderPokemons()}
         </FlexboxList>
