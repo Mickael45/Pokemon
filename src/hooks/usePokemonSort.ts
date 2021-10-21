@@ -19,10 +19,14 @@ const sortingMap: { [key: string]: SortingFunction } = {
   [DESCENDING_NAME]: (pokemons: IPokemon[]) => sortByStringFieldDesc(pokemons, "name"),
 };
 
+const MAX_ID_ALLOWED = 900;
+
+const filterPokemons = (pokemons: IPokemon[]) => pokemons.filter(({ id }: IPokemon) => id < MAX_ID_ALLOWED);
+
 const usePokemonSort = (sortingType: string): [IPokemon[], React.Dispatch<React.SetStateAction<IPokemon[]>>] => {
   const [pokemons, setPokemons] = useState<IPokemon[]>([]);
 
-  const sortPokemon = () => setPokemons(sortingMap[sortingType](pokemons));
+  const sortPokemon = () => setPokemons(sortingMap[sortingType](filterPokemons(pokemons)));
 
   useEffect(sortPokemon, [sortingType]);
 

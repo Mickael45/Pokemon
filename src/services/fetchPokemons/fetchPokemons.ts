@@ -1,6 +1,7 @@
 import { extractPokemonName, formatPokemon } from "./pokemonFormatting";
 
 const POKE_API_URL = "https://pokeapi.co/api/v2/";
+const POKEMON_LIMIT = 2000;
 
 const fetchPokemons = async (url: string) => {
   const response = await fetch(url);
@@ -9,11 +10,11 @@ const fetchPokemons = async (url: string) => {
   return jsonResponse;
 };
 
-export const fetchPokemonsByGeneration = async (generation: string): Promise<IPokemon[]> => {
-  const generationData = await fetchPokemons(`${POKE_API_URL}generation/${generation}`);
-  const generationPokemonNames = generationData.pokemon_species.map(extractPokemonName);
+export const fetchAllPokemons = async (): Promise<IPokemon[]> => {
+  const pokemonsData = await fetchPokemons(`${POKE_API_URL}pokemon?limit=${POKEMON_LIMIT}`);
+  const pokemonsName = pokemonsData.results.map(extractPokemonName);
 
-  return Promise.all(generationPokemonNames.map(fetchPokemonByName));
+  return Promise.all(pokemonsName.map(fetchPokemonByName));
 };
 
 export const fetchPokemonByName = async (name: string): Promise<IPokemon> => {

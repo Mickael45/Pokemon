@@ -1,1 +1,1 @@
-export { fetchPokemonsByGeneration, fetchPokemonByName } from "./fetchPokemons/fetchPokemons";
+export { fetchAllPokemons } from "./fetchPokemons/fetchPokemons";

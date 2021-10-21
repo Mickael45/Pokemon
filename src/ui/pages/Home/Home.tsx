@@ -1,7 +1,7 @@
-import { useState, useEffect, SyntheticEvent, BaseSyntheticEvent } from "react";
+import { useState, useEffect, BaseSyntheticEvent } from "react";
 import { Pokemon } from "../../components";
 import { usePokemonSort } from "../../../hooks";
-import { fetchPokemonsByGeneration } from "../../../services";
+import { fetchAllPokemons } from "../../../services";
 import { Page, FlexboxList } from "../../templates";
 import { sortingTypesMap } from "../../../hooks/usePokemonSort";
 import styles from "./Home.module.css";
@@ -20,7 +20,7 @@ const HomePage = () => {
   const onSortingTypeChange = (e: BaseSyntheticEvent) => setSortingType(e.target.value);
 
   const getFirstGenPokemons = () => {
-    fetchPokemonsByGeneration("1").then(setPokemons);
+    fetchAllPokemons().then(setPokemons);
   };
 
   useEffect(getFirstGenPokemons, [setPokemons]);
