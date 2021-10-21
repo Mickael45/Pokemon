@@ -33,7 +33,11 @@ const HomePage = () => {
 
   const renderPokemons = () => pokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 
-  const renderSortingType = (sortingType: string) => <option value={sortingType}>{sortingType}</option>;
+  const renderSortingType = (sortingType: string) => (
+    <option key={sortingType} value={sortingType}>
+      {sortingType}
+    </option>
+  );
 
   const renderOptions = () => sortingTypes.map(renderSortingType);
 
