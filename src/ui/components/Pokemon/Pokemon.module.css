@@ -9,9 +9,17 @@
   box-shadow: 0px 0px 10px 2px lightgrey;
 }
 
-.container > img {
+.container > img[data-loaded="true"] {
   width: 200px;
+  height: 200px;
   top: 0;
+}
+
+.container > rect,
+svg {
+  width: 200px;
+  height: 200px;
+  background-color: grey;
 }
 
 .container > img:hover,
