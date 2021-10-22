@@ -25,19 +25,18 @@ const MAX_ID_ALLOWED = 900;
 
 const pickFirst900Pokemons = (pokemons: IPokemon[]) => pokemons.filter(({ id }: IPokemon) => id < MAX_ID_ALLOWED);
 
-const usePokemonSort = (sortingType: string, filterType: Filter): [IPokemon[], (pokemons: IPokemon[]) => void] => {
+const usePokemonSort = (sortingType: string, filteringType: Filter): [IPokemon[], (pokemons: IPokemon[]) => void] => {
   const [pokemons, setPokemons] = useState<IPokemon[]>([]);
   const [manipulatedPokemons, setManipulatedPokemons] = useState<IPokemon[]>([]);
 
   const updatePokemons = (newPokemon: IPokemon[]) => setPokemons(pickFirst900Pokemons(newPokemon));
-  const updateManipulatedPokemons = () => setManipulatedPokemons(pokemons);
+  const updateManipulatedPokemons = (newPokemons: IPokemon[] = pokemons) => setManipulatedPokemons(newPokemons);
 
-  useEffect(() => {
-    sortPokemons(sortingType, pokemons, updatePokemons);
-  }, [sortingType]);
-  useEffect(() => {
-    filterPokemons(filterType, pokemons, updateManipulatedPokemons);
-  }, [filterType]);
+  const sortPokemonCallback = () => sortPokemons(sortingType, pokemons, updatePokemons);
+  const filterPokemonCallback = () => filterPokemons(filteringType, pokemons, updateManipulatedPokemons);
+
+  useEffect(sortPokemonCallback, [sortingType]);
+  useEffect(filterPokemonCallback, [filteringType]);
   useEffect(updateManipulatedPokemons, [pokemons]);
 
   return [manipulatedPokemons, updatePokemons];
@@ -52,7 +51,6 @@ const filterPokemons = (filteringType: Filter, pokemons: IPokemon[], updatePokem
     pokemons.filter((pokemon: IPokemon) => pokemon[field].includes(name));
 
   const filteredPokemons = filteringType ? filterPokemonsByField(filteringType.field, filteringType.name) : pokemons;
-
   updatePokemons(filteredPokemons);
 };
 
