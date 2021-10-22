@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, BaseSyntheticEvent } from "react";
 import { Pokemon } from "../../components";
 import { usePokemonSort } from "../../../hooks";
-import { fetchAllPokemons, fetchPokemonsByType } from "../../../services";
+import { fetchAllPokemons } from "../../../services";
 import { Page, FlexboxList } from "../../templates";
 import { sortingTypesMap } from "../../../hooks/usePokemonSort";
 import styles from "./Home.module.css";
@@ -28,6 +28,14 @@ const HomePage = () => {
     resetNumberOfPokemonShown();
   };
 
+  const handleSearchButtonClick = () => {
+    const input = document.getElementById("input") as HTMLInputElement;
+
+    if (input) {
+      setFilteringType({ name: input.value.toLowerCase(), field: "name" });
+    }
+  };
+
   const getAllPokemons = () => {
     fetchAllPokemons().then(setPokemons);
   };
@@ -51,6 +59,12 @@ const HomePage = () => {
     <Page>
       <div className={styles.container}>
         <button onClick={resetFilteringType}>Show All types</button>
+        <div>
+          <input id="input" />
+          <button placeholder="search by name" onClick={handleSearchButtonClick}>
+            Search
+          </button>
+        </div>
         <Dropdown options={sortingTypes} handleOptionSelectionChange={handleOptionSelectionChange} />
         <FlexboxList showMore={incrementNumberOfPokemonShown}>{renderPokemons()}</FlexboxList>
       </div>
