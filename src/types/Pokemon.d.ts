@@ -1,5 +1,5 @@
 interface PokemonStat {
-  name: string;
+  label: string;
   value: number;
 }
 interface IBasicPokemon {
@@ -10,5 +10,5 @@ interface IBasicPokemon {
 }
 
 type IFullPokemon = IBasicPokemon & {
-  stats: Stat[];
+  stats: Stat[] | [];
 };

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchPokemonDetailsByNameOrId } from "../../../services";
-import { ImageWithPlaceholder, PokemonType } from "../../components";
+import { ImageWithPlaceholder, PokemonType, Radar } from "../../components";
 import { Page } from "../../templates";
 import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
 interface Params {
@@ -15,7 +15,7 @@ const Details = () => {
     name: "",
     types: "",
     id: 0,
-    stats: [{ name: "", value: 0 }],
+    stats: [],
   });
   const { imageUrl, name, types, stats } = pokemon;
 
@@ -26,10 +26,9 @@ const Details = () => {
     fetchPokemonDetailsByNameOrId(id).then(setPokemon);
   };
 
-  const renderStat = ({ name, value }: PokemonStat) => console.log(name, value);
-  const renderStats = () => stats.map(renderStat);
-
   useEffect(getPokemonById, []);
+
+  const renderStatsRadar = () => (stats.length > 0 ? <Radar title="Stats" axisDataList={stats} color="red" /> : null);
 
   return (
     <Page>
@@ -38,7 +37,7 @@ const Details = () => {
         <span>{id}</span>
         <h2>{capitalizeFirstLetter(name)}</h2>
         {renderTypes()}
-        {renderStats()}
+        {renderStatsRadar()}
       </div>
     </Page>
   );

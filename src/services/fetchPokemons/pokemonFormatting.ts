@@ -1,5 +1,6 @@
 import brokenNamesMap from "./brokenNameMap";
 import { formatNumberToMatchLength } from "../../utils";
+import { capitalizeFirstLetter } from "../../utils/stringManipulation";
 
 const POKEMON_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
 
@@ -31,7 +32,10 @@ interface IPokemonResponseType {
 const extractTypeName = (type: IType) => type.type.name;
 
 const extractStatsFromPokemon = ({ stats }: IPokemonResponseType) =>
-  stats?.map(({ base_stat, stat }: IStat) => ({ name: stat.name, value: base_stat }));
+  stats?.map(({ base_stat, stat }: IStat) => ({
+    label: capitalizeFirstLetter(stat.name.replaceAll("-", " ")),
+    value: base_stat,
+  }));
 
 export const extractPokemonName = ({ name }: { name: string }) => replaceBrokenName(name);
 
