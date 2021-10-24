@@ -49,7 +49,7 @@ const HomePage = () => {
 
   const callbackedGetPokemonByType = useCallback(getPokemonByType, []);
 
-  const renderPokemon = (pokemon: IPokemon) => (
+  const renderPokemon = (pokemon: IBasicPokemon) => (
     <Pokemon key={pokemon.id} {...pokemon} onTypeClick={callbackedGetPokemonByType} />
   );
 

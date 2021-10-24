@@ -1,5 +1,6 @@
 import { capitalizeFirstLetter } from "../../../utils";
 import styles from "./PokemonType.module.css";
+const { typeColor, typeContainer } = styles;
 
 interface IProps {
   type: string;
@@ -10,7 +11,7 @@ const PokemonType = ({ type, handleClick }: IProps) => {
   const handleTypeClick = () => handleClick(type);
 
   return (
-    <span className={styles.typeColor} data-type={type} onClick={handleTypeClick}>
+    <span className={[typeContainer, typeColor].join(" ")} data-type={type} onClick={handleTypeClick}>
       {capitalizeFirstLetter(type)}
     </span>
   );

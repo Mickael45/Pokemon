@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { sortByNumberFieldAsc, sortByNumberFieldDesc, sortByStringFieldAsc, sortByStringFieldDesc } from "../utils";
 
-type FormattingFunction = (array: IPokemon[]) => IPokemon[];
+type FormattingFunction = (array: IBasicPokemon[]) => IBasicPokemon[];
 
-type UpdatePokemonFunction = (pokemons: IPokemon[]) => void;
+type UpdatePokemonFunction = (pokemons: IBasicPokemon[]) => void;
 
 export const sortingTypesMap = {
   ASCENDING_ID: "asc. number",
@@ -15,22 +15,26 @@ export const sortingTypesMap = {
 const { ASCENDING_ID, DESCENDING_ID, ASCENDING_NAME, DESCENDING_NAME } = sortingTypesMap;
 
 const sortingMap: { [key: string]: FormattingFunction } = {
-  [ASCENDING_ID]: (pokemons: IPokemon[]) => sortByNumberFieldAsc(pokemons, "id"),
-  [DESCENDING_ID]: (pokemons: IPokemon[]) => sortByNumberFieldDesc(pokemons, "id"),
-  [ASCENDING_NAME]: (pokemons: IPokemon[]) => sortByStringFieldAsc(pokemons, "name"),
-  [DESCENDING_NAME]: (pokemons: IPokemon[]) => sortByStringFieldDesc(pokemons, "name"),
+  [ASCENDING_ID]: (pokemons: IBasicPokemon[]) => sortByNumberFieldAsc(pokemons, "id"),
+  [DESCENDING_ID]: (pokemons: IBasicPokemon[]) => sortByNumberFieldDesc(pokemons, "id"),
+  [ASCENDING_NAME]: (pokemons: IBasicPokemon[]) => sortByStringFieldAsc(pokemons, "name"),
+  [DESCENDING_NAME]: (pokemons: IBasicPokemon[]) => sortByStringFieldDesc(pokemons, "name"),
 };
 
 const MAX_ID_ALLOWED = 900;
 
-const pickFirst900Pokemons = (pokemons: IPokemon[]) => pokemons.filter(({ id }: IPokemon) => id < MAX_ID_ALLOWED);
+const pickFirst900Pokemons = (pokemons: IBasicPokemon[]) =>
+  pokemons.filter(({ id }: IBasicPokemon) => id < MAX_ID_ALLOWED);
 
-const usePokemonSort = (sortingType: string, filteringType: Filter): [IPokemon[], (pokemons: IPokemon[]) => void] => {
-  const [pokemons, setPokemons] = useState<IPokemon[]>([]);
-  const [manipulatedPokemons, setManipulatedPokemons] = useState<IPokemon[]>([]);
+const usePokemonSort = (
+  sortingType: string,
+  filteringType: Filter
+): [IBasicPokemon[], (pokemons: IBasicPokemon[]) => void] => {
+  const [pokemons, setPokemons] = useState<IBasicPokemon[]>([]);
+  const [manipulatedPokemons, setManipulatedPokemons] = useState<IBasicPokemon[]>([]);
 
-  const updatePokemons = (newPokemon: IPokemon[]) => setPokemons(pickFirst900Pokemons(newPokemon));
-  const updateManipulatedPokemons = (newPokemons: IPokemon[] = pokemons) => setManipulatedPokemons(newPokemons);
+  const updatePokemons = (newPokemon: IBasicPokemon[]) => setPokemons(pickFirst900Pokemons(newPokemon));
+  const updateManipulatedPokemons = (newPokemons: IBasicPokemon[] = pokemons) => setManipulatedPokemons(newPokemons);
 
   const sortPokemonCallback = () => sortPokemons(sortingType, pokemons, updatePokemons);
   const filterPokemonCallback = () => filterPokemons(filteringType, pokemons, updateManipulatedPokemons);
@@ -42,13 +46,13 @@ const usePokemonSort = (sortingType: string, filteringType: Filter): [IPokemon[]
   return [manipulatedPokemons, updatePokemons];
 };
 
-const sortPokemons = (sortingType: string, pokemons: IPokemon[], updatePokemons: UpdatePokemonFunction) => {
+const sortPokemons = (sortingType: string, pokemons: IBasicPokemon[], updatePokemons: UpdatePokemonFunction) => {
   updatePokemons(sortingMap[sortingType](pokemons));
 };
 
-const filterPokemons = (filteringType: Filter, pokemons: IPokemon[], updatePokemons: UpdatePokemonFunction) => {
+const filterPokemons = (filteringType: Filter, pokemons: IBasicPokemon[], updatePokemons: UpdatePokemonFunction) => {
   const filterPokemonsByField = (field: FilterField, name: string) =>
-    pokemons.filter((pokemon: IPokemon) => pokemon[field].includes(name));
+    pokemons.filter((pokemon: IBasicPokemon) => pokemon[field].includes(name));
 
   const filteredPokemons = filteringType ? filterPokemonsByField(filteringType.field, filteringType.name) : pokemons;
   updatePokemons(filteredPokemons);
