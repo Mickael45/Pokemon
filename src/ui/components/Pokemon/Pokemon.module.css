@@ -1,0 +1,45 @@
+.container {
+  padding: 20px;
+  border-radius: 5px;
+  transition: margin-top 0.25s ease-out;
+}
+
+.container:hover {
+  margin-top: -10px;
+  box-shadow: 0px 0px 10px 2px lightgrey;
+}
+
+.container > img[data-loaded="true"] {
+  width: 200px;
+  height: 200px;
+  top: 0;
+}
+
+.container > rect,
+svg {
+  width: 200px;
+  height: 200px;
+  background-color: grey;
+}
+
+.container > img:hover,
+.container span:hover {
+  cursor: pointer;
+}
+
+.container > div {
+  color: grey;
+}
+
+.container span {
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.container > a {
+  text-decoration: none;
+}
