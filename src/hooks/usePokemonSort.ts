@@ -40,8 +40,7 @@ const usePokemonSort = (
   const filterPokemonCallback = () => filterPokemons(filteringType, pokemons, updateManipulatedPokemons);
 
   useEffect(sortPokemonCallback, [sortingType]);
-  useEffect(filterPokemonCallback, [filteringType]);
-  useEffect(updateManipulatedPokemons, [pokemons]);
+  useEffect(filterPokemonCallback, [filteringType, pokemons]);
 
   return [manipulatedPokemons, updatePokemons];
 };
@@ -53,8 +52,8 @@ const sortPokemons = (sortingType: string, pokemons: IBasicPokemon[], updatePoke
 const filterPokemons = (filteringType: Filter, pokemons: IBasicPokemon[], updatePokemons: UpdatePokemonFunction) => {
   const filterPokemonsByField = (field: FilterField, name: string) =>
     pokemons.filter((pokemon: IBasicPokemon) => pokemon[field].includes(name));
-
   const filteredPokemons = filteringType ? filterPokemonsByField(filteringType.field, filteringType.name) : pokemons;
+
   updatePokemons(filteredPokemons);
 };
 

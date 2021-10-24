@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { fetchPokemonDetailsByNameOrId } from "../../../services";
 import { ImageWithPlaceholder, PokemonType, Radar } from "../../components";
 import { Page } from "../../templates";
@@ -8,19 +8,19 @@ interface Params {
   id: string;
 }
 
+const DEFAULT_POKEMON = {
+  imageUrl: "",
+  name: "",
+  types: "",
+  id: 0,
+  stats: [],
+};
+
 const Details = () => {
   const { id } = useParams<Params>();
-  const [pokemon, setPokemon] = useState<IFullPokemon>({
-    imageUrl: "",
-    name: "",
-    types: "",
-    id: 0,
-    stats: [],
-  });
+  const history = useHistory();
+  const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
   const { imageUrl, name, types, stats } = pokemon;
-
-  const renderType = (type: string) => <PokemonType key={`${id}-${type}`} type={type} handleClick={() => {}} />;
-  const renderTypes = () => types.split(",").map(renderType);
 
   const getPokemonById = () => {
     fetchPokemonDetailsByNameOrId(id).then(setPokemon);
@@ -28,6 +28,14 @@ const Details = () => {
 
   useEffect(getPokemonById, []);
 
+  const onTypeClick = (type: string) =>
+    history.push({
+      pathname: "/",
+      search: `name=${type}&field=types`,
+    });
+
+  const renderType = (type: string) => <PokemonType key={`${id}-${type}`} type={type} handleClick={onTypeClick} />;
+  const renderTypes = () => types.split(",").map(renderType);
   const renderStatsRadar = () => (stats.length > 0 ? <Radar title="Stats" axisDataList={stats} color="red" /> : null);
 
   return (
