@@ -1,6 +1,7 @@
 import { capitalizeFirstLetter } from "../../../utils";
 import styles from "./PokemonType.module.css";
-const { typeColor, typeContainer } = styles;
+import pokemonTypesColor from "../../../constants/PokemonTypesColor.json";
+const { typeContainer } = styles;
 
 interface IProps {
   type: string;
@@ -9,10 +10,17 @@ interface IProps {
 }
 
 const PokemonType = ({ type, handleClick, children = "" }: IProps) => {
+  const castedPokemonTypesColor = pokemonTypesColor as MAP;
+
   const handleTypeClick = () => handleClick(type);
 
   return (
-    <span className={[typeContainer, typeColor].join(" ")} data-type={type} onClick={handleTypeClick}>
+    <span
+      style={{ background: castedPokemonTypesColor[type] }}
+      className={typeContainer}
+      data-type={type}
+      onClick={handleTypeClick}
+    >
       {capitalizeFirstLetter(type)}
       {children}
     </span>
