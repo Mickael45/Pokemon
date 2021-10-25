@@ -14,13 +14,14 @@ const DEFAULT_POKEMON = {
   types: "",
   id: 0,
   stats: [],
+  weaknesses: "",
 };
 
 const Details = () => {
   const { id } = useParams<Params>();
   const history = useHistory();
   const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
-  const { imageUrl, name, types, stats } = pokemon;
+  const { imageUrl, name, stats } = pokemon;
 
   const getPokemonById = () => {
     fetchPokemonDetailsByNameOrId(id).then(setPokemon);
@@ -35,7 +36,7 @@ const Details = () => {
     });
 
   const renderType = (type: string) => <PokemonType key={`${id}-${type}`} type={type} handleClick={onTypeClick} />;
-  const renderTypes = () => types.split(",").map(renderType);
+  const renderTypes = (types: string) => types.split(",").map(renderType);
   const renderStatsRadar = () => (stats.length > 0 ? <Radar title="Stats" axisDataList={stats} color="red" /> : null);
 
   return (
@@ -44,7 +45,10 @@ const Details = () => {
         <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
         <span>{id}</span>
         <h2>{capitalizeFirstLetter(name)}</h2>
-        {renderTypes()}
+        <h3>Types:</h3>
+        {renderTypes(pokemon.types)}
+        <h3>Weaknesses:</h3>
+        {renderTypes(pokemon.weaknesses)}
         {renderStatsRadar()}
       </div>
     </Page>

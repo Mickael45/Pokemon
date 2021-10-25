@@ -14,7 +14,7 @@ const POKEMON_TYPES = [
   "fighting",
   "poison",
   "ground",
-  "fly",
+  "flying",
   "psychic",
   "bug",
   "rock",

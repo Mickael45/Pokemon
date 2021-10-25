@@ -1,4 +1,4 @@
-import { extractPokemonName, extractPokemonData, formatToBasicPokemon, formatToFullPokemon } from "./pokemonFormatting";
+import { extractPokemonName, extractPokemonData, formatToBasicPokemon, formatToFullPokemon } from "./pokemonFormater";
 
 const POKE_API_URL = "https://pokeapi.co/api/v2/";
 const POKEMON_LIMIT = 2000;

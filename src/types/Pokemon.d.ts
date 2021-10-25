@@ -8,7 +8,7 @@ type PokemonTypes =
   | "fighting"
   | "poison"
   | "ground"
-  | "fly"
+  | "flying"
   | "psychic"
   | "bug"
   | "rock"
@@ -18,9 +18,20 @@ type PokemonTypes =
   | "steel"
   | "fairy";
 
+type PokemonInteractionTypes =
+  | "no effect"
+  | "not effective at all"
+  | "normal effectiveness"
+  | "very effective"
+  | "super effective";
+
 interface IPokemonTypeInteraction {
   key: string;
   values: { [key: PokemonTypes]: string }[];
+}
+
+interface IPokemonInteractionType {
+  [key: PokemonTypes]: PokemonInteractionTypes;
 }
 interface IPokemonStat {
   label: string;
@@ -35,4 +46,5 @@ interface IBasicPokemon {
 
 type IFullPokemon = IBasicPokemon & {
   stats: Stat[] | [];
+  weaknesses: string;
 };

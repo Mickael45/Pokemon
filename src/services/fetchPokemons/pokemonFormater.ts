@@ -1,7 +1,7 @@
 import brokenNamesMap from "./brokenNameMap";
 import { formatNumberToMatchLength } from "../../utils";
 import { capitalizeFirstLetter } from "../../utils/stringManipulation";
-
+import typesInteractionData from "../../ui/pages/TypeInteractions/typeInteractions.json";
 const POKEMON_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
 
 interface IType {
@@ -29,6 +29,20 @@ interface IPokemonResponseType {
   stats: IStat[];
 }
 
+const getPokemonWeaknesses = (types: string) => {
+  const typeInteractions = typesInteractionData.flat().find(({ key }: IPokemonTypeInteraction) => key === types);
+  const weakInteractionTypes = typeInteractions?.values.filter(
+    (value: IPokemonInteractionType) =>
+      Object.values(value)[0] === "very effective" || Object.values(value)[0] === "super effective"
+  );
+  const weakTypesName = weakInteractionTypes
+    ? weakInteractionTypes.map((interactionType) => Object.keys(interactionType)[0]).join(",")
+    : "";
+  console.log(typeInteractions, weakInteractionTypes, weakTypesName);
+
+  return weakTypesName;
+};
+
 const extractTypeName = (type: IType) => type.type.name;
 
 const extractStatsFromPokemon = ({ stats }: IPokemonResponseType) =>
@@ -54,6 +68,7 @@ export const formatToBasicPokemon = (pokemon: IPokemonResponseType): IBasicPokem
 export const formatToFullPokemon = (pokemon: IPokemonResponseType): IFullPokemon => {
   const pokemonBasicInfo = formatToBasicPokemon(pokemon);
   const stats = extractStatsFromPokemon(pokemon);
+  const weaknesses = getPokemonWeaknesses(pokemonBasicInfo.types);
 
-  return { ...pokemonBasicInfo, stats };
+  return { ...pokemonBasicInfo, stats, weaknesses };
 };
