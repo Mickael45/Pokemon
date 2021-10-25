@@ -33,16 +33,17 @@ interface IPokemonResponseType {
 
 const getPokemonWeaknesses = (types: string) => {
   const typeInteractions = typesInteractionData.flat().find(({ key }: IPokemonTypeInteraction) => key === types);
-  const weakInteractionTypes = typeInteractions?.values.filter(
-    (value: IPokemonInteractionType) =>
-      Object.values(value)[0] === "very effective" || Object.values(value)[0] === "super effective"
-  );
-  const weakTypesName = weakInteractionTypes
-    ? weakInteractionTypes.map((interactionType) => Object.keys(interactionType)[0]).join(",")
-    : "";
-  console.log(typeInteractions, weakInteractionTypes, weakTypesName);
+  const weakInteractionTypes = typeInteractions?.values
+    .filter(
+      (value: IPokemonInteractionType) =>
+        Object.values(value)[0] === "very effective" || Object.values(value)[0] === "super effective"
+    )
+    .map((value: IPokemonInteractionType) => ({
+      type: Object.keys(value)[0] as PokemonTypes,
+      factor: (Object.values(value)[0] === "very effective" ? "2" : "4") as DamageFactor,
+    }));
 
-  return weakTypesName;
+  return weakInteractionTypes || [];
 };
 
 const extractTypeName = (type: IType) => type.type.name;

@@ -5,14 +5,16 @@ const { typeColor, typeContainer } = styles;
 interface IProps {
   type: string;
   handleClick: (type: string) => void;
+  children?: string;
 }
 
-const PokemonType = ({ type, handleClick }: IProps) => {
+const PokemonType = ({ type, handleClick, children = "" }: IProps) => {
   const handleTypeClick = () => handleClick(type);
 
   return (
     <span className={[typeContainer, typeColor].join(" ")} data-type={type} onClick={handleTypeClick}>
       {capitalizeFirstLetter(type)}
+      {children}
     </span>
   );
 };

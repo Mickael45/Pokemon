@@ -4,6 +4,7 @@ import { fetchPokemonDetailsByNameOrId } from "../../../services";
 import { ImageWithPlaceholder, PokemonType, Radar } from "../../components";
 import { Page } from "../../templates";
 import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
+
 interface Params {
   id: string;
 }
@@ -16,14 +17,14 @@ const DEFAULT_POKEMON = {
   weight: 0,
   id: 0,
   stats: [],
-  weaknesses: "",
+  weaknesses: [],
 };
 
 const Details = () => {
   const { id } = useParams<Params>();
   const history = useHistory();
   const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
-  const { imageUrl, name, stats, height, weight } = pokemon;
+  const { imageUrl, name, stats, height, weight, types, weaknesses } = pokemon;
 
   const getPokemonById = () => {
     fetchPokemonDetailsByNameOrId(id).then(setPokemon);
@@ -37,8 +38,18 @@ const Details = () => {
       search: `name=${type}&field=types`,
     });
 
-  const renderType = (type: string) => <PokemonType key={`${id}-${type}`} type={type} handleClick={onTypeClick} />;
-  const renderTypes = (types: string) => types.split(",").map(renderType);
+  const renderType = (type: string, child?: any) => (
+    <PokemonType key={`${id}-${type}`} type={type} handleClick={onTypeClick}>
+      {child}
+    </PokemonType>
+  );
+  const renderTypes = () => {
+    const renderTypeWithoutChild = (type: string) => renderType(type);
+
+    return types.split(",").map(renderTypeWithoutChild);
+  };
+  const renderWeakness = ({ type, factor }: Weakness) => renderType(type, ` (x${factor})`);
+  const renderWeaknesses = () => weaknesses.map(renderWeakness);
   const renderStatsRadar = () => (stats.length > 0 ? <Radar title="Stats" axisDataList={stats} color="red" /> : null);
 
   return (
@@ -50,9 +61,9 @@ const Details = () => {
         <p>Height: {height}</p>
         <p>Weight: {weight}</p>
         <h3>Types:</h3>
-        {renderTypes(pokemon.types)}
+        {renderTypes()}
         <h3>Weaknesses:</h3>
-        {renderTypes(pokemon.weaknesses)}
+        {renderWeaknesses()}
         {renderStatsRadar()}
       </div>
     </Page>

@@ -30,6 +30,12 @@ interface IPokemonTypeInteraction {
   values: { [key: PokemonTypes]: string }[];
 }
 
+type DamageFactor = "0" | "0.25" | "0.5" | "1" | "2" | "4";
+
+type Weakness = {
+  type: PokemonTypes;
+  factor: DamageFactor;
+};
 interface IPokemonInteractionType {
   [key: PokemonTypes]: PokemonInteractionTypes;
 }
@@ -46,7 +52,7 @@ interface IBasicPokemon {
 
 type IFullPokemon = IBasicPokemon & {
   stats: Stat[] | [];
-  weaknesses: string;
+  weaknesses: Weakness[] | [];
   height: number;
   weight: number;
 };
