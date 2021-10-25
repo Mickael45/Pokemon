@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, BaseSyntheticEvent } from "react";
+import { useLocation } from "react-router-dom";
 import { Pokemon } from "../../components";
 import { usePokemonSort } from "../../../hooks";
 import { fetchAllPokemons } from "../../../services";
@@ -11,9 +12,23 @@ const POKEMON_STACK_SIZE = 12;
 
 const sortingTypes = Object.values(sortingTypesMap);
 
+const useQueryParams = (): Filter => {
+  const query = new URLSearchParams(useLocation().search);
+  const name = query.get("name");
+  const field = query.get("field") as FilterField;
+
+  return !name || !field
+    ? null
+    : {
+        name,
+        field,
+      };
+};
+
 const HomePage = () => {
+  const queryFilteringType = useQueryParams();
   const [sortingType, setSortingType] = useState<string>(sortingTypes[0]);
-  const [filteringType, setFilteringType] = useState<Filter>(null);
+  const [filteringType, setFilteringType] = useState<Filter>(queryFilteringType);
   const [pokemons, setPokemons] = usePokemonSort(sortingType, filteringType);
   const [numberOfPokemonShown, setNumberOfPokemonShown] = useState(POKEMON_STACK_SIZE);
 
@@ -49,7 +64,7 @@ const HomePage = () => {
 
   const callbackedGetPokemonByType = useCallback(getPokemonByType, []);
 
-  const renderPokemon = (pokemon: IPokemon) => (
+  const renderPokemon = (pokemon: IBasicPokemon) => (
     <Pokemon key={pokemon.id} {...pokemon} onTypeClick={callbackedGetPokemonByType} />
   );
 
