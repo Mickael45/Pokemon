@@ -31,7 +31,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -90,7 +90,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -149,7 +149,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -208,7 +208,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -267,7 +267,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -326,7 +326,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -385,7 +385,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -444,7 +444,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -503,7 +503,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -532,7 +532,7 @@
       ]
     },
     {
-      "key": "normal,fly",
+      "key": "normal,flying",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -562,7 +562,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -621,7 +621,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -680,7 +680,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -739,7 +739,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -798,7 +798,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -857,7 +857,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -916,7 +916,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -975,7 +975,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -1034,7 +1034,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -1086,7 +1086,7 @@
           "ice": "not very effective"
         },
         {
-          "fighting": "very effective"
+          "fighting": "normal effectiveness"
         },
         {
           "poison": "normal effectiveness"
@@ -1095,7 +1095,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -1107,7 +1107,7 @@
           "rock": "very effective"
         },
         {
-          "ghost": "no effect"
+          "ghost": "normal effectiveness"
         },
         {
           "dragon": "normal effectiveness"
@@ -1145,7 +1145,7 @@
           "ice": "not very effective"
         },
         {
-          "fighting": "normal effectiveness"
+          "fighting": "very effective"
         },
         {
           "poison": "normal effectiveness"
@@ -1154,7 +1154,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -1166,7 +1166,7 @@
           "rock": "very effective"
         },
         {
-          "ghost": "normal effectiveness"
+          "ghost": "no effect"
         },
         {
           "dragon": "normal effectiveness"
@@ -1213,7 +1213,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -1272,7 +1272,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -1331,7 +1331,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -1390,7 +1390,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -1449,7 +1449,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -1508,7 +1508,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -1567,7 +1567,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -1596,7 +1596,7 @@
       ]
     },
     {
-      "key": "fire,fly",
+      "key": "fire,flying",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -1626,7 +1626,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -1685,7 +1685,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -1744,7 +1744,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -1803,7 +1803,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -1862,7 +1862,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -1921,7 +1921,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -1980,7 +1980,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -2039,7 +2039,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -2098,7 +2098,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -2135,65 +2135,6 @@
           "normal": "normal effectiveness"
         },
         {
-          "fire": "not effective at all"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "very effective"
-        },
-        {
-          "grass": "normal effectiveness"
-        },
-        {
-          "ice": "not effective at all"
-        },
-        {
-          "fighting": "normal effectiveness"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "very effective"
-        },
-        {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "not very effective"
-        },
-        {
-          "rock": "very effective"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "not effective at all"
-        },
-        {
-          "fairy": "not very effective"
-        }
-      ]
-    },
-    {
-      "key": "water,normal",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
           "fire": "not very effective"
         },
         {
@@ -2218,7 +2159,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -2247,7 +2188,7 @@
       ]
     },
     {
-      "key": "water,fire",
+      "key": "water,normal",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -2277,7 +2218,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -2302,6 +2243,65 @@
         },
         {
           "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "water,fire",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "not effective at all"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "very effective"
+        },
+        {
+          "grass": "normal effectiveness"
+        },
+        {
+          "ice": "not effective at all"
+        },
+        {
+          "fighting": "normal effectiveness"
+        },
+        {
+          "poison": "normal effectiveness"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "not very effective"
+        },
+        {
+          "rock": "very effective"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "not effective at all"
+        },
+        {
+          "fairy": "not very effective"
         }
       ]
     },
@@ -2336,7 +2336,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -2395,7 +2395,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -2454,7 +2454,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -2513,7 +2513,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -2572,7 +2572,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -2631,7 +2631,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -2660,7 +2660,7 @@
       ]
     },
     {
-      "key": "water,fly",
+      "key": "water,flying",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -2690,7 +2690,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -2749,7 +2749,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -2808,7 +2808,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -2867,7 +2867,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -2926,7 +2926,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -2985,7 +2985,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -3044,7 +3044,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -3103,7 +3103,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -3162,7 +3162,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -3199,65 +3199,6 @@
           "normal": "normal effectiveness"
         },
         {
-          "fire": "not very effective"
-        },
-        {
-          "water": "not very effective"
-        },
-        {
-          "electric": "normal effectiveness"
-        },
-        {
-          "grass": "very effective"
-        },
-        {
-          "ice": "not very effective"
-        },
-        {
-          "fighting": "normal effectiveness"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "very effective"
-        },
-        {
-          "fly": "not very effective"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "normal effectiveness"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "not effective at all"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "electric,normal",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
           "fire": "normal effectiveness"
         },
         {
@@ -3282,7 +3223,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -3311,7 +3252,7 @@
       ]
     },
     {
-      "key": "electric,fire",
+      "key": "electric,normal",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -3341,7 +3282,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -3370,7 +3311,7 @@
       ]
     },
     {
-      "key": "electric,water",
+      "key": "electric,fire",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -3400,7 +3341,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -3425,6 +3366,65 @@
         },
         {
           "fairy": "not very effective"
+        }
+      ]
+    },
+    {
+      "key": "electric,water",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "not very effective"
+        },
+        {
+          "water": "not very effective"
+        },
+        {
+          "electric": "normal effectiveness"
+        },
+        {
+          "grass": "very effective"
+        },
+        {
+          "ice": "not very effective"
+        },
+        {
+          "fighting": "normal effectiveness"
+        },
+        {
+          "poison": "normal effectiveness"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "not very effective"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "normal effectiveness"
+        },
+        {
+          "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "not effective at all"
+        },
+        {
+          "fairy": "normal effectiveness"
         }
       ]
     },
@@ -3459,7 +3459,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -3518,7 +3518,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -3577,7 +3577,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -3636,7 +3636,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "very effective"
@@ -3695,7 +3695,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -3724,7 +3724,7 @@
       ]
     },
     {
-      "key": "electric,fly",
+      "key": "electric,flying",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -3754,7 +3754,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -3813,7 +3813,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -3872,7 +3872,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -3931,7 +3931,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not effective at all"
+          "flying": "not effective at all"
         },
         {
           "psychic": "normal effectiveness"
@@ -3990,7 +3990,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -4049,7 +4049,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -4108,7 +4108,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "no effect"
@@ -4167,7 +4167,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not effective at all"
+          "flying": "not effective at all"
         },
         {
           "psychic": "not very effective"
@@ -4226,7 +4226,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -4269,65 +4269,6 @@
           "water": "not very effective"
         },
         {
-          "electric": "not effective at all"
-        },
-        {
-          "grass": "not very effective"
-        },
-        {
-          "ice": "very effective"
-        },
-        {
-          "fighting": "normal effectiveness"
-        },
-        {
-          "poison": "very effective"
-        },
-        {
-          "ground": "normal effectiveness"
-        },
-        {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "very effective"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "not very effective"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "grass,normal",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
-          "fire": "very effective"
-        },
-        {
-          "water": "not very effective"
-        },
-        {
           "electric": "not very effective"
         },
         {
@@ -4346,7 +4287,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -4375,7 +4316,7 @@
       ]
     },
     {
-      "key": "grass,fire",
+      "key": "grass,normal",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -4405,7 +4346,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -4434,7 +4375,7 @@
       ]
     },
     {
-      "key": "grass,water",
+      "key": "grass,fire",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -4464,7 +4405,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -4493,7 +4434,7 @@
       ]
     },
     {
-      "key": "grass,electric",
+      "key": "grass,water",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -4523,7 +4464,66 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "very effective"
+        },
+        {
+          "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "not very effective"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "grass,electric",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "very effective"
+        },
+        {
+          "water": "not very effective"
+        },
+        {
+          "electric": "not effective at all"
+        },
+        {
+          "grass": "not very effective"
+        },
+        {
+          "ice": "very effective"
+        },
+        {
+          "fighting": "normal effectiveness"
+        },
+        {
+          "poison": "very effective"
+        },
+        {
+          "ground": "normal effectiveness"
+        },
+        {
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -4582,7 +4582,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -4641,7 +4641,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "super effective"
+          "flying": "super effective"
         },
         {
           "psychic": "very effective"
@@ -4700,7 +4700,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -4759,7 +4759,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -4788,7 +4788,7 @@
       ]
     },
     {
-      "key": "grass,fly",
+      "key": "grass,flying",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -4818,7 +4818,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -4877,7 +4877,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "not very effective"
@@ -4936,7 +4936,7 @@
           "ground": "not effective at all"
         },
         {
-          "fly": "super effective"
+          "flying": "super effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -4995,7 +4995,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -5054,7 +5054,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -5113,7 +5113,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -5172,7 +5172,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "no effect"
@@ -5231,7 +5231,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -5290,7 +5290,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -5327,37 +5327,37 @@
           "normal": "normal effectiveness"
         },
         {
-          "fire": "super effective"
+          "fire": "very effective"
         },
         {
-          "water": "not very effective"
+          "water": "normal effectiveness"
         },
         {
-          "electric": "not very effective"
+          "electric": "normal effectiveness"
         },
         {
-          "grass": "not very effective"
+          "grass": "normal effectiveness"
         },
         {
-          "ice": "normal effectiveness"
+          "ice": "not very effective"
         },
         {
           "fighting": "very effective"
         },
         {
-          "poison": "very effective"
+          "poison": "normal effectiveness"
         },
         {
-          "ground": "not very effective"
+          "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
         },
         {
-          "bug": "very effective"
+          "bug": "normal effectiveness"
         },
         {
           "rock": "very effective"
@@ -5401,65 +5401,6 @@
           "ice": "not very effective"
         },
         {
-          "fighting": "very effective"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "normal effectiveness"
-        },
-        {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "normal effectiveness"
-        },
-        {
-          "rock": "very effective"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "very effective"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "ice,fire",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
-          "fire": "very effective"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "normal effectiveness"
-        },
-        {
-          "grass": "normal effectiveness"
-        },
-        {
-          "ice": "not very effective"
-        },
-        {
           "fighting": "super effective"
         },
         {
@@ -5469,7 +5410,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -5498,7 +5439,7 @@
       ]
     },
     {
-      "key": "ice,water",
+      "key": "ice,fire",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -5528,7 +5469,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -5557,7 +5498,7 @@
       ]
     },
     {
-      "key": "ice,electric",
+      "key": "ice,water",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -5587,7 +5528,66 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "normal effectiveness"
+        },
+        {
+          "rock": "very effective"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "ice,electric",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "very effective"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "not very effective"
+        },
+        {
+          "grass": "normal effectiveness"
+        },
+        {
+          "ice": "not very effective"
+        },
+        {
+          "fighting": "very effective"
+        },
+        {
+          "poison": "normal effectiveness"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -5622,37 +5622,37 @@
           "normal": "normal effectiveness"
         },
         {
-          "fire": "very effective"
+          "fire": "super effective"
         },
         {
-          "water": "normal effectiveness"
+          "water": "not very effective"
         },
         {
           "electric": "not very effective"
         },
         {
-          "grass": "normal effectiveness"
+          "grass": "not very effective"
         },
         {
-          "ice": "not very effective"
+          "ice": "normal effectiveness"
         },
         {
           "fighting": "very effective"
         },
         {
-          "poison": "normal effectiveness"
+          "poison": "very effective"
         },
         {
-          "ground": "very effective"
+          "ground": "not very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
         },
         {
-          "bug": "normal effectiveness"
+          "bug": "very effective"
         },
         {
           "rock": "very effective"
@@ -5667,7 +5667,7 @@
           "dark": "normal effectiveness"
         },
         {
-          "steel": "normal effectiveness"
+          "steel": "very effective"
         },
         {
           "fairy": "normal effectiveness"
@@ -5705,7 +5705,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -5764,7 +5764,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -5823,7 +5823,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -5852,7 +5852,7 @@
       ]
     },
     {
-      "key": "ice,fly",
+      "key": "ice,flying",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -5882,7 +5882,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -5941,7 +5941,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -6000,7 +6000,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -6059,7 +6059,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -6118,7 +6118,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -6177,7 +6177,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -6236,7 +6236,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -6295,7 +6295,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -6354,7 +6354,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -6391,7 +6391,7 @@
           "normal": "normal effectiveness"
         },
         {
-          "fire": "very effective"
+          "fire": "normal effectiveness"
         },
         {
           "water": "normal effectiveness"
@@ -6403,10 +6403,10 @@
           "grass": "normal effectiveness"
         },
         {
-          "ice": "not very effective"
+          "ice": "normal effectiveness"
         },
         {
-          "fighting": "very effective"
+          "fighting": "normal effectiveness"
         },
         {
           "poison": "normal effectiveness"
@@ -6415,7 +6415,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -6424,7 +6424,7 @@
           "bug": "not very effective"
         },
         {
-          "rock": "normal effectiveness"
+          "rock": "not very effective"
         },
         {
           "ghost": "normal effectiveness"
@@ -6436,7 +6436,7 @@
           "dark": "not very effective"
         },
         {
-          "steel": "very effective"
+          "steel": "normal effectiveness"
         },
         {
           "fairy": "very effective"
@@ -6465,65 +6465,6 @@
           "ice": "normal effectiveness"
         },
         {
-          "fighting": "normal effectiveness"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "normal effectiveness"
-        },
-        {
-          "fly": "very effective"
-        },
-        {
-          "psychic": "very effective"
-        },
-        {
-          "bug": "not very effective"
-        },
-        {
-          "rock": "not very effective"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "not very effective"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "very effective"
-        }
-      ]
-    },
-    {
-      "key": "fighting,fire",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "normal effectiveness"
-        },
-        {
-          "grass": "normal effectiveness"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
           "fighting": "very effective"
         },
         {
@@ -6533,7 +6474,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -6562,7 +6503,7 @@
       ]
     },
     {
-      "key": "fighting,water",
+      "key": "fighting,fire",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -6592,7 +6533,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -6621,7 +6562,7 @@
       ]
     },
     {
-      "key": "fighting,electric",
+      "key": "fighting,water",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -6651,7 +6592,66 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
+        },
+        {
+          "psychic": "very effective"
+        },
+        {
+          "bug": "not very effective"
+        },
+        {
+          "rock": "not very effective"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "not very effective"
+        },
+        {
+          "steel": "not very effective"
+        },
+        {
+          "fairy": "very effective"
+        }
+      ]
+    },
+    {
+      "key": "fighting,electric",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "not very effective"
+        },
+        {
+          "grass": "normal effectiveness"
+        },
+        {
+          "ice": "normal effectiveness"
+        },
+        {
+          "fighting": "normal effectiveness"
+        },
+        {
+          "poison": "normal effectiveness"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -6686,65 +6686,6 @@
           "normal": "normal effectiveness"
         },
         {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "not very effective"
-        },
-        {
-          "grass": "normal effectiveness"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
-          "fighting": "normal effectiveness"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "very effective"
-        },
-        {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "very effective"
-        },
-        {
-          "bug": "not very effective"
-        },
-        {
-          "rock": "not very effective"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "not very effective"
-        },
-        {
-          "steel": "not very effective"
-        },
-        {
-          "fairy": "very effective"
-        }
-      ]
-    },
-    {
-      "key": "fighting,ice",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
           "fire": "very effective"
         },
         {
@@ -6769,7 +6710,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "super effective"
+          "flying": "super effective"
         },
         {
           "psychic": "very effective"
@@ -6791,6 +6732,65 @@
         },
         {
           "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "very effective"
+        }
+      ]
+    },
+    {
+      "key": "fighting,ice",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "very effective"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "normal effectiveness"
+        },
+        {
+          "grass": "normal effectiveness"
+        },
+        {
+          "ice": "not very effective"
+        },
+        {
+          "fighting": "very effective"
+        },
+        {
+          "poison": "normal effectiveness"
+        },
+        {
+          "ground": "normal effectiveness"
+        },
+        {
+          "flying": "very effective"
+        },
+        {
+          "psychic": "very effective"
+        },
+        {
+          "bug": "not very effective"
+        },
+        {
+          "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "not very effective"
+        },
+        {
+          "steel": "very effective"
         },
         {
           "fairy": "very effective"
@@ -6828,7 +6828,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "super effective"
@@ -6887,7 +6887,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -6916,7 +6916,7 @@
       ]
     },
     {
-      "key": "fighting,fly",
+      "key": "fighting,flying",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -6946,7 +6946,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -7005,7 +7005,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -7064,7 +7064,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "super effective"
+          "flying": "super effective"
         },
         {
           "psychic": "very effective"
@@ -7123,7 +7123,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -7182,7 +7182,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -7241,7 +7241,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -7300,7 +7300,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "no effect"
@@ -7359,7 +7359,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -7418,7 +7418,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -7479,66 +7479,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "very effective"
-        },
-        {
-          "psychic": "super effective"
-        },
-        {
-          "bug": "not effective at all"
-        },
-        {
-          "rock": "not very effective"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "not very effective"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "poison,normal",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "normal effectiveness"
-        },
-        {
-          "grass": "not very effective"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
-          "fighting": "not very effective"
-        },
-        {
-          "poison": "not very effective"
-        },
-        {
-          "ground": "very effective"
-        },
-        {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -7567,7 +7508,7 @@
       ]
     },
     {
-      "key": "poison,fire",
+      "key": "poison,normal",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -7597,7 +7538,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -7626,7 +7567,7 @@
       ]
     },
     {
-      "key": "poison,water",
+      "key": "poison,fire",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -7656,7 +7597,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -7685,7 +7626,7 @@
       ]
     },
     {
-      "key": "poison,electric",
+      "key": "poison,water",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -7715,7 +7656,66 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "very effective"
+        },
+        {
+          "bug": "not very effective"
+        },
+        {
+          "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "not very effective"
+        },
+        {
+          "fairy": "not very effective"
+        }
+      ]
+    },
+    {
+      "key": "poison,electric",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "not very effective"
+        },
+        {
+          "grass": "not very effective"
+        },
+        {
+          "ice": "normal effectiveness"
+        },
+        {
+          "fighting": "not very effective"
+        },
+        {
+          "poison": "not very effective"
+        },
+        {
+          "ground": "super effective"
+        },
+        {
+          "flying": "not very effective"
         },
         {
           "psychic": "very effective"
@@ -7750,65 +7750,6 @@
           "normal": "normal effectiveness"
         },
         {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "not very effective"
-        },
-        {
-          "grass": "not very effective"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
-          "fighting": "not very effective"
-        },
-        {
-          "poison": "not very effective"
-        },
-        {
-          "ground": "super effective"
-        },
-        {
-          "fly": "not very effective"
-        },
-        {
-          "psychic": "very effective"
-        },
-        {
-          "bug": "not very effective"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "not very effective"
-        },
-        {
-          "fairy": "not very effective"
-        }
-      ]
-    },
-    {
-      "key": "poison,ice",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
           "fire": "very effective"
         },
         {
@@ -7833,7 +7774,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -7862,7 +7803,7 @@
       ]
     },
     {
-      "key": "poison,fighting",
+      "key": "poison,ice",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -7892,7 +7833,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -7917,6 +7858,65 @@
         },
         {
           "fairy": "not very effective"
+        }
+      ]
+    },
+    {
+      "key": "poison,fighting",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "normal effectiveness"
+        },
+        {
+          "grass": "not very effective"
+        },
+        {
+          "ice": "normal effectiveness"
+        },
+        {
+          "fighting": "not very effective"
+        },
+        {
+          "poison": "not very effective"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "very effective"
+        },
+        {
+          "psychic": "super effective"
+        },
+        {
+          "bug": "not effective at all"
+        },
+        {
+          "rock": "not very effective"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "not very effective"
+        },
+        {
+          "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "normal effectiveness"
         }
       ]
     },
@@ -7951,7 +7951,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -7980,7 +7980,7 @@
       ]
     },
     {
-      "key": "poison,fly",
+      "key": "poison,flying",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -8010,7 +8010,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -8069,7 +8069,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -8128,7 +8128,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -8187,7 +8187,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "very effective"
@@ -8246,7 +8246,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -8305,7 +8305,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -8364,7 +8364,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -8423,7 +8423,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -8482,7 +8482,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -8528,65 +8528,6 @@
           "electric": "no effect"
         },
         {
-          "grass": "normal effectiveness"
-        },
-        {
-          "ice": "very effective"
-        },
-        {
-          "fighting": "not very effective"
-        },
-        {
-          "poison": "not effective at all"
-        },
-        {
-          "ground": "very effective"
-        },
-        {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "very effective"
-        },
-        {
-          "bug": "not very effective"
-        },
-        {
-          "rock": "not very effective"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "not very effective"
-        }
-      ]
-    },
-    {
-      "key": "ground,normal",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "very effective"
-        },
-        {
-          "electric": "no effect"
-        },
-        {
           "grass": "very effective"
         },
         {
@@ -8602,7 +8543,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -8631,7 +8572,7 @@
       ]
     },
     {
-      "key": "ground,fire",
+      "key": "ground,normal",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -8661,7 +8602,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -8690,7 +8631,7 @@
       ]
     },
     {
-      "key": "ground,water",
+      "key": "ground,fire",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -8720,7 +8661,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -8749,7 +8690,7 @@
       ]
     },
     {
-      "key": "ground,electric",
+      "key": "ground,water",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -8779,7 +8720,66 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "normal effectiveness"
+        },
+        {
+          "rock": "not very effective"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "not very effective"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "ground,electric",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "very effective"
+        },
+        {
+          "electric": "no effect"
+        },
+        {
+          "grass": "very effective"
+        },
+        {
+          "ice": "very effective"
+        },
+        {
+          "fighting": "normal effectiveness"
+        },
+        {
+          "poison": "not very effective"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -8814,65 +8814,6 @@
           "normal": "normal effectiveness"
         },
         {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "very effective"
-        },
-        {
-          "electric": "no effect"
-        },
-        {
-          "grass": "very effective"
-        },
-        {
-          "ice": "very effective"
-        },
-        {
-          "fighting": "normal effectiveness"
-        },
-        {
-          "poison": "not very effective"
-        },
-        {
-          "ground": "very effective"
-        },
-        {
-          "fly": "not very effective"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "normal effectiveness"
-        },
-        {
-          "rock": "not very effective"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "not very effective"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "ground,ice",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
           "fire": "very effective"
         },
         {
@@ -8897,7 +8838,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -8926,7 +8867,7 @@
       ]
     },
     {
-      "key": "ground,fighting",
+      "key": "ground,ice",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -8956,7 +8897,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -8985,7 +8926,7 @@
       ]
     },
     {
-      "key": "ground,poison",
+      "key": "ground,fighting",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -9015,7 +8956,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -9044,7 +8985,66 @@
       ]
     },
     {
-      "key": "ground,fly",
+      "key": "ground,poison",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "very effective"
+        },
+        {
+          "electric": "no effect"
+        },
+        {
+          "grass": "normal effectiveness"
+        },
+        {
+          "ice": "very effective"
+        },
+        {
+          "fighting": "not very effective"
+        },
+        {
+          "poison": "not effective at all"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "very effective"
+        },
+        {
+          "bug": "not very effective"
+        },
+        {
+          "rock": "not very effective"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "not very effective"
+        }
+      ]
+    },
+    {
+      "key": "ground,flying",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -9074,7 +9074,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -9133,7 +9133,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -9192,7 +9192,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -9251,7 +9251,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -9310,7 +9310,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -9369,7 +9369,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -9428,7 +9428,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -9487,7 +9487,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -9546,7 +9546,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -9577,66 +9577,7 @@
   ],
   [
     {
-      "key": "fly",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "very effective"
-        },
-        {
-          "electric": "no effect"
-        },
-        {
-          "grass": "normal effectiveness"
-        },
-        {
-          "ice": "super effective"
-        },
-        {
-          "fighting": "not very effective"
-        },
-        {
-          "poison": "not very effective"
-        },
-        {
-          "ground": "no effect"
-        },
-        {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "not very effective"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "fly,normal",
+      "key": "flying",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -9666,7 +9607,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -9695,7 +9636,7 @@
       ]
     },
     {
-      "key": "fly,fire",
+      "key": "flying,normal",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -9725,7 +9666,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -9754,7 +9695,7 @@
       ]
     },
     {
-      "key": "fly,water",
+      "key": "flying,fire",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -9784,7 +9725,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -9813,7 +9754,7 @@
       ]
     },
     {
-      "key": "fly,electric",
+      "key": "flying,water",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -9843,7 +9784,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -9872,7 +9813,7 @@
       ]
     },
     {
-      "key": "fly,grass",
+      "key": "flying,electric",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -9902,7 +9843,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -9931,7 +9872,7 @@
       ]
     },
     {
-      "key": "fly,ice",
+      "key": "flying,grass",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -9961,7 +9902,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -9990,7 +9931,7 @@
       ]
     },
     {
-      "key": "fly,fighting",
+      "key": "flying,ice",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -10020,7 +9961,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -10049,7 +9990,7 @@
       ]
     },
     {
-      "key": "fly,poison",
+      "key": "flying,fighting",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -10079,7 +10020,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -10108,7 +10049,7 @@
       ]
     },
     {
-      "key": "fly,ground",
+      "key": "flying,poison",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -10138,7 +10079,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -10167,7 +10108,66 @@
       ]
     },
     {
-      "key": "fly,psychic",
+      "key": "flying,ground",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "very effective"
+        },
+        {
+          "electric": "no effect"
+        },
+        {
+          "grass": "normal effectiveness"
+        },
+        {
+          "ice": "super effective"
+        },
+        {
+          "fighting": "not very effective"
+        },
+        {
+          "poison": "not very effective"
+        },
+        {
+          "ground": "no effect"
+        },
+        {
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "not very effective"
+        },
+        {
+          "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "flying,psychic",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -10197,7 +10197,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -10226,7 +10226,7 @@
       ]
     },
     {
-      "key": "fly,bug",
+      "key": "flying,bug",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -10256,7 +10256,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -10285,7 +10285,7 @@
       ]
     },
     {
-      "key": "fly,rock",
+      "key": "flying,rock",
       "values": [
         {
           "normal": "not very effective"
@@ -10315,7 +10315,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -10344,7 +10344,7 @@
       ]
     },
     {
-      "key": "fly,ghost",
+      "key": "flying,ghost",
       "values": [
         {
           "normal": "no effect"
@@ -10374,7 +10374,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -10403,7 +10403,7 @@
       ]
     },
     {
-      "key": "fly,dragon",
+      "key": "flying,dragon",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -10433,7 +10433,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -10462,7 +10462,7 @@
       ]
     },
     {
-      "key": "fly,dark",
+      "key": "flying,dark",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -10492,7 +10492,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -10521,7 +10521,7 @@
       ]
     },
     {
-      "key": "fly,steel",
+      "key": "flying,steel",
       "values": [
         {
           "normal": "not very effective"
@@ -10551,7 +10551,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -10580,7 +10580,7 @@
       ]
     },
     {
-      "key": "fly,fairy",
+      "key": "flying,fairy",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -10610,7 +10610,7 @@
           "ground": "no effect"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -10653,34 +10653,34 @@
           "water": "normal effectiveness"
         },
         {
-          "electric": "very effective"
+          "electric": "normal effectiveness"
         },
         {
-          "grass": "not very effective"
+          "grass": "normal effectiveness"
         },
         {
-          "ice": "very effective"
+          "ice": "normal effectiveness"
         },
         {
-          "fighting": "not effective at all"
+          "fighting": "not very effective"
         },
         {
           "poison": "normal effectiveness"
         },
         {
-          "ground": "no effect"
+          "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
         },
         {
-          "bug": "normal effectiveness"
+          "bug": "very effective"
         },
         {
-          "rock": "very effective"
+          "rock": "normal effectiveness"
         },
         {
           "ghost": "very effective"
@@ -10721,65 +10721,6 @@
           "ice": "normal effectiveness"
         },
         {
-          "fighting": "not very effective"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "normal effectiveness"
-        },
-        {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "not very effective"
-        },
-        {
-          "bug": "very effective"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "very effective"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "very effective"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "psychic,fire",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "normal effectiveness"
-        },
-        {
-          "grass": "normal effectiveness"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
           "fighting": "normal effectiveness"
         },
         {
@@ -10789,7 +10730,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -10818,7 +10759,7 @@
       ]
     },
     {
-      "key": "psychic,water",
+      "key": "psychic,fire",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -10848,7 +10789,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -10877,7 +10818,7 @@
       ]
     },
     {
-      "key": "psychic,electric",
+      "key": "psychic,water",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -10907,7 +10848,66 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "not very effective"
+        },
+        {
+          "bug": "very effective"
+        },
+        {
+          "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "very effective"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "very effective"
+        },
+        {
+          "steel": "not very effective"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "psychic,electric",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "not very effective"
+        },
+        {
+          "grass": "normal effectiveness"
+        },
+        {
+          "ice": "normal effectiveness"
+        },
+        {
+          "fighting": "not very effective"
+        },
+        {
+          "poison": "normal effectiveness"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -10942,65 +10942,6 @@
           "normal": "normal effectiveness"
         },
         {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "not very effective"
-        },
-        {
-          "grass": "normal effectiveness"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
-          "fighting": "not very effective"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "very effective"
-        },
-        {
-          "fly": "not very effective"
-        },
-        {
-          "psychic": "not very effective"
-        },
-        {
-          "bug": "very effective"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "very effective"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "very effective"
-        },
-        {
-          "steel": "not very effective"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "psychic,ice",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
           "fire": "very effective"
         },
         {
@@ -11025,7 +10966,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "not very effective"
@@ -11054,7 +10995,7 @@
       ]
     },
     {
-      "key": "psychic,fighting",
+      "key": "psychic,ice",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -11084,7 +11025,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -11113,7 +11054,7 @@
       ]
     },
     {
-      "key": "psychic,poison",
+      "key": "psychic,fighting",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -11143,7 +11084,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -11172,7 +11113,7 @@
       ]
     },
     {
-      "key": "psychic,ground",
+      "key": "psychic,poison",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -11202,7 +11143,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -11231,7 +11172,7 @@
       ]
     },
     {
-      "key": "psychic,fly",
+      "key": "psychic,ground",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -11261,7 +11202,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -11271,6 +11212,65 @@
         },
         {
           "rock": "not very effective"
+        },
+        {
+          "ghost": "very effective"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "very effective"
+        },
+        {
+          "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "psychic,flying",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "very effective"
+        },
+        {
+          "grass": "not very effective"
+        },
+        {
+          "ice": "very effective"
+        },
+        {
+          "fighting": "not effective at all"
+        },
+        {
+          "poison": "normal effectiveness"
+        },
+        {
+          "ground": "no effect"
+        },
+        {
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "not very effective"
+        },
+        {
+          "bug": "normal effectiveness"
+        },
+        {
+          "rock": "very effective"
         },
         {
           "ghost": "very effective"
@@ -11320,7 +11320,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "not very effective"
@@ -11379,7 +11379,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -11438,7 +11438,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -11497,7 +11497,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -11556,7 +11556,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -11615,7 +11615,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not effective at all"
@@ -11674,7 +11674,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -11726,7 +11726,7 @@
           "ice": "normal effectiveness"
         },
         {
-          "fighting": "not effective at all"
+          "fighting": "not very effective"
         },
         {
           "poison": "normal effectiveness"
@@ -11735,25 +11735,25 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
-          "psychic": "not very effective"
+          "psychic": "normal effectiveness"
         },
         {
-          "bug": "very effective"
+          "bug": "normal effectiveness"
         },
         {
           "rock": "very effective"
         },
         {
-          "ghost": "very effective"
+          "ghost": "normal effectiveness"
         },
         {
           "dragon": "normal effectiveness"
         },
         {
-          "dark": "very effective"
+          "dark": "normal effectiveness"
         },
         {
           "steel": "normal effectiveness"
@@ -11785,65 +11785,6 @@
           "ice": "normal effectiveness"
         },
         {
-          "fighting": "not very effective"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "not very effective"
-        },
-        {
-          "fly": "very effective"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "normal effectiveness"
-        },
-        {
-          "rock": "very effective"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "bug,fire",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
-          "fire": "very effective"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "normal effectiveness"
-        },
-        {
-          "grass": "not very effective"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
           "fighting": "normal effectiveness"
         },
         {
@@ -11853,7 +11794,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -11882,7 +11823,7 @@
       ]
     },
     {
-      "key": "bug,water",
+      "key": "bug,fire",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -11912,7 +11853,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -11941,7 +11882,7 @@
       ]
     },
     {
-      "key": "bug,electric",
+      "key": "bug,water",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -11971,7 +11912,66 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "normal effectiveness"
+        },
+        {
+          "rock": "very effective"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "not very effective"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "bug,electric",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "very effective"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "not very effective"
+        },
+        {
+          "grass": "not very effective"
+        },
+        {
+          "ice": "normal effectiveness"
+        },
+        {
+          "fighting": "not very effective"
+        },
+        {
+          "poison": "normal effectiveness"
+        },
+        {
+          "ground": "normal effectiveness"
+        },
+        {
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -12006,65 +12006,6 @@
           "normal": "normal effectiveness"
         },
         {
-          "fire": "very effective"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "not very effective"
-        },
-        {
-          "grass": "not very effective"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
-          "fighting": "not very effective"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "normal effectiveness"
-        },
-        {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "normal effectiveness"
-        },
-        {
-          "rock": "very effective"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "not very effective"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "bug,ice",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
           "fire": "super effective"
         },
         {
@@ -12089,7 +12030,7 @@
           "ground": "not effective at all"
         },
         {
-          "fly": "super effective"
+          "flying": "super effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -12118,7 +12059,7 @@
       ]
     },
     {
-      "key": "bug,fighting",
+      "key": "bug,ice",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -12148,7 +12089,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -12177,7 +12118,7 @@
       ]
     },
     {
-      "key": "bug,poison",
+      "key": "bug,fighting",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -12207,7 +12148,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "super effective"
+          "flying": "super effective"
         },
         {
           "psychic": "very effective"
@@ -12236,7 +12177,7 @@
       ]
     },
     {
-      "key": "bug,ground",
+      "key": "bug,poison",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -12266,7 +12207,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -12295,7 +12236,7 @@
       ]
     },
     {
-      "key": "bug,fly",
+      "key": "bug,ground",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -12325,7 +12266,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -12335,6 +12276,65 @@
         },
         {
           "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "bug,flying",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "very effective"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "very effective"
+        },
+        {
+          "grass": "not effective at all"
+        },
+        {
+          "ice": "very effective"
+        },
+        {
+          "fighting": "not effective at all"
+        },
+        {
+          "poison": "normal effectiveness"
+        },
+        {
+          "ground": "no effect"
+        },
+        {
+          "flying": "very effective"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "not very effective"
+        },
+        {
+          "rock": "super effective"
         },
         {
           "ghost": "normal effectiveness"
@@ -12366,13 +12366,13 @@
           "water": "normal effectiveness"
         },
         {
-          "electric": "very effective"
+          "electric": "normal effectiveness"
         },
         {
-          "grass": "not effective at all"
+          "grass": "not very effective"
         },
         {
-          "ice": "very effective"
+          "ice": "normal effectiveness"
         },
         {
           "fighting": "not effective at all"
@@ -12381,28 +12381,28 @@
           "poison": "normal effectiveness"
         },
         {
-          "ground": "no effect"
+          "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
-          "psychic": "normal effectiveness"
+          "psychic": "not very effective"
         },
         {
-          "bug": "not very effective"
+          "bug": "very effective"
         },
         {
-          "rock": "super effective"
+          "rock": "very effective"
         },
         {
-          "ghost": "normal effectiveness"
+          "ghost": "very effective"
         },
         {
           "dragon": "normal effectiveness"
         },
         {
-          "dark": "normal effectiveness"
+          "dark": "very effective"
         },
         {
           "steel": "normal effectiveness"
@@ -12443,7 +12443,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -12502,7 +12502,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -12561,7 +12561,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -12620,7 +12620,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "no effect"
@@ -12679,7 +12679,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -12738,7 +12738,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -12775,7 +12775,7 @@
           "normal": "not very effective"
         },
         {
-          "fire": "normal effectiveness"
+          "fire": "not very effective"
         },
         {
           "water": "very effective"
@@ -12784,22 +12784,22 @@
           "electric": "normal effectiveness"
         },
         {
-          "grass": "normal effectiveness"
+          "grass": "very effective"
         },
         {
           "ice": "normal effectiveness"
         },
         {
-          "fighting": "normal effectiveness"
+          "fighting": "very effective"
         },
         {
           "poison": "not very effective"
         },
         {
-          "ground": "normal effectiveness"
+          "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -12808,7 +12808,7 @@
           "bug": "normal effectiveness"
         },
         {
-          "rock": "very effective"
+          "rock": "normal effectiveness"
         },
         {
           "ghost": "normal effectiveness"
@@ -12849,65 +12849,6 @@
           "ice": "normal effectiveness"
         },
         {
-          "fighting": "very effective"
-        },
-        {
-          "poison": "not very effective"
-        },
-        {
-          "ground": "very effective"
-        },
-        {
-          "fly": "not very effective"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "normal effectiveness"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "very effective"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "rock,fire",
-      "values": [
-        {
-          "normal": "not very effective"
-        },
-        {
-          "fire": "not very effective"
-        },
-        {
-          "water": "very effective"
-        },
-        {
-          "electric": "normal effectiveness"
-        },
-        {
-          "grass": "very effective"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
           "fighting": "super effective"
         },
         {
@@ -12917,7 +12858,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -12946,7 +12887,7 @@
       ]
     },
     {
-      "key": "rock,water",
+      "key": "rock,fire",
       "values": [
         {
           "normal": "not very effective"
@@ -12976,7 +12917,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -13005,7 +12946,7 @@
       ]
     },
     {
-      "key": "rock,electric",
+      "key": "rock,water",
       "values": [
         {
           "normal": "not very effective"
@@ -13035,7 +12976,66 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "normal effectiveness"
+        },
+        {
+          "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "rock,electric",
+      "values": [
+        {
+          "normal": "not very effective"
+        },
+        {
+          "fire": "not very effective"
+        },
+        {
+          "water": "very effective"
+        },
+        {
+          "electric": "not very effective"
+        },
+        {
+          "grass": "very effective"
+        },
+        {
+          "ice": "normal effectiveness"
+        },
+        {
+          "fighting": "very effective"
+        },
+        {
+          "poison": "not very effective"
+        },
+        {
+          "ground": "super effective"
+        },
+        {
+          "flying": "not effective at all"
         },
         {
           "psychic": "normal effectiveness"
@@ -13070,65 +13070,6 @@
           "normal": "not very effective"
         },
         {
-          "fire": "not very effective"
-        },
-        {
-          "water": "very effective"
-        },
-        {
-          "electric": "not very effective"
-        },
-        {
-          "grass": "very effective"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
-          "fighting": "very effective"
-        },
-        {
-          "poison": "not very effective"
-        },
-        {
-          "ground": "super effective"
-        },
-        {
-          "fly": "not effective at all"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "normal effectiveness"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "rock,ice",
-      "values": [
-        {
-          "normal": "not very effective"
-        },
-        {
           "fire": "normal effectiveness"
         },
         {
@@ -13153,7 +13094,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -13182,7 +13123,7 @@
       ]
     },
     {
-      "key": "rock,fighting",
+      "key": "rock,ice",
       "values": [
         {
           "normal": "not very effective"
@@ -13212,7 +13153,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -13241,7 +13182,7 @@
       ]
     },
     {
-      "key": "rock,poison",
+      "key": "rock,fighting",
       "values": [
         {
           "normal": "not very effective"
@@ -13271,7 +13212,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -13300,7 +13241,7 @@
       ]
     },
     {
-      "key": "rock,ground",
+      "key": "rock,poison",
       "values": [
         {
           "normal": "not very effective"
@@ -13330,7 +13271,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "very effective"
@@ -13359,7 +13300,7 @@
       ]
     },
     {
-      "key": "rock,fly",
+      "key": "rock,ground",
       "values": [
         {
           "normal": "not very effective"
@@ -13389,7 +13330,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -13399,6 +13340,65 @@
         },
         {
           "rock": "not very effective"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "very effective"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "rock,flying",
+      "values": [
+        {
+          "normal": "not very effective"
+        },
+        {
+          "fire": "not very effective"
+        },
+        {
+          "water": "very effective"
+        },
+        {
+          "electric": "very effective"
+        },
+        {
+          "grass": "normal effectiveness"
+        },
+        {
+          "ice": "very effective"
+        },
+        {
+          "fighting": "normal effectiveness"
+        },
+        {
+          "poison": "not very effective"
+        },
+        {
+          "ground": "no effect"
+        },
+        {
+          "flying": "not very effective"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "not very effective"
+        },
+        {
+          "rock": "very effective"
         },
         {
           "ghost": "normal effectiveness"
@@ -13430,65 +13430,6 @@
           "water": "very effective"
         },
         {
-          "electric": "very effective"
-        },
-        {
-          "grass": "normal effectiveness"
-        },
-        {
-          "ice": "very effective"
-        },
-        {
-          "fighting": "normal effectiveness"
-        },
-        {
-          "poison": "not very effective"
-        },
-        {
-          "ground": "no effect"
-        },
-        {
-          "fly": "not very effective"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "not very effective"
-        },
-        {
-          "rock": "very effective"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "very effective"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "rock,bug",
-      "values": [
-        {
-          "normal": "not very effective"
-        },
-        {
-          "fire": "not very effective"
-        },
-        {
-          "water": "very effective"
-        },
-        {
           "electric": "normal effectiveness"
         },
         {
@@ -13507,7 +13448,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -13526,6 +13467,65 @@
         },
         {
           "dark": "very effective"
+        },
+        {
+          "steel": "very effective"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "rock,bug",
+      "values": [
+        {
+          "normal": "not very effective"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "very effective"
+        },
+        {
+          "electric": "normal effectiveness"
+        },
+        {
+          "grass": "normal effectiveness"
+        },
+        {
+          "ice": "normal effectiveness"
+        },
+        {
+          "fighting": "normal effectiveness"
+        },
+        {
+          "poison": "not very effective"
+        },
+        {
+          "ground": "normal effectiveness"
+        },
+        {
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "normal effectiveness"
+        },
+        {
+          "rock": "very effective"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "normal effectiveness"
         },
         {
           "steel": "very effective"
@@ -13566,7 +13566,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -13625,7 +13625,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -13684,7 +13684,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "no effect"
@@ -13743,7 +13743,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not effective at all"
+          "flying": "not effective at all"
         },
         {
           "psychic": "not very effective"
@@ -13802,7 +13802,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -13839,16 +13839,16 @@
           "normal": "no effect"
         },
         {
-          "fire": "not very effective"
+          "fire": "normal effectiveness"
         },
         {
-          "water": "very effective"
+          "water": "normal effectiveness"
         },
         {
           "electric": "normal effectiveness"
         },
         {
-          "grass": "very effective"
+          "grass": "normal effectiveness"
         },
         {
           "ice": "normal effectiveness"
@@ -13857,13 +13857,13 @@
           "fighting": "no effect"
         },
         {
-          "poison": "not effective at all"
+          "poison": "not very effective"
         },
         {
-          "ground": "very effective"
+          "ground": "normal effectiveness"
         },
         {
-          "fly": "not very effective"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -13884,7 +13884,7 @@
           "dark": "very effective"
         },
         {
-          "steel": "very effective"
+          "steel": "normal effectiveness"
         },
         {
           "fairy": "normal effectiveness"
@@ -13922,66 +13922,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "not very effective"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "very effective"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "very effective"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "ghost,fire",
-      "values": [
-        {
-          "normal": "no effect"
-        },
-        {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "normal effectiveness"
-        },
-        {
-          "grass": "normal effectiveness"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
-          "fighting": "no effect"
-        },
-        {
-          "poison": "not very effective"
-        },
-        {
-          "ground": "normal effectiveness"
-        },
-        {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -14010,7 +13951,7 @@
       ]
     },
     {
-      "key": "ghost,water",
+      "key": "ghost,fire",
       "values": [
         {
           "normal": "no effect"
@@ -14040,7 +13981,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -14069,7 +14010,7 @@
       ]
     },
     {
-      "key": "ghost,electric",
+      "key": "ghost,water",
       "values": [
         {
           "normal": "no effect"
@@ -14099,7 +14040,66 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "not very effective"
+        },
+        {
+          "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "very effective"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "very effective"
+        },
+        {
+          "steel": "not very effective"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "ghost,electric",
+      "values": [
+        {
+          "normal": "no effect"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "not very effective"
+        },
+        {
+          "grass": "normal effectiveness"
+        },
+        {
+          "ice": "normal effectiveness"
+        },
+        {
+          "fighting": "no effect"
+        },
+        {
+          "poison": "not very effective"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -14134,65 +14134,6 @@
           "normal": "no effect"
         },
         {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "not very effective"
-        },
-        {
-          "grass": "normal effectiveness"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
-          "fighting": "no effect"
-        },
-        {
-          "poison": "not very effective"
-        },
-        {
-          "ground": "very effective"
-        },
-        {
-          "fly": "not very effective"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "not very effective"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "very effective"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "very effective"
-        },
-        {
-          "steel": "not very effective"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "ghost,ice",
-      "values": [
-        {
-          "normal": "no effect"
-        },
-        {
           "fire": "very effective"
         },
         {
@@ -14217,7 +14158,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -14246,7 +14187,7 @@
       ]
     },
     {
-      "key": "ghost,fighting",
+      "key": "ghost,ice",
       "values": [
         {
           "normal": "no effect"
@@ -14276,7 +14217,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -14305,7 +14246,7 @@
       ]
     },
     {
-      "key": "ghost,poison",
+      "key": "ghost,fighting",
       "values": [
         {
           "normal": "no effect"
@@ -14335,7 +14276,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -14364,7 +14305,7 @@
       ]
     },
     {
-      "key": "ghost,ground",
+      "key": "ghost,poison",
       "values": [
         {
           "normal": "no effect"
@@ -14394,7 +14335,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -14423,7 +14364,7 @@
       ]
     },
     {
-      "key": "ghost,fly",
+      "key": "ghost,ground",
       "values": [
         {
           "normal": "no effect"
@@ -14453,7 +14394,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -14463,6 +14404,65 @@
         },
         {
           "rock": "not very effective"
+        },
+        {
+          "ghost": "very effective"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "very effective"
+        },
+        {
+          "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "ghost,flying",
+      "values": [
+        {
+          "normal": "no effect"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "very effective"
+        },
+        {
+          "grass": "not very effective"
+        },
+        {
+          "ice": "very effective"
+        },
+        {
+          "fighting": "no effect"
+        },
+        {
+          "poison": "not very effective"
+        },
+        {
+          "ground": "no effect"
+        },
+        {
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "not effective at all"
+        },
+        {
+          "rock": "very effective"
         },
         {
           "ghost": "very effective"
@@ -14494,65 +14494,6 @@
           "water": "normal effectiveness"
         },
         {
-          "electric": "very effective"
-        },
-        {
-          "grass": "not very effective"
-        },
-        {
-          "ice": "very effective"
-        },
-        {
-          "fighting": "no effect"
-        },
-        {
-          "poison": "not very effective"
-        },
-        {
-          "ground": "no effect"
-        },
-        {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "not effective at all"
-        },
-        {
-          "rock": "very effective"
-        },
-        {
-          "ghost": "very effective"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "very effective"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "ghost,bug",
-      "values": [
-        {
-          "normal": "no effect"
-        },
-        {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
           "electric": "normal effectiveness"
         },
         {
@@ -14571,7 +14512,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -14600,7 +14541,7 @@
       ]
     },
     {
-      "key": "ghost,rock",
+      "key": "ghost,bug",
       "values": [
         {
           "normal": "no effect"
@@ -14630,7 +14571,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -14652,6 +14593,65 @@
         },
         {
           "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "ghost,rock",
+      "values": [
+        {
+          "normal": "no effect"
+        },
+        {
+          "fire": "not very effective"
+        },
+        {
+          "water": "very effective"
+        },
+        {
+          "electric": "normal effectiveness"
+        },
+        {
+          "grass": "very effective"
+        },
+        {
+          "ice": "normal effectiveness"
+        },
+        {
+          "fighting": "no effect"
+        },
+        {
+          "poison": "not effective at all"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "not very effective"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "not very effective"
+        },
+        {
+          "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "very effective"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "very effective"
+        },
+        {
+          "steel": "very effective"
         },
         {
           "fairy": "normal effectiveness"
@@ -14689,7 +14689,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -14748,7 +14748,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -14807,7 +14807,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -14866,7 +14866,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -14900,7 +14900,7 @@
       "key": "dragon",
       "values": [
         {
-          "normal": "no effect"
+          "normal": "normal effectiveness"
         },
         {
           "fire": "not very effective"
@@ -14918,34 +14918,34 @@
           "ice": "very effective"
         },
         {
-          "fighting": "no effect"
+          "fighting": "normal effectiveness"
         },
         {
-          "poison": "not very effective"
+          "poison": "normal effectiveness"
         },
         {
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
         },
         {
-          "bug": "not very effective"
+          "bug": "normal effectiveness"
         },
         {
           "rock": "normal effectiveness"
         },
         {
-          "ghost": "very effective"
+          "ghost": "normal effectiveness"
         },
         {
           "dragon": "very effective"
         },
         {
-          "dark": "very effective"
+          "dark": "normal effectiveness"
         },
         {
           "steel": "normal effectiveness"
@@ -14977,65 +14977,6 @@
           "ice": "very effective"
         },
         {
-          "fighting": "normal effectiveness"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "normal effectiveness"
-        },
-        {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "normal effectiveness"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "very effective"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "very effective"
-        }
-      ]
-    },
-    {
-      "key": "dragon,fire",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
-          "fire": "not very effective"
-        },
-        {
-          "water": "not very effective"
-        },
-        {
-          "electric": "not very effective"
-        },
-        {
-          "grass": "not very effective"
-        },
-        {
-          "ice": "very effective"
-        },
-        {
           "fighting": "very effective"
         },
         {
@@ -15045,7 +14986,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -15074,7 +15015,7 @@
       ]
     },
     {
-      "key": "dragon,water",
+      "key": "dragon,fire",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -15104,7 +15045,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -15133,7 +15074,7 @@
       ]
     },
     {
-      "key": "dragon,electric",
+      "key": "dragon,water",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -15163,7 +15104,66 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "normal effectiveness"
+        },
+        {
+          "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "very effective"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "not very effective"
+        },
+        {
+          "fairy": "very effective"
+        }
+      ]
+    },
+    {
+      "key": "dragon,electric",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "not very effective"
+        },
+        {
+          "water": "not very effective"
+        },
+        {
+          "electric": "not effective at all"
+        },
+        {
+          "grass": "not very effective"
+        },
+        {
+          "ice": "very effective"
+        },
+        {
+          "fighting": "normal effectiveness"
+        },
+        {
+          "poison": "normal effectiveness"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -15198,65 +15198,6 @@
           "normal": "normal effectiveness"
         },
         {
-          "fire": "not very effective"
-        },
-        {
-          "water": "not very effective"
-        },
-        {
-          "electric": "not effective at all"
-        },
-        {
-          "grass": "not very effective"
-        },
-        {
-          "ice": "very effective"
-        },
-        {
-          "fighting": "normal effectiveness"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "very effective"
-        },
-        {
-          "fly": "not very effective"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "normal effectiveness"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "very effective"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "not very effective"
-        },
-        {
-          "fairy": "very effective"
-        }
-      ]
-    },
-    {
-      "key": "dragon,ice",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
           "fire": "normal effectiveness"
         },
         {
@@ -15281,7 +15222,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -15310,7 +15251,7 @@
       ]
     },
     {
-      "key": "dragon,fighting",
+      "key": "dragon,ice",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -15340,7 +15281,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -15369,7 +15310,7 @@
       ]
     },
     {
-      "key": "dragon,poison",
+      "key": "dragon,fighting",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -15399,7 +15340,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -15428,7 +15369,7 @@
       ]
     },
     {
-      "key": "dragon,ground",
+      "key": "dragon,poison",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -15458,7 +15399,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -15487,7 +15428,7 @@
       ]
     },
     {
-      "key": "dragon,fly",
+      "key": "dragon,ground",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -15517,7 +15458,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -15527,6 +15468,65 @@
         },
         {
           "rock": "not very effective"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "very effective"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "very effective"
+        }
+      ]
+    },
+    {
+      "key": "dragon,flying",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "not very effective"
+        },
+        {
+          "water": "not very effective"
+        },
+        {
+          "electric": "normal effectiveness"
+        },
+        {
+          "grass": "not effective at all"
+        },
+        {
+          "ice": "super effective"
+        },
+        {
+          "fighting": "not very effective"
+        },
+        {
+          "poison": "normal effectiveness"
+        },
+        {
+          "ground": "no effect"
+        },
+        {
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "not very effective"
+        },
+        {
+          "rock": "very effective"
         },
         {
           "ghost": "normal effectiveness"
@@ -15558,65 +15558,6 @@
           "water": "not very effective"
         },
         {
-          "electric": "normal effectiveness"
-        },
-        {
-          "grass": "not effective at all"
-        },
-        {
-          "ice": "super effective"
-        },
-        {
-          "fighting": "not very effective"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "no effect"
-        },
-        {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "not very effective"
-        },
-        {
-          "rock": "very effective"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "very effective"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "very effective"
-        }
-      ]
-    },
-    {
-      "key": "dragon,bug",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
-          "fire": "not very effective"
-        },
-        {
-          "water": "not very effective"
-        },
-        {
           "electric": "not very effective"
         },
         {
@@ -15635,7 +15576,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -15664,7 +15605,7 @@
       ]
     },
     {
-      "key": "dragon,rock",
+      "key": "dragon,bug",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -15694,7 +15635,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -15723,7 +15664,7 @@
       ]
     },
     {
-      "key": "dragon,ghost",
+      "key": "dragon,rock",
       "values": [
         {
           "normal": "not very effective"
@@ -15753,7 +15694,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -15775,6 +15716,65 @@
         },
         {
           "steel": "very effective"
+        },
+        {
+          "fairy": "very effective"
+        }
+      ]
+    },
+    {
+      "key": "dragon,ghost",
+      "values": [
+        {
+          "normal": "no effect"
+        },
+        {
+          "fire": "not very effective"
+        },
+        {
+          "water": "not very effective"
+        },
+        {
+          "electric": "not very effective"
+        },
+        {
+          "grass": "not very effective"
+        },
+        {
+          "ice": "very effective"
+        },
+        {
+          "fighting": "no effect"
+        },
+        {
+          "poison": "not very effective"
+        },
+        {
+          "ground": "normal effectiveness"
+        },
+        {
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "not very effective"
+        },
+        {
+          "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "very effective"
+        },
+        {
+          "dragon": "very effective"
+        },
+        {
+          "dark": "very effective"
+        },
+        {
+          "steel": "normal effectiveness"
         },
         {
           "fairy": "very effective"
@@ -15812,7 +15812,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -15871,7 +15871,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -15930,7 +15930,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -15967,65 +15967,6 @@
           "normal": "normal effectiveness"
         },
         {
-          "fire": "not very effective"
-        },
-        {
-          "water": "not very effective"
-        },
-        {
-          "electric": "not very effective"
-        },
-        {
-          "grass": "not very effective"
-        },
-        {
-          "ice": "very effective"
-        },
-        {
-          "fighting": "very effective"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "normal effectiveness"
-        },
-        {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "no effect"
-        },
-        {
-          "bug": "very effective"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "not very effective"
-        },
-        {
-          "dragon": "very effective"
-        },
-        {
-          "dark": "not very effective"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "super effective"
-        }
-      ]
-    },
-    {
-      "key": "dark,normal",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
           "fire": "normal effectiveness"
         },
         {
@@ -16050,7 +15991,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -16079,7 +16020,7 @@
       ]
     },
     {
-      "key": "dark,fire",
+      "key": "dark,normal",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -16109,7 +16050,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -16138,7 +16079,7 @@
       ]
     },
     {
-      "key": "dark,water",
+      "key": "dark,fire",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -16168,7 +16109,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -16197,7 +16138,7 @@
       ]
     },
     {
-      "key": "dark,electric",
+      "key": "dark,water",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -16227,7 +16168,66 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "no effect"
+        },
+        {
+          "bug": "very effective"
+        },
+        {
+          "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "not very effective"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "not very effective"
+        },
+        {
+          "steel": "not very effective"
+        },
+        {
+          "fairy": "very effective"
+        }
+      ]
+    },
+    {
+      "key": "dark,electric",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "not very effective"
+        },
+        {
+          "grass": "normal effectiveness"
+        },
+        {
+          "ice": "normal effectiveness"
+        },
+        {
+          "fighting": "very effective"
+        },
+        {
+          "poison": "normal effectiveness"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "not very effective"
         },
         {
           "psychic": "no effect"
@@ -16262,65 +16262,6 @@
           "normal": "normal effectiveness"
         },
         {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "not very effective"
-        },
-        {
-          "grass": "normal effectiveness"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
-          "fighting": "very effective"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "very effective"
-        },
-        {
-          "fly": "not very effective"
-        },
-        {
-          "psychic": "no effect"
-        },
-        {
-          "bug": "very effective"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "not very effective"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "not very effective"
-        },
-        {
-          "steel": "not very effective"
-        },
-        {
-          "fairy": "very effective"
-        }
-      ]
-    },
-    {
-      "key": "dark,ice",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
           "fire": "very effective"
         },
         {
@@ -16345,7 +16286,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "no effect"
@@ -16374,7 +16315,7 @@
       ]
     },
     {
-      "key": "dark,fighting",
+      "key": "dark,ice",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -16404,7 +16345,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -16433,7 +16374,7 @@
       ]
     },
     {
-      "key": "dark,poison",
+      "key": "dark,fighting",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -16463,7 +16404,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "no effect"
@@ -16492,7 +16433,7 @@
       ]
     },
     {
-      "key": "dark,ground",
+      "key": "dark,poison",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -16522,7 +16463,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -16551,7 +16492,7 @@
       ]
     },
     {
-      "key": "dark,fly",
+      "key": "dark,ground",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -16581,7 +16522,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -16591,6 +16532,65 @@
         },
         {
           "rock": "not very effective"
+        },
+        {
+          "ghost": "not very effective"
+        },
+        {
+          "dragon": "normal effectiveness"
+        },
+        {
+          "dark": "not very effective"
+        },
+        {
+          "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "very effective"
+        }
+      ]
+    },
+    {
+      "key": "dark,flying",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "very effective"
+        },
+        {
+          "grass": "not very effective"
+        },
+        {
+          "ice": "very effective"
+        },
+        {
+          "fighting": "normal effectiveness"
+        },
+        {
+          "poison": "normal effectiveness"
+        },
+        {
+          "ground": "no effect"
+        },
+        {
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "no effect"
+        },
+        {
+          "bug": "normal effectiveness"
+        },
+        {
+          "rock": "very effective"
         },
         {
           "ghost": "not very effective"
@@ -16622,65 +16622,6 @@
           "water": "normal effectiveness"
         },
         {
-          "electric": "very effective"
-        },
-        {
-          "grass": "not very effective"
-        },
-        {
-          "ice": "very effective"
-        },
-        {
-          "fighting": "normal effectiveness"
-        },
-        {
-          "poison": "normal effectiveness"
-        },
-        {
-          "ground": "no effect"
-        },
-        {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "no effect"
-        },
-        {
-          "bug": "normal effectiveness"
-        },
-        {
-          "rock": "very effective"
-        },
-        {
-          "ghost": "not very effective"
-        },
-        {
-          "dragon": "normal effectiveness"
-        },
-        {
-          "dark": "not very effective"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "very effective"
-        }
-      ]
-    },
-    {
-      "key": "dark,bug",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
           "electric": "normal effectiveness"
         },
         {
@@ -16699,7 +16640,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -16728,7 +16669,7 @@
       ]
     },
     {
-      "key": "dark,rock",
+      "key": "dark,bug",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -16758,7 +16699,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "no effect"
@@ -16787,7 +16728,7 @@
       ]
     },
     {
-      "key": "dark,ghost",
+      "key": "dark,rock",
       "values": [
         {
           "normal": "not very effective"
@@ -16817,7 +16758,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "no effect"
@@ -16846,7 +16787,7 @@
       ]
     },
     {
-      "key": "dark,dragon",
+      "key": "dark,ghost",
       "values": [
         {
           "normal": "no effect"
@@ -16876,7 +16817,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -16901,6 +16842,65 @@
         },
         {
           "fairy": "very effective"
+        }
+      ]
+    },
+    {
+      "key": "dark,dragon",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "not very effective"
+        },
+        {
+          "water": "not very effective"
+        },
+        {
+          "electric": "not very effective"
+        },
+        {
+          "grass": "not very effective"
+        },
+        {
+          "ice": "very effective"
+        },
+        {
+          "fighting": "very effective"
+        },
+        {
+          "poison": "normal effectiveness"
+        },
+        {
+          "ground": "normal effectiveness"
+        },
+        {
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "no effect"
+        },
+        {
+          "bug": "very effective"
+        },
+        {
+          "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "not very effective"
+        },
+        {
+          "dragon": "very effective"
+        },
+        {
+          "dark": "not very effective"
+        },
+        {
+          "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "super effective"
         }
       ]
     },
@@ -16935,7 +16935,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "no effect"
@@ -16994,7 +16994,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -17046,65 +17046,6 @@
           "ice": "not very effective"
         },
         {
-          "fighting": "super effective"
-        },
-        {
-          "poison": "no effect"
-        },
-        {
-          "ground": "very effective"
-        },
-        {
-          "fly": "not very effective"
-        },
-        {
-          "psychic": "no effect"
-        },
-        {
-          "bug": "normal effectiveness"
-        },
-        {
-          "rock": "not very effective"
-        },
-        {
-          "ghost": "not very effective"
-        },
-        {
-          "dragon": "not very effective"
-        },
-        {
-          "dark": "not very effective"
-        },
-        {
-          "steel": "not very effective"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "steel,normal",
-      "values": [
-        {
-          "normal": "not very effective"
-        },
-        {
-          "fire": "very effective"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "normal effectiveness"
-        },
-        {
-          "grass": "not very effective"
-        },
-        {
-          "ice": "not very effective"
-        },
-        {
           "fighting": "very effective"
         },
         {
@@ -17114,7 +17055,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -17143,7 +17084,7 @@
       ]
     },
     {
-      "key": "steel,fire",
+      "key": "steel,normal",
       "values": [
         {
           "normal": "not very effective"
@@ -17173,7 +17114,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -17202,7 +17143,7 @@
       ]
     },
     {
-      "key": "steel,water",
+      "key": "steel,fire",
       "values": [
         {
           "normal": "not very effective"
@@ -17232,7 +17173,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -17261,7 +17202,7 @@
       ]
     },
     {
-      "key": "steel,electric",
+      "key": "steel,water",
       "values": [
         {
           "normal": "not very effective"
@@ -17291,7 +17232,66 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
+        },
+        {
+          "psychic": "not very effective"
+        },
+        {
+          "bug": "not very effective"
+        },
+        {
+          "rock": "not very effective"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "not very effective"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "not effective at all"
+        },
+        {
+          "fairy": "not very effective"
+        }
+      ]
+    },
+    {
+      "key": "steel,electric",
+      "values": [
+        {
+          "normal": "not very effective"
+        },
+        {
+          "fire": "very effective"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "not very effective"
+        },
+        {
+          "grass": "not very effective"
+        },
+        {
+          "ice": "not very effective"
+        },
+        {
+          "fighting": "very effective"
+        },
+        {
+          "poison": "no effect"
+        },
+        {
+          "ground": "super effective"
+        },
+        {
+          "flying": "not effective at all"
         },
         {
           "psychic": "not very effective"
@@ -17326,65 +17326,6 @@
           "normal": "not very effective"
         },
         {
-          "fire": "very effective"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "not very effective"
-        },
-        {
-          "grass": "not very effective"
-        },
-        {
-          "ice": "not very effective"
-        },
-        {
-          "fighting": "very effective"
-        },
-        {
-          "poison": "no effect"
-        },
-        {
-          "ground": "super effective"
-        },
-        {
-          "fly": "not effective at all"
-        },
-        {
-          "psychic": "not very effective"
-        },
-        {
-          "bug": "not very effective"
-        },
-        {
-          "rock": "not very effective"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "not very effective"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "not effective at all"
-        },
-        {
-          "fairy": "not very effective"
-        }
-      ]
-    },
-    {
-      "key": "steel,ice",
-      "values": [
-        {
-          "normal": "not very effective"
-        },
-        {
           "fire": "super effective"
         },
         {
@@ -17409,7 +17350,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -17438,7 +17379,7 @@
       ]
     },
     {
-      "key": "steel,fighting",
+      "key": "steel,ice",
       "values": [
         {
           "normal": "not very effective"
@@ -17468,7 +17409,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -17497,7 +17438,7 @@
       ]
     },
     {
-      "key": "steel,poison",
+      "key": "steel,fighting",
       "values": [
         {
           "normal": "not very effective"
@@ -17527,7 +17468,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -17556,7 +17497,7 @@
       ]
     },
     {
-      "key": "steel,ground",
+      "key": "steel,poison",
       "values": [
         {
           "normal": "not very effective"
@@ -17586,7 +17527,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -17615,7 +17556,7 @@
       ]
     },
     {
-      "key": "steel,fly",
+      "key": "steel,ground",
       "values": [
         {
           "normal": "not very effective"
@@ -17645,7 +17586,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -17655,6 +17596,65 @@
         },
         {
           "rock": "not effective at all"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "not very effective"
+        },
+        {
+          "dark": "normal effectiveness"
+        },
+        {
+          "steel": "not very effective"
+        },
+        {
+          "fairy": "not very effective"
+        }
+      ]
+    },
+    {
+      "key": "steel,flying",
+      "values": [
+        {
+          "normal": "not very effective"
+        },
+        {
+          "fire": "very effective"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "very effective"
+        },
+        {
+          "grass": "not effective at all"
+        },
+        {
+          "ice": "normal effectiveness"
+        },
+        {
+          "fighting": "normal effectiveness"
+        },
+        {
+          "poison": "no effect"
+        },
+        {
+          "ground": "no effect"
+        },
+        {
+          "flying": "not very effective"
+        },
+        {
+          "psychic": "not very effective"
+        },
+        {
+          "bug": "not effective at all"
+        },
+        {
+          "rock": "normal effectiveness"
         },
         {
           "ghost": "normal effectiveness"
@@ -17686,65 +17686,6 @@
           "water": "normal effectiveness"
         },
         {
-          "electric": "very effective"
-        },
-        {
-          "grass": "not effective at all"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
-          "fighting": "normal effectiveness"
-        },
-        {
-          "poison": "no effect"
-        },
-        {
-          "ground": "no effect"
-        },
-        {
-          "fly": "not very effective"
-        },
-        {
-          "psychic": "not very effective"
-        },
-        {
-          "bug": "not effective at all"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "not very effective"
-        },
-        {
-          "dark": "normal effectiveness"
-        },
-        {
-          "steel": "not very effective"
-        },
-        {
-          "fairy": "not very effective"
-        }
-      ]
-    },
-    {
-      "key": "steel,bug",
-      "values": [
-        {
-          "normal": "not very effective"
-        },
-        {
-          "fire": "very effective"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
           "electric": "normal effectiveness"
         },
         {
@@ -17763,7 +17704,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not effective at all"
@@ -17792,7 +17733,7 @@
       ]
     },
     {
-      "key": "steel,rock",
+      "key": "steel,bug",
       "values": [
         {
           "normal": "not very effective"
@@ -17822,7 +17763,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -17851,7 +17792,7 @@
       ]
     },
     {
-      "key": "steel,ghost",
+      "key": "steel,rock",
       "values": [
         {
           "normal": "not effective at all"
@@ -17881,7 +17822,7 @@
           "ground": "super effective"
         },
         {
-          "fly": "not effective at all"
+          "flying": "not effective at all"
         },
         {
           "psychic": "not very effective"
@@ -17910,7 +17851,7 @@
       ]
     },
     {
-      "key": "steel,dragon",
+      "key": "steel,ghost",
       "values": [
         {
           "normal": "no effect"
@@ -17940,7 +17881,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -17969,7 +17910,7 @@
       ]
     },
     {
-      "key": "steel,dark",
+      "key": "steel,dragon",
       "values": [
         {
           "normal": "not very effective"
@@ -17999,7 +17940,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -18018,6 +17959,65 @@
         },
         {
           "dark": "normal effectiveness"
+        },
+        {
+          "steel": "not very effective"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "steel,dark",
+      "values": [
+        {
+          "normal": "not very effective"
+        },
+        {
+          "fire": "very effective"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "normal effectiveness"
+        },
+        {
+          "grass": "not very effective"
+        },
+        {
+          "ice": "not very effective"
+        },
+        {
+          "fighting": "super effective"
+        },
+        {
+          "poison": "no effect"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "not very effective"
+        },
+        {
+          "psychic": "no effect"
+        },
+        {
+          "bug": "normal effectiveness"
+        },
+        {
+          "rock": "not very effective"
+        },
+        {
+          "ghost": "not very effective"
+        },
+        {
+          "dragon": "not very effective"
+        },
+        {
+          "dark": "not very effective"
         },
         {
           "steel": "not very effective"
@@ -18058,7 +18058,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "not very effective"
@@ -18092,65 +18092,6 @@
       "key": "fairy",
       "values": [
         {
-          "normal": "not very effective"
-        },
-        {
-          "fire": "very effective"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "normal effectiveness"
-        },
-        {
-          "grass": "not very effective"
-        },
-        {
-          "ice": "not very effective"
-        },
-        {
-          "fighting": "normal effectiveness"
-        },
-        {
-          "poison": "no effect"
-        },
-        {
-          "ground": "very effective"
-        },
-        {
-          "fly": "not very effective"
-        },
-        {
-          "psychic": "not very effective"
-        },
-        {
-          "bug": "not effective at all"
-        },
-        {
-          "rock": "not very effective"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "no effect"
-        },
-        {
-          "dark": "not very effective"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "not very effective"
-        }
-      ]
-    },
-    {
-      "key": "fairy,normal",
-      "values": [
-        {
           "normal": "normal effectiveness"
         },
         {
@@ -18178,7 +18119,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -18207,7 +18148,7 @@
       ]
     },
     {
-      "key": "fairy,fire",
+      "key": "fairy,normal",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -18237,7 +18178,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -18266,7 +18207,7 @@
       ]
     },
     {
-      "key": "fairy,water",
+      "key": "fairy,fire",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -18296,7 +18237,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -18325,7 +18266,7 @@
       ]
     },
     {
-      "key": "fairy,electric",
+      "key": "fairy,water",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -18355,7 +18296,66 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "not very effective"
+        },
+        {
+          "rock": "normal effectiveness"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "no effect"
+        },
+        {
+          "dark": "not very effective"
+        },
+        {
+          "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "fairy,electric",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "not very effective"
+        },
+        {
+          "grass": "normal effectiveness"
+        },
+        {
+          "ice": "normal effectiveness"
+        },
+        {
+          "fighting": "not very effective"
+        },
+        {
+          "poison": "very effective"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -18390,65 +18390,6 @@
           "normal": "normal effectiveness"
         },
         {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
-          "electric": "not very effective"
-        },
-        {
-          "grass": "normal effectiveness"
-        },
-        {
-          "ice": "normal effectiveness"
-        },
-        {
-          "fighting": "not very effective"
-        },
-        {
-          "poison": "very effective"
-        },
-        {
-          "ground": "very effective"
-        },
-        {
-          "fly": "not very effective"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "not very effective"
-        },
-        {
-          "rock": "normal effectiveness"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "no effect"
-        },
-        {
-          "dark": "not very effective"
-        },
-        {
-          "steel": "normal effectiveness"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "fairy,ice",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
           "fire": "very effective"
         },
         {
@@ -18473,7 +18414,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -18502,7 +18443,7 @@
       ]
     },
     {
-      "key": "fairy,fighting",
+      "key": "fairy,ice",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -18532,7 +18473,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -18561,7 +18502,7 @@
       ]
     },
     {
-      "key": "fairy,poison",
+      "key": "fairy,fighting",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -18591,7 +18532,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "very effective"
@@ -18620,7 +18561,7 @@
       ]
     },
     {
-      "key": "fairy,ground",
+      "key": "fairy,poison",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -18650,7 +18591,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "very effective"
@@ -18679,7 +18620,7 @@
       ]
     },
     {
-      "key": "fairy,fly",
+      "key": "fairy,ground",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -18709,7 +18650,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -18719,6 +18660,65 @@
         },
         {
           "rock": "not very effective"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "no effect"
+        },
+        {
+          "dark": "not very effective"
+        },
+        {
+          "steel": "very effective"
+        },
+        {
+          "fairy": "normal effectiveness"
+        }
+      ]
+    },
+    {
+      "key": "fairy,flying",
+      "values": [
+        {
+          "normal": "normal effectiveness"
+        },
+        {
+          "fire": "normal effectiveness"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "very effective"
+        },
+        {
+          "grass": "not very effective"
+        },
+        {
+          "ice": "very effective"
+        },
+        {
+          "fighting": "not effective at all"
+        },
+        {
+          "poison": "very effective"
+        },
+        {
+          "ground": "no effect"
+        },
+        {
+          "flying": "normal effectiveness"
+        },
+        {
+          "psychic": "normal effectiveness"
+        },
+        {
+          "bug": "not effective at all"
+        },
+        {
+          "rock": "very effective"
         },
         {
           "ghost": "normal effectiveness"
@@ -18750,65 +18750,6 @@
           "water": "normal effectiveness"
         },
         {
-          "electric": "very effective"
-        },
-        {
-          "grass": "not very effective"
-        },
-        {
-          "ice": "very effective"
-        },
-        {
-          "fighting": "not effective at all"
-        },
-        {
-          "poison": "very effective"
-        },
-        {
-          "ground": "no effect"
-        },
-        {
-          "fly": "normal effectiveness"
-        },
-        {
-          "psychic": "normal effectiveness"
-        },
-        {
-          "bug": "not effective at all"
-        },
-        {
-          "rock": "very effective"
-        },
-        {
-          "ghost": "normal effectiveness"
-        },
-        {
-          "dragon": "no effect"
-        },
-        {
-          "dark": "not very effective"
-        },
-        {
-          "steel": "very effective"
-        },
-        {
-          "fairy": "normal effectiveness"
-        }
-      ]
-    },
-    {
-      "key": "fairy,bug",
-      "values": [
-        {
-          "normal": "normal effectiveness"
-        },
-        {
-          "fire": "normal effectiveness"
-        },
-        {
-          "water": "normal effectiveness"
-        },
-        {
           "electric": "normal effectiveness"
         },
         {
@@ -18827,7 +18768,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "not very effective"
@@ -18856,7 +18797,7 @@
       ]
     },
     {
-      "key": "fairy,rock",
+      "key": "fairy,bug",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -18886,7 +18827,7 @@
           "ground": "not very effective"
         },
         {
-          "fly": "very effective"
+          "flying": "very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -18915,7 +18856,7 @@
       ]
     },
     {
-      "key": "fairy,ghost",
+      "key": "fairy,rock",
       "values": [
         {
           "normal": "not very effective"
@@ -18945,7 +18886,7 @@
           "ground": "very effective"
         },
         {
-          "fly": "not very effective"
+          "flying": "not very effective"
         },
         {
           "psychic": "normal effectiveness"
@@ -18974,7 +18915,7 @@
       ]
     },
     {
-      "key": "fairy,dragon",
+      "key": "fairy,ghost",
       "values": [
         {
           "normal": "no effect"
@@ -19004,7 +18945,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -19033,7 +18974,7 @@
       ]
     },
     {
-      "key": "fairy,dark",
+      "key": "fairy,dragon",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -19063,7 +19004,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "normal effectiveness"
@@ -19092,7 +19033,7 @@
       ]
     },
     {
-      "key": "fairy,steel",
+      "key": "fairy,dark",
       "values": [
         {
           "normal": "normal effectiveness"
@@ -19122,7 +19063,7 @@
           "ground": "normal effectiveness"
         },
         {
-          "fly": "normal effectiveness"
+          "flying": "normal effectiveness"
         },
         {
           "psychic": "no effect"
@@ -19147,6 +19088,65 @@
         },
         {
           "fairy": "very effective"
+        }
+      ]
+    },
+    {
+      "key": "fairy,steel",
+      "values": [
+        {
+          "normal": "not very effective"
+        },
+        {
+          "fire": "very effective"
+        },
+        {
+          "water": "normal effectiveness"
+        },
+        {
+          "electric": "normal effectiveness"
+        },
+        {
+          "grass": "not very effective"
+        },
+        {
+          "ice": "not very effective"
+        },
+        {
+          "fighting": "normal effectiveness"
+        },
+        {
+          "poison": "no effect"
+        },
+        {
+          "ground": "very effective"
+        },
+        {
+          "flying": "not very effective"
+        },
+        {
+          "psychic": "not very effective"
+        },
+        {
+          "bug": "not effective at all"
+        },
+        {
+          "rock": "not very effective"
+        },
+        {
+          "ghost": "normal effectiveness"
+        },
+        {
+          "dragon": "no effect"
+        },
+        {
+          "dark": "not very effective"
+        },
+        {
+          "steel": "normal effectiveness"
+        },
+        {
+          "fairy": "not very effective"
         }
       ]
     }

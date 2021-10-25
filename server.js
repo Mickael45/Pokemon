@@ -21,7 +21,7 @@ const ROW_LABEL = [
   "fighting",
   "poison",
   "ground",
-  "fly",
+  "flying",
   "psychic",
   "bug",
   "rock",
@@ -67,19 +67,20 @@ app.get("/api", async (req, res, next) => {
       const dualTypeMap = createDualTypeMap();
 
       [...trimmedRows].forEach((row, rowIndex) => {
-        const firstTypeIndex = Math.floor(rowIndex / 18);
-        const secondTypeIndex = rowIndex % 18;
-        const firstType = ROW_LABEL[firstTypeIndex];
-        const secondType = firstTypeIndex === secondTypeIndex ? "" : `,${ROW_LABEL[secondTypeIndex]}`;
-
         const data = row.getElementsByTagName("TD");
+        const typesContainerElements = row.getElementsByTagName("a");
+        const types = [...typesContainerElements]
+          .map((element) => (element.innerHTML === "—" ? "" : element.innerHTML.toLowerCase()))
+          .filter((type) => type !== "");
+
+        const joinedTypes = types.length > 1 ? types.join(",") : types.join("");
 
         [...data]
           .filter((d, dIndex) => dIndex > 0)
           .forEach((d, dIndex) => {
-            const currentTypeEffectivementObj = dualTypeMap[`${firstType}${secondType}`];
+            const currentTypeEffectivementObj = dualTypeMap[joinedTypes];
 
-            dualTypeMap[`${firstType}${secondType}`] = {
+            dualTypeMap[joinedTypes] = {
               ...currentTypeEffectivementObj,
               [`${ROW_LABEL[dIndex]}`]: TYPE_MAP[d.className],
             };
