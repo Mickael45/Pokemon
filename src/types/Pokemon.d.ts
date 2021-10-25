@@ -1,4 +1,28 @@
-interface PokemonStat {
+type PokemonTypes =
+  | "normal"
+  | "fire"
+  | "water"
+  | "electric"
+  | "grass"
+  | "ice"
+  | "fighting"
+  | "poison"
+  | "ground"
+  | "fly"
+  | "psychic"
+  | "bug"
+  | "rock"
+  | "ghost"
+  | "dragon"
+  | "dark"
+  | "steel"
+  | "fairy";
+
+interface IPokemonTypeInteraction {
+  key: string;
+  values: { [key: PokemonTypes]: string }[];
+}
+interface IPokemonStat {
   label: string;
   value: number;
 }

@@ -1,4 +1,4 @@
-const brokenNamesMap: { [key: string]: string } = {
+const brokenNamesMap: MAP = {
   deoxys: "deoxys-normal",
 };
 
