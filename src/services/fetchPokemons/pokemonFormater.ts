@@ -74,5 +74,5 @@ export const formatToFullPokemon = (pokemon: IPokemonResponseType): IFullPokemon
   const stats = extractStatsFromPokemon(pokemon);
   const weaknesses = getPokemonWeaknesses(pokemonBasicInfo.types);
 
-  return { ...pokemonBasicInfo, stats, weaknesses, height, weight: weight / 10 };
+  return { ...pokemonBasicInfo, stats, weaknesses, height: height * 10, weight: weight / 10 };
 };

@@ -4,6 +4,12 @@ import { fetchPokemonDetailsByNameOrId } from "../../../services";
 import { ImageWithPlaceholder, PokemonType, Radar } from "../../components";
 import { Page } from "../../templates";
 import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
+import {
+  convertCmtoMeterString,
+  cmToFeetString,
+  joinValueWithUnit,
+  kgToPoundsString,
+} from "../../../utils/unitConverter";
 
 interface Params {
   id: string;
@@ -51,6 +57,8 @@ const Details = () => {
   const renderWeakness = ({ type, factor }: Weakness) => renderType(type, ` (x${factor})`);
   const renderWeaknesses = () => weaknesses.map(renderWeakness);
   const renderStatsRadar = () => (stats.length > 0 ? <Radar title="Stats" axisDataList={stats} color="red" /> : null);
+  const renderHeight = () => <p>{`Height: ${convertCmtoMeterString(height)} (${cmToFeetString(height)})`}</p>;
+  const renderWeight = () => <p>{`Weight: ${joinValueWithUnit(weight, "kg")} (${kgToPoundsString(weight)})`}</p>;
 
   return (
     <Page>
@@ -58,8 +66,8 @@ const Details = () => {
         <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
         <span>{id}</span>
         <h2>{capitalizeFirstLetter(name)}</h2>
-        <p>Height: {height}</p>
-        <p>Weight: {weight}</p>
+        {renderHeight()}
+        {renderWeight()}
         <h3>Types:</h3>
         {renderTypes()}
         <h3>Weaknesses:</h3>
