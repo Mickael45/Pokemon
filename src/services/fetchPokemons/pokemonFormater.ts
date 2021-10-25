@@ -4,31 +4,39 @@ import { capitalizeFirstLetter } from "../../utils/stringManipulation";
 import typesInteractionData from "../../ui/pages/TypeInteractions/typeInteractions.json";
 const POKEMON_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
 
-interface IType {
+type Type = {
   type: {
     name: string;
   };
-}
+};
 
-interface IStat {
+type Stat = {
   base_stat: number;
   stat: {
     name: string;
   };
-}
+};
 
-interface IPokemonType {
+type PokemonType = {
   pokemon: {
     name: string;
   };
-}
+};
+
+type Ability = {
+  ability: {
+    name: string;
+  };
+  is_hidden: boolean;
+};
 interface IPokemonResponseType {
   id: number;
   name: string;
-  types: IType[];
-  stats: IStat[];
+  types: Type[];
+  stats: Stat[];
   weight: number;
   height: number;
+  abilities: Ability[];
 }
 
 const getPokemonWeaknesses = (types: string) => {
@@ -46,17 +54,22 @@ const getPokemonWeaknesses = (types: string) => {
   return weakInteractionTypes || [];
 };
 
-const extractTypeName = (type: IType) => type.type.name;
+const extractTypeName = (type: Type) => type.type.name;
 
 const extractStatsFromPokemon = ({ stats }: IPokemonResponseType) =>
-  stats?.map(({ base_stat, stat }: IStat) => ({
+  stats?.map(({ base_stat, stat }: Stat) => ({
     label: capitalizeFirstLetter(stat.name.replaceAll("-", " ")),
     value: base_stat,
   }));
 
+const extractAbilitiesFromPokemon = (abilities: Ability[]) =>
+  abilities
+    .filter((ability) => !ability.is_hidden)
+    .map(({ ability }: Ability) => capitalizeFirstLetter(ability.name.replaceAll("-", " ")));
+
 export const extractPokemonName = ({ name }: { name: string }) => replaceBrokenName(name);
 
-export const extractPokemonData = ({ pokemon }: IPokemonType) => pokemon;
+export const extractPokemonData = ({ pokemon }: PokemonType) => pokemon;
 
 export const replaceBrokenName = (name: string) => brokenNamesMap[name] || name;
 
@@ -72,7 +85,16 @@ export const formatToFullPokemon = (pokemon: IPokemonResponseType, evolutionChai
   const { height, weight } = pokemon;
   const pokemonBasicInfo = formatToBasicPokemon(pokemon);
   const stats = extractStatsFromPokemon(pokemon);
+  const abilities = extractAbilitiesFromPokemon(pokemon.abilities);
   const weaknesses = getPokemonWeaknesses(pokemonBasicInfo.types);
 
-  return { ...pokemonBasicInfo, stats, weaknesses, height: height * 10, weight: weight / 10, evolutionChain };
+  return {
+    ...pokemonBasicInfo,
+    stats,
+    weaknesses,
+    height: height * 10,
+    weight: weight / 10,
+    evolutionChain,
+    abilities,
+  };
 };

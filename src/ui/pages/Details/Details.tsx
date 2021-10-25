@@ -25,13 +25,14 @@ const DEFAULT_POKEMON = {
   stats: [],
   weaknesses: [],
   evolutionChain: [],
+  abilities: [],
 };
 
 const Details = () => {
   const { id } = useParams<Params>();
   const history = useHistory();
   const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
-  const { imageUrl, name, stats, height, weight, types, weaknesses, evolutionChain } = pokemon;
+  const { imageUrl, name, stats, height, weight, types, weaknesses, evolutionChain, abilities } = pokemon;
 
   const getPokemonById = () => {
     fetchPokemonDetailsByNameOrId(id).then(setPokemon);
@@ -64,6 +65,8 @@ const Details = () => {
   };
   const renderWeakness = ({ type, factor }: Weakness) => renderType(type, ` (x${factor})`);
   const renderWeaknesses = () => weaknesses.map(renderWeakness);
+  const renderAbility = (ability: string) => <p>{ability}</p>;
+  const renderAblilities = () => abilities.map(renderAbility);
   const renderStatsRadar = () => <Radar title="Stats" axisDataList={stats} color={getPrimaryTypeColor()} />;
   const renderHeight = () => <p>{`Height: ${convertCmtoMeterString(height)} (${cmToFeetString(height)})`}</p>;
   const renderWeight = () => <p>{`Weight: ${joinValueWithUnit(weight, "kg")} (${kgToPoundsString(weight)})`}</p>;
@@ -78,6 +81,8 @@ const Details = () => {
         <h2>{capitalizeFirstLetter(name)}</h2>
         {renderHeight()}
         {renderWeight()}
+        <h3>Abilities:</h3>
+        {renderAblilities()}
         <h3>Types:</h3>
         {renderTypes()}
         <h3>Weaknesses:</h3>
