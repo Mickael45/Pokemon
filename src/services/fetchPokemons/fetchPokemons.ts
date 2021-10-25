@@ -22,8 +22,7 @@ const getPokemonEvolutionChain = ({ evolves_to, species }: any, evolutionChain: 
   return evolutionChain;
 };
 
-const fetchPokemonEvolutionChain = async (id: string) => {
-  const pokemonSpeciesData = await request(`${POKE_API_URL}pokemon-species/${id}`);
+const fetchPokemonEvolutionChain = async (pokemonSpeciesData: any) => {
   const pokemonEvolutionData = await request(pokemonSpeciesData.evolution_chain.url);
   const pokemonEvolutionChain = getPokemonEvolutionChain(pokemonEvolutionData.chain);
   const evolutionChainPokemonsData = await Promise.all<any>(
@@ -36,8 +35,12 @@ const fetchPokemonEvolutionChain = async (id: string) => {
 
 export const fetchPokemonDetailsByNameOrId = async (id: string) => {
   const pokemonData = await fetchPokemonByNameOrId(id);
-  const evolutionChainPokemons = await fetchPokemonEvolutionChain(id);
-  const formattedPokemon = formatToFullPokemon(pokemonData, evolutionChainPokemons);
+  const pokemonSpeciesData = await request(`${POKE_API_URL}pokemon-species/${id}`);
+  const pokemonDescription = pokemonSpeciesData.flavor_text_entries.find(
+    (entry: any) => entry.language.name === "en"
+  )?.flavor_text;
+  const evolutionChainPokemons = await fetchPokemonEvolutionChain(pokemonSpeciesData);
+  const formattedPokemon = formatToFullPokemon(pokemonData, evolutionChainPokemons, pokemonDescription);
 
   return formattedPokemon;
 };

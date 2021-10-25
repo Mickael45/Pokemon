@@ -26,13 +26,14 @@ const DEFAULT_POKEMON = {
   weaknesses: [],
   evolutionChain: [],
   abilities: [],
+  description: "",
 };
 
 const Details = () => {
   const { id } = useParams<Params>();
   const history = useHistory();
   const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
-  const { imageUrl, name, stats, height, weight, types, weaknesses, evolutionChain, abilities } = pokemon;
+  const { imageUrl, name, stats, height, weight, types, weaknesses, evolutionChain, abilities, description } = pokemon;
 
   const getPokemonById = () => {
     fetchPokemonDetailsByNameOrId(id).then(setPokemon);
@@ -81,6 +82,8 @@ const Details = () => {
         <h2>{capitalizeFirstLetter(name)}</h2>
         {renderHeight()}
         {renderWeight()}
+        <h3>Description:</h3>
+        {description}
         <h3>Abilities:</h3>
         {renderAblilities()}
         <h3>Types:</h3>

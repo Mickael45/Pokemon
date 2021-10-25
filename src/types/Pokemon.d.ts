@@ -55,6 +55,7 @@ type IFullPokemon = IBasicPokemon & {
   weaknesses: Weakness[] | [];
   evolutionChain: IBasicPokemon[] | [];
   abilities: string[] | [];
+  description: string;
   height: number;
   weight: number;
 };
