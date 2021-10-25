@@ -72,8 +72,6 @@ app.get("/api", async (req, res, next) => {
         const firstType = ROW_LABEL[firstTypeIndex];
         const secondType = firstTypeIndex === secondTypeIndex ? "" : `,${ROW_LABEL[secondTypeIndex]}`;
 
-        console.log(firstType, secondType);
-
         const data = row.getElementsByTagName("TD");
 
         [...data]
