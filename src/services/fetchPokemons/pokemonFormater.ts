@@ -68,11 +68,11 @@ export const formatToBasicPokemon = (pokemon: IPokemonResponseType): IBasicPokem
   return { id, name, imageUrl, types: typesName };
 };
 
-export const formatToFullPokemon = (pokemon: IPokemonResponseType): IFullPokemon => {
+export const formatToFullPokemon = (pokemon: IPokemonResponseType, evolutionChain: IBasicPokemon[]): IFullPokemon => {
   const { height, weight } = pokemon;
   const pokemonBasicInfo = formatToBasicPokemon(pokemon);
   const stats = extractStatsFromPokemon(pokemon);
   const weaknesses = getPokemonWeaknesses(pokemonBasicInfo.types);
 
-  return { ...pokemonBasicInfo, stats, weaknesses, height: height * 10, weight: weight / 10 };
+  return { ...pokemonBasicInfo, stats, weaknesses, height: height * 10, weight: weight / 10, evolutionChain };
 };

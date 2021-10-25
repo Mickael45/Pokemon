@@ -53,6 +53,7 @@ interface IBasicPokemon {
 type IFullPokemon = IBasicPokemon & {
   stats: Stat[] | [];
   weaknesses: Weakness[] | [];
+  evolutionChain: IBasicPokemon[] | [];
   height: number;
   weight: number;
 };

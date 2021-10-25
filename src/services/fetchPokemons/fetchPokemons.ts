@@ -3,24 +3,48 @@ import { extractPokemonName, extractPokemonData, formatToBasicPokemon, formatToF
 const POKE_API_URL = "https://pokeapi.co/api/v2/";
 const POKEMON_LIMIT = 2000;
 
-const fetchPokemons = async (url: string) => {
+const request = async (url: string) => {
   const response = await fetch(url);
   const jsonResponse = await response.json();
 
   return jsonResponse;
 };
 
-const fetchPokemonByNameOrId = async (name: string) => await fetchPokemons(`${POKE_API_URL}pokemon/${name}`);
+const fetchPokemonByNameOrId = async (name: string) => await request(`${POKE_API_URL}pokemon/${name}`);
 
-export const fetchPokemonDetailsByNameOrId = async (name: string) => {
-  const pokemonData = await fetchPokemonByNameOrId(name);
-  const formattedPokemon = formatToFullPokemon(pokemonData);
+const getPokemonEvolutionChain = ({ evolves_to, species }: any, evolutionChain: any[] = []): any => {
+  evolutionChain.push({
+    name: species.name,
+  });
+  if (evolves_to.length > 0) {
+    getPokemonEvolutionChain(evolves_to[0], evolutionChain);
+  }
+
+  return evolutionChain;
+};
+
+const fetchPokemonEvolutionChain = async (id: string) => {
+  const pokemonSpeciesData = await request(`${POKE_API_URL}pokemon-species/${id}`);
+  const pokemonEvolutionData = await request(pokemonSpeciesData.evolution_chain.url);
+  const pokemonEvolutionChain = getPokemonEvolutionChain(pokemonEvolutionData.chain);
+  const evolutionChainPokemonsData = await Promise.all<any>(
+    pokemonEvolutionChain.map((evolutionData: any) => evolutionData.name).map(fetchPokemonByNameOrId)
+  );
+  const formattedEvolutionChainPokemons = evolutionChainPokemonsData.map(formatToBasicPokemon);
+
+  return formattedEvolutionChainPokemons;
+};
+
+export const fetchPokemonDetailsByNameOrId = async (id: string) => {
+  const pokemonData = await fetchPokemonByNameOrId(id);
+  const evolutionChainPokemons = await fetchPokemonEvolutionChain(id);
+  const formattedPokemon = formatToFullPokemon(pokemonData, evolutionChainPokemons);
 
   return formattedPokemon;
 };
 
 export const fetchAllPokemons = async (): Promise<IBasicPokemon[]> => {
-  const pokemonsData = await fetchPokemons(`${POKE_API_URL}pokemon?limit=${POKEMON_LIMIT}`);
+  const pokemonsData = await request(`${POKE_API_URL}pokemon?limit=${POKEMON_LIMIT}`);
   const pokemonsName = pokemonsData.results.map(extractPokemonName);
   const pokemonData = await Promise.all<any>(pokemonsName.map(fetchPokemonByNameOrId));
   const formattedPokemons = pokemonData.map(formatToBasicPokemon);
@@ -29,7 +53,7 @@ export const fetchAllPokemons = async (): Promise<IBasicPokemon[]> => {
 };
 
 export const fetchPokemonsByType = async (type: string): Promise<IBasicPokemon[]> => {
-  const pokemonsData = await fetchPokemons(`${POKE_API_URL}type/${type}`);
+  const pokemonsData = await request(`${POKE_API_URL}type/${type}`);
   const pokemonsName = pokemonsData.pokemon.map(extractPokemonData).map(extractPokemonName);
   const pokemonData = await Promise.all<any>(pokemonsName.map(fetchPokemonByNameOrId));
   const formattedPokemons = pokemonData.map(formatToBasicPokemon);

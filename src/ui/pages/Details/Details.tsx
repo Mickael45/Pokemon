@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { fetchPokemonDetailsByNameOrId } from "../../../services";
-import { ImageWithPlaceholder, PokemonType, Radar } from "../../components";
+import { ImageWithPlaceholder, PokemonType, Radar, EvolutionChain } from "../../components";
 import { Page } from "../../templates";
 import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
 import {
@@ -24,13 +24,14 @@ const DEFAULT_POKEMON = {
   id: 0,
   stats: [],
   weaknesses: [],
+  evolutionChain: [],
 };
 
 const Details = () => {
   const { id } = useParams<Params>();
   const history = useHistory();
   const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
-  const { imageUrl, name, stats, height, weight, types, weaknesses } = pokemon;
+  const { imageUrl, name, stats, height, weight, types, weaknesses, evolutionChain } = pokemon;
 
   const getPokemonById = () => {
     fetchPokemonDetailsByNameOrId(id).then(setPokemon);
@@ -43,14 +44,14 @@ const Details = () => {
     return castedPokemonTypesColor[primaryType];
   };
 
-  const onTypeClick = (type: string) =>
+  const handleTypeClick = (type: string) =>
     history.push({
       pathname: "/",
       search: `name=${type}&field=types`,
     });
 
   const renderType = (type: string, child?: any) => (
-    <PokemonType key={`${id}-${type}`} type={type} handleClick={onTypeClick}>
+    <PokemonType key={`${id}-${type}`} type={type} handleClick={handleTypeClick}>
       {child}
     </PokemonType>
   );
@@ -81,6 +82,7 @@ const Details = () => {
         <h3>Weaknesses:</h3>
         {renderWeaknesses()}
         {renderStatsRadar()}
+        <EvolutionChain chain={evolutionChain} handleClick={handleTypeClick} />
       </div>
     </Page>
   );
