@@ -67,7 +67,7 @@ const Details = () => {
   const renderHeight = () => <p>{`Height: ${convertCmtoMeterString(height)} (${cmToFeetString(height)})`}</p>;
   const renderWeight = () => <p>{`Weight: ${joinValueWithUnit(weight, "kg")} (${kgToPoundsString(weight)})`}</p>;
 
-  useEffect(getPokemonById, []);
+  useEffect(getPokemonById, [id]);
 
   return (
     <Page>
