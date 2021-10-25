@@ -12,6 +12,8 @@ const DEFAULT_POKEMON = {
   imageUrl: "",
   name: "",
   types: "",
+  height: 0,
+  weight: 0,
   id: 0,
   stats: [],
   weaknesses: "",
@@ -21,7 +23,7 @@ const Details = () => {
   const { id } = useParams<Params>();
   const history = useHistory();
   const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
-  const { imageUrl, name, stats } = pokemon;
+  const { imageUrl, name, stats, height, weight } = pokemon;
 
   const getPokemonById = () => {
     fetchPokemonDetailsByNameOrId(id).then(setPokemon);
@@ -45,6 +47,8 @@ const Details = () => {
         <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
         <span>{id}</span>
         <h2>{capitalizeFirstLetter(name)}</h2>
+        <p>Height: {height}</p>
+        <p>Weight: {weight}</p>
         <h3>Types:</h3>
         {renderTypes(pokemon.types)}
         <h3>Weaknesses:</h3>

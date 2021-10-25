@@ -27,6 +27,8 @@ interface IPokemonResponseType {
   name: string;
   types: IType[];
   stats: IStat[];
+  weight: number;
+  height: number;
 }
 
 const getPokemonWeaknesses = (types: string) => {
@@ -66,9 +68,10 @@ export const formatToBasicPokemon = (pokemon: IPokemonResponseType): IBasicPokem
 };
 
 export const formatToFullPokemon = (pokemon: IPokemonResponseType): IFullPokemon => {
+  const { height, weight } = pokemon;
   const pokemonBasicInfo = formatToBasicPokemon(pokemon);
   const stats = extractStatsFromPokemon(pokemon);
   const weaknesses = getPokemonWeaknesses(pokemonBasicInfo.types);
 
-  return { ...pokemonBasicInfo, stats, weaknesses };
+  return { ...pokemonBasicInfo, stats, weaknesses, height, weight: weight / 10 };
 };

@@ -47,4 +47,6 @@ interface IBasicPokemon {
 type IFullPokemon = IBasicPokemon & {
   stats: Stat[] | [];
   weaknesses: string;
+  height: number;
+  weight: number;
 };
