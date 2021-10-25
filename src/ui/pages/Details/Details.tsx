@@ -10,7 +10,7 @@ import {
   joinValueWithUnit,
   kgToPoundsString,
 } from "../../../utils/unitConverter";
-
+import pokemonTypesColor from "../../../constants/PokemonTypesColor.json";
 interface Params {
   id: string;
 }
@@ -36,7 +36,12 @@ const Details = () => {
     fetchPokemonDetailsByNameOrId(id).then(setPokemon);
   };
 
-  useEffect(getPokemonById, []);
+  const getPrimaryTypeColor = () => {
+    const primaryType = types.split(",")[0];
+    const castedPokemonTypesColor = pokemonTypesColor as MAP;
+
+    return castedPokemonTypesColor[primaryType];
+  };
 
   const onTypeClick = (type: string) =>
     history.push({
@@ -56,9 +61,12 @@ const Details = () => {
   };
   const renderWeakness = ({ type, factor }: Weakness) => renderType(type, ` (x${factor})`);
   const renderWeaknesses = () => weaknesses.map(renderWeakness);
-  const renderStatsRadar = () => (stats.length > 0 ? <Radar title="Stats" axisDataList={stats} color="red" /> : null);
+  const renderStatsRadar = () =>
+    stats.length > 0 ? <Radar title="Stats" axisDataList={stats} color={getPrimaryTypeColor()} /> : null;
   const renderHeight = () => <p>{`Height: ${convertCmtoMeterString(height)} (${cmToFeetString(height)})`}</p>;
   const renderWeight = () => <p>{`Weight: ${joinValueWithUnit(weight, "kg")} (${kgToPoundsString(weight)})`}</p>;
+
+  useEffect(getPokemonById, []);
 
   return (
     <Page>

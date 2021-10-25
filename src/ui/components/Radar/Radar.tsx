@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { draw, updateColors } from "./lib";
+import { draw } from "./lib";
 
 interface Props {
   axisDataList: {
@@ -18,10 +18,6 @@ const Radar = ({ axisDataList, color, title }: Props): JSX.Element => {
   useEffect(() => {
     draw(`#${containerID}`, axisDataList, color);
   }, []);
-
-  useEffect(() => {
-    updateColors(color);
-  }, [color]);
 
   return (
     <div>
