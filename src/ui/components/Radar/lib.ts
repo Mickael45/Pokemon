@@ -1,4 +1,4 @@
-import { select, selectAll } from "d3";
+import { select } from "d3";
 import { createAxes, createCurve } from ".";
 import {
   SVG_HEIGHT,
@@ -44,12 +44,11 @@ const createBorders = (svg: D3SVGElement, axisDataList: AxisData[]) => {
 
 const createDef = (svg: D3SVGElement) => svg.append("defs");
 
-export const updateColors = (color: string): void => {
-  selectAll("#value").style("fill", color);
-  selectAll("polygon").style("fill", color).style("stroke", color);
-};
+const deleteSvg = (id: string) => document.getElementById(id)?.remove();
 
 export const draw = (id: string, axisDataList: AxisData[], color: string): void => {
+  deleteSvg(`${id}Chart`);
+
   const svg = createSvg(id);
 
   createDef(svg);

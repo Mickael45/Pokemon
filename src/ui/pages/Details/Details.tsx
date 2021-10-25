@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { fetchPokemonDetailsByNameOrId } from "../../../services";
 import { ImageWithPlaceholder, PokemonType, Radar, EvolutionChain } from "../../components";
@@ -50,8 +50,10 @@ const Details = () => {
       search: `name=${type}&field=types`,
     });
 
+  const callBackedHandleTypeClick = useCallback(handleTypeClick, []);
+
   const renderType = (type: string, child?: any) => (
-    <PokemonType key={`${id}-${type}`} type={type} handleClick={handleTypeClick}>
+    <PokemonType key={`${id}-${type}`} type={type} handleClick={callBackedHandleTypeClick}>
       {child}
     </PokemonType>
   );
@@ -62,8 +64,7 @@ const Details = () => {
   };
   const renderWeakness = ({ type, factor }: Weakness) => renderType(type, ` (x${factor})`);
   const renderWeaknesses = () => weaknesses.map(renderWeakness);
-  const renderStatsRadar = () =>
-    stats.length > 0 ? <Radar title="Stats" axisDataList={stats} color={getPrimaryTypeColor()} /> : null;
+  const renderStatsRadar = () => <Radar title="Stats" axisDataList={stats} color={getPrimaryTypeColor()} />;
   const renderHeight = () => <p>{`Height: ${convertCmtoMeterString(height)} (${cmToFeetString(height)})`}</p>;
   const renderWeight = () => <p>{`Weight: ${joinValueWithUnit(weight, "kg")} (${kgToPoundsString(weight)})`}</p>;
 
@@ -82,7 +83,7 @@ const Details = () => {
         <h3>Weaknesses:</h3>
         {renderWeaknesses()}
         {renderStatsRadar()}
-        <EvolutionChain chain={evolutionChain} handleClick={handleTypeClick} />
+        <EvolutionChain chain={evolutionChain} handleClick={callBackedHandleTypeClick} />
       </div>
     </Page>
   );

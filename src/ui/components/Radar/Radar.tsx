@@ -15,9 +15,13 @@ const containerIDSuffix = "radarContainer";
 const Radar = ({ axisDataList, color, title }: Props): JSX.Element => {
   const containerID = `${title.replaceAll(" ", "")}-${containerIDSuffix}`;
 
-  useEffect(() => {
-    draw(`#${containerID}`, axisDataList, color);
-  }, []);
+  const drawRadar = () => {
+    if (axisDataList && axisDataList.length > 0) {
+      draw(`#${containerID}`, axisDataList, color);
+    }
+  };
+
+  useEffect(drawRadar, [axisDataList]);
 
   return (
     <div>
