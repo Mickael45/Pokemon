@@ -16,9 +16,8 @@ const getPokemonEvolutionChain = ({ evolves_to, species }: any, evolutionChain: 
   evolutionChain.push({
     name: species.name,
   });
-  if (evolves_to.length > 0) {
-    getPokemonEvolutionChain(evolves_to[0], evolutionChain);
-  }
+
+  evolves_to.forEach((evolution: any) => getPokemonEvolutionChain(evolution, evolutionChain));
 
   return evolutionChain;
 };
