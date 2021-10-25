@@ -27,13 +27,15 @@ const DEFAULT_POKEMON = {
   evolutionChain: [],
   abilities: [],
   description: "",
+  category: "",
 };
 
 const Details = () => {
   const { id } = useParams<Params>();
   const history = useHistory();
   const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
-  const { imageUrl, name, stats, height, weight, types, weaknesses, evolutionChain, abilities, description } = pokemon;
+  const { imageUrl, name, stats, height, weight, types, weaknesses, evolutionChain, abilities, description, category } =
+    pokemon;
 
   const getPokemonById = () => {
     fetchPokemonDetailsByNameOrId(id).then(setPokemon);
@@ -51,6 +53,10 @@ const Details = () => {
       pathname: "/",
       search: `name=${type}&field=types`,
     });
+
+  const handlePreviousButtonClick = () => history.push(`/details/${pokemon.id - 1}`);
+
+  const handleNextButtonClick = () => history.push(`/details/${pokemon.id + 1}`);
 
   const callBackedHandleTypeClick = useCallback(handleTypeClick, []);
 
@@ -77,6 +83,10 @@ const Details = () => {
   return (
     <Page>
       <div>
+        <span>
+          <button onClick={handlePreviousButtonClick}>{pokemon.id - 1}</button>
+          <button onClick={handleNextButtonClick}>{pokemon.id + 1}</button>
+        </span>
         <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
         <span>{id}</span>
         <h2>{capitalizeFirstLetter(name)}</h2>
@@ -84,6 +94,8 @@ const Details = () => {
         {renderWeight()}
         <h3>Description:</h3>
         {description}
+        <h3>Category:</h3>
+        {category}
         <h3>Abilities:</h3>
         {renderAblilities()}
         <h3>Types:</h3>

@@ -84,7 +84,8 @@ export const formatToBasicPokemon = (pokemon: IPokemonResponseType): IBasicPokem
 export const formatToFullPokemon = (
   pokemon: IPokemonResponseType,
   evolutionChain: IBasicPokemon[],
-  description: string
+  description: string,
+  category: string
 ): IFullPokemon => {
   const { height, weight } = pokemon;
   const pokemonBasicInfo = formatToBasicPokemon(pokemon);
@@ -101,5 +102,6 @@ export const formatToFullPokemon = (
     evolutionChain,
     abilities,
     description,
+    category,
   };
 };

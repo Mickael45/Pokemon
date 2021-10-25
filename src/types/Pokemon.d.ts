@@ -58,4 +58,5 @@ type IFullPokemon = IBasicPokemon & {
   description: string;
   height: number;
   weight: number;
+  category: string;
 };

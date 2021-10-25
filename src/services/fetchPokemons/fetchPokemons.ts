@@ -39,8 +39,16 @@ export const fetchPokemonDetailsByNameOrId = async (id: string) => {
   const pokemonDescription = pokemonSpeciesData.flavor_text_entries.find(
     (entry: any) => entry.language.name === "en"
   )?.flavor_text;
+  const pokemonCategory = pokemonSpeciesData.genera
+    .find((entry: any) => entry.language.name === "en")
+    ?.genus.replace("Pokémon", "");
   const evolutionChainPokemons = await fetchPokemonEvolutionChain(pokemonSpeciesData);
-  const formattedPokemon = formatToFullPokemon(pokemonData, evolutionChainPokemons, pokemonDescription);
+  const formattedPokemon = formatToFullPokemon(
+    pokemonData,
+    evolutionChainPokemons,
+    pokemonDescription,
+    pokemonCategory
+  );
 
   return formattedPokemon;
 };
