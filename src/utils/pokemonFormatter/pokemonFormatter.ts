@@ -1,7 +1,8 @@
-import { formatNumberToMatchLength } from "../../../utils/stringManipulation";
-import typesInteractionData from "../../../constants/TypeInteractions.json";
+import { formatNumberToMatchLength } from "../stringManipulation";
+import typesInteractionData from "../../constants/TypeInteractions.json";
 import { EvolutionData, EvolvesTo, Specie, IPokemonResponseType } from "./types";
-import EffectivenessTypeToDamageFactorHashMapType from "../../../constants/EffectivenessTypeToDamageFactorHashMap";
+import EffectivenessTypeToDamageFactorHashMapType from "../../constants/EffectivenessTypeToDamageFactorHashMap";
+import pokemonTypesColor from "../../constants/TypesColor.json";
 import {
   extractStatsFromPokemon,
   extractAbilitiesFromPokemon,
@@ -38,6 +39,13 @@ const getPokemonWeaknesses = (types: string) => {
     .map(createWeaknessInteractionTypeObj);
 
   return weakInteractionTypes || [];
+};
+
+export const getPokemonPrimaryTypeColor = (types: string) => {
+  const primaryType = types.split(",")[0];
+  const castedPokemonTypesColor = pokemonTypesColor as HashMap;
+
+  return castedPokemonTypesColor[primaryType];
 };
 
 export const formatPokemonEvolutionChain = ({ evolves_to, species }: EvolutionData, evolutionChain: string[] = []) => {

@@ -7,11 +7,11 @@ import BasicInfo from "../../components/PokemonBasicInfo/PokemonBasicInfo";
 import Type from "../../components/PokemonType/PokemonType";
 import EvolutionChain from "../../components/EvolutionChain/EvolutionChain";
 import Radar from "../../components/Radar/Radar";
-import Page from "../../templates/Page/Page";
-import pokemonTypesColor from "../../../constants/TypesColor.json";
-import styles from "./Details.module.css";
 import IdNavigation from "../../components/IdNavigation/IdNavigation";
 import { DEFAULT_POKEMON } from "../../../constants/DefaultPokemons";
+import { getPokemonPrimaryTypeColor } from "../../../utils/pokemonFormatter/pokemonFormatter";
+import Page from "../../templates/Page/Page";
+import styles from "./Details.module.css";
 interface Params {
   id: string;
 }
@@ -22,16 +22,11 @@ const Details = () => {
   const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
   const { imageUrl, name, stats, height, weight, types, weaknesses, evolutionChain, abilities, description, category } =
     pokemon;
+  const color = getPokemonPrimaryTypeColor(types);
+  const basicInfo = { description, height, weight, category, types, abilities, color };
 
   const getPokemonById = () => {
     fetchPokemonDetailsByNameOrId(id).then(setPokemon);
-  };
-
-  const getPrimaryTypeColor = () => {
-    const primaryType = types.split(",")[0];
-    const castedPokemonTypesColor = pokemonTypesColor as HashMap;
-
-    return castedPokemonTypesColor[primaryType];
   };
 
   const handleTypeClick = (type: string) =>
@@ -62,7 +57,6 @@ const Details = () => {
   );
 
   useEffect(getPokemonById, [id]);
-
   return (
     <Page>
       <div className={styles.container}>
@@ -71,17 +65,10 @@ const Details = () => {
         <div>
           <span>
             <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
-            <Radar title="Stats" axisDataList={stats} color={getPrimaryTypeColor()} />
+            <Radar title="Stats" axisDataList={stats} color={color} />
           </span>
           <span>
-            <BasicInfo
-              background={getPrimaryTypeColor()}
-              description={description}
-              height={height}
-              weight={weight}
-              category={category}
-              abilities={abilities}
-            />
+            <BasicInfo {...basicInfo} />
             <div>
               {renderSection("Types", renderTypes())}
               {renderSection("Weaknesses", renderWeaknesses())}

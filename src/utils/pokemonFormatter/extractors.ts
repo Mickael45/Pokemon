@@ -1,5 +1,5 @@
-import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
-import brokenNamesMap from "../brokenNameMap";
+import { capitalizeFirstLetter } from "../stringManipulation";
+import brokenNamesMap from "./brokenNameMap";
 import { TypeData, Type, Stat, Ability, FlavorTextEntry, GeneraEntry, Specie, IPokemonResponseType } from "./types";
 
 const findEnglishEntry = (entry: FlavorTextEntry | GeneraEntry) => entry.language.name === "en";
