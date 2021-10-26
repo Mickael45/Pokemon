@@ -19,6 +19,11 @@ const fetchPokemonByNameOrId = async (name: string) => await request(`${POKE_API
 const fetchPokemonEvolutionChain = async (pokemonSpeciesData: Specie) => {
   const pokemonEvolutionData = await request(pokemonSpeciesData.evolution_chain.url);
   const pokemonEvolutionChain = formatPokemonEvolutionChain(pokemonEvolutionData.chain);
+
+  if (pokemonEvolutionChain.length <= 1) {
+    return [];
+  }
+
   const evolutionChainPokemonsDataPromises = pokemonEvolutionChain.map(fetchPokemonByNameOrId);
   const evolutionChainPokemonsData = await Promise.all<IPokemonResponseType>(evolutionChainPokemonsDataPromises);
   const formattedEvolutionChainPokemons = evolutionChainPokemonsData.map(formatToBasicPokemon);
