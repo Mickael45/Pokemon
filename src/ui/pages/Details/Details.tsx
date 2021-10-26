@@ -11,24 +11,10 @@ import Page from "../../templates/Page/Page";
 import pokemonTypesColor from "../../../constants/TypesColor.json";
 import styles from "./Details.module.css";
 import IdNavigation from "../../components/IdNavigation/IdNavigation";
+import { DEFAULT_POKEMON } from "../../../constants/DefaultPokemons";
 interface Params {
   id: string;
 }
-
-const DEFAULT_POKEMON = {
-  imageUrl: "",
-  name: "",
-  types: "",
-  height: 0,
-  weight: 0,
-  id: 0,
-  stats: [],
-  weaknesses: [],
-  evolutionChain: [],
-  abilities: [],
-  description: "",
-  category: "",
-};
 
 const Details = () => {
   const { id } = useParams<Params>();
