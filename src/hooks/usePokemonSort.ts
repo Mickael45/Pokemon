@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
-import { sortByNumberFieldAsc, sortByNumberFieldDesc, sortByStringFieldAsc, sortByStringFieldDesc } from "../utils";
+import {
+  sortByNumberFieldAsc,
+  sortByNumberFieldDesc,
+  sortByStringFieldAsc,
+  sortByStringFieldDesc,
+} from "../utils/arraySorting";
 
 type FormattingFunction = (array: IBasicPokemon[]) => IBasicPokemon[];
 

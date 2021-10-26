@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, memo } from "react";
-import { useIntersectionObserver } from "../../../hooks";
+import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 
 interface IProps {
   children: JSX.Element;

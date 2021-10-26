@@ -1,4 +1,7 @@
-import { HomePage, DetailsPage, TypeInteractionsPage } from "./ui/pages";
+import HomePage from "./ui/pages/Home/Home";
+import DetailsPage from "./ui/pages/Details/Details";
+import TypeInteractionsPage from "./ui/pages/TypeInteractions/TypeInteractions";
+
 import { BrowserRouter, Route } from "react-router-dom";
 
 const App = () => (

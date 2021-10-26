@@ -1,5 +1,5 @@
 import { CENTER_OPACITY_AREA } from "./constants";
-import { calculateCurveXPosition, calculateCurveYPosition } from ".";
+import { calculateCurveXPosition, calculateCurveYPosition } from "./pointPositionCalculator";
 
 import type { D3SVGElement, AxisData } from "./types";
 

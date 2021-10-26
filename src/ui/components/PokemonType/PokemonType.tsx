@@ -1,4 +1,4 @@
-import { capitalizeFirstLetter } from "../../../utils";
+import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
 import styles from "./PokemonType.module.css";
 import pokemonTypesColor from "../../../constants/TypesColor.json";
 const { typeContainer } = styles;

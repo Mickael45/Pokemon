@@ -1,12 +1,13 @@
 import { useState, useEffect, useCallback, BaseSyntheticEvent } from "react";
 import { useLocation } from "react-router-dom";
-import { Pokemon } from "../../components";
-import { usePokemonSort } from "../../../hooks";
-import { fetchAllPokemons } from "../../../services";
-import { Page, FlexboxList } from "../../templates";
+import { fetchAllPokemons } from "../../../services/fetchPokemons/fetchPokemons";
 import { sortingTypesMap } from "../../../hooks/usePokemonSort";
-import styles from "./Home.module.css";
+import Pokemon from "../../components/Pokemon/Pokemon";
+import Page from "../../templates/Page/Page";
+import FlexboxList from "../../templates/FlexboxList/FlexboxList";
 import Dropdown from "../../components/Dropdown/Dropdown";
+import usePokemonSort from "../../../hooks/usePokemonSort";
+import styles from "./Home.module.css";
 
 const POKEMON_STACK_SIZE = 12;
 

@@ -1,8 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { fetchPokemonDetailsByNameOrId } from "../../../services";
-import { ImageWithPlaceholder, PokemonType, Radar, EvolutionChain } from "../../components";
-import { Page } from "../../templates";
+import { fetchPokemonDetailsByNameOrId } from "../../../services/fetchPokemons/fetchPokemons";
 import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
 import {
   convertCmtoMeterString,
@@ -10,6 +8,11 @@ import {
   joinValueWithUnit,
   kgToPoundsString,
 } from "../../../utils/unitConverter";
+import ImageWithPlaceholder from "../../components/ImageWithPlaceholder/ImageWithPlaceholder";
+import PokemonType from "../../components/PokemonType/PokemonType";
+import Radar from "../../components/Radar/Radar";
+import EvolutionChain from "../../components/EvolutionChain/EvolutionChain";
+import Page from "../../templates/Page/Page";
 import pokemonTypesColor from "../../../constants/TypesColor.json";
 interface Params {
   id: string;

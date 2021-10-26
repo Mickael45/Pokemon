@@ -1,4 +1,4 @@
-import { formatNumberToMatchLength } from "../../../utils";
+import { formatNumberToMatchLength } from "../../../utils/stringManipulation";
 import typesInteractionData from "../../../constants/TypeInteractions.json";
 import { EvolutionData, EvolvesTo, Specie, IPokemonResponseType } from "./types";
 import EffectivenessTypeToDamageFactorHashMapType from "../../../constants/EffectivenessTypeToDamageFactorHashMap";

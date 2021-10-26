@@ -1,5 +1,5 @@
-import { TypeInteractionsTable } from "../../components";
-import { Page } from "../../templates";
+import TypeInteractionsTable from "../../components/TypeInteractionsTable/TypeInteractionsTable";
+import Page from "../../templates/Page/Page";
 import typeInteractionsData from "../../../constants/TypeInteractions.json";
 
 const TypeInteractionsPage = () => {

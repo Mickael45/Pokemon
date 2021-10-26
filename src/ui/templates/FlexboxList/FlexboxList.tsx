@@ -1,4 +1,4 @@
-import { IntersectionObserver } from "../../components";
+import IntersectionObserver from "../../components/IntersectionObserver/IntersectionObserver";
 import styles from "./FlexboxList.module.css";
 
 interface IProps {
