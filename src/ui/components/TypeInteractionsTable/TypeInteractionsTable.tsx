@@ -1,7 +1,7 @@
 import styles from "./TypeInteractionsTable.module.css";
 
 interface IProps {
-  typeInteractions: IPokemonTypeInteraction[];
+  typeInteractions: IPokemonInteractionTypes[];
 }
 
 const POKEMON_TYPES = [
@@ -25,7 +25,7 @@ const POKEMON_TYPES = [
   "fairy",
 ];
 
-const EFFECTIVENESS_MAP: MAP = {
+const EFFECTIVENESS_MAP: HashMap = {
   "no effect": "0",
   "not effective at all": "1/4",
   "not very effective": "1/2",
@@ -49,7 +49,7 @@ const renderHeader = () => {
   );
 };
 
-const renderRow = ({ key, values }: IPokemonTypeInteraction) => {
+const renderRow = ({ key, values }: IPokemonInteractionTypes) => {
   const convertEffectivenessStringToDamageRatio = (effectiveness: string) => EFFECTIVENESS_MAP[effectiveness];
   const extractEffectiveness = (value: any, index: number) => value[POKEMON_TYPES[index]];
   const damageRatioArray = values.map(extractEffectiveness).map(convertEffectivenessStringToDamageRatio);

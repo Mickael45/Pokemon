@@ -10,7 +10,7 @@ import {
   joinValueWithUnit,
   kgToPoundsString,
 } from "../../../utils/unitConverter";
-import pokemonTypesColor from "../../../constants/PokemonTypesColor.json";
+import pokemonTypesColor from "../../../constants/TypesColor.json";
 interface Params {
   id: string;
 }
@@ -43,7 +43,7 @@ const Details = () => {
 
   const getPrimaryTypeColor = () => {
     const primaryType = types.split(",")[0];
-    const castedPokemonTypesColor = pokemonTypesColor as MAP;
+    const castedPokemonTypesColor = pokemonTypesColor as HashMap;
 
     return castedPokemonTypesColor[primaryType];
   };

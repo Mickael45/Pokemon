@@ -1,6 +1,6 @@
 import { capitalizeFirstLetter } from "../../../utils";
 import styles from "./PokemonType.module.css";
-import pokemonTypesColor from "../../../constants/PokemonTypesColor.json";
+import pokemonTypesColor from "../../../constants/TypesColor.json";
 const { typeContainer } = styles;
 
 interface IProps {
@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const PokemonType = ({ type, handleClick, children = "" }: IProps) => {
-  const castedPokemonTypesColor = pokemonTypesColor as MAP;
+  const castedPokemonTypesColor = pokemonTypesColor as HashMap;
 
   const handleTypeClick = () => handleClick(type);
 

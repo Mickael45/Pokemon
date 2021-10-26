@@ -1,4 +1,4 @@
-const brokenNamesMap: MAP = {
+const brokenNamesMap: HashMap = {
   deoxys: "deoxys-normal",
 };
 

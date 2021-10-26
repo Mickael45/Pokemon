@@ -1,3 +1,3 @@
-interface MAP {
+interface HashMap {
   [key: string]: string;
 }
