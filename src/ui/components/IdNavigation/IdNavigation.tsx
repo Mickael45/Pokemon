@@ -1,13 +1,16 @@
+import { useHistory } from "react-router-dom";
 import styles from "./IdNavigation.module.css";
 
 interface IProps {
-  handleClick: (id: number) => void;
   id: string;
 }
 
-const IdNavigation = ({ handleClick, id }: IProps) => {
+const IdNavigation = ({ id }: IProps) => {
+  const history = useHistory();
   const previousId = parseInt(id) - 1;
   const nextId = parseInt(id) + 1;
+
+  const handleClick = (id: number) => history.push(`/details/${id}`);
   const handlePreviousButtonClick = () => handleClick(previousId);
   const handleNextButtonClick = () => handleClick(nextId);
 

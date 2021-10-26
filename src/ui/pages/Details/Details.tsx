@@ -7,7 +7,6 @@ import BasicInfo from "../../components/PokemonBasicInfo/PokemonBasicInfo";
 import Type from "../../components/PokemonType/PokemonType";
 import EvolutionChain from "../../components/EvolutionChain/EvolutionChain";
 import Radar from "../../components/Radar/Radar";
-
 import Page from "../../templates/Page/Page";
 import pokemonTypesColor from "../../../constants/TypesColor.json";
 import styles from "./Details.module.css";
@@ -55,8 +54,6 @@ const Details = () => {
       search: `name=${type}&field=types`,
     });
 
-  const handleNavigationClick = (id: number) => history.push(`/details/${id}`);
-
   const callBackedHandleTypeClick = useCallback(handleTypeClick, []);
 
   const renderType = (type: string, child?: any) => (
@@ -83,7 +80,7 @@ const Details = () => {
   return (
     <Page>
       <div className={styles.container}>
-        <IdNavigation id={id} handleClick={handleNavigationClick} />
+        <IdNavigation id={id} />
         <div>{`${capitalizeFirstLetter(name)} #${id}`}</div>
         <div>
           <span>
