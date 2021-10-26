@@ -8,38 +8,45 @@ import {
   extractPokemonCategory,
   extractTypeName,
 } from "./extractors";
-
+import {
+  NO_EFFECT,
+  NOT_EFFECTIVE_AT_ALL,
+  NOT_VERY_EFFECTIVE,
+  NORMAL_EFFECTIVENESS,
+  VERY_EFFECTIVE,
+  SUPER_EFFECTIVE,
+} from "../../../constants/PokemonEffectivenessTypes";
 const POKEMON_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
 
 type PokemonInteractionTypesToDamageFactorType = {
-  [key in PokemonInteractionTypes]: DamageFactor;
+  [key in PokemonEffectivenessType]: DamageFactor;
 };
 
 const PokemonInteractionTypesToDamageFactorMap: PokemonInteractionTypesToDamageFactorType = {
-  "no effect": "0",
-  "not effective at all": "0.25",
-  "not very effective": "1",
-  "normal effectiveness": "0.5",
-  "very effective": "1",
-  "super effective": "2",
+  [NO_EFFECT]: "0",
+  [NOT_EFFECTIVE_AT_ALL]: "0.25",
+  [NOT_VERY_EFFECTIVE]: "1",
+  [NORMAL_EFFECTIVENESS]: "0.5",
+  [VERY_EFFECTIVE]: "1",
+  [SUPER_EFFECTIVE]: "2",
 };
 
-const isVeryOrSuperEffectiveTypes = (value: IPokemonInteractionType) => {
-  const firstValue = Object.values(value)[0];
+const isVeryOrSuperEffectiveTypes = (value: PokemonInteractionType) => {
+  const firstValue = Object.values(value)[0] as PokemonEffectivenessType;
 
   return firstValue === "very effective" || firstValue === "super effective";
 };
 
-const createWeaknessInteractionTypeObj = (value: IPokemonInteractionType) => {
-  const type = Object.keys(value)[0] as PokemonTypes;
-  const interactionType = Object.values(value)[0] as PokemonInteractionTypes;
+const createWeaknessInteractionTypeObj = (value: any) => {
+  const type = Object.keys(value)[0] as PokemonType;
+  const interactionType = Object.values(value)[0] as PokemonEffectivenessType;
   const factor = PokemonInteractionTypesToDamageFactorMap[interactionType];
 
   return { type, factor };
 };
 
 const getPokemonWeaknesses = (types: string) => {
-  const areTypesEqual = ({ key }: IPokemonTypeInteraction) => key === types;
+  const areTypesEqual = ({ key }: IPokemonInteractionTypes) => key === types;
 
   const typeInteractions = typesInteractionData.flat().find(areTypesEqual);
   const weakInteractionTypes = typeInteractions?.values

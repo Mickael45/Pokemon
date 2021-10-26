@@ -1,84 +1,95 @@
 import {
-  FIRE,
   NORMAL,
+  FIRE,
   WATER,
-  GRASS,
   ELECTRIC,
+  GRASS,
   ICE,
-  ROCK,
   FIGHTING,
   POISON,
   GROUND,
   FLYING,
   PSYCHIC,
   BUG,
+  ROCK,
   GHOST,
-  DARK,
   DRAGON,
+  DARK,
   STEEL,
   FAIRY,
 } from "../constants/PokemonTypes";
 
-type PokemonTypes =
-  | NORMAL
-  | FIRE
-  | WATER
-  | ELECTRIC
-  | GRASS
-  | ICE
-  | FIGHTING
-  | POISON
-  | GROUND
-  | FLYING
-  | PSYCHIC
-  | BUG
-  | ROCK
-  | GHOST
-  | DRAGON
-  | DARK
-  | STEEL
-  | FAIRY;
+import {
+  NO_EFFECT,
+  NOT_EFFECTIVE_AT_ALL,
+  NOT_VERY_EFFECTIVE,
+  NORMAL_EFFECTIVENESS,
+  VERY_EFFECTIVE,
+  SUPER_EFFECTIVE,
+} from "../constants/PokemonEffectivenessTypes";
 
-type PokemonInteractionTypes =
-  | "no effect"
-  | "not effective at all"
-  | "not very effective"
-  | "normal effectiveness"
-  | "very effective"
-  | "super effective";
+declare global {
+  export type PokemonType =
+    | typeof NORMAL
+    | typeof FIRE
+    | typeof WATER
+    | typeof ELECTRIC
+    | typeof GRASS
+    | typeof ICE
+    | typeof FIGHTING
+    | typeof POISON
+    | typeof GROUND
+    | typeof FLYING
+    | typeof PSYCHIC
+    | typeof BUG
+    | typeof ROCK
+    | typeof GHOST
+    | typeof DRAGON
+    | typeof DARK
+    | typeof STEEL
+    | typeof FAIRY;
 
-interface IPokemonTypeInteraction {
-  key: string;
-  values: { [key: PokemonTypes]: string }[];
+  export type PokemonEffectivenessType =
+    | typeof NO_EFFECT
+    | typeof NOT_EFFECTIVE_AT_ALL
+    | typeof NOT_VERY_EFFECTIVE
+    | typeof NORMAL_EFFECTIVENESS
+    | typeof VERY_EFFECTIVE
+    | typeof SUPER_EFFECTIVE;
+
+  export type DamageFactor = "0" | "0.25" | "0.5" | "1" | "2" | "4";
+
+  export type Weakness = {
+    type: PokemonType;
+    factor: DamageFactor;
+  };
+
+  export type PokemonInteractionType = {
+    [key: PokemonType]: PokemonEffectivenessType;
+  };
+  export interface IPokemonInteractionTypes {
+    key: string;
+    values: PokemonInteractionType[];
+  }
+  export interface IPokemonStat {
+    label: string;
+    value: number;
+  }
+  export interface IBasicPokemon {
+    id: number;
+    name: string;
+    imageUrl: string;
+    types: string;
+  }
+
+  export type IFullPokemon = IBasicPokemon & {
+    stats: Stat[] | [];
+    weaknesses: Weakness[] | [];
+    evolutionChain: IBasicPokemon[] | [];
+    abilities: string[] | [];
+    description: string;
+    height: number;
+    weight: number;
+    category: string;
+  };
 }
-
-type DamageFactor = "0" | "0.25" | "0.5" | "1" | "2" | "4";
-
-type Weakness = {
-  type: PokemonTypes;
-  factor: DamageFactor;
-};
-interface IPokemonInteractionType {
-  [key: PokemonTypes]: PokemonInteractionTypes;
-}
-interface IPokemonStat {
-  label: string;
-  value: number;
-}
-interface IBasicPokemon {
-  id: number;
-  name: string;
-  imageUrl: string;
-  types: string;
-}
-
-type IFullPokemon = IBasicPokemon & {
-  stats: Stat[] | [];
-  weaknesses: Weakness[] | [];
-  evolutionChain: IBasicPokemon[] | [];
-  abilities: string[] | [];
-  description: string;
-  height: number;
-  weight: number;
-  category: string;
-};
