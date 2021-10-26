@@ -1,6 +1,6 @@
 import { formatToBasicPokemon, formatToFullPokemon, formatPokemonEvolutionChain } from "./formatter/pokemonFormatter";
 import { extractPokemonName, extractPokemonData } from "./formatter/extractors";
-import { PokemonSpecie, IPokemonResponseType } from "./formatter/types";
+import { Specie, IPokemonResponseType } from "./formatter/types";
 
 const POKE_API_URL = "https://pokeapi.co/api/v2/";
 const POKEMON_LIMIT = 2000;
@@ -14,7 +14,7 @@ const request = async (url: string) => {
 
 const fetchPokemonByNameOrId = async (name: string) => await request(`${POKE_API_URL}pokemon/${name}`);
 
-const fetchPokemonEvolutionChain = async (pokemonSpeciesData: PokemonSpecie) => {
+const fetchPokemonEvolutionChain = async (pokemonSpeciesData: Specie) => {
   const pokemonEvolutionData = await request(pokemonSpeciesData.evolution_chain.url);
   const pokemonEvolutionChain = formatPokemonEvolutionChain(pokemonEvolutionData.chain);
   const evolutionChainPokemonsDataPromises = pokemonEvolutionChain.map(fetchPokemonByNameOrId);
