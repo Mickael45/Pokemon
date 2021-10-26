@@ -1,22 +1,43 @@
+import {
+  FIRE,
+  NORMAL,
+  WATER,
+  GRASS,
+  ELECTRIC,
+  ICE,
+  ROCK,
+  FIGHTING,
+  POISON,
+  GROUND,
+  FLYING,
+  PSYCHIC,
+  BUG,
+  GHOST,
+  DARK,
+  DRAGON,
+  STEEL,
+  FAIRY,
+} from "../constants/PokemonTypes";
+
 type PokemonTypes =
-  | "normal"
-  | "fire"
-  | "water"
-  | "electric"
-  | "grass"
-  | "ice"
-  | "fighting"
-  | "poison"
-  | "ground"
-  | "flying"
-  | "psychic"
-  | "bug"
-  | "rock"
-  | "ghost"
-  | "dragon"
-  | "dark"
-  | "steel"
-  | "fairy";
+  | NORMAL
+  | FIRE
+  | WATER
+  | ELECTRIC
+  | GRASS
+  | ICE
+  | FIGHTING
+  | POISON
+  | GROUND
+  | FLYING
+  | PSYCHIC
+  | BUG
+  | ROCK
+  | GHOST
+  | DRAGON
+  | DARK
+  | STEEL
+  | FAIRY;
 
 type PokemonInteractionTypes =
   | "no effect"
