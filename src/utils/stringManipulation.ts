@@ -17,6 +17,10 @@ export const compareStrings = (strA: string, strB: string) => {
   return strA > strB ? 1 : 0;
 };
 
+export const extractThreeFirstLetters = (str: string) => str.substring(0, 3);
+
+export const capitalizeString = (str: string) => str.toUpperCase();
+
 export const formatNumberToMatchLength = (number: number, length: number = 3) => {
   const stringedNumber = number.toString();
 

@@ -21,7 +21,7 @@ th {
   border-top: 1px solid #dddddd;
 }
 
-.firstSquare {
+[data-type="first-square"] {
   width: 130px;
   height: 40px;
   justify-content: left;
