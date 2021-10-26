@@ -10,9 +10,7 @@ import {
   extractPokemonCategory,
   extractTypeName,
 } from "./extractors";
-
-const POKEMON_BASIC_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
-const POKEMON_FULL_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/";
+import { POKEMON_BASIC_PIC_URL, POKEMON_FULL_PIC_URL } from "../../constants/FetchPokemons";
 
 type PIC_TYPE = "basic" | "full";
 

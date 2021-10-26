@@ -5,9 +5,7 @@ import {
 } from "../../utils/pokemonFormatter/pokemonFormatter";
 import { extractPokemonName, extractPokemonData } from "../../utils/pokemonFormatter/extractors";
 import { Specie, IPokemonResponseType } from "../../utils/pokemonFormatter/types";
-
-const POKE_API_URL = "https://pokeapi.co/api/v2/";
-const POKEMON_LIMIT = 2000;
+import { POKEMON_LIMIT, POKE_API_URL } from "../../constants/FetchPokemons";
 
 const request = async (url: string) => {
   const response = await fetch(url);
