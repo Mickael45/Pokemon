@@ -1,5 +1,6 @@
 import { formatToBasicPokemon, formatToFullPokemon, formatPokemonEvolutionChain } from "./formatter/pokemonFormatter";
 import { extractPokemonName, extractPokemonData } from "./formatter/extractors";
+import { PokemonSpecie, IPokemonResponseType } from "./formatter/types";
 
 const POKE_API_URL = "https://pokeapi.co/api/v2/";
 const POKEMON_LIMIT = 2000;
@@ -13,11 +14,11 @@ const request = async (url: string) => {
 
 const fetchPokemonByNameOrId = async (name: string) => await request(`${POKE_API_URL}pokemon/${name}`);
 
-const fetchPokemonEvolutionChain = async (pokemonSpeciesData: any) => {
+const fetchPokemonEvolutionChain = async (pokemonSpeciesData: PokemonSpecie) => {
   const pokemonEvolutionData = await request(pokemonSpeciesData.evolution_chain.url);
   const pokemonEvolutionChain = formatPokemonEvolutionChain(pokemonEvolutionData.chain);
   const evolutionChainPokemonsDataPromises = pokemonEvolutionChain.map(fetchPokemonByNameOrId);
-  const evolutionChainPokemonsData = await Promise.all<any>(evolutionChainPokemonsDataPromises);
+  const evolutionChainPokemonsData = await Promise.all<IPokemonResponseType>(evolutionChainPokemonsDataPromises);
   const formattedEvolutionChainPokemons = evolutionChainPokemonsData.map(formatToBasicPokemon);
 
   return formattedEvolutionChainPokemons;
@@ -35,7 +36,7 @@ export const fetchPokemonDetailsByNameOrId = async (id: string) => {
 export const fetchAllPokemons = async (): Promise<IBasicPokemon[]> => {
   const pokemonsData = await request(`${POKE_API_URL}pokemon?limit=${POKEMON_LIMIT}`);
   const pokemonsName = pokemonsData.results.map(extractPokemonName);
-  const pokemonData = await Promise.all<any>(pokemonsName.map(fetchPokemonByNameOrId));
+  const pokemonData = await Promise.all<IPokemonResponseType>(pokemonsName.map(fetchPokemonByNameOrId));
   const formattedPokemons = pokemonData.map(formatToBasicPokemon);
 
   return formattedPokemons;
@@ -44,7 +45,7 @@ export const fetchAllPokemons = async (): Promise<IBasicPokemon[]> => {
 export const fetchPokemonsByType = async (type: string): Promise<IBasicPokemon[]> => {
   const pokemonsData = await request(`${POKE_API_URL}type/${type}`);
   const pokemonsName = pokemonsData.pokemon.map(extractPokemonData).map(extractPokemonName);
-  const pokemonData = await Promise.all<any>(pokemonsName.map(fetchPokemonByNameOrId));
+  const pokemonData = await Promise.all<IPokemonResponseType>(pokemonsName.map(fetchPokemonByNameOrId));
   const formattedPokemons = pokemonData.map(formatToBasicPokemon);
 
   return formattedPokemons;

@@ -45,6 +45,9 @@ export type GeneraEntry = {
 };
 
 export type PokemonSpecie = {
+  evolution_chain: {
+    url: string;
+  };
   flavor_text_entries: FlavorTextEntry[];
   genera: GeneraEntry[];
 };
