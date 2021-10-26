@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { MAX_POKEMON_ID_ALLOWED } from "../constants/FetchPokemons";
 import {
   sortByNumberFieldAsc,
   sortByNumberFieldDesc,
@@ -26,10 +27,8 @@ const sortingMap: { [key: string]: FormattingFunction } = {
   [DESCENDING_NAME]: (pokemons: IBasicPokemon[]) => sortByStringFieldDesc(pokemons, "name"),
 };
 
-const MAX_ID_ALLOWED = 900;
-
 const pickFirst900Pokemons = (pokemons: IBasicPokemon[]) =>
-  pokemons.filter(({ id }: IBasicPokemon) => id < MAX_ID_ALLOWED);
+  pokemons.filter(({ id }: IBasicPokemon) => id < MAX_POKEMON_ID_ALLOWED);
 
 const usePokemonSort = (
   sortingType: string,

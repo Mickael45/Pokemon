@@ -5,9 +5,7 @@ import {
 } from "../../utils/pokemonFormatter/pokemonFormatter";
 import { extractPokemonName, extractPokemonData } from "../../utils/pokemonFormatter/extractors";
 import { Specie, IPokemonResponseType } from "../../utils/pokemonFormatter/types";
-
-const POKE_API_URL = "https://pokeapi.co/api/v2/";
-const POKEMON_LIMIT = 2000;
+import { MAX_POKEMON_ID_ALLOWED, POKE_API_URL } from "../../constants/FetchPokemons";
 
 const request = async (url: string) => {
   const response = await fetch(url);
@@ -21,6 +19,11 @@ const fetchPokemonByNameOrId = async (name: string) => await request(`${POKE_API
 const fetchPokemonEvolutionChain = async (pokemonSpeciesData: Specie) => {
   const pokemonEvolutionData = await request(pokemonSpeciesData.evolution_chain.url);
   const pokemonEvolutionChain = formatPokemonEvolutionChain(pokemonEvolutionData.chain);
+
+  if (pokemonEvolutionChain.length <= 1) {
+    return [];
+  }
+
   const evolutionChainPokemonsDataPromises = pokemonEvolutionChain.map(fetchPokemonByNameOrId);
   const evolutionChainPokemonsData = await Promise.all<IPokemonResponseType>(evolutionChainPokemonsDataPromises);
   const formattedEvolutionChainPokemons = evolutionChainPokemonsData.map(formatToBasicPokemon);
@@ -38,7 +41,7 @@ export const fetchPokemonDetailsByNameOrId = async (id: string) => {
 };
 
 export const fetchAllPokemons = async (): Promise<IBasicPokemon[]> => {
-  const pokemonsData = await request(`${POKE_API_URL}pokemon?limit=${POKEMON_LIMIT}`);
+  const pokemonsData = await request(`${POKE_API_URL}pokemon?limit=${MAX_POKEMON_ID_ALLOWED}`);
   const pokemonsName = pokemonsData.results.map(extractPokemonName);
   const pokemonData = await Promise.all<IPokemonResponseType>(pokemonsName.map(fetchPokemonByNameOrId));
   const formattedPokemons = pokemonData.map(formatToBasicPokemon);

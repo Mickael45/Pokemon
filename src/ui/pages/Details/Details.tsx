@@ -4,7 +4,6 @@ import { fetchPokemonDetailsByNameOrId } from "../../../services/fetchPokemons/f
 import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
 import ImageWithPlaceholder from "../../components/ImageWithPlaceholder/ImageWithPlaceholder";
 import BasicInfo from "../../components/PokemonBasicInfo/PokemonBasicInfo";
-import Type from "../../components/PokemonType/PokemonType";
 import EvolutionChain from "../../components/EvolutionChain/EvolutionChain";
 import Radar from "../../components/Radar/Radar";
 import IdNavigation from "../../components/IdNavigation/IdNavigation";
@@ -12,6 +11,8 @@ import { DEFAULT_POKEMON } from "../../../constants/DefaultPokemons";
 import { getPokemonPrimaryTypeColor } from "../../../utils/pokemonFormatter/pokemonFormatter";
 import Page from "../../templates/Page/Page";
 import styles from "./Details.module.css";
+import PokemonTypes from "../../components/PokemonTypes/PokemonTypes";
+import PokemonWeaknesses from "../../components/PokemonWeaknesses/PokemonWeaknesses";
 interface Params {
   id: string;
 }
@@ -39,21 +40,6 @@ const Details = () => {
 
   const callBackedHandleTypeClick = useCallback(handleTypeClick, []);
 
-  const renderType = (typeInfo: string | { type: string; child: string }) => {
-    const isString = typeof typeInfo === "string";
-    const type = isString ? typeInfo : typeInfo.type;
-    const child = isString ? "" : typeInfo.child;
-
-    return (
-      <Type key={`${id}-${type}`} type={type} handleClick={callBackedHandleTypeClick}>
-        {child}
-      </Type>
-    );
-  };
-  const renderTypes = () => types.split(",").map(renderType);
-  const renderWeakness = ({ type, factor }: Weakness) => renderType({ type, child: ` (x${factor})` });
-  const renderWeaknesses = () => weaknesses.map(renderWeakness);
-
   return (
     <Page>
       <div className={styles.container}>
@@ -68,9 +54,9 @@ const Details = () => {
             <BasicInfo {...basicInfo} />
             <div>
               <h3>Types</h3>
-              {renderTypes()}
+              <PokemonTypes id={id} types={types} handleClick={callBackedHandleTypeClick} />
               <h3>Weaknesses</h3>
-              {renderWeaknesses()}
+              <PokemonWeaknesses id={id} types={weaknesses} handleClick={callBackedHandleTypeClick} />
             </div>
           </span>
         </div>

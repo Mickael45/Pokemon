@@ -9,10 +9,9 @@ import {
   extractPokemonDescription,
   extractPokemonCategory,
   extractTypeName,
+  replaceBrokenName,
 } from "./extractors";
-
-const POKEMON_BASIC_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
-const POKEMON_FULL_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/";
+import { POKEMON_BASIC_PIC_URL, POKEMON_FULL_PIC_URL } from "../../constants/FetchPokemons";
 
 type PIC_TYPE = "basic" | "full";
 
@@ -51,7 +50,7 @@ export const getPokemonPrimaryTypeColor = (types: string) => {
 export const formatPokemonEvolutionChain = ({ evolves_to, species }: EvolutionData, evolutionChain: string[] = []) => {
   const getNestedEvolutionData = (evolution: EvolvesTo) => formatPokemonEvolutionChain(evolution, evolutionChain);
 
-  evolutionChain.push(species.name);
+  evolutionChain.push(replaceBrokenName(species.name));
   evolves_to.forEach(getNestedEvolutionData);
 
   return evolutionChain;

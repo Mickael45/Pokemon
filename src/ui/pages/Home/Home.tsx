@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, BaseSyntheticEvent } from "react";
+import { useState, useEffect, useCallback, BaseSyntheticEvent, memo } from "react";
 import { useLocation } from "react-router-dom";
 import { fetchAllPokemons } from "../../../services/fetchPokemons/fetchPokemons";
 import { sortingTypesMap } from "../../../hooks/usePokemonSort";
@@ -88,4 +88,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default memo(HomePage);
