@@ -25,7 +25,7 @@ const POKEMON_TYPES = [
   "fairy",
 ];
 
-const EFFECTIVENESS_MAP: MAP = {
+const EFFECTIVENESS_MAP: HashMap = {
   "no effect": "0",
   "not effective at all": "1/4",
   "not very effective": "1/2",

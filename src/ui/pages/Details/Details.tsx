@@ -43,7 +43,7 @@ const Details = () => {
 
   const getPrimaryTypeColor = () => {
     const primaryType = types.split(",")[0];
-    const castedPokemonTypesColor = pokemonTypesColor as MAP;
+    const castedPokemonTypesColor = pokemonTypesColor as HashMap;
 
     return castedPokemonTypesColor[primaryType];
   };

@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const PokemonType = ({ type, handleClick, children = "" }: IProps) => {
-  const castedPokemonTypesColor = pokemonTypesColor as MAP;
+  const castedPokemonTypesColor = pokemonTypesColor as HashMap;
 
   const handleTypeClick = () => handleClick(type);
 
