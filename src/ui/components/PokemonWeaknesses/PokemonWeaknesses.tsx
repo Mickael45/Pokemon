@@ -11,7 +11,7 @@ const PokemonWeaknesses = ({ id, types, handleClick }: IProps) => {
   const renderType = ({ type, factor }: Weakness) => {
     return (
       <PokemonType key={`${id}-${type}`} type={type} handleClick={handleClick}>
-        {`x${factor}`}
+        {` (x${factor})`}
       </PokemonType>
     );
   };
