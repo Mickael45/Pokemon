@@ -15,7 +15,7 @@ import {
   NORMAL_EFFECTIVENESS,
   VERY_EFFECTIVE,
   SUPER_EFFECTIVE,
-} from "../../../constants/PokemonTypesEffectiveness";
+} from "../../../constants/PokemonEffectivenessTypes";
 const POKEMON_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
 
 type PokemonInteractionTypesToDamageFactorType = {
