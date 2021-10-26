@@ -28,6 +28,8 @@ import {
   SUPER_EFFECTIVE,
 } from "../constants/PokemonEffectivenessTypes";
 
+import { ZERO, QUARTER, HALF, ONE, TWO, FOUR } from "../constants/DamageFactors";
+
 declare global {
   export type PokemonType =
     | typeof NORMAL
@@ -57,7 +59,7 @@ declare global {
     | typeof VERY_EFFECTIVE
     | typeof SUPER_EFFECTIVE;
 
-  export type DamageFactor = "0" | "0.25" | "0.5" | "1" | "2" | "4";
+  export type DamageFactor = ZERO | QUARTER | HALF | ONE | TWO | FOUR;
 
   export type Weakness = {
     type: PokemonType;

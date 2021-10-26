@@ -16,6 +16,8 @@ import {
   VERY_EFFECTIVE,
   SUPER_EFFECTIVE,
 } from "../../../constants/PokemonEffectivenessTypes";
+import { ZERO, QUARTER, HALF, ONE, TWO, FOUR } from "../../../constants/DamageFactors";
+
 const POKEMON_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
 
 type PokemonInteractionTypesToDamageFactorType = {
@@ -23,12 +25,12 @@ type PokemonInteractionTypesToDamageFactorType = {
 };
 
 const PokemonInteractionTypesToDamageFactorMap: PokemonInteractionTypesToDamageFactorType = {
-  [NO_EFFECT]: "0",
-  [NOT_EFFECTIVE_AT_ALL]: "0.25",
-  [NOT_VERY_EFFECTIVE]: "1",
-  [NORMAL_EFFECTIVENESS]: "0.5",
-  [VERY_EFFECTIVE]: "1",
-  [SUPER_EFFECTIVE]: "2",
+  [NO_EFFECT]: ZERO,
+  [NOT_EFFECTIVE_AT_ALL]: QUARTER,
+  [NOT_VERY_EFFECTIVE]: HALF,
+  [NORMAL_EFFECTIVENESS]: ONE,
+  [VERY_EFFECTIVE]: TWO,
+  [SUPER_EFFECTIVE]: FOUR,
 };
 
 const isVeryOrSuperEffectiveTypes = (value: PokemonInteractionType) => {
