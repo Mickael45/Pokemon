@@ -2,19 +2,16 @@ import { memo } from "react";
 import { useHistory } from "react-router-dom";
 import { getRandomTransformAnimation } from "../../animations/transform/transform";
 import { capitalizeFirstLetter, formatNumberToMatchLength } from "../../../utils/stringManipulation";
-import PokemonType from "../PokemonType/PokemonType";
 import ImageWithPlaceholder from "../ImageWithPlaceholder/ImageWithPlaceholder";
 import styles from "./Pokemon.module.css";
+import PokemonTypes from "../PokemonTypes/PokemonTypes";
 
 type IProps = IBasicPokemon & {
-  onTypeClick: (type: string) => void;
+  onTypeClick: (type: PokemonType) => void;
 };
 
 const Pokemon = ({ name, imageUrl, id, types, onTypeClick }: IProps) => {
   const history = useHistory();
-  const renderType = (type: string) => <PokemonType key={`${id}-${type}`} type={type} handleClick={onTypeClick} />;
-  const renderTypes = () => types.split(",").map(renderType);
-
   const handleTagClick = () => history.push(`/details/${id}`);
 
   return (
@@ -22,7 +19,9 @@ const Pokemon = ({ name, imageUrl, id, types, onTypeClick }: IProps) => {
       <ImageWithPlaceholder src={imageUrl} alt="pokemon pic" handleClick={handleTagClick} />
       <div onClick={handleTagClick}>{`#${formatNumberToMatchLength(id)}`}</div>
       <h3 onClick={handleTagClick}>{capitalizeFirstLetter(name)}</h3>
-      <span>{renderTypes()}</span>
+      <span>
+        <PokemonTypes id={id} handleClick={onTypeClick} types={types} />
+      </span>
     </div>
   );
 };

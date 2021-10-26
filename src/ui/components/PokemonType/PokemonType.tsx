@@ -4,8 +4,8 @@ import pokemonTypesColor from "../../../constants/TypesColor.json";
 const { typeContainer } = styles;
 
 interface IProps {
-  type: string;
-  handleClick: (type: string) => void;
+  type: PokemonType;
+  handleClick: (type: PokemonType) => void;
   children?: string;
 }
 
