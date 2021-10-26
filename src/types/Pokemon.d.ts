@@ -21,6 +21,7 @@ type PokemonTypes =
 type PokemonInteractionTypes =
   | "no effect"
   | "not effective at all"
+  | "not very effective"
   | "normal effectiveness"
   | "very effective"
   | "super effective";

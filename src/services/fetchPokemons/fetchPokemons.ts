@@ -1,4 +1,5 @@
-import { extractPokemonName, extractPokemonData, formatToBasicPokemon, formatToFullPokemon } from "./pokemonFormater";
+import { formatToBasicPokemon, formatToFullPokemon, formatPokemonEvolutionChain } from "./formatter/pokemonFormatter";
+import { extractPokemonName, extractPokemonData } from "./formatter/extractors";
 
 const POKE_API_URL = "https://pokeapi.co/api/v2/";
 const POKEMON_LIMIT = 2000;
@@ -12,22 +13,11 @@ const request = async (url: string) => {
 
 const fetchPokemonByNameOrId = async (name: string) => await request(`${POKE_API_URL}pokemon/${name}`);
 
-const getPokemonEvolutionChain = ({ evolves_to, species }: any, evolutionChain: any[] = []): any => {
-  evolutionChain.push({
-    name: species.name,
-  });
-
-  evolves_to.forEach((evolution: any) => getPokemonEvolutionChain(evolution, evolutionChain));
-
-  return evolutionChain;
-};
-
 const fetchPokemonEvolutionChain = async (pokemonSpeciesData: any) => {
   const pokemonEvolutionData = await request(pokemonSpeciesData.evolution_chain.url);
-  const pokemonEvolutionChain = getPokemonEvolutionChain(pokemonEvolutionData.chain);
-  const evolutionChainPokemonsData = await Promise.all<any>(
-    pokemonEvolutionChain.map((evolutionData: any) => evolutionData.name).map(fetchPokemonByNameOrId)
-  );
+  const pokemonEvolutionChain = formatPokemonEvolutionChain(pokemonEvolutionData.chain);
+  const evolutionChainPokemonsDataPromises = pokemonEvolutionChain.map(fetchPokemonByNameOrId);
+  const evolutionChainPokemonsData = await Promise.all<any>(evolutionChainPokemonsDataPromises);
   const formattedEvolutionChainPokemons = evolutionChainPokemonsData.map(formatToBasicPokemon);
 
   return formattedEvolutionChainPokemons;
@@ -36,19 +26,8 @@ const fetchPokemonEvolutionChain = async (pokemonSpeciesData: any) => {
 export const fetchPokemonDetailsByNameOrId = async (id: string) => {
   const pokemonData = await fetchPokemonByNameOrId(id);
   const pokemonSpeciesData = await request(`${POKE_API_URL}pokemon-species/${id}`);
-  const pokemonDescription = pokemonSpeciesData.flavor_text_entries.find(
-    (entry: any) => entry.language.name === "en"
-  )?.flavor_text;
-  const pokemonCategory = pokemonSpeciesData.genera
-    .find((entry: any) => entry.language.name === "en")
-    ?.genus.replace("Pokémon", "");
   const evolutionChainPokemons = await fetchPokemonEvolutionChain(pokemonSpeciesData);
-  const formattedPokemon = formatToFullPokemon(
-    pokemonData,
-    evolutionChainPokemons,
-    pokemonDescription,
-    pokemonCategory
-  );
+  const formattedPokemon = formatToFullPokemon(pokemonData, evolutionChainPokemons, pokemonSpeciesData);
 
   return formattedPokemon;
 };
