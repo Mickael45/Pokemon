@@ -9,6 +9,7 @@ import {
   extractPokemonDescription,
   extractPokemonCategory,
   extractTypeName,
+  replaceBrokenName,
 } from "./extractors";
 import { POKEMON_BASIC_PIC_URL, POKEMON_FULL_PIC_URL } from "../../constants/FetchPokemons";
 
@@ -49,7 +50,7 @@ export const getPokemonPrimaryTypeColor = (types: string) => {
 export const formatPokemonEvolutionChain = ({ evolves_to, species }: EvolutionData, evolutionChain: string[] = []) => {
   const getNestedEvolutionData = (evolution: EvolvesTo) => formatPokemonEvolutionChain(evolution, evolutionChain);
 
-  evolutionChain.push(species.name);
+  evolutionChain.push(replaceBrokenName(species.name));
   evolves_to.forEach(getNestedEvolutionData);
 
   return evolutionChain;

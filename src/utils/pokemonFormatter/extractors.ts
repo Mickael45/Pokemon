@@ -4,7 +4,7 @@ import { TypeData, Type, Stat, Ability, FlavorTextEntry, GeneraEntry, Specie, IP
 
 const findEnglishEntry = (entry: FlavorTextEntry | GeneraEntry) => entry.language.name === "en";
 
-const replaceBrokenName = (name: string) => brokenNamesMap[name] || name;
+export const replaceBrokenName = (name: string) => brokenNamesMap[name] || name;
 
 export const extractStatsFromPokemon = ({ stats }: IPokemonResponseType) => {
   const formatStatLabel = (statLabel: string) => capitalizeFirstLetter(statLabel.replaceAll("-", " "));

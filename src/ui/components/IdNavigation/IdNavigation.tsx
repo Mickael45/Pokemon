@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
-import styles from "./IdNavigation.module.css";
 import { MAX_POKEMON_ID_ALLOWED } from "../../../constants/FetchPokemons";
+import styles from "./IdNavigation.module.css";
 
 interface IProps {
   id: string;
@@ -11,7 +11,7 @@ const IdNavigation = ({ id }: IProps) => {
   const history = useHistory();
 
   const createPreviousId = () => (idNumber - 1 === 0 ? MAX_POKEMON_ID_ALLOWED : idNumber - 1);
-  const createNextId = () => (idNumber + 1 === MAX_POKEMON_ID_ALLOWED ? 1 : idNumber + 1);
+  const createNextId = () => (idNumber === MAX_POKEMON_ID_ALLOWED ? 1 : idNumber + 1);
 
   const previousId = createPreviousId();
   const nextId = createNextId();

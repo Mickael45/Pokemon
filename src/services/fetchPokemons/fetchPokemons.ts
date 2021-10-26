@@ -5,7 +5,7 @@ import {
 } from "../../utils/pokemonFormatter/pokemonFormatter";
 import { extractPokemonName, extractPokemonData } from "../../utils/pokemonFormatter/extractors";
 import { Specie, IPokemonResponseType } from "../../utils/pokemonFormatter/types";
-import { POKEMON_LIMIT, POKE_API_URL } from "../../constants/FetchPokemons";
+import { MAX_POKEMON_ID_ALLOWED, POKE_API_URL } from "../../constants/FetchPokemons";
 
 const request = async (url: string) => {
   const response = await fetch(url);
@@ -41,7 +41,7 @@ export const fetchPokemonDetailsByNameOrId = async (id: string) => {
 };
 
 export const fetchAllPokemons = async (): Promise<IBasicPokemon[]> => {
-  const pokemonsData = await request(`${POKE_API_URL}pokemon?limit=${POKEMON_LIMIT}`);
+  const pokemonsData = await request(`${POKE_API_URL}pokemon?limit=${MAX_POKEMON_ID_ALLOWED}`);
   const pokemonsName = pokemonsData.results.map(extractPokemonName);
   const pokemonData = await Promise.all<IPokemonResponseType>(pokemonsName.map(fetchPokemonByNameOrId));
   const formattedPokemons = pokemonData.map(formatToBasicPokemon);
