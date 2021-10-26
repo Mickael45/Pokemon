@@ -29,6 +29,8 @@ const Details = () => {
     fetchPokemonDetailsByNameOrId(id).then(setPokemon);
   };
 
+  useEffect(getPokemonById, [id]);
+
   const handleTypeClick = (type: string) =>
     history.push({
       pathname: "/",
@@ -37,26 +39,21 @@ const Details = () => {
 
   const callBackedHandleTypeClick = useCallback(handleTypeClick, []);
 
-  const renderType = (type: string, child?: any) => (
-    <Type key={`${id}-${type}`} type={type} handleClick={callBackedHandleTypeClick}>
-      {child}
-    </Type>
-  );
-  const renderTypes = () => {
-    const renderTypeWithoutChild = (type: string) => renderType(type);
+  const renderType = (typeInfo: string | { type: string; child: string }) => {
+    const isString = typeof typeInfo === "string";
+    const type = isString ? typeInfo : typeInfo.type;
+    const child = isString ? "" : typeInfo.child;
 
-    return types.split(",").map(renderTypeWithoutChild);
+    return (
+      <Type key={`${id}-${type}`} type={type} handleClick={callBackedHandleTypeClick}>
+        {child}
+      </Type>
+    );
   };
-  const renderWeakness = ({ type, factor }: Weakness) => renderType(type, ` (x${factor})`);
+  const renderTypes = () => types.split(",").map(renderType);
+  const renderWeakness = ({ type, factor }: Weakness) => renderType({ type, child: ` (x${factor})` });
   const renderWeaknesses = () => weaknesses.map(renderWeakness);
-  const renderSection = (title: string, children: JSX.Element[] | string) => (
-    <>
-      <h3>{title}</h3>
-      {children}
-    </>
-  );
 
-  useEffect(getPokemonById, [id]);
   return (
     <Page>
       <div className={styles.container}>
@@ -70,8 +67,10 @@ const Details = () => {
           <span>
             <BasicInfo {...basicInfo} />
             <div>
-              {renderSection("Types", renderTypes())}
-              {renderSection("Weaknesses", renderWeaknesses())}
+              <h3>Types</h3>
+              {renderTypes()}
+              <h3>Weaknesses</h3>
+              {renderWeaknesses()}
             </div>
           </span>
         </div>
