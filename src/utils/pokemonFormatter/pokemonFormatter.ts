@@ -1,7 +1,8 @@
-import { formatNumberToMatchLength } from "../../../utils/stringManipulation";
-import typesInteractionData from "../../../constants/TypeInteractions.json";
+import { formatNumberToMatchLength } from "../stringManipulation";
+import typesInteractionData from "../../constants/TypeInteractions.json";
 import { EvolutionData, EvolvesTo, Specie, IPokemonResponseType } from "./types";
-import EffectivenessTypeToDamageFactorHashMapType from "../../../constants/EffectivenessTypeToDamageFactorHashMap";
+import EffectivenessTypeToDamageFactorHashMapType from "../../constants/EffectivenessTypeToDamageFactorHashMap";
+import pokemonTypesColor from "../../constants/TypesColor.json";
 import {
   extractStatsFromPokemon,
   extractAbilitiesFromPokemon,
@@ -10,7 +11,10 @@ import {
   extractTypeName,
 } from "./extractors";
 
-const POKEMON_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
+const POKEMON_BASIC_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
+const POKEMON_FULL_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/";
+
+type PIC_TYPE = "basic" | "full";
 
 const isVeryOrSuperEffectiveTypes = (value: PokemonInteractionType) => {
   const firstValue = Object.values(value)[0] as PokemonEffectivenessType;
@@ -37,6 +41,13 @@ const getPokemonWeaknesses = (types: string) => {
   return weakInteractionTypes || [];
 };
 
+export const getPokemonPrimaryTypeColor = (types: string) => {
+  const primaryType = types.split(",")[0];
+  const castedPokemonTypesColor = pokemonTypesColor as HashMap;
+
+  return castedPokemonTypesColor[primaryType];
+};
+
 export const formatPokemonEvolutionChain = ({ evolves_to, species }: EvolutionData, evolutionChain: string[] = []) => {
   const getNestedEvolutionData = (evolution: EvolvesTo) => formatPokemonEvolutionChain(evolution, evolutionChain);
 
@@ -46,9 +57,12 @@ export const formatPokemonEvolutionChain = ({ evolves_to, species }: EvolutionDa
   return evolutionChain;
 };
 
+const createImageUrl = (id: number, imgType: PIC_TYPE = "basic") =>
+  `${imgType === "basic" ? POKEMON_BASIC_PIC_URL : POKEMON_FULL_PIC_URL}${formatNumberToMatchLength(id)}.png`;
+
 export const formatToBasicPokemon = (pokemon: IPokemonResponseType): IBasicPokemon => {
   const { id, name, types } = pokemon;
-  const imageUrl = `${POKEMON_PIC_URL}${formatNumberToMatchLength(id)}.png`;
+  const imageUrl = createImageUrl(id);
   const typesName = types.map(extractTypeName).join(",");
 
   return { id, name, imageUrl, types: typesName };
@@ -69,6 +83,7 @@ export const formatToFullPokemon = (
 
   return {
     ...pokemonBasicInfo,
+    imageUrl: createImageUrl(pokemon.id, "full"),
     stats,
     weaknesses,
     height: height * 10,

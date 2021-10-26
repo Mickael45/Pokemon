@@ -1,0 +1,21 @@
+.container > :nth-child(2) {
+  text-align: center;
+}
+
+.container > :nth-child(3) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container img {
+  width: 100%;
+}
+
+.container > :nth-child(3) > * {
+  display: grid;
+  width: 100%;
+  max-width: 45%;
+  min-width: 375px;
+  align-content: space-evenly;
+}

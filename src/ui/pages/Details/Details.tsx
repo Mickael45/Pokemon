@@ -2,36 +2,19 @@ import { useEffect, useState, useCallback } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { fetchPokemonDetailsByNameOrId } from "../../../services/fetchPokemons/fetchPokemons";
 import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
-import {
-  convertCmtoMeterString,
-  cmToFeetString,
-  joinValueWithUnit,
-  kgToPoundsString,
-} from "../../../utils/unitConverter";
 import ImageWithPlaceholder from "../../components/ImageWithPlaceholder/ImageWithPlaceholder";
-import PokemonType from "../../components/PokemonType/PokemonType";
-import Radar from "../../components/Radar/Radar";
+import BasicInfo from "../../components/PokemonBasicInfo/PokemonBasicInfo";
+import Type from "../../components/PokemonType/PokemonType";
 import EvolutionChain from "../../components/EvolutionChain/EvolutionChain";
+import Radar from "../../components/Radar/Radar";
+import IdNavigation from "../../components/IdNavigation/IdNavigation";
+import { DEFAULT_POKEMON } from "../../../constants/DefaultPokemons";
+import { getPokemonPrimaryTypeColor } from "../../../utils/pokemonFormatter/pokemonFormatter";
 import Page from "../../templates/Page/Page";
-import pokemonTypesColor from "../../../constants/TypesColor.json";
+import styles from "./Details.module.css";
 interface Params {
   id: string;
 }
-
-const DEFAULT_POKEMON = {
-  imageUrl: "",
-  name: "",
-  types: "",
-  height: 0,
-  weight: 0,
-  id: 0,
-  stats: [],
-  weaknesses: [],
-  evolutionChain: [],
-  abilities: [],
-  description: "",
-  category: "",
-};
 
 const Details = () => {
   const { id } = useParams<Params>();
@@ -39,17 +22,14 @@ const Details = () => {
   const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
   const { imageUrl, name, stats, height, weight, types, weaknesses, evolutionChain, abilities, description, category } =
     pokemon;
+  const color = getPokemonPrimaryTypeColor(types);
+  const basicInfo = { description, height, weight, category, types, abilities, color };
 
   const getPokemonById = () => {
     fetchPokemonDetailsByNameOrId(id).then(setPokemon);
   };
 
-  const getPrimaryTypeColor = () => {
-    const primaryType = types.split(",")[0];
-    const castedPokemonTypesColor = pokemonTypesColor as HashMap;
-
-    return castedPokemonTypesColor[primaryType];
-  };
+  useEffect(getPokemonById, [id]);
 
   const handleTypeClick = (type: string) =>
     history.push({
@@ -57,55 +37,43 @@ const Details = () => {
       search: `name=${type}&field=types`,
     });
 
-  const handlePreviousButtonClick = () => history.push(`/details/${pokemon.id - 1}`);
-
-  const handleNextButtonClick = () => history.push(`/details/${pokemon.id + 1}`);
-
   const callBackedHandleTypeClick = useCallback(handleTypeClick, []);
 
-  const renderType = (type: string, child?: any) => (
-    <PokemonType key={`${id}-${type}`} type={type} handleClick={callBackedHandleTypeClick}>
-      {child}
-    </PokemonType>
-  );
-  const renderTypes = () => {
-    const renderTypeWithoutChild = (type: string) => renderType(type);
+  const renderType = (typeInfo: string | { type: string; child: string }) => {
+    const isString = typeof typeInfo === "string";
+    const type = isString ? typeInfo : typeInfo.type;
+    const child = isString ? "" : typeInfo.child;
 
-    return types.split(",").map(renderTypeWithoutChild);
+    return (
+      <Type key={`${id}-${type}`} type={type} handleClick={callBackedHandleTypeClick}>
+        {child}
+      </Type>
+    );
   };
-  const renderWeakness = ({ type, factor }: Weakness) => renderType(type, ` (x${factor})`);
+  const renderTypes = () => types.split(",").map(renderType);
+  const renderWeakness = ({ type, factor }: Weakness) => renderType({ type, child: ` (x${factor})` });
   const renderWeaknesses = () => weaknesses.map(renderWeakness);
-  const renderAbility = (ability: string) => <p>{ability}</p>;
-  const renderAblilities = () => abilities.map(renderAbility);
-  const renderStatsRadar = () => <Radar title="Stats" axisDataList={stats} color={getPrimaryTypeColor()} />;
-  const renderHeight = () => <p>{`Height: ${convertCmtoMeterString(height)} (${cmToFeetString(height)})`}</p>;
-  const renderWeight = () => <p>{`Weight: ${joinValueWithUnit(weight, "kg")} (${kgToPoundsString(weight)})`}</p>;
-
-  useEffect(getPokemonById, [id]);
 
   return (
     <Page>
-      <div>
-        <span>
-          <button onClick={handlePreviousButtonClick}>{pokemon.id - 1}</button>
-          <button onClick={handleNextButtonClick}>{pokemon.id + 1}</button>
-        </span>
-        <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
-        <span>{id}</span>
-        <h2>{capitalizeFirstLetter(name)}</h2>
-        {renderHeight()}
-        {renderWeight()}
-        <h3>Description:</h3>
-        {description}
-        <h3>Category:</h3>
-        {category}
-        <h3>Abilities:</h3>
-        {renderAblilities()}
-        <h3>Types:</h3>
-        {renderTypes()}
-        <h3>Weaknesses:</h3>
-        {renderWeaknesses()}
-        {renderStatsRadar()}
+      <div className={styles.container}>
+        <IdNavigation id={id} />
+        <div>{`${capitalizeFirstLetter(name)} #${id}`}</div>
+        <div>
+          <span>
+            <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
+            <Radar title="Stats" axisDataList={stats} color={color} />
+          </span>
+          <span>
+            <BasicInfo {...basicInfo} />
+            <div>
+              <h3>Types</h3>
+              {renderTypes()}
+              <h3>Weaknesses</h3>
+              {renderWeaknesses()}
+            </div>
+          </span>
+        </div>
         <EvolutionChain chain={evolutionChain} handleClick={callBackedHandleTypeClick} />
       </div>
     </Page>
