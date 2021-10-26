@@ -1,6 +1,6 @@
 import { TypeInteractionsTable } from "../../components";
 import { Page } from "../../templates";
-import typeInteractionsData from "./typeInteractions.json";
+import typeInteractionsData from "../../../constants/TypeInteractions.json";
 
 const TypeInteractionsPage = () => {
   const renderTypeInteractionTable = (typeInteractions: IPokemonInteractionTypes[], index: number) => (

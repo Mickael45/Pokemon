@@ -1,5 +1,5 @@
 import { formatNumberToMatchLength } from "../../../utils";
-import typesInteractionData from "../../../ui/pages/TypeInteractions/typeInteractions.json";
+import typesInteractionData from "../../../constants/TypeInteractions.json";
 import { PokemonEvolutionData, PokemonSpecie, IPokemonResponseType } from "./types";
 import {
   extractStatsFromPokemon,
