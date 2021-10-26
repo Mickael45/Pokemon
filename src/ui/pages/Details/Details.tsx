@@ -10,7 +10,7 @@ import {
   joinValueWithUnit,
   kgToPoundsString,
 } from "../../../utils/unitConverter";
-import pokemonTypesColor from "../../../constants/PokemonTypesColor.json";
+import pokemonTypesColor from "../../../constants/TypesColor.json";
 interface Params {
   id: string;
 }

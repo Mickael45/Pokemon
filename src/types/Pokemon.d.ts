@@ -17,7 +17,7 @@ import {
   DARK,
   STEEL,
   FAIRY,
-} from "../constants/PokemonTypes";
+} from "../constants/Types";
 
 import {
   NO_EFFECT,
@@ -26,7 +26,7 @@ import {
   NORMAL_EFFECTIVENESS,
   VERY_EFFECTIVE,
   SUPER_EFFECTIVE,
-} from "../constants/PokemonEffectivenessTypes";
+} from "../constants/EffectivenessTypes";
 
 import { ZERO, QUARTER, HALF, ONE, TWO, FOUR } from "../constants/DamageFactors";
 

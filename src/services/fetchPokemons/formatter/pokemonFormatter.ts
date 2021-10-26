@@ -15,7 +15,7 @@ import {
   NORMAL_EFFECTIVENESS,
   VERY_EFFECTIVE,
   SUPER_EFFECTIVE,
-} from "../../../constants/PokemonEffectivenessTypes";
+} from "../../../constants/EffectivenessTypes";
 import { ZERO, QUARTER, HALF, ONE, TWO, FOUR } from "../../../constants/DamageFactors";
 
 const POKEMON_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";

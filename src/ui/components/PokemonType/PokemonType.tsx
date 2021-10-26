@@ -1,6 +1,6 @@
 import { capitalizeFirstLetter } from "../../../utils";
 import styles from "./PokemonType.module.css";
-import pokemonTypesColor from "../../../constants/PokemonTypesColor.json";
+import pokemonTypesColor from "../../../constants/TypesColor.json";
 const { typeContainer } = styles;
 
 interface IProps {
