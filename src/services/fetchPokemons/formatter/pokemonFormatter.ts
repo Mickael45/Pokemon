@@ -1,6 +1,7 @@
 import { formatNumberToMatchLength } from "../../../utils";
 import typesInteractionData from "../../../constants/TypeInteractions.json";
 import { PokemonEvolutionData, PokemonSpecie, IPokemonResponseType } from "./types";
+import EffectivenessTypeToDamageFactorHashMapType from "../../../constants/EffectivenessTypeToDamageFactorHashMap";
 import {
   extractStatsFromPokemon,
   extractAbilitiesFromPokemon,
@@ -8,30 +9,8 @@ import {
   extractPokemonCategory,
   extractTypeName,
 } from "./extractors";
-import {
-  NO_EFFECT,
-  NOT_EFFECTIVE_AT_ALL,
-  NOT_VERY_EFFECTIVE,
-  NORMAL_EFFECTIVENESS,
-  VERY_EFFECTIVE,
-  SUPER_EFFECTIVE,
-} from "../../../constants/EffectivenessTypes";
-import { ZERO, QUARTER, HALF, ONE, TWO, FOUR } from "../../../constants/DamageFactors";
 
 const POKEMON_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
-
-type PokemonInteractionTypesToDamageFactorType = {
-  [key in PokemonEffectivenessType]: DamageFactor;
-};
-
-const PokemonInteractionTypesToDamageFactorMap: PokemonInteractionTypesToDamageFactorType = {
-  [NO_EFFECT]: ZERO,
-  [NOT_EFFECTIVE_AT_ALL]: QUARTER,
-  [NOT_VERY_EFFECTIVE]: HALF,
-  [NORMAL_EFFECTIVENESS]: ONE,
-  [VERY_EFFECTIVE]: TWO,
-  [SUPER_EFFECTIVE]: FOUR,
-};
 
 const isVeryOrSuperEffectiveTypes = (value: PokemonInteractionType) => {
   const firstValue = Object.values(value)[0] as PokemonEffectivenessType;
@@ -42,7 +21,7 @@ const isVeryOrSuperEffectiveTypes = (value: PokemonInteractionType) => {
 const createWeaknessInteractionTypeObj = (value: any) => {
   const type = Object.keys(value)[0] as PokemonType;
   const interactionType = Object.values(value)[0] as PokemonEffectivenessType;
-  const factor = PokemonInteractionTypesToDamageFactorMap[interactionType];
+  const factor = EffectivenessTypeToDamageFactorHashMapType[interactionType];
 
   return { type, factor };
 };
