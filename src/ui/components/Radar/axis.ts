@@ -1,5 +1,6 @@
 import { RADAR_WIDTH, RADAR_HEIGHT, RADIANS } from "./constants";
-import { createRadialOpacityGradient, calculateAxisXPointPosition, calculateAxisYPointPosition } from ".";
+import { calculateAxisXPointPosition, calculateAxisYPointPosition } from "./pointPositionCalculator";
+import createRadialOpacityGradient from "./colorGradient";
 
 import type { D3SVGElement, D3AxisElement, AxisData } from "./types";
 

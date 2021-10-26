@@ -1,4 +1,4 @@
-import { Pokemon } from "..";
+import Pokemon from "../Pokemon/Pokemon";
 import styles from "./EvolutionChain.module.css";
 
 interface IProps {

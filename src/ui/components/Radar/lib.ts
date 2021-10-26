@@ -1,5 +1,6 @@
 import { select } from "d3";
-import { createAxes, createCurve } from ".";
+import createCurve from "./curve";
+import createAxes from "./axis";
 import {
   SVG_HEIGHT,
   SVG_WIDTH,

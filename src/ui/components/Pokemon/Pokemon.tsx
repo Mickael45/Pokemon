@@ -1,8 +1,9 @@
 import { memo } from "react";
 import { useHistory } from "react-router-dom";
-import { getRandomTransformAnimation } from "../../animations";
-import { capitalizeFirstLetter, formatNumberToMatchLength } from "../../../utils";
-import { PokemonType, ImageWithPlaceholder } from "../";
+import { getRandomTransformAnimation } from "../../animations/transform/transform";
+import { capitalizeFirstLetter, formatNumberToMatchLength } from "../../../utils/stringManipulation";
+import PokemonType from "../PokemonType/PokemonType";
+import ImageWithPlaceholder from "../ImageWithPlaceholder/ImageWithPlaceholder";
 import styles from "./Pokemon.module.css";
 
 type IProps = IBasicPokemon & {
