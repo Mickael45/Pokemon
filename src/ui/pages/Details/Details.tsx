@@ -2,18 +2,15 @@ import { useEffect, useState, useCallback } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { fetchPokemonDetailsByNameOrId } from "../../../services/fetchPokemons/fetchPokemons";
 import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
-import {
-  convertCmtoMeterString,
-  cmToFeetString,
-  joinValueWithUnit,
-  kgToPoundsString,
-} from "../../../utils/unitConverter";
 import ImageWithPlaceholder from "../../components/ImageWithPlaceholder/ImageWithPlaceholder";
-import PokemonType from "../../components/PokemonType/PokemonType";
-import Radar from "../../components/Radar/Radar";
+import BasicInfo from "../../components/PokemonBasicInfo/PokemonBasicInfo";
+import Type from "../../components/PokemonType/PokemonType";
 import EvolutionChain from "../../components/EvolutionChain/EvolutionChain";
+import Radar from "../../components/Radar/Radar";
+
 import Page from "../../templates/Page/Page";
 import pokemonTypesColor from "../../../constants/TypesColor.json";
+import styles from "./Details.module.css";
 interface Params {
   id: string;
 }
@@ -64,9 +61,9 @@ const Details = () => {
   const callBackedHandleTypeClick = useCallback(handleTypeClick, []);
 
   const renderType = (type: string, child?: any) => (
-    <PokemonType key={`${id}-${type}`} type={type} handleClick={callBackedHandleTypeClick}>
+    <Type key={`${id}-${type}`} type={type} handleClick={callBackedHandleTypeClick}>
       {child}
-    </PokemonType>
+    </Type>
   );
   const renderTypes = () => {
     const renderTypeWithoutChild = (type: string) => renderType(type);
@@ -75,37 +72,43 @@ const Details = () => {
   };
   const renderWeakness = ({ type, factor }: Weakness) => renderType(type, ` (x${factor})`);
   const renderWeaknesses = () => weaknesses.map(renderWeakness);
-  const renderAbility = (ability: string) => <p>{ability}</p>;
-  const renderAblilities = () => abilities.map(renderAbility);
-  const renderStatsRadar = () => <Radar title="Stats" axisDataList={stats} color={getPrimaryTypeColor()} />;
-  const renderHeight = () => <p>{`Height: ${convertCmtoMeterString(height)} (${cmToFeetString(height)})`}</p>;
-  const renderWeight = () => <p>{`Weight: ${joinValueWithUnit(weight, "kg")} (${kgToPoundsString(weight)})`}</p>;
+  const renderSection = (title: string, children: JSX.Element[] | string) => (
+    <>
+      <h3>{title}</h3>
+      {children}
+    </>
+  );
 
   useEffect(getPokemonById, [id]);
 
   return (
     <Page>
-      <div>
+      <div className={styles.container}>
         <span>
           <button onClick={handlePreviousButtonClick}>{pokemon.id - 1}</button>
           <button onClick={handleNextButtonClick}>{pokemon.id + 1}</button>
+          <div>{`#${id} ${capitalizeFirstLetter(name)}`}</div>
         </span>
-        <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
-        <span>{id}</span>
-        <h2>{capitalizeFirstLetter(name)}</h2>
-        {renderHeight()}
-        {renderWeight()}
-        <h3>Description:</h3>
-        {description}
-        <h3>Category:</h3>
-        {category}
-        <h3>Abilities:</h3>
-        {renderAblilities()}
-        <h3>Types:</h3>
-        {renderTypes()}
-        <h3>Weaknesses:</h3>
-        {renderWeaknesses()}
-        {renderStatsRadar()}
+        <div>
+          <span>
+            <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
+            <Radar title="Stats" axisDataList={stats} color={getPrimaryTypeColor()} />
+          </span>
+          <span>
+            <BasicInfo
+              background={getPrimaryTypeColor()}
+              description={description}
+              height={height}
+              weight={weight}
+              category={category}
+              abilities={abilities}
+            />
+            <div>
+              {renderSection("Types", renderTypes())}
+              {renderSection("Weaknesses", renderWeaknesses())}
+            </div>
+          </span>
+        </div>
         <EvolutionChain chain={evolutionChain} handleClick={callBackedHandleTypeClick} />
       </div>
     </Page>

@@ -10,7 +10,10 @@ import {
   extractTypeName,
 } from "./extractors";
 
-const POKEMON_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
+const POKEMON_BASIC_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
+const POKEMON_FULL_PIC_URL = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/";
+
+type PIC_TYPE = "basic" | "full";
 
 const isVeryOrSuperEffectiveTypes = (value: PokemonInteractionType) => {
   const firstValue = Object.values(value)[0] as PokemonEffectivenessType;
@@ -46,9 +49,12 @@ export const formatPokemonEvolutionChain = ({ evolves_to, species }: EvolutionDa
   return evolutionChain;
 };
 
+const createImageUrl = (id: number, imgType: PIC_TYPE = "basic") =>
+  `${imgType === "basic" ? POKEMON_BASIC_PIC_URL : POKEMON_FULL_PIC_URL}${formatNumberToMatchLength(id)}.png`;
+
 export const formatToBasicPokemon = (pokemon: IPokemonResponseType): IBasicPokemon => {
   const { id, name, types } = pokemon;
-  const imageUrl = `${POKEMON_PIC_URL}${formatNumberToMatchLength(id)}.png`;
+  const imageUrl = createImageUrl(id);
   const typesName = types.map(extractTypeName).join(",");
 
   return { id, name, imageUrl, types: typesName };
@@ -69,6 +75,7 @@ export const formatToFullPokemon = (
 
   return {
     ...pokemonBasicInfo,
+    imageUrl: createImageUrl(pokemon.id, "full"),
     stats,
     weaknesses,
     height: height * 10,
