@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.container button {
+  border: none;
+  background: none;
+  font-size: 150%;
+}

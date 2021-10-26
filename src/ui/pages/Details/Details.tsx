@@ -11,6 +11,7 @@ import Radar from "../../components/Radar/Radar";
 import Page from "../../templates/Page/Page";
 import pokemonTypesColor from "../../../constants/TypesColor.json";
 import styles from "./Details.module.css";
+import IdNavigation from "../../components/IdNavigation/IdNavigation";
 interface Params {
   id: string;
 }
@@ -54,9 +55,7 @@ const Details = () => {
       search: `name=${type}&field=types`,
     });
 
-  const handlePreviousButtonClick = () => history.push(`/details/${pokemon.id - 1}`);
-
-  const handleNextButtonClick = () => history.push(`/details/${pokemon.id + 1}`);
+  const handleNavigationClick = (id: number) => history.push(`/details/${id}`);
 
   const callBackedHandleTypeClick = useCallback(handleTypeClick, []);
 
@@ -84,11 +83,8 @@ const Details = () => {
   return (
     <Page>
       <div className={styles.container}>
-        <span>
-          <button onClick={handlePreviousButtonClick}>{pokemon.id - 1}</button>
-          <button onClick={handleNextButtonClick}>{pokemon.id + 1}</button>
-          <div>{`#${id} ${capitalizeFirstLetter(name)}`}</div>
-        </span>
+        <IdNavigation id={id} handleClick={handleNavigationClick} />
+        <div>{`${capitalizeFirstLetter(name)} #${id}`}</div>
         <div>
           <span>
             <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
