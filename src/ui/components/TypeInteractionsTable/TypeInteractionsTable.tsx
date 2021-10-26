@@ -1,43 +1,15 @@
+import EffectivenessTypeToDamageFactorHashMap from "../../../constants/EffectivenessTypeToDamageFactorHashMap";
+import * as POKEMON_TYPES from "../../../constants/Types";
 import styles from "./TypeInteractionsTable.module.css";
 
 interface IProps {
   typeInteractions: IPokemonInteractionTypes[];
 }
 
-const POKEMON_TYPES = [
-  "normal",
-  "fire",
-  "water",
-  "electric",
-  "grass",
-  "ice",
-  "fighting",
-  "poison",
-  "ground",
-  "flying",
-  "psychic",
-  "bug",
-  "rock",
-  "ghost",
-  "dragon",
-  "dark",
-  "steel",
-  "fairy",
-];
-
-const EFFECTIVENESS_MAP: HashMap = {
-  "no effect": "0",
-  "not effective at all": "1/4",
-  "not very effective": "1/2",
-  "normal effectiveness": "",
-  "very effective": "2",
-  "super effective": "4",
-};
-
 const renderHeader = () => {
   const capitalizeString = (str: string) => str.toUpperCase();
   const extractThreeFirstLetters = (str: string) => str.substring(0, 3);
-  const shortTypesName = POKEMON_TYPES.map(extractThreeFirstLetters).map(capitalizeString);
+  const shortTypesName = Object.values(POKEMON_TYPES).map(extractThreeFirstLetters).map(capitalizeString);
 
   const renderHeaderTag = (content: string) => <th key={content}>{content}</th>;
 
@@ -50,13 +22,15 @@ const renderHeader = () => {
 };
 
 const renderRow = ({ key, values }: IPokemonInteractionTypes) => {
-  const convertEffectivenessStringToDamageRatio = (effectiveness: string) => EFFECTIVENESS_MAP[effectiveness];
-  const extractEffectiveness = (value: any, index: number) => value[POKEMON_TYPES[index]];
+  const convertEffectivenessStringToDamageRatio = (effectiveness: PokemonEffectivenessType) =>
+    EffectivenessTypeToDamageFactorHashMap[effectiveness];
+  const extractEffectiveness = (value: PokemonInteractionType): PokemonEffectivenessType =>
+    Object.values<PokemonEffectivenessType>(value)[0];
   const damageRatioArray = values.map(extractEffectiveness).map(convertEffectivenessStringToDamageRatio);
 
   const renderData = (value: string, index: number) => (
     <td key={index} data-effectiveness={value}>
-      {value}
+      {value === "1" ? "" : value}
     </td>
   );
 
