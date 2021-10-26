@@ -11,7 +11,7 @@ const TypeInteractionsPage = () => {
 
   return (
     <Page>
-      <>{renderTypeInteractionTables()}</>
+      <div>{renderTypeInteractionTables()}</div>
     </Page>
   );
 };
