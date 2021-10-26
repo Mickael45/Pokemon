@@ -59,10 +59,10 @@ const getPokemonWeaknesses = (types: string) => {
 };
 
 export const formatPokemonEvolutionChain = (
-  { evolves_to, specie }: PokemonEvolutionData,
+  { evolves_to, species }: PokemonEvolutionData,
   evolutionChain: string[] = []
 ) => {
-  evolutionChain.push(specie.name);
+  evolutionChain.push(species.name);
   evolves_to.forEach((evolution: any) => formatPokemonEvolutionChain(evolution, evolutionChain));
 
   return evolutionChain;

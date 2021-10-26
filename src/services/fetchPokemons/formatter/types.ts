@@ -7,7 +7,7 @@ export type PokemonType = {
 export type PokemonEvolutionData = {
   evolves_to: [{ evolves_to?: []; evolution_details: [] }];
   evolution_details: {};
-  specie: { name: string };
+  species: { name: string };
 };
 
 export type PokemonTypeData = {
