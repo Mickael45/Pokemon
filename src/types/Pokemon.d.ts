@@ -26,7 +26,7 @@ import {
   NORMAL_EFFECTIVENESS,
   VERY_EFFECTIVE,
   SUPER_EFFECTIVE,
-} from "../constants/PokemonEffectivenessTypes";
+} from "../constants/PokemonTypesEffectiveness";
 
 declare global {
   export type PokemonType =
