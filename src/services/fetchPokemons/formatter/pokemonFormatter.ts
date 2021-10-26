@@ -1,6 +1,6 @@
 import { formatNumberToMatchLength } from "../../../utils";
 import typesInteractionData from "../../../constants/TypeInteractions.json";
-import { PokemonEvolutionData, PokemonSpecie, IPokemonResponseType } from "./types";
+import { EvolutionData, EvolvesTo, Specie, IPokemonResponseType } from "./types";
 import EffectivenessTypeToDamageFactorHashMapType from "../../../constants/EffectivenessTypeToDamageFactorHashMap";
 import {
   extractStatsFromPokemon,
@@ -18,7 +18,7 @@ const isVeryOrSuperEffectiveTypes = (value: PokemonInteractionType) => {
   return firstValue === "very effective" || firstValue === "super effective";
 };
 
-const createWeaknessInteractionTypeObj = (value: any) => {
+const createWeaknessInteractionTypeObj = (value: PokemonInteractionType) => {
   const type = Object.keys(value)[0] as PokemonType;
   const interactionType = Object.values(value)[0] as PokemonEffectivenessType;
   const factor = EffectivenessTypeToDamageFactorHashMapType[interactionType];
@@ -37,12 +37,11 @@ const getPokemonWeaknesses = (types: string) => {
   return weakInteractionTypes || [];
 };
 
-export const formatPokemonEvolutionChain = (
-  { evolves_to, species }: PokemonEvolutionData,
-  evolutionChain: string[] = []
-) => {
+export const formatPokemonEvolutionChain = ({ evolves_to, species }: EvolutionData, evolutionChain: string[] = []) => {
+  const getNestedEvolutionData = (evolution: EvolvesTo) => formatPokemonEvolutionChain(evolution, evolutionChain);
+
   evolutionChain.push(species.name);
-  evolves_to.forEach((evolution: any) => formatPokemonEvolutionChain(evolution, evolutionChain));
+  evolves_to.forEach(getNestedEvolutionData);
 
   return evolutionChain;
 };
@@ -58,7 +57,7 @@ export const formatToBasicPokemon = (pokemon: IPokemonResponseType): IBasicPokem
 export const formatToFullPokemon = (
   pokemon: IPokemonResponseType,
   evolutionChain: IBasicPokemon[],
-  pokemonSpeciesData: PokemonSpecie
+  pokemonSpeciesData: Specie
 ): IFullPokemon => {
   const { height, weight } = pokemon;
   const pokemonBasicInfo = formatToBasicPokemon(pokemon);

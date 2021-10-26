@@ -4,26 +4,27 @@ export type PokemonType = {
   };
 };
 
-export type PokemonEvolutionData = {
-  evolves_to: [{ evolves_to?: []; evolution_details: [] }];
-  evolution_details: {};
+export type EvolvesTo = { evolves_to: EvolvesTo[]; evolution_details: []; species: { name: string } };
+
+export type EvolutionData = {
+  evolves_to: EvolvesTo[];
   species: { name: string };
 };
 
-export type PokemonTypeData = {
+export type TypeData = {
   pokemon: {
     name: string;
   };
 };
 
-export type PokemonStat = {
+export type Stat = {
   base_stat: number;
   stat: {
     name: string;
   };
 };
 
-export type PokemonAbility = {
+export type Ability = {
   ability: {
     name: string;
   };
@@ -44,7 +45,7 @@ export type GeneraEntry = {
   genus: string;
 };
 
-export type PokemonSpecie = {
+export type Specie = {
   evolution_chain: {
     url: string;
   };
@@ -55,9 +56,9 @@ export type PokemonSpecie = {
 export interface IPokemonResponseType {
   id: number;
   name: string;
-  types: PokemonType[];
-  stats: PokemonStat[];
+  types: Type[];
+  stats: Stat[];
   weight: number;
   height: number;
-  abilities: PokemonAbility[];
+  abilities: Ability[];
 }
