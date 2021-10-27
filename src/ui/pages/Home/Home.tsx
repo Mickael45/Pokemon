@@ -8,6 +8,7 @@ import FlexboxList from "../../templates/FlexboxList/FlexboxList";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import usePokemonSort from "../../../hooks/usePokemonSort";
 import styles from "./Home.module.css";
+import PokeballSpinner from "../../components/PokeballSpinner/PokeballSpinner";
 
 const POKEMON_STACK_SIZE = 12;
 
@@ -28,6 +29,7 @@ const useQueryParams = (): Filter => {
 
 const HomePage = () => {
   const queryFilteringType = useQueryParams();
+  const [loading, setLoading] = useState(true);
   const [sortingType, setSortingType] = useState<string>(sortingTypes[0]);
   const [filteringType, setFilteringType] = useState<Filter>(queryFilteringType);
   const [pokemons, setPokemons] = usePokemonSort(sortingType, filteringType);
@@ -44,21 +46,35 @@ const HomePage = () => {
     resetNumberOfPokemonShown();
   };
 
+  const setLoadingAccordingly = () => {
+    if (pokemons && pokemons.length > 0) {
+      setLoading(false);
+    }
+  };
+
   const handleSearchButtonClick = () => {
     const input = document.getElementById("input") as HTMLInputElement;
+    setLoading(true);
 
     if (input) {
       setFilteringType({ name: input.value.toLowerCase(), field: "name" });
     }
   };
 
+  const updatePokemons = (pokemons: IBasicPokemon[]) => {
+    setPokemons(pokemons);
+    setLoading(false);
+  };
+
   const getAllPokemons = () => {
-    fetchAllPokemons().then(setPokemons);
+    fetchAllPokemons().then(updatePokemons);
   };
 
   useEffect(getAllPokemons, []);
+  useEffect(setLoadingAccordingly, [pokemons]);
 
   const getPokemonByType = (type: string) => {
+    setLoading(true);
     setFilteringType({ name: type, field: "types" });
     resetNumberOfPokemonShown();
   };
@@ -71,7 +87,7 @@ const HomePage = () => {
 
   const renderPokemons = () => pokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 
-  return (
+  const renderHomePage = () => (
     <Page>
       <div className={styles.container}>
         <button onClick={resetFilteringType}>Show All types</button>
@@ -86,6 +102,8 @@ const HomePage = () => {
       </div>
     </Page>
   );
+
+  return loading ? <PokeballSpinner /> : renderHomePage();
 };
 
 export default memo(HomePage);

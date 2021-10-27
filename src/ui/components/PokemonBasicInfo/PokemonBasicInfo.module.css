@@ -16,7 +16,7 @@
 
 .container > :last-child > * {
   display: grid;
-  max-width: 45%;
+  max-width: 35%;
   width: 100%;
   padding: 10px 0;
   align-content: flex-start;
