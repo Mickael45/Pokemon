@@ -13,6 +13,7 @@ import Page from "../../templates/Page/Page";
 import styles from "./Details.module.css";
 import PokemonTypes from "../../components/PokemonTypes/PokemonTypes";
 import PokemonWeaknesses from "../../components/PokemonWeaknesses/PokemonWeaknesses";
+import PokeballSpinner from "../../components/PokeballSpinner/PokeballSpinner";
 interface Params {
   id: string;
 }
@@ -21,13 +22,20 @@ const Details = () => {
   const { id } = useParams<Params>();
   const history = useHistory();
   const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
+  const [loading, setLoading] = useState(true);
   const { imageUrl, name, stats, height, weight, types, weaknesses, evolutionChain, abilities, description, category } =
     pokemon;
   const color = getPokemonPrimaryTypeColor(types);
   const basicInfo = { description, height, weight, category, types, abilities, color };
 
+  const updatePokemon = (pokemon: IFullPokemon) => {
+    setPokemon(pokemon);
+    setLoading(false);
+  };
+
   const getPokemonById = () => {
-    fetchPokemonDetailsByNameOrId(id).then(setPokemon);
+    setLoading(true);
+    fetchPokemonDetailsByNameOrId(id).then(updatePokemon);
   };
 
   useEffect(getPokemonById, [id]);
@@ -40,7 +48,7 @@ const Details = () => {
 
   const callBackedHandleTypeClick = useCallback(handleTypeClick, []);
 
-  return (
+  const renderDetailsPage = () => (
     <Page>
       <div className={styles.container}>
         <IdNavigation id={id} />
@@ -64,6 +72,8 @@ const Details = () => {
       </div>
     </Page>
   );
+
+  return loading ? <PokeballSpinner /> : renderDetailsPage();
 };
 
 export default Details;
