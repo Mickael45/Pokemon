@@ -2,13 +2,14 @@ import { useState, useEffect, useCallback, BaseSyntheticEvent, memo } from "reac
 import { useLocation } from "react-router-dom";
 import { fetchAllPokemons } from "../../../services/fetchPokemons/fetchPokemons";
 import { sortingTypesMap } from "../../../hooks/usePokemonSort";
+import PikachuLoader from "../../components/PikachuLoader/PikachuLoader";
 import Pokemon from "../../components/Pokemon/Pokemon";
+import Dropdown from "../../components/Dropdown/Dropdown";
 import Page from "../../templates/Page/Page";
 import FlexboxList from "../../templates/FlexboxList/FlexboxList";
-import Dropdown from "../../components/Dropdown/Dropdown";
 import usePokemonSort from "../../../hooks/usePokemonSort";
 import styles from "./Home.module.css";
-import PokeballSpinner from "../../components/PokeballSpinner/PokeballSpinner";
+import ErrorScreen from "../../components/ErrorScreen/ErrorScreen";
 
 const POKEMON_STACK_SIZE = 12;
 
@@ -30,6 +31,7 @@ const useQueryParams = (): Filter => {
 const HomePage = () => {
   const queryFilteringType = useQueryParams();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [sortingType, setSortingType] = useState<string>(sortingTypes[0]);
   const [filteringType, setFilteringType] = useState<Filter>(queryFilteringType);
   const [pokemons, setPokemons] = usePokemonSort(sortingType, filteringType);
@@ -66,8 +68,12 @@ const HomePage = () => {
     setLoading(false);
   };
 
+  const setErrorToTrue = () => {
+    setError(true);
+  };
+
   const getAllPokemons = () => {
-    fetchAllPokemons().then(updatePokemons);
+    fetchAllPokemons().then(updatePokemons).catch(setErrorToTrue);
   };
 
   useEffect(getAllPokemons, []);
@@ -103,7 +109,11 @@ const HomePage = () => {
     </Page>
   );
 
-  return loading ? <PokeballSpinner /> : renderHomePage();
+  if (error) {
+    return <ErrorScreen />;
+  }
+
+  return loading ? <PikachuLoader /> : renderHomePage();
 };
 
 export default memo(HomePage);
