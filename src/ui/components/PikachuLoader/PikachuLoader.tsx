@@ -8,8 +8,7 @@ const TEXT_UPDATE_INTERVAL_MS = 4000;
 const LoadingTexts = [
   `Pikachu ! Go! `,
   "He should be back in a sec...",
-  "Dusting Off Pokemons...",
-  "Don't panic, Just count to infinite !",
+  "Don't panic, he's on his way back !",
   "Does Anyone Actually Read This ?",
 ];
 
