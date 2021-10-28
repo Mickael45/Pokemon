@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import ErrorContext from "../../../../context/ErrorContext";
-import { ErrorScreen } from "../../../ErrorScreen/ErrorScreen";
+import { ErrorScreen } from "../../ErrorScreen/ErrorScreen";
 
 interface IProps {
   children: JSX.Element;
