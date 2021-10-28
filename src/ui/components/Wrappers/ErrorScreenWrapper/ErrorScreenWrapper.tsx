@@ -1,31 +1,15 @@
-import { useState } from "react";
+import { useContext } from "react";
+import ErrorContext from "../../../../context/ErrorContext";
 import { ErrorScreen } from "../../../ErrorScreen/ErrorScreen";
 
-type RenderFunctionParamsType = { setError: SetErrorFunctionType; error: ErrorType | null };
-type RenderFunctionType = (params: RenderFunctionParamsType) => JSX.Element | null;
-
-interface IErrorScreenWrapperProps {
-  children: RenderFunctionType;
-  type?: ErrorType | null;
+interface IProps {
+  children: JSX.Element;
 }
 
-export const ErrorScreenWrapper = ({ children, type = null }: IErrorScreenWrapperProps) => {
-  const [error, setError] = useState<ErrorType | null>(type);
+export const ErrorScreenWrapper = ({ children }: IProps) => {
+  const { error } = useContext(ErrorContext);
 
-  const renderLoader = () => (error ? <ErrorScreen type={error} /> : null);
-
-  const renderChild = () => children({ setError, error });
-
-  return (
-    <>
-      {renderChild()}
-      {renderLoader()}
-    </>
-  );
+  return error ? <ErrorScreen type={error} /> : children;
 };
 
-const withError = (renderChild: RenderFunctionType) => (
-  <ErrorScreenWrapper>{(props: RenderFunctionParamsType) => renderChild(props)}</ErrorScreenWrapper>
-);
-
-export default withError;
+export default ErrorScreenWrapper;
