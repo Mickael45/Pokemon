@@ -1,6 +1,5 @@
-type FilterField = "name" | "types";
+import { TYPES, NAME } from "../constants/FilteringFields";
 
-type Filter = null | {
-  name: string;
-  field: FilterField;
-};
+declare global {
+  export type FilterField = typeof TYPES | typeof NAME;
+}

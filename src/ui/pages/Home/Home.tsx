@@ -1,39 +1,30 @@
-import { useState, useEffect, useCallback, BaseSyntheticEvent, useContext } from "react";
+import { useState, useEffect, useCallback, useContext } from "react";
 import { fetchAllPokemons } from "../../../services/fetchPokemons/fetchPokemons";
-import { sortingTypesMap } from "../../../hooks/usePokemonSort";
 import Pokemon from "../../components/Pokemon/Pokemon";
-import Dropdown from "../../components/Dropdown/Dropdown";
 import Page from "../../templates/Page/Page";
 import FlexboxList from "../../templates/FlexboxList/FlexboxList";
-import usePokemonSort from "../../../hooks/usePokemonSort";
 import styles from "./Home.module.css";
-import useQueryParams from "../../../hooks/useQueryParams";
 import { SOMETHING_WRONG_HAPPENED } from "../../../constants/Errors";
 import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
 import ErrorScreenWrapper from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenWrapper";
 import ErrorContext from "../../../context/ErrorContext";
 import LoadingContext from "../../../context/LoadingContext";
-import FilterBar from "../../components/FilterBar/FilterBar";
+import ListManipulationBar from "../../components/LIstManipulationBar/ListManipulationBar";
+import PokemonContext from "../../../context/PokemonContext";
 
 const POKEMON_STACK_SIZE = 12;
 
-const sortingTypes = Object.values(sortingTypesMap);
-
 const HomePage = () => {
-  const queryFilteringType = useQueryParams();
   const { setLoading } = useContext(LoadingContext);
   const { setError } = useContext(ErrorContext);
-  const [sortingType, setSortingType] = useState<string>(sortingTypes[0]);
-  const [filteringType, setFilteringType] = useState<Filter>(queryFilteringType);
-  const [pokemons, setPokemons] = usePokemonSort(sortingType, filteringType);
+  const { pokemons, setPokemons } = useContext(PokemonContext);
   const [numberOfPokemonShown, setNumberOfPokemonShown] = useState(POKEMON_STACK_SIZE);
 
   const incrementNumberOfPokemonShown = () => setNumberOfPokemonShown(numberOfPokemonShown + POKEMON_STACK_SIZE);
 
   const resetNumberOfPokemonShown = () => setNumberOfPokemonShown(POKEMON_STACK_SIZE);
 
-  const handleOptionSelectionChange = (e: BaseSyntheticEvent) => {
-    setSortingType(e.target.value);
+  const handleOptionSelectionChange = (option: SortingType) => {
     resetNumberOfPokemonShown();
   };
 
@@ -43,14 +34,14 @@ const HomePage = () => {
     }
   };
 
-  const handleSearchButtonClick = () => {
-    const input = document.getElementById("input") as HTMLInputElement;
-    setLoading(true);
+  // const handleSearchButtonClick = () => {
+  //   const input = document.getElementById("input") as HTMLInputElement;
+  //   setLoading(true);
 
-    if (input) {
-      setFilteringType({ name: input.value.toLowerCase(), field: "name" });
-    }
-  };
+  //   if (input) {
+  //     setFilteringType({ name: input.value.toLowerCase(), field: "name" });
+  //   }
+  // };
 
   const updatePokemons = (pokemons: IBasicPokemon[]) => {
     setPokemons(pokemons);
@@ -71,7 +62,7 @@ const HomePage = () => {
 
   const getPokemonByType = (type: string) => {
     setLoading(true);
-    setFilteringType({ name: type, field: "types" });
+    // setFilteringType({ name: type, field: "types" });
     resetNumberOfPokemonShown();
   };
 
@@ -90,8 +81,12 @@ const HomePage = () => {
       <LoadingScreenWrapper>
         <Page>
           <div className={styles.container}>
-            <FilterBar setFilteringType={setFilteringType} handleSearchButtonClick={handleSearchButtonClick} />
-            <Dropdown options={sortingTypes} handleOptionSelectionChange={handleOptionSelectionChange} />
+            <ListManipulationBar
+            // setFilteringType={setFilteringType}
+            // handleSearchButtonClick={handleFilterOp}
+            // handleOptionSelectionChange={handleOptionSelectionChange}
+            // selectedFilteringType={filteringType}
+            />
             <FlexboxList hasReachedEnd={areThereMorePokemonsToShow()} showMore={incrementNumberOfPokemonShown}>
               {renderPokemons()}
             </FlexboxList>

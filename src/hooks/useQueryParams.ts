@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
 
-const useQueryParams = (): Filter => {
+const useQueryParams = (): FilteringType => {
   const query = new URLSearchParams(useLocation().search);
-  const name = query.get("name");
+  const name = query.get("name") as PokemonType;
   const field = query.get("field") as FilterField;
 
   return !name || !field
