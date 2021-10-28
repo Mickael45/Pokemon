@@ -50,7 +50,7 @@ const ListFilteringDropdown = () => {
   const { pokemons, setPokemons } = useContext(PokemonContext);
 
   const filterPokemonsByField = (type: FilteringType) => {
-    const doestTypesContainType = (pokemon: IBasicPokemon) => pokemon.types.includes(type as unknown as string);
+    const doestTypesContainType = (pokemon: IBasicPokemon) => pokemon.types.includes(type);
 
     return pokemons.filter(doestTypesContainType);
   };

@@ -24,24 +24,11 @@ const HomePage = () => {
 
   const resetNumberOfPokemonShown = () => setNumberOfPokemonShown(POKEMON_STACK_SIZE);
 
-  const handleOptionSelectionChange = (option: SortingType) => {
-    resetNumberOfPokemonShown();
-  };
-
   const setLoadingAccordingly = () => {
     if (pokemons && pokemons.length > 0) {
       setLoading(false);
     }
   };
-
-  // const handleSearchButtonClick = () => {
-  //   const input = document.getElementById("input") as HTMLInputElement;
-  //   setLoading(true);
-
-  //   if (input) {
-  //     setFilteringType({ name: input.value.toLowerCase(), field: "name" });
-  //   }
-  // };
 
   const updatePokemons = (pokemons: IBasicPokemon[]) => {
     setPokemons(pokemons);
@@ -62,7 +49,6 @@ const HomePage = () => {
 
   const getPokemonByType = (type: string) => {
     setLoading(true);
-    // setFilteringType({ name: type, field: "types" });
     resetNumberOfPokemonShown();
   };
 
@@ -81,12 +67,7 @@ const HomePage = () => {
       <LoadingScreenWrapper>
         <Page>
           <div className={styles.container}>
-            <ListManipulationBar
-            // setFilteringType={setFilteringType}
-            // handleSearchButtonClick={handleFilterOp}
-            // handleOptionSelectionChange={handleOptionSelectionChange}
-            // selectedFilteringType={filteringType}
-            />
+            <ListManipulationBar />
             <FlexboxList hasReachedEnd={areThereMorePokemonsToShow()} showMore={incrementNumberOfPokemonShown}>
               {renderPokemons()}
             </FlexboxList>
