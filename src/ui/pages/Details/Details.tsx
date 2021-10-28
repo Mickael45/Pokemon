@@ -13,12 +13,13 @@ import Page from "../../templates/Page/Page";
 import styles from "./Details.module.css";
 import PokemonTypes from "../../components/PokemonTypes/PokemonTypes";
 import PokemonWeaknesses from "../../components/PokemonWeaknesses/PokemonWeaknesses";
-import PokeballSpinner from "../../components/PokeballSpinner/PokeballSpinner";
+import withError from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenWrapper";
+import { SOMETHING_WRONG_HAPPENED } from "../../../constants/Errors";
 interface Params {
   id: string;
 }
 
-const Details = () => {
+const Details = ({ setError, error }: ErrorScreenWrapProps) => {
   const { id } = useParams<Params>();
   const history = useHistory();
   const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
@@ -33,9 +34,11 @@ const Details = () => {
     setLoading(false);
   };
 
+  const setErrorToSomethingWrongHappened = () => setError(SOMETHING_WRONG_HAPPENED);
+
   const getPokemonById = () => {
     setLoading(true);
-    fetchPokemonDetailsByNameOrId(id).then(updatePokemon);
+    fetchPokemonDetailsByNameOrId(id).then(updatePokemon).catch(setErrorToSomethingWrongHappened);
   };
 
   useEffect(getPokemonById, [id]);
@@ -48,7 +51,7 @@ const Details = () => {
 
   const callBackedHandleTypeClick = useCallback(handleTypeClick, []);
 
-  const renderDetailsPage = () => (
+  return !error ? (
     <Page>
       <div className={styles.container}>
         <IdNavigation id={id} />
@@ -71,9 +74,9 @@ const Details = () => {
         <EvolutionChain chain={evolutionChain} handleClick={callBackedHandleTypeClick} />
       </div>
     </Page>
-  );
-
-  return loading ? <PokeballSpinner /> : renderDetailsPage();
+  ) : null;
 };
 
-export default Details;
+const DetailsWithError = () => withError(Details);
+
+export default DetailsWithError;

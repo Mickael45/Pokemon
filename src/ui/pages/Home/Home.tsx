@@ -1,33 +1,21 @@
-import { useState, useEffect, useCallback, BaseSyntheticEvent, memo } from "react";
-import { useLocation } from "react-router-dom";
+import { useState, useEffect, useCallback, BaseSyntheticEvent } from "react";
 import { fetchAllPokemons } from "../../../services/fetchPokemons/fetchPokemons";
 import { sortingTypesMap } from "../../../hooks/usePokemonSort";
 import Pokemon from "../../components/Pokemon/Pokemon";
+import Dropdown from "../../components/Dropdown/Dropdown";
 import Page from "../../templates/Page/Page";
 import FlexboxList from "../../templates/FlexboxList/FlexboxList";
-import Dropdown from "../../components/Dropdown/Dropdown";
 import usePokemonSort from "../../../hooks/usePokemonSort";
 import styles from "./Home.module.css";
-import PokeballSpinner from "../../components/PokeballSpinner/PokeballSpinner";
+import useQueryParams from "../../../hooks/useQueryParams";
+import { SOMETHING_WRONG_HAPPENED } from "../../../constants/Errors";
+import withError from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenWrapper";
 
 const POKEMON_STACK_SIZE = 12;
 
 const sortingTypes = Object.values(sortingTypesMap);
 
-const useQueryParams = (): Filter => {
-  const query = new URLSearchParams(useLocation().search);
-  const name = query.get("name");
-  const field = query.get("field") as FilterField;
-
-  return !name || !field
-    ? null
-    : {
-        name,
-        field,
-      };
-};
-
-const HomePage = () => {
+const HomePage = ({ setError, error }: ErrorScreenWrapProps) => {
   const queryFilteringType = useQueryParams();
   const [loading, setLoading] = useState(true);
   const [sortingType, setSortingType] = useState<string>(sortingTypes[0]);
@@ -66,8 +54,13 @@ const HomePage = () => {
     setLoading(false);
   };
 
+  const setErrorToTrue = () => {
+    setError(SOMETHING_WRONG_HAPPENED);
+  };
+
   const getAllPokemons = () => {
-    fetchAllPokemons().then(updatePokemons);
+    setLoading(true);
+    fetchAllPokemons().then(updatePokemons).catch(setErrorToTrue);
   };
 
   useEffect(getAllPokemons, []);
@@ -87,7 +80,7 @@ const HomePage = () => {
 
   const renderPokemons = () => pokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 
-  const renderHomePage = () => (
+  return !error ? (
     <Page>
       <div className={styles.container}>
         <button onClick={resetFilteringType}>Show All types</button>
@@ -101,9 +94,9 @@ const HomePage = () => {
         <FlexboxList showMore={incrementNumberOfPokemonShown}>{renderPokemons()}</FlexboxList>
       </div>
     </Page>
-  );
-
-  return loading ? <PokeballSpinner /> : renderHomePage();
+  ) : null;
 };
 
-export default memo(HomePage);
+const HomePageWithError = () => withError(HomePage);
+
+export default HomePageWithError;
