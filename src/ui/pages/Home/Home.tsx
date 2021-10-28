@@ -13,7 +13,7 @@ import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper
 import ErrorScreenWrapper from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenWrapper";
 import ErrorContext from "../../../context/ErrorContext";
 import LoadingContext from "../../../context/LoadingContext";
-import { MAX_POKEMON_ID_ALLOWED } from "../../../constants/FetchPokemons";
+import FilterBar from "../../components/FilterBar/FilterBar";
 
 const POKEMON_STACK_SIZE = 12;
 
@@ -31,8 +31,6 @@ const HomePage = () => {
   const incrementNumberOfPokemonShown = () => setNumberOfPokemonShown(numberOfPokemonShown + POKEMON_STACK_SIZE);
 
   const resetNumberOfPokemonShown = () => setNumberOfPokemonShown(POKEMON_STACK_SIZE);
-
-  const resetFilteringType = () => setFilteringType(null);
 
   const handleOptionSelectionChange = (e: BaseSyntheticEvent) => {
     setSortingType(e.target.value);
@@ -92,13 +90,7 @@ const HomePage = () => {
       <LoadingScreenWrapper>
         <Page>
           <div className={styles.container}>
-            <button onClick={resetFilteringType}>Show All types</button>
-            <div>
-              <input id="input" />
-              <button placeholder="search by name" onClick={handleSearchButtonClick}>
-                Search
-              </button>
-            </div>
+            <FilterBar setFilteringType={setFilteringType} handleSearchButtonClick={handleSearchButtonClick} />
             <Dropdown options={sortingTypes} handleOptionSelectionChange={handleOptionSelectionChange} />
             <FlexboxList hasReachedEnd={areThereMorePokemonsToShow()} showMore={incrementNumberOfPokemonShown}>
               {renderPokemons()}
