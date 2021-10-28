@@ -13,14 +13,9 @@ import withError from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenW
 
 const POKEMON_STACK_SIZE = 12;
 
-interface IProps {
-  setError: SetErrorFunctionType;
-  error: ErrorType | null;
-}
-
 const sortingTypes = Object.values(sortingTypesMap);
 
-const HomePage = ({ setError, error }: IProps) => {
+const HomePage = ({ setError, error }: ErrorScreenWrapProps) => {
   const queryFilteringType = useQueryParams();
   const [loading, setLoading] = useState(true);
   const [sortingType, setSortingType] = useState<string>(sortingTypes[0]);

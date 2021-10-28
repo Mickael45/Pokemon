@@ -25,9 +25,7 @@ export const ErrorScreenWrapper = ({ children, type = null }: IErrorScreenWrappe
 };
 
 const withError = (renderChild: RenderFunctionType) => (
-  <ErrorScreenWrapper>
-    {({ setError, error }: RenderFunctionParamsType) => renderChild({ setError, error })}
-  </ErrorScreenWrapper>
+  <ErrorScreenWrapper>{(props: RenderFunctionParamsType) => renderChild(props)}</ErrorScreenWrapper>
 );
 
 export default withError;

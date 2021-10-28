@@ -4,4 +4,9 @@ import { PAGE_NOT_FOUND_MESSAGE, SOMETHING_WRONG_HAPPENED_MESSAGE } from "../con
 declare global {
   export type ErrorType = typeof PAGE_NOT_FOUND | typeof SOMETHING_WRONG_HAPPENED;
   export type ErrorMessage = typeof PAGE_NOT_FOUND_MESSAGE | typeof SOMETHING_WRONG_HAPPENED_MESSAGE;
+  export type SetErrorFunctionType = (error: ErrorType | null) => void;
+  export type ErrorScreenWrapProps = {
+    setError: SetErrorFunctionType;
+    error: ErrorType | null;
+  };
 }
