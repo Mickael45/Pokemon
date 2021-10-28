@@ -13,6 +13,7 @@ import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper
 import ErrorScreenWrapper from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenWrapper";
 import ErrorContext from "../../../context/ErrorContext";
 import LoadingContext from "../../../context/LoadingContext";
+import { MAX_POKEMON_ID_ALLOWED } from "../../../constants/FetchPokemons";
 
 const POKEMON_STACK_SIZE = 12;
 
@@ -84,6 +85,8 @@ const HomePage = () => {
 
   const renderPokemons = () => pokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 
+  const areThereMorePokemonsToShow = () => numberOfPokemonShown >= pokemons.length;
+
   return (
     <ErrorScreenWrapper>
       <LoadingScreenWrapper>
@@ -97,7 +100,9 @@ const HomePage = () => {
               </button>
             </div>
             <Dropdown options={sortingTypes} handleOptionSelectionChange={handleOptionSelectionChange} />
-            <FlexboxList showMore={incrementNumberOfPokemonShown}>{renderPokemons()}</FlexboxList>
+            <FlexboxList hasReachedEnd={areThereMorePokemonsToShow()} showMore={incrementNumberOfPokemonShown}>
+              {renderPokemons()}
+            </FlexboxList>
           </div>
         </Page>
       </LoadingScreenWrapper>

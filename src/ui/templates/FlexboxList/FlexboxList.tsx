@@ -1,17 +1,19 @@
 import IntersectionObserver from "../../components/IntersectionObserver/IntersectionObserver";
+import PokeballSpinner from "../../components/PokeballSpinner/PokeballSpinner";
 import styles from "./FlexboxList.module.css";
 
 interface IProps {
   children: JSX.Element[];
   showMore: () => void;
+  hasReachedEnd: boolean;
 }
 
-const FlexboxList = ({ children, showMore }: IProps) => {
+const FlexboxList = ({ children, showMore, hasReachedEnd }: IProps) => {
+  const renderLoadMoreComponent = () => (!hasReachedEnd ? <PokeballSpinner /> : <div />);
+
   const renderIntersectionObserver = () =>
     children?.length > 0 ? (
-      <IntersectionObserver handleIntersection={showMore}>
-        <div>Loading More...</div>
-      </IntersectionObserver>
+      <IntersectionObserver handleIntersection={showMore}>{renderLoadMoreComponent()}</IntersectionObserver>
     ) : null;
 
   return (
