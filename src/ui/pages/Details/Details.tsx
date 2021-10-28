@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useContext } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { fetchPokemonDetailsByNameOrId } from "../../../services/fetchPokemons/fetchPokemons";
 import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
@@ -13,17 +13,21 @@ import Page from "../../templates/Page/Page";
 import styles from "./Details.module.css";
 import PokemonTypes from "../../components/PokemonTypes/PokemonTypes";
 import PokemonWeaknesses from "../../components/PokemonWeaknesses/PokemonWeaknesses";
-import withError from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenWrapper";
 import { SOMETHING_WRONG_HAPPENED } from "../../../constants/Errors";
+import ErrorScreenWrapper from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenWrapper";
+import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
+import LoadingContext from "../../../context/LoadingContext";
+import ErrorContext from "../../../context/ErrorContext";
 interface Params {
   id: string;
 }
 
-const Details = ({ setError, error }: ErrorScreenWrapProps) => {
+const DetailsPage = () => {
   const { id } = useParams<Params>();
+  const { setLoading } = useContext(LoadingContext);
+  const { setError } = useContext(ErrorContext);
   const history = useHistory();
   const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
-  const [loading, setLoading] = useState(true);
   const { imageUrl, name, stats, height, weight, types, weaknesses, evolutionChain, abilities, description, category } =
     pokemon;
   const color = getPokemonPrimaryTypeColor(types);
@@ -51,32 +55,34 @@ const Details = ({ setError, error }: ErrorScreenWrapProps) => {
 
   const callBackedHandleTypeClick = useCallback(handleTypeClick, []);
 
-  return !error ? (
-    <Page>
-      <div className={styles.container}>
-        <IdNavigation id={id} />
-        <div>{`${capitalizeFirstLetter(name)} #${id}`}</div>
-        <div>
-          <span>
-            <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
-            <Radar title="Stats" axisDataList={stats} color={color} />
-          </span>
-          <span>
-            <BasicInfo {...basicInfo} />
+  return (
+    <ErrorScreenWrapper>
+      <LoadingScreenWrapper>
+        <Page>
+          <div className={styles.container}>
+            <IdNavigation id={id} />
+            <div>{`${capitalizeFirstLetter(name)} #${id}`}</div>
             <div>
-              <h3>Types</h3>
-              <PokemonTypes id={id} types={types} handleClick={callBackedHandleTypeClick} />
-              <h3>Weaknesses</h3>
-              <PokemonWeaknesses id={id} types={weaknesses} handleClick={callBackedHandleTypeClick} />
+              <span>
+                <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
+                <Radar title="Stats" axisDataList={stats} color={color} />
+              </span>
+              <span>
+                <BasicInfo {...basicInfo} />
+                <div>
+                  <h3>Types</h3>
+                  <PokemonTypes id={id} types={types} handleClick={callBackedHandleTypeClick} />
+                  <h3>Weaknesses</h3>
+                  <PokemonWeaknesses id={id} types={weaknesses} handleClick={callBackedHandleTypeClick} />
+                </div>
+              </span>
             </div>
-          </span>
-        </div>
-        <EvolutionChain chain={evolutionChain} handleClick={callBackedHandleTypeClick} />
-      </div>
-    </Page>
-  ) : null;
+            <EvolutionChain chain={evolutionChain} handleClick={callBackedHandleTypeClick} />
+          </div>
+        </Page>
+      </LoadingScreenWrapper>
+    </ErrorScreenWrapper>
+  );
 };
 
-const DetailsWithError = () => withError(Details);
-
-export default DetailsWithError;
+export default DetailsPage;

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, BaseSyntheticEvent } from "react";
+import { useState, useEffect, useCallback, BaseSyntheticEvent, useContext } from "react";
 import { fetchAllPokemons } from "../../../services/fetchPokemons/fetchPokemons";
 import { sortingTypesMap } from "../../../hooks/usePokemonSort";
 import Pokemon from "../../components/Pokemon/Pokemon";
@@ -9,15 +9,19 @@ import usePokemonSort from "../../../hooks/usePokemonSort";
 import styles from "./Home.module.css";
 import useQueryParams from "../../../hooks/useQueryParams";
 import { SOMETHING_WRONG_HAPPENED } from "../../../constants/Errors";
-import withError from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenWrapper";
+import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
+import ErrorScreenWrapper from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenWrapper";
+import ErrorContext from "../../../context/ErrorContext";
+import LoadingContext from "../../../context/LoadingContext";
 
 const POKEMON_STACK_SIZE = 12;
 
 const sortingTypes = Object.values(sortingTypesMap);
 
-const HomePage = ({ setError, error }: ErrorScreenWrapProps) => {
+const HomePage = () => {
   const queryFilteringType = useQueryParams();
-  const [loading, setLoading] = useState(true);
+  const { setLoading } = useContext(LoadingContext);
+  const { setError } = useContext(ErrorContext);
   const [sortingType, setSortingType] = useState<string>(sortingTypes[0]);
   const [filteringType, setFilteringType] = useState<Filter>(queryFilteringType);
   const [pokemons, setPokemons] = usePokemonSort(sortingType, filteringType);
@@ -54,13 +58,13 @@ const HomePage = ({ setError, error }: ErrorScreenWrapProps) => {
     setLoading(false);
   };
 
-  const setErrorToTrue = () => {
+  const setErrorToSomethingWrongHappened = () => {
     setError(SOMETHING_WRONG_HAPPENED);
   };
 
   const getAllPokemons = () => {
     setLoading(true);
-    fetchAllPokemons().then(updatePokemons).catch(setErrorToTrue);
+    fetchAllPokemons().then(updatePokemons).catch(setErrorToSomethingWrongHappened);
   };
 
   useEffect(getAllPokemons, []);
@@ -80,23 +84,25 @@ const HomePage = ({ setError, error }: ErrorScreenWrapProps) => {
 
   const renderPokemons = () => pokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 
-  return !error ? (
-    <Page>
-      <div className={styles.container}>
-        <button onClick={resetFilteringType}>Show All types</button>
-        <div>
-          <input id="input" />
-          <button placeholder="search by name" onClick={handleSearchButtonClick}>
-            Search
-          </button>
-        </div>
-        <Dropdown options={sortingTypes} handleOptionSelectionChange={handleOptionSelectionChange} />
-        <FlexboxList showMore={incrementNumberOfPokemonShown}>{renderPokemons()}</FlexboxList>
-      </div>
-    </Page>
-  ) : null;
+  return (
+    <ErrorScreenWrapper>
+      <LoadingScreenWrapper>
+        <Page>
+          <div className={styles.container}>
+            <button onClick={resetFilteringType}>Show All types</button>
+            <div>
+              <input id="input" />
+              <button placeholder="search by name" onClick={handleSearchButtonClick}>
+                Search
+              </button>
+            </div>
+            <Dropdown options={sortingTypes} handleOptionSelectionChange={handleOptionSelectionChange} />
+            <FlexboxList showMore={incrementNumberOfPokemonShown}>{renderPokemons()}</FlexboxList>
+          </div>
+        </Page>
+      </LoadingScreenWrapper>
+    </ErrorScreenWrapper>
+  );
 };
 
-const HomePageWithError = () => withError(HomePage);
-
-export default HomePageWithError;
+export default HomePage;
