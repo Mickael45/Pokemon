@@ -2,7 +2,7 @@ import HomePage from "./ui/pages/Home/Home";
 import DetailsPage from "./ui/pages/Details/Details";
 import TypeInteractionsPage from "./ui/pages/TypeInteractions/TypeInteractions";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ErrorScreen from "./ui/components/ErrorScreen/ErrorScreen";
+import { ErrorScreen } from "./ui/ErrorScreen/ErrorScreen";
 
 const renderErrorScreen = () => <ErrorScreen type="Page Not Found" />;
 

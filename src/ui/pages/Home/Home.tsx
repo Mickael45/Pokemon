@@ -1,37 +1,28 @@
-import { useState, useEffect, useCallback, BaseSyntheticEvent, memo } from "react";
-import { useLocation } from "react-router-dom";
+import { useState, useEffect, useCallback, BaseSyntheticEvent } from "react";
 import { fetchAllPokemons } from "../../../services/fetchPokemons/fetchPokemons";
 import { sortingTypesMap } from "../../../hooks/usePokemonSort";
-import PikachuLoader from "../../components/PikachuLoader/PikachuLoader";
 import Pokemon from "../../components/Pokemon/Pokemon";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import Page from "../../templates/Page/Page";
 import FlexboxList from "../../templates/FlexboxList/FlexboxList";
 import usePokemonSort from "../../../hooks/usePokemonSort";
 import styles from "./Home.module.css";
-import ErrorScreen from "../../components/ErrorScreen/ErrorScreen";
+import useQueryParams from "../../../hooks/useQueryParams";
+import { SOMETHING_WRONG_HAPPENED } from "../../../constants/Errors";
+import withError from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenWrapper";
 
 const POKEMON_STACK_SIZE = 12;
 
+interface IProps {
+  setError: SetErrorFunctionType;
+  error: ErrorType | null;
+}
+
 const sortingTypes = Object.values(sortingTypesMap);
 
-const useQueryParams = (): Filter => {
-  const query = new URLSearchParams(useLocation().search);
-  const name = query.get("name");
-  const field = query.get("field") as FilterField;
-
-  return !name || !field
-    ? null
-    : {
-        name,
-        field,
-      };
-};
-
-const HomePage = () => {
+const HomePage = ({ setError, error }: IProps) => {
   const queryFilteringType = useQueryParams();
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
   const [sortingType, setSortingType] = useState<string>(sortingTypes[0]);
   const [filteringType, setFilteringType] = useState<Filter>(queryFilteringType);
   const [pokemons, setPokemons] = usePokemonSort(sortingType, filteringType);
@@ -69,10 +60,11 @@ const HomePage = () => {
   };
 
   const setErrorToTrue = () => {
-    setError(true);
+    setError(SOMETHING_WRONG_HAPPENED);
   };
 
   const getAllPokemons = () => {
+    setLoading(true);
     fetchAllPokemons().then(updatePokemons).catch(setErrorToTrue);
   };
 
@@ -93,7 +85,7 @@ const HomePage = () => {
 
   const renderPokemons = () => pokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 
-  const renderHomePage = () => (
+  return !error ? (
     <Page>
       <div className={styles.container}>
         <button onClick={resetFilteringType}>Show All types</button>
@@ -107,13 +99,9 @@ const HomePage = () => {
         <FlexboxList showMore={incrementNumberOfPokemonShown}>{renderPokemons()}</FlexboxList>
       </div>
     </Page>
-  );
-
-  if (error) {
-    return <ErrorScreen />;
-  }
-
-  return loading ? <PikachuLoader /> : renderHomePage();
+  ) : null;
 };
 
-export default memo(HomePage);
+const HomePageWithError = () => withError(HomePage);
+
+export default HomePageWithError;
