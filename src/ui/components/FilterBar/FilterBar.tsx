@@ -10,10 +10,12 @@ const FilterBar = ({ setFilteringType, handleSearchButtonClick }: IProps) => {
     <>
       <button onClick={resetFilteringType}>Show All types</button>
       <div>
-        <input id="input" />
-        <button placeholder="search by name" onClick={handleSearchButtonClick}>
-          Search
-        </button>
+        <form onSubmit={handleSearchButtonClick}>
+          <input id="input" />
+          <button placeholder="search by name" onClick={handleSearchButtonClick}>
+            Search
+          </button>
+        </form>
       </div>
     </>
   );
