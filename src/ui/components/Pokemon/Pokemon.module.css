@@ -15,11 +15,13 @@
   top: 0;
 }
 
-.container > rect,
-.container > svg {
+.container > div[id="placeholder"] {
+  display: grid;
+  justify-content: center;
+  align-content: center;
   width: 200px;
   height: 200px;
-  background-color: grey;
+  background-color: lightgrey;
 }
 
 .container > img:hover {

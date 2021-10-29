@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PokeballSpinner from "../PokeballSpinner/PokeballSpinner";
 import styles from "./ImageWithPlaceholder.module.css";
 
 interface IProps {
@@ -25,9 +26,9 @@ const ImageWithPlaceholder = ({ src, alt, handleClick }: IProps) => {
 
   const renderPlaceholder = () =>
     !isLoaded ? (
-      <svg>
-        <rect fill="#CCC" />
-      </svg>
+      <div id="placeholder">
+        <PokeballSpinner />
+      </div>
     ) : null;
 
   return (
