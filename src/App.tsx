@@ -9,23 +9,9 @@ import ErrorContext from "./context/ErrorContext";
 import PokemonContext from "./context/PokemonContext";
 import { SOMETHING_WRONG_HAPPENED } from "./constants/Errors";
 import { fetchAllPokemons } from "./services/fetchPokemons/fetchPokemons";
+import usePokemons from "./hooks/usePokemons";
 
 const renderErrorScreen = () => <ErrorScreen type="Page Not Found" />;
-
-const usePokemons = (): [IBasicPokemon[], IBasicPokemon[], (pokemons: IBasicPokemon[]) => void] => {
-  const [pokemons, setPokemons] = useState<IBasicPokemon[]>([]);
-  const [filteredPokemons, setFilteredPokemons] = useState<IBasicPokemon[]>([]);
-
-  const updatePokemons = () => {
-    if (!pokemons || pokemons.length === 0) {
-      setPokemons(filteredPokemons);
-    }
-  };
-
-  useEffect(updatePokemons, [filteredPokemons]);
-
-  return [filteredPokemons, pokemons, setFilteredPokemons];
-};
 
 const App = () => {
   const [filteredPokemons, pokemons, setPokemons] = usePokemons();
