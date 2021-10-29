@@ -10,6 +10,7 @@ import PokemonContext from "./context/PokemonContext";
 import { SOMETHING_WRONG_HAPPENED } from "./constants/Errors";
 import { fetchAllPokemons } from "./services/fetchPokemons/fetchPokemons";
 import usePokemons from "./hooks/usePokemons";
+import ListManipulationBar from "./ui/components/LIstManipulationBar/ListManipulationBar";
 
 const renderErrorScreen = () => <ErrorScreen type="Page Not Found" />;
 
@@ -32,20 +33,23 @@ const App = () => {
   useEffect(getAllPokemons, []);
 
   return (
-    <BrowserRouter>
-      <ErrorContext.Provider value={{ error, setError }}>
-        <LoadingContext.Provider value={{ loading, setLoading }}>
-          <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons }}>
-            <Switch>
-              <Route path="/" exact component={HomePage} />
-              <Route path="/details/:id" component={DetailsPage} />
-              <Route path="/type-interactions" component={TypeInteractionsPage} />
-              <Route component={renderErrorScreen} />
-            </Switch>
-          </PokemonContext.Provider>
-        </LoadingContext.Provider>
-      </ErrorContext.Provider>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <ErrorContext.Provider value={{ error, setError }}>
+          <LoadingContext.Provider value={{ loading, setLoading }}>
+            <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons }}>
+              <ListManipulationBar />
+              <Switch>
+                <Route path="/" exact component={HomePage} />
+                <Route path="/details/:id" component={DetailsPage} />
+                <Route path="/type-interactions" component={TypeInteractionsPage} />
+                <Route component={renderErrorScreen} />
+              </Switch>
+            </PokemonContext.Provider>
+          </LoadingContext.Provider>
+        </ErrorContext.Provider>
+      </BrowserRouter>
+    </>
   );
 };
 

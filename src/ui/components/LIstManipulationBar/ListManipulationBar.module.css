@@ -2,7 +2,7 @@
   display: grid;
   width: 100%;
   padding: 1% 0;
-  background: #2a75bb;
+  background: #cc0000;
   position: fixed;
   top: 0;
   min-width: 60%;
@@ -14,7 +14,7 @@
   width: 200px;
   position: absolute;
   left: 15px;
-  top: 15%;
+  top: 10px;
 }
 
 .container > img:hover {
@@ -32,7 +32,7 @@
 
 div.open {
   visibility: visible;
-  height: 100px;
+  height: 200px;
   opacity: 1;
   transition: all 0.5s ease-out;
 }
@@ -40,6 +40,7 @@ div.open {
 .close {
   display: grid;
   justify-content: center;
+  overflow: hidden;
   align-content: center;
   visibility: hidden;
   opacity: 0;

@@ -5,7 +5,6 @@ import FlexboxList from "../../templates/FlexboxList/FlexboxList";
 import styles from "./Home.module.css";
 import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
 import ErrorScreenWrapper from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenWrapper";
-import ListManipulationBar from "../../components/LIstManipulationBar/ListManipulationBar";
 import PokemonContext from "../../../context/PokemonContext";
 
 const POKEMON_STACK_SIZE = 12;
@@ -28,7 +27,6 @@ const HomePage = () => {
       <LoadingScreenWrapper>
         <Page>
           <div className={styles.container}>
-            <ListManipulationBar />
             <FlexboxList hasReachedEnd={areThereMorePokemonsToShow()} showMore={incrementNumberOfPokemonShown}>
               {renderPokemons()}
             </FlexboxList>

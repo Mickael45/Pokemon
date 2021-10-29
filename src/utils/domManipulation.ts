@@ -1,4 +1,4 @@
-export const getDivElementClassesById = (id: string): DOMTokenList | null => {
+export const getDivClassesById = (id: string): DOMTokenList | null => {
   const element = document.getElementById(id) as HTMLDivElement;
 
   if (!element) {

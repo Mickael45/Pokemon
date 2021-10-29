@@ -7,24 +7,30 @@ const { typeContainer } = styles;
 interface IProps {
   type: PokemonType;
   children?: string;
+  handleTypeClick?: Function;
 }
 
-const PokemonType = ({ type, children = "" }: IProps) => {
+const PokemonType = ({ type, children = "", handleTypeClick }: IProps) => {
   const history = useHistory();
   const castedPokemonTypesColor = pokemonTypesColor as HashMap;
 
-  const handleTypeClick = () =>
-    history.push({
-      pathname: "/",
-      search: `name=${type}&field=types`,
-    });
+  const handleClick = () => {
+    if (handleTypeClick) {
+      handleTypeClick(type);
+    } else {
+      history.push({
+        pathname: "/",
+        search: `name=${type}&field=types`,
+      });
+    }
+  };
 
   return (
     <span
       style={{ background: castedPokemonTypesColor[type] }}
       className={typeContainer}
       data-type={type}
-      onClick={handleTypeClick}
+      onClick={handleClick}
     >
       {capitalizeFirstLetter(type)}
       {children}

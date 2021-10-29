@@ -1,5 +1,4 @@
-// import ListSortingDropdown from "../ListSortingDropdown/ListSortingDropdown";
-import { getDivElementClassesById } from "../../../utils/domManipulation";
+import { getDivClassesById } from "../../../utils/domManipulation";
 import ListFilteringDropdown from "../ListFilteringDropdown/ListFilteringDropdown";
 import ListFilteringInput from "../ListFilteringInput/ListFilteringInput";
 import logo from "../../../assets/logo.svg";
@@ -25,8 +24,8 @@ const ListManipulationBar = () => {
   };
 
   const toggleDrawer = () => {
-    const drawerClassList = getDivElementClassesById(DRAWER_ELEMENT_ID);
-    const arrowClassList = getDivElementClassesById(ARROW_ELEMENT_ID);
+    const drawerClassList = getDivClassesById(DRAWER_ELEMENT_ID);
+    const arrowClassList = getDivClassesById(ARROW_ELEMENT_ID);
 
     if (!drawerClassList || !arrowClassList) {
       return;
@@ -38,6 +37,7 @@ const ListManipulationBar = () => {
       openDrawer(drawerClassList, arrowClassList);
     }
   };
+
   return (
     <div className={styles.container}>
       <img src={logo} alt="logo" onClick={navigateHome} />
@@ -45,7 +45,6 @@ const ListManipulationBar = () => {
 
       <div className={styles.close} id={DRAWER_ELEMENT_ID}>
         <ListFilteringDropdown />
-        {/* <ListSortingDropdown /> */}
       </div>
       <div className={styles.arrow} id={ARROW_ELEMENT_ID} onClick={toggleDrawer} />
     </div>
