@@ -10,11 +10,15 @@
   z-index: 1;
 }
 
-.container > :first-child {
+.container > img {
   width: 200px;
   position: absolute;
   left: 15px;
   top: 15%;
+}
+
+.container > img:hover {
+  cursor: pointer;
 }
 
 .container > * {

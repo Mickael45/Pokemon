@@ -4,11 +4,16 @@ import ListFilteringDropdown from "../ListFilteringDropdown/ListFilteringDropdow
 import ListFilteringInput from "../ListFilteringInput/ListFilteringInput";
 import logo from "../../../assets/logo.svg";
 import styles from "./ListManipulationBar.module.css";
+import { useHistory } from "react-router-dom";
 
 const DRAWER_ELEMENT_ID = "drawerElementId";
 const ARROW_ELEMENT_ID = "arrowElementId";
 
 const ListManipulationBar = () => {
+  const history = useHistory();
+
+  const navigateHome = () => history.push("/");
+
   const openDrawer = (drawerClassList: DOMTokenList, arrowClassList: DOMTokenList) => {
     drawerClassList.add(styles.open);
     arrowClassList.add(styles.up);
@@ -35,7 +40,7 @@ const ListManipulationBar = () => {
   };
   return (
     <div className={styles.container}>
-      <img src={logo} alt="logo" />
+      <img src={logo} alt="logo" onClick={navigateHome} />
       <ListFilteringInput />
 
       <div className={styles.close} id={DRAWER_ELEMENT_ID}>
