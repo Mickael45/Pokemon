@@ -2,7 +2,7 @@
   display: grid;
   width: 100%;
   padding: 1% 0;
-  background: red;
+  background: #2a75bb;
   position: fixed;
   top: 0;
   min-width: 60%;
@@ -14,12 +14,68 @@
   width: 100%;
 }
 
-.container > :last-child {
-  display: flex;
-  justify-content: space-around;
-}
-
 .container > :first-child {
   max-width: 500px;
   margin: 0 auto;
+}
+
+div.open {
+  visibility: visible;
+  height: 45px;
+  opacity: 1;
+  transition: all 0.5s ease-out;
+}
+
+.close {
+  visibility: hidden;
+  opacity: 0;
+  height: 0px;
+  transition: all 0.5s ease-out;
+}
+.arrow {
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 3px white solid;
+  border-bottom: 3px white solid;
+  transition: transform 0.5s;
+}
+
+.arrow:before {
+  content: "";
+  position: absolute;
+  margin: -5px 0 0 5px;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  border-left: none;
+  border-top: none;
+  border-right: 2px white solid;
+  border-bottom: 2px white solid;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: arrow;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transition: transform 0.5s;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-5px, -5px);
+  }
 }
