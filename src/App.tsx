@@ -23,7 +23,7 @@ const App = () => {
     setLoading(false);
   };
 
-  const setErrorToSomethingWrongHappened = () => setError(null);
+  const setErrorToSomethingWrongHappened = () => setError(SOMETHING_WRONG_HAPPENED);
 
   const getAllPokemons = () => {
     fetchAllPokemons().then(handlePromiseResolution).catch(setErrorToSomethingWrongHappened);

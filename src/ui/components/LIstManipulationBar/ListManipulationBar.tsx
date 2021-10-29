@@ -2,6 +2,7 @@
 import { getDivElementClassesById } from "../../../utils/domManipulation";
 import ListFilteringDropdown from "../ListFilteringDropdown/ListFilteringDropdown";
 import ListFilteringInput from "../ListFilteringInput/ListFilteringInput";
+import logo from "../../../assets/logo.svg";
 import styles from "./ListManipulationBar.module.css";
 
 const DRAWER_ELEMENT_ID = "drawerElementId";
@@ -34,6 +35,7 @@ const ListManipulationBar = () => {
   };
   return (
     <div className={styles.container}>
+      <img src={logo} alt="logo" />
       <ListFilteringInput />
 
       <div className={styles.close} id={DRAWER_ELEMENT_ID}>
