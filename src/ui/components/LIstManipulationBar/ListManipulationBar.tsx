@@ -1,4 +1,4 @@
-import ListSortingDropdown from "../ListFilteringDropdown/ListFilteringDropdown";
+import ListSortingDropdown from "../ListSortingDropdown/ListSortingDropdown";
 import ListFilteringDropdown from "../ListFilteringDropdown/ListFilteringDropdown";
 import ListFilteringInput from "../ListFilteringInput/ListFilteringInput";
 
