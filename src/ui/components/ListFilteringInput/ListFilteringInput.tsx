@@ -1,5 +1,7 @@
 import { FormEvent, useContext } from "react";
 import PokemonContext from "../../../context/PokemonContext";
+import searchIcon from "../../../assets/search.svg";
+import styles from "./ListFilteringInput.module.css";
 
 const NAME_INPUT_ID = "nameInputId";
 
@@ -29,11 +31,11 @@ const ListFilteringInput = () => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <input id={NAME_INPUT_ID} />
-      <button placeholder="search by name" onClick={handleButtonClick}>
-        Search
-      </button>
+    <form onSubmit={handleFormSubmit} className={styles.container}>
+      <div>
+        <input id={NAME_INPUT_ID} />
+        <img src={searchIcon} onClick={handleButtonClick} alt="searchIcon" />
+      </div>
     </form>
   );
 };
