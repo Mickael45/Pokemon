@@ -12,8 +12,23 @@ import { fetchAllPokemons } from "./services/fetchPokemons/fetchPokemons";
 
 const renderErrorScreen = () => <ErrorScreen type="Page Not Found" />;
 
-const App = () => {
+const usePokemons = (): [IBasicPokemon[], IBasicPokemon[], (pokemons: IBasicPokemon[]) => void] => {
   const [pokemons, setPokemons] = useState<IBasicPokemon[]>([]);
+  const [filteredPokemons, setFilteredPokemons] = useState<IBasicPokemon[]>([]);
+
+  const updatePokemons = () => {
+    if (!pokemons || pokemons.length === 0) {
+      setPokemons(filteredPokemons);
+    }
+  };
+
+  useEffect(updatePokemons, [filteredPokemons]);
+
+  return [filteredPokemons, pokemons, setFilteredPokemons];
+};
+
+const App = () => {
+  const [filteredPokemons, pokemons, setPokemons] = usePokemons();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<ErrorType | null>(null);
 
@@ -37,7 +52,7 @@ const App = () => {
     <BrowserRouter>
       <ErrorContext.Provider value={{ error, setError }}>
         <LoadingContext.Provider value={{ loading, setLoading }}>
-          <PokemonContext.Provider value={{ pokemons, setPokemons }}>
+          <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons }}>
             <Switch>
               <Route path="/" exact component={HomePage} />
               <Route path="/details/:id" component={DetailsPage} />

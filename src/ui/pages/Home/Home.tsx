@@ -11,7 +11,7 @@ import PokemonContext from "../../../context/PokemonContext";
 const POKEMON_STACK_SIZE = 12;
 
 const HomePage = () => {
-  const { pokemons } = useContext(PokemonContext);
+  const { filteredPokemons } = useContext(PokemonContext);
 
   const [numberOfPokemonShown, setNumberOfPokemonShown] = useState(POKEMON_STACK_SIZE);
 
@@ -19,9 +19,9 @@ const HomePage = () => {
 
   const renderPokemon = (pokemon: IBasicPokemon) => <Pokemon key={pokemon.id} {...pokemon} />;
 
-  const renderPokemons = () => pokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
+  const renderPokemons = () => filteredPokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 
-  const areThereMorePokemonsToShow = () => numberOfPokemonShown >= pokemons.length;
+  const areThereMorePokemonsToShow = () => numberOfPokemonShown >= filteredPokemons.length;
 
   return (
     <ErrorScreenWrapper>
