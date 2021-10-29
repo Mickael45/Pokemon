@@ -32,7 +32,7 @@ const ListFilteringInput = () => {
   return (
     <form onSubmit={handleFormSubmit} className={styles.container}>
       <div>
-        <input id={NAME_INPUT_ID} />
+        <input autoComplete="off" placeholder="Search a Pokemon by name or id" id={NAME_INPUT_ID} />
         <img src={searchIcon} onClick={handleButtonClick} alt="searchIcon" />
       </div>
     </form>
