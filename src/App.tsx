@@ -15,7 +15,7 @@ const renderErrorScreen = () => <ErrorScreen type="Page Not Found" />;
 
 const App = () => {
   const [filteredPokemons, pokemons, setPokemons] = usePokemons();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<ErrorType | null>(null);
 
   const handlePromiseResolution = (newPokemons: IBasicPokemon[]) => {
@@ -23,10 +23,7 @@ const App = () => {
     setLoading(false);
   };
 
-  const setErrorToSomethingWrongHappened = (e: any) => {
-    console.log(e, e.status);
-    setError(SOMETHING_WRONG_HAPPENED);
-  };
+  const setErrorToSomethingWrongHappened = () => setError(null);
 
   const getAllPokemons = () => {
     fetchAllPokemons().then(handlePromiseResolution).catch(setErrorToSomethingWrongHappened);
