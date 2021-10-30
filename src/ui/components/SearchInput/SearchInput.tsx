@@ -12,6 +12,10 @@ const SearchInput = () => {
   const filterPokemons = (input: HTMLInputElement) => {
     const { value } = input;
 
+    if (value === "") {
+      return pokemons;
+    }
+
     return !isNaN(+value)
       ? filteredPokemonsById(pokemons, +value)
       : filterPokemonByName(pokemons, value.toLocaleLowerCase());

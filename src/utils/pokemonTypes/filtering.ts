@@ -10,7 +10,7 @@ export const filterPokemonsByTypes = (pokemons: IBasicPokemon[], types: string) 
 export const filterPokemonByName = (pokemons: IBasicPokemon[], value: string) => {
   const doValueAndPokemonNameMatchPartially = (pokemon: IBasicPokemon) => pokemon.name.includes(value);
 
-  return value === "" ? pokemons : pokemons.filter(doValueAndPokemonNameMatchPartially);
+  return pokemons.filter(doValueAndPokemonNameMatchPartially);
 };
 
 export const filteredPokemonsById = (pokemons: IBasicPokemon[], id: number) => {
