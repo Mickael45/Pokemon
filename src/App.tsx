@@ -26,7 +26,11 @@ const App = () => {
 
   const setErrorToSomethingWrongHappened = () => setError(SOMETHING_WRONG_HAPPENED);
 
-  const getAllPokemons = () => fetchAllPokemons().then(handlePromiseResolution).catch(setErrorToSomethingWrongHappened);
+  const getAllPokemons = () => {
+    if (pokemons.length === 0) {
+      fetchAllPokemons().then(handlePromiseResolution).catch(setErrorToSomethingWrongHappened);
+    }
+  };
 
   return (
     <>
