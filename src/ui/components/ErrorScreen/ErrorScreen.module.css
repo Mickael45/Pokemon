@@ -1,15 +1,18 @@
 .container {
   height: 100vh;
   width: 100%;
-  background: teal;
 }
 
 .container > :only-child {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   text-align: center;
   display: grid;
   justify-items: center;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -55%);
+}
+
+.container > :only-child > :last-child {
+  margin-top: 50px;
 }

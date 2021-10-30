@@ -4,18 +4,11 @@ span {
 }
 
 p[data-char=" "] {
-  margin-left: 5px;
+  margin-left: 15px;
 }
 
 p {
-  position: relative;
-  font-family: sans-serif;
   text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: 4px;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: 100%;
 }
 
 .char {
