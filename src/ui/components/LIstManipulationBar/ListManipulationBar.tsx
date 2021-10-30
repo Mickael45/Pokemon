@@ -1,4 +1,9 @@
-import { getDivClassesById } from "../../../utils/domManipulation";
+import {
+  addClassToElement,
+  doesElementContainClass,
+  getElementById,
+  removeClassFromElement,
+} from "../../../utils/domManipulation";
 import ListFilteringDropdown from "../ListFiltering/ListFiltering";
 import ListFilteringInput from "../ListFilteringInput/ListFilteringInput";
 import logo from "../../../assets/logo.svg";
@@ -13,29 +18,25 @@ const ListManipulationBar = () => {
 
   const navigateHome = () => history.push("/");
 
-  const openDrawer = (drawerClassList: DOMTokenList, arrowClassList: DOMTokenList) => {
-    drawerClassList.add(styles.open);
-    arrowClassList.add(styles.up);
+  const openDrawer = (drawer: HTMLElement, arrow: HTMLElement) => {
+    addClassToElement(drawer, styles.open);
+    addClassToElement(arrow, styles.up);
   };
 
-  const closeDrawer = (drawerClassList: DOMTokenList, arrowClassList: DOMTokenList) => {
-    drawerClassList.remove(styles.open);
-    arrowClassList.remove(styles.up);
+  const closeDrawer = (drawer: HTMLElement, arrow: HTMLElement) => {
+    removeClassFromElement(drawer, styles.open);
+    removeClassFromElement(arrow, styles.up);
   };
 
   const toggleDrawer = () => {
-    const drawerClassList = getDivClassesById(DRAWER_ELEMENT_ID);
-    const arrowClassList = getDivClassesById(ARROW_ELEMENT_ID);
+    const drawer = getElementById(DRAWER_ELEMENT_ID);
+    const arrow = getElementById(ARROW_ELEMENT_ID);
 
-    if (!drawerClassList || !arrowClassList) {
+    if (!drawer || !arrow) {
       return;
     }
 
-    if (drawerClassList.contains(styles.open)) {
-      closeDrawer(drawerClassList, arrowClassList);
-    } else {
-      openDrawer(drawerClassList, arrowClassList);
-    }
+    return doesElementContainClass(drawer, styles.open) ? closeDrawer(drawer, arrow) : openDrawer(drawer, arrow);
   };
 
   return (
