@@ -2,6 +2,7 @@
   display: grid;
   background: rgba(236, 236, 236);
   width: 100%;
+  min-height: calc(100vh - 137px);
 }
 
 .container > :only-child {
