@@ -46,7 +46,7 @@
   border-radius: 10px;
 }
 
-.container > :nth-child(2) > :first-child > :last-child h1 {
+.container > :nth-child(2) > :first-child > :last-child h3 {
   text-align: left;
   margin-left: 35px;
 }

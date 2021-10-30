@@ -27,6 +27,7 @@ const PokemonType = ({ type, children = "", handleTypeClick }: IProps) => {
 
   return (
     <span
+      id="type"
       style={{ background: castedPokemonTypesColor[type] }}
       className={typeContainer}
       data-type={type}
