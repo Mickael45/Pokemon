@@ -41,12 +41,15 @@ const ListManipulationBar = () => {
   return (
     <div className={styles.container}>
       <img src={logo} alt="logo" onClick={navigateHome} />
-      <ListFilteringInput />
-
-      <div className={styles.close} id={DRAWER_ELEMENT_ID}>
-        <ListFilteringDropdown />
+      <div>
+        <ListFilteringInput />
+        <div className={[styles.drawer, styles.close].join(" ")} id={DRAWER_ELEMENT_ID}>
+          <ListFilteringDropdown />
+        </div>
+        <div>
+          <div className={styles.arrow} id={ARROW_ELEMENT_ID} onClick={toggleDrawer} />
+        </div>
       </div>
-      <div className={styles.arrow} id={ARROW_ELEMENT_ID} onClick={toggleDrawer} />
     </div>
   );
 };

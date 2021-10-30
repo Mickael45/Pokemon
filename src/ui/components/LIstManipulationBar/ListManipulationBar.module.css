@@ -1,33 +1,52 @@
 .container {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-items: center;
   width: 100%;
-  padding: 1% 0;
+  padding: 20px 0;
   background: #cc0000;
-  position: fixed;
-  top: 0;
   min-width: 60%;
-  margin: 0 auto;
-  z-index: 1;
 }
 
 .container > img {
-  width: 200px;
   position: absolute;
   left: 15px;
-  top: 10px;
+  top: 15px;
+  max-width: 200px;
+  width: 100%;
+  height: 70px;
+}
+
+@media screen and (max-width: 1000px) {
+  .container > img {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .container > :last-child {
+    width: 90%;
+    margin: 90px auto 0 auto;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container > img {
+    top: 15px;
+  }
+
+  .container > :last-child {
+    width: 55%;
+    margin: 15px auto 0 auto;
+  }
 }
 
 .container > img:hover {
   cursor: pointer;
 }
 
-.container > * {
-  width: 100%;
-}
-
-.container > :nth-child(2) {
-  max-width: 500px;
-  margin: 0 auto;
+.container > :last-child > :last-child {
+  margin-top: 20px;
 }
 
 div.open {
@@ -37,11 +56,14 @@ div.open {
   transition: all 0.5s ease-out;
 }
 
-.close {
+.drawer {
   display: grid;
   justify-content: center;
   overflow: hidden;
   align-content: center;
+}
+
+.close {
   visibility: hidden;
   opacity: 0;
   height: 0px;
