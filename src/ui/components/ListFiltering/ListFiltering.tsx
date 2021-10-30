@@ -8,14 +8,8 @@ import { useHistory } from "react-router-dom";
 
 const filteringOptions = Object.values(FilteringTypes);
 
-const ListFilteringDropdown = () => {
-  let filteringQuery = useQueryParams();
-
-  if (filteringQuery && filteringQuery.field === "types") {
-    filteringQuery = filteringQuery.name;
-  } else {
-    filteringQuery = FilteringTypes.ALL;
-  }
+const ListFiltering = () => {
+  const filteringQuery = useQueryParams("types");
   const history = useHistory();
   const { pokemons, setPokemons } = useContext(PokemonContext);
 
@@ -99,4 +93,4 @@ const ListFilteringDropdown = () => {
   );
 };
 
-export default ListFilteringDropdown;
+export default ListFiltering;

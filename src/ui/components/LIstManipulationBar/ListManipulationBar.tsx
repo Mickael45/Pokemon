@@ -1,5 +1,5 @@
 import { getDivClassesById } from "../../../utils/domManipulation";
-import ListFilteringDropdown from "../ListFilteringDropdown/ListFilteringDropdown";
+import ListFilteringDropdown from "../ListFiltering/ListFiltering";
 import ListFilteringInput from "../ListFilteringInput/ListFilteringInput";
 import logo from "../../../assets/logo.svg";
 import styles from "./ListManipulationBar.module.css";
