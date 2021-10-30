@@ -28,6 +28,7 @@ const App = () => {
 
   const getAllPokemons = () => {
     if (pokemons.length === 0) {
+      setLoading(true);
       fetchAllPokemons().then(handlePromiseResolution).catch(setErrorToSomethingWrongHappened);
     }
   };

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import pikachuGif from "../../../assets/running-pikachu.gif";
 import styles from "./PikachuLoader.module.css";
 import AnimatedText from "../AnimatedText/AnimatedText";
+import Page from "../../templates/Page/Page";
 
 const TEXT_UPDATE_INTERVAL_MS = 4000;
 
@@ -36,10 +37,12 @@ const PikachuLoader = () => {
   useEffect(triggerInterval, [loadingText]);
 
   return (
-    <div className={styles.container}>
-      <img src={pikachuGif} alt="pika pika" />
-      <AnimatedText text={loadingText} />
-    </div>
+    <Page>
+      <div className={styles.container}>
+        <img src={pikachuGif} alt="pika pika" />
+        <AnimatedText text={loadingText} />
+      </div>
+    </Page>
   );
 };
 
