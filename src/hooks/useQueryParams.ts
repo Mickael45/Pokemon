@@ -5,7 +5,7 @@ const getTypesQueryParams = (name: PokemonType, field: FilterField) => (field ? 
 
 const getNameQueryParams = (name: PokemonType, field: FilterField) => (field ? name : "");
 
-const useQueryParams = (filteringType: string): FilteringType => {
+const useQueryParams = (filteringType: FilterField): FilteringType => {
   const query = new URLSearchParams(useLocation().search);
   const name = query.get("name") as PokemonType;
   const field = query.get("field") as FilterField;
