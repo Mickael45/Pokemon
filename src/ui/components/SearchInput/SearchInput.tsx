@@ -1,24 +1,33 @@
 import { FormEvent, useContext } from "react";
 import PokemonContext from "../../../context/PokemonContext";
 import searchIcon from "../../../assets/search.svg";
-import styles from "./ListFilteringInput.module.css";
+import styles from "./SearchInput.module.css";
 
 const NAME_INPUT_ID = "nameInputId";
 
-const ListFilteringInput = () => {
+const SearchInput = () => {
   const { pokemons, setPokemons } = useContext(PokemonContext);
 
   const filterPokemonByName = (value: string) => {
     const doValueAndPokemonNameMatchPartially = (pokemon: IBasicPokemon) => pokemon.name.includes(value);
 
-    return pokemons.filter(doValueAndPokemonNameMatchPartially);
+    return value === "" ? pokemons : pokemons.filter(doValueAndPokemonNameMatchPartially);
+  };
+
+  const filteredPokemonsById = (id: number) => {
+    const doesPokemonIdMatchWithId = (pokemon: IBasicPokemon) => pokemon.id === id;
+
+    return pokemons.filter(doesPokemonIdMatchWithId);
   };
 
   const handleButtonClick = () => {
     const input = document.getElementById(NAME_INPUT_ID) as HTMLInputElement;
 
     if (input) {
-      const filteredPokemons = input.value === "" ? pokemons : filterPokemonByName(input.value.toLocaleLowerCase());
+      const { value } = input;
+      const filteredPokemons = !isNaN(+value)
+        ? filteredPokemonsById(+value)
+        : filterPokemonByName(input.value.toLocaleLowerCase());
 
       setPokemons(filteredPokemons);
     }
@@ -39,4 +48,4 @@ const ListFilteringInput = () => {
   );
 };
 
-export default ListFilteringInput;
+export default SearchInput;
