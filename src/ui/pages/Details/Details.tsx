@@ -52,7 +52,10 @@ const DetailsPage = () => {
         <Page>
           <div className={styles.container}>
             <IdNavigation id={id} />
-            <div>{`${capitalizeFirstLetter(name)} #${id}`}</div>
+            <span>
+              <h1>{capitalizeFirstLetter(name)}</h1>
+              <h1>{`#${id}`}</h1>
+            </span>
             <div>
               <span>
                 <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />

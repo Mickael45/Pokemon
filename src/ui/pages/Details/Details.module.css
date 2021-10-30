@@ -29,3 +29,16 @@
   align-content: center;
   background-color: lightgrey;
 }
+
+.container > :nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container > :nth-child(2) > :last-child {
+  color: lightgrey;
+  margin-left: 10px;
+}
