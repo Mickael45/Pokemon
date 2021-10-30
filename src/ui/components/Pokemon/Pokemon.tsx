@@ -15,7 +15,7 @@ const Pokemon = ({ name, imageUrl, id, types }: IBasicPokemon) => {
       <ImageWithPlaceholder src={imageUrl} alt="pokemon pic" handleClick={handleTagClick} />
       <div>
         <div onClick={handleTagClick}>{`#${formatNumberToMatchLength(id)}`}</div>
-        <h3 onClick={handleTagClick}>{capitalizeFirstLetter(name)}</h3>
+        <h4 onClick={handleTagClick}>{capitalizeFirstLetter(name)}</h4>
       </div>
       <span>
         <PokemonTypes id={id} types={types} />
