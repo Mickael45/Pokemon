@@ -17,8 +17,8 @@ const ListFilteringInput = () => {
   const handleButtonClick = () => {
     const input = document.getElementById(NAME_INPUT_ID) as HTMLInputElement;
 
-    if (input && input.value) {
-      const filteredPokemons = filterPokemonByName(input.value.toLocaleLowerCase());
+    if (input) {
+      const filteredPokemons = input.value === "" ? pokemons : filterPokemonByName(input.value.toLocaleLowerCase());
 
       setPokemons(filteredPokemons);
     }
