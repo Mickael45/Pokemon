@@ -6,3 +6,15 @@ export const filterPokemonsByTypes = (pokemons: IBasicPokemon[], types: string) 
 
   return filteredPokemons;
 };
+
+export const filterPokemonByName = (pokemons: IBasicPokemon[], value: string) => {
+  const doValueAndPokemonNameMatchPartially = (pokemon: IBasicPokemon) => pokemon.name.includes(value);
+
+  return value === "" ? pokemons : pokemons.filter(doValueAndPokemonNameMatchPartially);
+};
+
+export const filteredPokemonsById = (pokemons: IBasicPokemon[], id: number) => {
+  const doesPokemonIdMatchWithId = (pokemon: IBasicPokemon) => pokemon.id === id;
+
+  return pokemons.filter(doesPokemonIdMatchWithId);
+};
