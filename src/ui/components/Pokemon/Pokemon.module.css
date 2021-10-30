@@ -26,6 +26,10 @@
   cursor: pointer;
 }
 
-.container > div {
+.container > :nth-child(2) > div {
   color: grey;
+}
+
+.container > :nth-child(2) {
+  display: grid;
 }
