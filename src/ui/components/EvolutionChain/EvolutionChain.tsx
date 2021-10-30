@@ -9,7 +9,12 @@ const EvolutionChain = ({ chain }: IProps) => {
   const renderPokemon = (pokemon: IBasicPokemon) => <Pokemon key={pokemon.id} {...pokemon} />;
   const renderPokemons = () => chain.map(renderPokemon);
 
-  return <div className={styles.container}>{renderPokemons()}</div>;
+  return (
+    <div className={styles.container}>
+      <h1>Evolution Chain</h1>
+      <div>{renderPokemons()}</div>
+    </div>
+  );
 };
 
 export default EvolutionChain;

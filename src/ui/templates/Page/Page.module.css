@@ -1,9 +1,14 @@
 .container {
   display: grid;
+  background: rgba(236, 236, 236);
   width: 100%;
 }
 
 .container > :only-child {
-  width: 60%;
-  margin: 20px auto;
+  max-width: 1000px;
+  width: 90%;
+  min-width: 360px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px 0;
 }

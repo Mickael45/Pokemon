@@ -13,8 +13,10 @@ const Pokemon = ({ name, imageUrl, id, types }: IBasicPokemon) => {
   return (
     <div className={[styles.container, getRandomTransformAnimation()].join(" ")}>
       <ImageWithPlaceholder src={imageUrl} alt="pokemon pic" handleClick={handleTagClick} />
-      <div onClick={handleTagClick}>{`#${formatNumberToMatchLength(id)}`}</div>
-      <h3 onClick={handleTagClick}>{capitalizeFirstLetter(name)}</h3>
+      <div>
+        <div onClick={handleTagClick}>{`#${formatNumberToMatchLength(id)}`}</div>
+        <h3 onClick={handleTagClick}>{capitalizeFirstLetter(name)}</h3>
+      </div>
       <span>
         <PokemonTypes id={id} types={types} />
       </span>

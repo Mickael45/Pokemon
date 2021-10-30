@@ -50,25 +50,32 @@ const DetailsPage = () => {
     <ErrorScreenWrapper>
       <LoadingScreenWrapper>
         <Page>
-          <div className={styles.container}>
+          <div>
             <IdNavigation id={id} />
-            <div>{`${capitalizeFirstLetter(name)} #${id}`}</div>
-            <div>
-              <span>
-                <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
-                <Radar title="Stats" axisDataList={stats} color={color} />
-              </span>
-              <span>
-                <BasicInfo {...basicInfo} />
-                <div>
-                  <h3>Types</h3>
-                  <PokemonTypes id={id} types={types} />
-                  <h3>Weaknesses</h3>
-                  <PokemonWeaknesses id={id} types={weaknesses} />
-                </div>
-              </span>
+            <div className={styles.container}>
+              <div>
+                <h1>{capitalizeFirstLetter(name)}</h1>
+                <h1>{`#${id}`}</h1>
+              </div>
+              <div>
+                <span>
+                  <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
+                  <div>
+                    <Radar title="Stats" axisDataList={stats} color={color} />
+                  </div>
+                </span>
+                <span>
+                  <BasicInfo {...basicInfo} />
+                  <div>
+                    <h3>Types</h3>
+                    <PokemonTypes id={id} types={types} />
+                    <h3>Weaknesses</h3>
+                    <PokemonWeaknesses id={id} types={weaknesses} />
+                  </div>
+                </span>
+                <EvolutionChain chain={evolutionChain} />
+              </div>
             </div>
-            <EvolutionChain chain={evolutionChain} />
           </div>
         </Page>
       </LoadingScreenWrapper>

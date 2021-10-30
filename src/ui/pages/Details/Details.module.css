@@ -1,8 +1,9 @@
-.container > :nth-child(2) {
-  text-align: center;
+.container > :first-child {
+  display: flex;
+  justify-content: center;
 }
 
-.container > :nth-child(3) {
+.container > :nth-child(2) {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -13,19 +14,44 @@
   height: 100%;
 }
 
-.container > :nth-child(3) > * {
+.container > :nth-child(2) > :not(:last-child) {
   display: grid;
-  width: 100%;
-  max-width: 45%;
-  min-width: 350px;
+  width: 45%;
   align-content: space-evenly;
 }
 
-.container > :nth-child(3) > :first-child > [id="placeholder"] {
+.container > :nth-child(2) > :last-child {
+  width: 91%;
+}
+
+@media screen and (max-width: 800px) {
+  .container > :nth-child(2) > :not(:last-child),
+  .container > :nth-child(2) > :last-child {
+    width: 100%;
+  }
+}
+
+.container > :nth-child(2) > :first-child > [id="placeholder"] {
   max-width: 500px;
   height: 500px;
   display: grid;
   justify-content: center;
   align-content: center;
   background-color: lightgrey;
+}
+
+.container > :nth-child(2) > :first-child > :last-child {
+  background: white;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.container > :nth-child(2) > :first-child > :last-child h1 {
+  text-align: left;
+  margin-left: 35px;
+}
+
+.container > :nth-child(1) > :last-child {
+  color: rgb(164, 164, 164);
+  margin-left: 10px;
 }
