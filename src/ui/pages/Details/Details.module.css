@@ -21,13 +21,18 @@
 }
 
 .container > :nth-child(2) > :last-child {
-  width: 91%;
+  width: 95%;
 }
 
 @media screen and (max-width: 800px) {
   .container > :nth-child(2) > :not(:last-child),
   .container > :nth-child(2) > :last-child {
     width: 100%;
+  }
+  .container > :nth-child(2) {
+    display: grid;
+    row-gap: 50px;
+    align-content: space-around;
   }
 }
 

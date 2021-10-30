@@ -6,8 +6,27 @@ const findEnglishEntry = (entry: FlavorTextEntry | GeneraEntry) => entry.languag
 
 export const replaceBrokenName = (name: string) => brokenNamesMap[name] || name;
 
+export const revertPokemonNameToOriginal = (pokemon: IPokemonResponseType) => {
+  const entry = Object.entries(brokenNamesMap).find((entry: any) => pokemon.name === entry[1]);
+  const name = entry ? entry[0] : "";
+  if (pokemon.name.includes("-")) {
+    console.log(name, pokemon.name, Object.entries(brokenNamesMap));
+  }
+  return name ? { ...pokemon, name } : pokemon;
+};
+
+const statLabelMapper: HashMap = {
+  "special attack": "spe. Att.",
+  attack: "attack",
+  defense: "defense",
+  "special defense": "spe. Def.",
+  hp: "hp",
+  speed: "speed",
+};
+
 export const extractStatsFromPokemon = ({ stats }: IPokemonResponseType) => {
-  const formatStatLabel = (statLabel: string) => capitalizeFirstLetter(statLabel.replaceAll("-", " "));
+  const formatStatLabel = (statLabel: string) => capitalizeFirstLetter(statLabelMapper[statLabel.replaceAll("-", " ")]);
+
   const createStatObj = ({ base_stat, stat }: Stat) => ({
     label: formatStatLabel(stat.name),
     value: base_stat,

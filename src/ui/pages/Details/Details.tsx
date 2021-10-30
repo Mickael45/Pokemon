@@ -54,8 +54,8 @@ const DetailsPage = () => {
             <IdNavigation id={id} />
             <div className={styles.container}>
               <div>
-                <h1>{capitalizeFirstLetter(name)}</h1>
-                <h1>{`#${id}`}</h1>
+                <h2>{capitalizeFirstLetter(name)}</h2>
+                <h3>{`#${id}`}</h3>
               </div>
               <div>
                 <span>

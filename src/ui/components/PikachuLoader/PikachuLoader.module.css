@@ -1,11 +1,11 @@
 .container {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   text-align: center;
   display: grid;
   justify-items: center;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -55%);
   animation: fadeIn ease-in 1s;
 }
 

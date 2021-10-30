@@ -2,13 +2,13 @@
   display: grid;
   background: rgba(236, 236, 236);
   width: 100%;
+  min-height: calc(100vh - 137px);
 }
 
 .container > :only-child {
   max-width: 1000px;
   width: 90%;
-  min-width: 360px;
+  min-width: 340px;
   margin: 0 auto;
-  overflow: hidden;
   padding: 20px 0;
 }

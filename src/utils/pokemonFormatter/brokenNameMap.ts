@@ -9,6 +9,22 @@ const brokenNamesMap: HashMap = {
   meowstic: "meowstic-male",
   darmanitan: "darmanitan-standard",
   wormadam: "wormadam-plant",
+  basculin: "basculin-red-striped",
+  giratina: "giratina-altered",
+  shaymin: "shaymin-land",
+  tornadus: "tornadus-incarnate",
+  thundurus: "thundurus-incarnate",
+  landorus: "landorus-incarnate",
+  keldeo: "keldeo-ordinary",
+  meloetta: "meloetta-aria",
+  oricorio: "oricorio-baile",
+  wishiwashi: "wishiwashi-solo",
+  minior: "minior-red-meteor",
+  mimikyu: "mimikyu-disguised",
+  eiscue: "eiscue-ice",
+  indeedee: "indeedee-male",
+  zacian: "zacian-hero",
+  zamazenta: "zamazenta-hero",
 };
 
 export default brokenNamesMap;

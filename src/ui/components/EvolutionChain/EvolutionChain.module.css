@@ -1,13 +1,13 @@
 .container {
   background: url("https://assets.pokemon.com/static2/_ui/img/chrome/body_gray_bg.png");
   margin-top: 30px;
-  padding: 20px;
+  padding: 20px 0;
   border-radius: 10px;
   color: white;
 }
 
 .container > :first-child {
-  margin-left: 10px;
+  margin-left: 30px;
 }
 
 .container > :last-child {

@@ -7,7 +7,7 @@ import Page from "../../templates/Page/Page";
 const TEXT_UPDATE_INTERVAL_MS = 4000;
 
 const LoadingTexts = [
-  `Pikachu ! Go! `,
+  "Pikachu ! Go !",
   "He should be back in a sec...",
   "Don't panic, he's on his way back !",
   "Does Anyone Actually Read This ?",
