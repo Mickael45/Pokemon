@@ -1,5 +1,5 @@
-import { useEffect, useState, useCallback, useContext } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
+import { useParams } from "react-router-dom";
 import { fetchPokemonDetailsByNameOrId } from "../../../services/fetchPokemons/fetchPokemons";
 import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
 import ImageWithPlaceholder from "../../components/ImageWithPlaceholder/ImageWithPlaceholder";
@@ -26,7 +26,6 @@ const DetailsPage = () => {
   const { id } = useParams<Params>();
   const { setLoading } = useContext(LoadingContext);
   const { setError } = useContext(ErrorContext);
-  const history = useHistory();
   const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
   const { imageUrl, name, stats, height, weight, types, weaknesses, evolutionChain, abilities, description, category } =
     pokemon;
@@ -47,14 +46,6 @@ const DetailsPage = () => {
 
   useEffect(getPokemonById, [id]);
 
-  const handleTypeClick = (type: string) =>
-    history.push({
-      pathname: "/",
-      search: `name=${type}&field=types`,
-    });
-
-  const callBackedHandleTypeClick = useCallback(handleTypeClick, []);
-
   return (
     <ErrorScreenWrapper>
       <LoadingScreenWrapper>
@@ -71,13 +62,13 @@ const DetailsPage = () => {
                 <BasicInfo {...basicInfo} />
                 <div>
                   <h3>Types</h3>
-                  <PokemonTypes id={id} types={types} handleClick={callBackedHandleTypeClick} />
+                  <PokemonTypes id={id} types={types} />
                   <h3>Weaknesses</h3>
-                  <PokemonWeaknesses id={id} types={weaknesses} handleClick={callBackedHandleTypeClick} />
+                  <PokemonWeaknesses id={id} types={weaknesses} />
                 </div>
               </span>
             </div>
-            <EvolutionChain chain={evolutionChain} handleClick={callBackedHandleTypeClick} />
+            <EvolutionChain chain={evolutionChain} />
           </div>
         </Page>
       </LoadingScreenWrapper>

@@ -6,11 +6,7 @@ import ImageWithPlaceholder from "../ImageWithPlaceholder/ImageWithPlaceholder";
 import styles from "./Pokemon.module.css";
 import PokemonTypes from "../PokemonTypes/PokemonTypes";
 
-type IProps = IBasicPokemon & {
-  onTypeClick: (type: PokemonType) => void;
-};
-
-const Pokemon = ({ name, imageUrl, id, types, onTypeClick }: IProps) => {
+const Pokemon = ({ name, imageUrl, id, types }: IBasicPokemon) => {
   const history = useHistory();
   const handleTagClick = () => history.push(`/details/${id}`);
 
@@ -20,7 +16,7 @@ const Pokemon = ({ name, imageUrl, id, types, onTypeClick }: IProps) => {
       <div onClick={handleTagClick}>{`#${formatNumberToMatchLength(id)}`}</div>
       <h3 onClick={handleTagClick}>{capitalizeFirstLetter(name)}</h3>
       <span>
-        <PokemonTypes id={id} handleClick={onTypeClick} types={types} />
+        <PokemonTypes id={id} types={types} />
       </span>
     </div>
   );

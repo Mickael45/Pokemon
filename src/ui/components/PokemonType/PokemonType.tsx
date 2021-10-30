@@ -1,25 +1,36 @@
 import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
 import styles from "./PokemonType.module.css";
 import pokemonTypesColor from "../../../constants/TypesColor.json";
+import { useHistory } from "react-router-dom";
 const { typeContainer } = styles;
 
 interface IProps {
   type: PokemonType;
-  handleClick: (type: PokemonType) => void;
   children?: string;
+  handleTypeClick?: Function;
 }
 
-const PokemonType = ({ type, handleClick, children = "" }: IProps) => {
+const PokemonType = ({ type, children = "", handleTypeClick }: IProps) => {
+  const history = useHistory();
   const castedPokemonTypesColor = pokemonTypesColor as HashMap;
 
-  const handleTypeClick = () => handleClick(type);
+  const handleClick = () => {
+    if (handleTypeClick) {
+      handleTypeClick(type);
+    } else {
+      history.push({
+        pathname: "/",
+        search: `name=${type}&field=types`,
+      });
+    }
+  };
 
   return (
     <span
       style={{ background: castedPokemonTypesColor[type] }}
       className={typeContainer}
       data-type={type}
-      onClick={handleTypeClick}
+      onClick={handleClick}
     >
       {capitalizeFirstLetter(type)}
       {children}

@@ -1,0 +1,119 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background: #cc0000;
+  min-width: 60%;
+}
+
+.container > img {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  max-width: 200px;
+  width: 100%;
+  height: 70px;
+}
+
+@media screen and (max-width: 1000px) {
+  .container > img {
+    height: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .container > :last-child {
+    width: 90%;
+    margin: 50px auto 0 auto;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container > img {
+    top: 15px;
+  }
+
+  .container > :last-child {
+    width: 55%;
+    margin: 15px auto 0 auto;
+  }
+}
+
+.container > img:hover {
+  cursor: pointer;
+}
+
+.container > :last-child > :last-child {
+  margin-top: 20px;
+}
+
+div.open {
+  visibility: visible;
+  max-height: 500px;
+  opacity: 1;
+  transition: all 0.5s ease-out;
+}
+
+.drawer {
+  display: grid;
+  justify-content: center;
+  overflow: hidden;
+  align-content: center;
+}
+
+.close {
+  visibility: collapse;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.5s ease-out;
+}
+.arrow {
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 3px white solid;
+  border-bottom: 3px white solid;
+  transition: transform 0.5s;
+}
+
+.arrow:before {
+  content: "";
+  position: absolute;
+  margin: -5px 0 0 5px;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  border-left: none;
+  border-top: none;
+  border-right: 2px white solid;
+  border-bottom: 2px white solid;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: arrow;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transition: transform 0.5s;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-5px, -5px);
+  }
+}

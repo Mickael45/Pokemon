@@ -4,11 +4,10 @@ import styles from "./PokemonTypes.module.css";
 interface IProps {
   id: number | string;
   types: string;
-  handleClick: (type: PokemonType) => void;
 }
 
-const PokemonTypes = ({ id, types, handleClick }: IProps) => {
-  const renderType = (type: PokemonType) => <PokemonType key={`${id}-${type}`} type={type} handleClick={handleClick} />;
+const PokemonTypes = ({ id, types }: IProps) => {
+  const renderType = (type: PokemonType) => <PokemonType key={`${id}-${type}`} type={type} />;
   const renderTypes = () => {
     const splitTypes = types.split(",") as PokemonType[];
 

@@ -1,20 +1,29 @@
-import { ChangeEventHandler } from "react";
+import { BaseSyntheticEvent } from "react";
 
 interface IProps {
   options: string[];
-  handleOptionSelectionChange: ChangeEventHandler;
 }
 
-const Dropdown = ({ options, handleOptionSelectionChange }: IProps) => {
-  const renderSortingType = (sortingType: string) => (
-    <option key={sortingType} value={sortingType}>
-      {sortingType}
+function Dropdown<U>({
+  selectedOption,
+  options,
+  handleOptionSelectionChange,
+}: IProps & { handleOptionSelectionChange: (option: U) => void; selectedOption: U }) {
+  const renderOption = (option: string) => (
+    <option key={option} value={option}>
+      {option}
     </option>
   );
 
-  const renderOptions = () => options.map(renderSortingType);
+  const renderOptions = () => options.map(renderOption);
 
-  return <select onChange={handleOptionSelectionChange}>{renderOptions()}</select>;
-};
+  const handleOnChange = (e: BaseSyntheticEvent) => handleOptionSelectionChange(e.target.value as U);
+
+  return (
+    <select value={selectedOption as unknown as string} onChange={handleOnChange}>
+      {renderOptions()}
+    </select>
+  );
+}
 
 export default Dropdown;

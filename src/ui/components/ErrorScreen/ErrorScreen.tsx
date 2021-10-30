@@ -1,5 +1,5 @@
-import pikachu from "../../assets/surprised-pikachu.png";
-import { ErrorTypeToMessageHashMap } from "../../constants/ErrorTypeToMessageHashMap";
+import pikachu from "../../../assets/surprised-pikachu.png";
+import { ErrorTypeToMessageHashMap } from "../../../constants/ErrorTypeToMessageHashMap";
 import styles from "./ErrorScreen.module.css";
 
 interface IProps {

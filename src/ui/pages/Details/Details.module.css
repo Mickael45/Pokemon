@@ -10,6 +10,7 @@
 
 .container img {
   width: 100%;
+  height: 100%;
 }
 
 .container > :nth-child(3) > * {
@@ -18,4 +19,13 @@
   max-width: 45%;
   min-width: 350px;
   align-content: space-evenly;
+}
+
+.container > :nth-child(3) > :first-child > [id="placeholder"] {
+  max-width: 500px;
+  height: 500px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-color: lightgrey;
 }
