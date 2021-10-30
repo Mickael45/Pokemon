@@ -10,7 +10,7 @@ import PokemonContext from "./context/PokemonContext";
 import { SOMETHING_WRONG_HAPPENED } from "./constants/Errors";
 import { fetchAllPokemons } from "./services/fetchPokemons/fetchPokemons";
 import usePokemons from "./hooks/usePokemons";
-import ListManipulationBar from "./ui/components/LIstManipulationBar/ListManipulationBar";
+import NavigationBar from "./ui/components/NavigationBar/NavigationBar";
 
 const renderErrorScreen = () => <ErrorScreen type="Page Not Found" />;
 
@@ -34,7 +34,7 @@ const App = () => {
         <ErrorContext.Provider value={{ error, setError }}>
           <LoadingContext.Provider value={{ loading, setLoading }}>
             <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons, getAllPokemons }}>
-              <ListManipulationBar />
+              <NavigationBar />
               <Switch>
                 <Route path="/" exact component={HomePage} />
                 <Route path="/details/:id" component={DetailsPage} />

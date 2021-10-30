@@ -2,7 +2,6 @@ import { useContext, useEffect } from "react";
 import PokemonContext from "../../../context/PokemonContext";
 import * as FilteringTypes from "../../../constants/Types";
 import useQueryParams from "../../../hooks/useQueryParams";
-import styles from "./ListFiltering.module.css";
 import PokemonType from "../PokemonType/PokemonType";
 import { useHistory } from "react-router-dom";
 import {
@@ -12,10 +11,11 @@ import {
   removeClassFromElement,
 } from "../../../utils/domManipulation";
 import { filterPokemonsByTypes } from "../../../utils/pokemonTypes/filtering";
+import styles from "./TypesSelector.module.css";
 
 const filteringOptions = Object.values(FilteringTypes);
 
-const ListFiltering = () => {
+const TypesSelector = () => {
   const filteringQuery = useQueryParams();
   const history = useHistory();
   const { pokemons, setPokemons } = useContext(PokemonContext);
@@ -103,4 +103,4 @@ const ListFiltering = () => {
   );
 };
 
-export default ListFiltering;
+export default TypesSelector;

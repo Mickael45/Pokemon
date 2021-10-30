@@ -1,5 +1,7 @@
+export const getElementById = (id: string) => document.getElementById(id);
+
 export const getDivClassesById = (id: string): DOMTokenList | null => {
-  const element = document.getElementById(id) as HTMLDivElement;
+  const element = getElementById(id) as HTMLDivElement;
 
   if (!element) {
     return null;
