@@ -59,7 +59,9 @@ const DetailsPage = () => {
             <div>
               <span>
                 <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
-                <Radar title="Stats" axisDataList={stats} color={color} />
+                <div>
+                  <Radar title="Stats" axisDataList={stats} color={color} />
+                </div>
               </span>
               <span>
                 <BasicInfo {...basicInfo} />
