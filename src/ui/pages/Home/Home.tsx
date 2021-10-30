@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import Pokemon from "../../components/Pokemon/Pokemon";
 import Page from "../../templates/Page/Page";
 import FlexboxList from "../../templates/FlexboxList/FlexboxList";
@@ -10,7 +10,7 @@ import PokemonContext from "../../../context/PokemonContext";
 const POKEMON_STACK_SIZE = 12;
 
 const HomePage = () => {
-  const { filteredPokemons } = useContext(PokemonContext);
+  const { filteredPokemons, getAllPokemons } = useContext(PokemonContext);
 
   const [numberOfPokemonShown, setNumberOfPokemonShown] = useState(POKEMON_STACK_SIZE);
 
@@ -21,6 +21,8 @@ const HomePage = () => {
   const renderPokemons = () => filteredPokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 
   const areThereMorePokemonsToShow = () => numberOfPokemonShown >= filteredPokemons.length;
+
+  useEffect(getAllPokemons, []);
 
   return (
     <ErrorScreenWrapper>

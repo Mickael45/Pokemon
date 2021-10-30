@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import HomePage from "./ui/pages/Home/Home";
 import DetailsPage from "./ui/pages/Details/Details";
 import TypeInteractionsPage from "./ui/pages/TypeInteractions/TypeInteractions";
@@ -16,7 +16,7 @@ const renderErrorScreen = () => <ErrorScreen type="Page Not Found" />;
 
 const App = () => {
   const [filteredPokemons, pokemons, setPokemons] = usePokemons();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<ErrorType | null>(null);
 
   const handlePromiseResolution = (newPokemons: IBasicPokemon[]) => {
@@ -26,18 +26,14 @@ const App = () => {
 
   const setErrorToSomethingWrongHappened = () => setError(SOMETHING_WRONG_HAPPENED);
 
-  const getAllPokemons = () => {
-    fetchAllPokemons().then(handlePromiseResolution).catch(setErrorToSomethingWrongHappened);
-  };
-
-  useEffect(getAllPokemons, []);
+  const getAllPokemons = () => fetchAllPokemons().then(handlePromiseResolution).catch(setErrorToSomethingWrongHappened);
 
   return (
     <>
       <BrowserRouter>
         <ErrorContext.Provider value={{ error, setError }}>
           <LoadingContext.Provider value={{ loading, setLoading }}>
-            <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons }}>
+            <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons, getAllPokemons }}>
               <ListManipulationBar />
               <Switch>
                 <Route path="/" exact component={HomePage} />
