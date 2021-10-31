@@ -16,7 +16,7 @@ import styles from "./TypesSelector.module.css";
 const filteringOptions = Object.values(FilteringTypes);
 
 const TypesSelector = () => {
-  const filteringQuery = useQueryParams();
+  const filteringQuery = useQueryParams("types");
   const history = useHistory();
   const { pokemons, setPokemons } = useContext(PokemonContext);
 
@@ -76,7 +76,7 @@ const TypesSelector = () => {
 
   const createQuery = (type: string, element: HTMLElement) => {
     const types = doesElementContainClass(element, styles.highlight) ? removeTypeFromQuery(type) : addTypeToQuery(type);
-    const search = types === "" ? "" : `name=${types}&field=types`;
+    const search = types === "" ? "" : `types=${types}`;
 
     history.push({
       pathname: "/",
