@@ -1,5 +1,4 @@
 import { FormEvent, useContext, useEffect } from "react";
-import { filteredPokemonsById, filterPokemonByName } from "../../../utils/pokemonTypes/filtering";
 import { useHistory } from "react-router-dom";
 import PokemonContext from "../../../context/PokemonContext";
 import searchIcon from "../../../assets/search.svg";
@@ -10,47 +9,50 @@ import { getElementById } from "../../../utils/domManipulation";
 const NAME_INPUT_ID = "nameInputId";
 
 const SearchInput = () => {
-  const filteringQuery = useQueryParams("id");
-  const history = useHistory();
-  const { pokemons, setPokemons } = useContext(PokemonContext);
+  // const filteringQuery = useQueryParams("id");
+  // const history = useHistory();
+  // const { pokemons, setPokemons } = useContext(PokemonContext);
 
-  const filterPokemons = (input: HTMLInputElement) => {
-    const { value } = input;
+  // const filterPokemons = (input: HTMLInputElement) => {
+  //   const { value } = input;
 
-    if (value === "") {
-      return pokemons;
-    }
+  //   if (value === "") {
+  //     return pokemons;
+  //   }
+  //   return !isNaN(+value)
+  //     ? filteredPokemonsById(pokemons, +value)
+  //     : filterPokemonByName(pokemons, value.toLocaleLowerCase());
+  // };
 
-    return !isNaN(+value)
-      ? filteredPokemonsById(pokemons, +value)
-      : filterPokemonByName(pokemons, value.toLocaleLowerCase());
-  };
+  // const handlePokemonsAndFilteringQueryChange = () => {
+  //   const input = getElementById(NAME_INPUT_ID) as HTMLInputElement;
 
-  const handlePokemonsAndFilteringQueryChange = () => {
-    const input = getElementById(NAME_INPUT_ID) as HTMLInputElement;
+  //   if (!input || !filteringQuery) {
+  //     return;
+  //   }
 
-    if (!pokemons || !pokemons.length || !input) {
-      return;
-    }
+  //   input.value = filteringQuery;
 
-    setPokemons(filterPokemons(input));
-  };
+  //   if (!pokemons || !pokemons.length) {
+  //     return;
+  //   }
+  //   setPokemons(filterPokemons(input));
+  // };
 
-  useEffect(handlePokemonsAndFilteringQueryChange, [filteringQuery, pokemons]);
+  // useEffect(handlePokemonsAndFilteringQueryChange, [filteringQuery, pokemons]);
 
   const createQuery = () => {
-    const { value = "" } = getElementById(NAME_INPUT_ID) as HTMLInputElement;
-    const search = value === "" ? "" : `id=${value}`;
-
-    history.push({
-      pathname: "/",
-      search,
-    });
+    // const { value = "" } = getElementById(NAME_INPUT_ID) as HTMLInputElement;
+    // const search = value === "" ? "" : `id=${value}`;
+    // history.push({
+    //   pathname: "/",
+    //   search,
+    // });
   };
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    createQuery();
+    // e.preventDefault();
+    // createQuery();
   };
 
   return (

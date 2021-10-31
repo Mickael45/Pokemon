@@ -1,7 +1,6 @@
-import { useContext, useEffect } from "react";
-import PokemonContext from "../../../context/PokemonContext";
+import { useEffect } from "react";
 import * as FilteringTypes from "../../../constants/Types";
-import useQueryParams from "../../../hooks/useQueryParams";
+import { usePokemonTypesFromQuery } from "../../../hooks/useQueryParams";
 import PokemonType from "../PokemonType/PokemonType";
 import { useHistory } from "react-router-dom";
 import {
@@ -10,21 +9,15 @@ import {
   getElementByQuerySelector,
   removeClassFromElement,
 } from "../../../utils/domManipulation";
-import { filterPokemonsByTypes } from "../../../utils/pokemonTypes/filtering";
 import styles from "./TypesSelector.module.css";
+import useFiltering from "../../../hooks/useFiltering";
 
 const filteringOptions = Object.values(FilteringTypes);
 
 const TypesSelector = () => {
-  const filteringQuery = useQueryParams("types");
   const history = useHistory();
-  const { pokemons, setPokemons } = useContext(PokemonContext);
-
-  const filterPokemons = () => {
-    const filteredPokemons = filteringQuery !== "" ? filterPokemonsByTypes(pokemons, filteringQuery) : pokemons;
-
-    setPokemons(filteredPokemons);
-  };
+  const filteringQuery = usePokemonTypesFromQuery();
+  const filteredPokemons = useFiltering();
 
   const doesFilteringQueryIncludeType = (type: PokemonType) => filteringQuery.split(",").includes(type);
 
@@ -44,22 +37,13 @@ const TypesSelector = () => {
     typeElements.forEach(applyStyle);
   };
 
-  const handlePokemonsAndFilteringQueryChange = () => {
-    if (!pokemons || !pokemons.length) {
-      return;
-    }
-
-    applySelectedStyleToSelectedTypes();
-    filterPokemons();
-  };
-
-  useEffect(handlePokemonsAndFilteringQueryChange, [filteringQuery, pokemons]);
+  useEffect(applySelectedStyleToSelectedTypes, [filteringQuery, filteredPokemons]);
 
   const removeTypeFromQuery = (type: PokemonType | string) => {
     const doesFilterTypeMatchWithType = (filterType: PokemonType | string) => filterType === type;
 
     const currentQueryTypes = filteringQuery.split(",");
-    const typeIndex = currentQueryTypes.findIndex(doesFilterTypeMatchWithType);
+    const typeIndex = currentQueryTypes.findIndex(doesFilterTypeMatchWithType) || -1;
 
     currentQueryTypes.splice(typeIndex, 1);
 

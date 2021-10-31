@@ -20,7 +20,7 @@ const PokemonType = ({ type, children = "", handleTypeClick }: IProps) => {
     } else {
       history.push({
         pathname: "/",
-        search: `name=${type}&field=types`,
+        search: `types=${type}`,
       });
     }
   };

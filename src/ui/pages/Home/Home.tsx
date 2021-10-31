@@ -6,11 +6,13 @@ import styles from "./Home.module.css";
 import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
 import ErrorScreenWrapper from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenWrapper";
 import PokemonContext from "../../../context/PokemonContext";
+import useFiltering from "../../../hooks/useFiltering";
 
 const POKEMON_STACK_SIZE = 12;
 
 const HomePage = () => {
-  const { filteredPokemons, getAllPokemons } = useContext(PokemonContext);
+  const { getAllPokemons } = useContext(PokemonContext);
+  const filteredPokemons = useFiltering();
 
   const [numberOfPokemonShown, setNumberOfPokemonShown] = useState(POKEMON_STACK_SIZE);
 
