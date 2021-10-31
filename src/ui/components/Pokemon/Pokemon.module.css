@@ -1,6 +1,8 @@
 .container {
+  width: 210px;
   padding: 20px;
   border-radius: 5px;
+  overflow-wrap: anywhere;
 }
 
 .container:hover {
