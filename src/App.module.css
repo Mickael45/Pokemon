@@ -106,6 +106,7 @@
 
 .container[data-theme="dark"],
 .container[data-theme="dark"] select,
+.container[data-theme="dark"] form *,
 .container[data-theme="dark"] [id="loading-screen"],
 .container[data-theme="dark"] [id="error-screen"] {
   background: rgba(40, 40, 40);
