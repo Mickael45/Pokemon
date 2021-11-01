@@ -14,6 +14,8 @@ import usePokemons from "./hooks/usePokemons";
 import { LOW_RES } from "./constants/Style";
 import "./App.module.css";
 import NavigationBar from "./ui/components/NavigationBar/NavigationBar";
+import ThemeContext from "./context/ThemeContext";
+import { LIGHT } from "./constants/Theme";
 
 const renderErrorScreen = () => <ErrorScreen type="Page Not Found" />;
 
@@ -21,6 +23,7 @@ const App = () => {
   const [filteredPokemons, pokemons, setPokemons] = usePokemons();
   const [loading, setLoading] = useState(true);
   const [resolution, setResolution] = useState<APP_STYLE>(LOW_RES);
+  const [theme, setTheme] = useState<THEME>(LIGHT);
   const [error, setError] = useState<ErrorType | null>(null);
 
   const handlePromiseResolution = (newPokemons: IBasicPokemon[]) => {
@@ -41,19 +44,21 @@ const App = () => {
     <div data-resolution={resolution}>
       <BrowserRouter>
         <ResolutionContext.Provider value={{ resolution, setResolution }}>
-          <ErrorContext.Provider value={{ error, setError }}>
-            <LoadingContext.Provider value={{ loading, setLoading }}>
-              <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons, getAllPokemons }}>
-                <NavigationBar />
-                <Switch>
-                  <Route path="/" exact component={HomePage} />
-                  <Route path="/details/:id" component={DetailsPage} />
-                  <Route path="/type-interactions" component={TypeInteractionsPage} />
-                  <Route component={renderErrorScreen} />
-                </Switch>
-              </PokemonContext.Provider>
-            </LoadingContext.Provider>
-          </ErrorContext.Provider>
+          <ThemeContext.Provider value={{ theme, setTheme }}>
+            <ErrorContext.Provider value={{ error, setError }}>
+              <LoadingContext.Provider value={{ loading, setLoading }}>
+                <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons, getAllPokemons }}>
+                  <NavigationBar />
+                  <Switch>
+                    <Route path="/" exact component={HomePage} />
+                    <Route path="/details/:id" component={DetailsPage} />
+                    <Route path="/type-interactions" component={TypeInteractionsPage} />
+                    <Route component={renderErrorScreen} />
+                  </Switch>
+                </PokemonContext.Provider>
+              </LoadingContext.Provider>
+            </ErrorContext.Provider>
+          </ThemeContext.Provider>{" "}
         </ResolutionContext.Provider>
       </BrowserRouter>
     </div>
