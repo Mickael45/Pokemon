@@ -1,12 +1,12 @@
 import { createContext } from "react";
-import { LOW_RES } from "../constants/Style";
+import { LOW_RESOLUTION } from "../constants/Resolution";
 
 interface IContextProps {
-  resolution: APP_STYLE;
-  setResolution: (resolution: APP_STYLE) => void;
+  resolution: RESOLUTION;
+  setResolution: (resolution: RESOLUTION) => void;
 }
 
 export default createContext<IContextProps>({
-  resolution: LOW_RES,
+  resolution: LOW_RESOLUTION,
   setResolution: () => {},
 });
