@@ -10,8 +10,8 @@
 }
 
 .container img {
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 
 .container > :nth-child(2) > :not(:last-child) {
@@ -36,9 +36,9 @@
   }
 }
 
-.container > :nth-child(2) > :first-child > [id="placeholder"] {
-  max-width: 500px;
-  height: 500px;
+.container [id="placeholder"] {
+  max-width: 450px;
+  height: 450px;
   display: grid;
   justify-content: center;
   align-content: center;

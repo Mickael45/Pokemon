@@ -32,10 +32,10 @@ const ImageWithPlaceholder = ({ src, alt, handleClick }: IProps) => {
     ) : null;
 
   return (
-    <>
+    <div>
       {renderPlaceholder()}
       {renderImage()}
-    </>
+    </div>
   );
 };
 
