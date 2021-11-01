@@ -51,4 +51,16 @@ export const usePokemonTypesFromQuery = (): string => {
   return (query.get(TYPES) as PokemonType) || "";
 };
 
+export const usePokemonIdFromQuery = (): string => {
+  const query = new URLSearchParams(useLocation().search);
+
+  return query.get(ID) || "";
+};
+
+export const usePokemonNameFromQuery = (): string => {
+  const query = new URLSearchParams(useLocation().search);
+
+  return query.get(NAME) || "";
+};
+
 export default useQueryParams;

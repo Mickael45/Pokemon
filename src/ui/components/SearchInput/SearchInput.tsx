@@ -1,58 +1,45 @@
-import { FormEvent, useContext, useEffect } from "react";
+import { FormEvent, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import PokemonContext from "../../../context/PokemonContext";
 import searchIcon from "../../../assets/search.svg";
-import styles from "./SearchInput.module.css";
-import useQueryParams from "../../../hooks/useQueryParams";
 import { getElementById } from "../../../utils/domManipulation";
+import useFiltering from "../../../hooks/useFiltering";
+import { usePokemonIdFromQuery, usePokemonNameFromQuery } from "../../../hooks/useQueryParams";
+import styles from "./SearchInput.module.css";
 
 const NAME_INPUT_ID = "nameInputId";
 
 const SearchInput = () => {
-  // const filteringQuery = useQueryParams("id");
-  // const history = useHistory();
-  // const { pokemons, setPokemons } = useContext(PokemonContext);
+  const id = usePokemonIdFromQuery();
+  const name = usePokemonNameFromQuery();
+  const filteredPokemons = useFiltering();
+  const history = useHistory();
 
-  // const filterPokemons = (input: HTMLInputElement) => {
-  //   const { value } = input;
+  const handlePokemonsAndFilteringQueryChange = () => {
+    const input = getElementById(NAME_INPUT_ID) as HTMLInputElement;
 
-  //   if (value === "") {
-  //     return pokemons;
-  //   }
-  //   return !isNaN(+value)
-  //     ? filteredPokemonsById(pokemons, +value)
-  //     : filterPokemonByName(pokemons, value.toLocaleLowerCase());
-  // };
+    input.value = id || name;
+  };
 
-  // const handlePokemonsAndFilteringQueryChange = () => {
-  //   const input = getElementById(NAME_INPUT_ID) as HTMLInputElement;
-
-  //   if (!input || !filteringQuery) {
-  //     return;
-  //   }
-
-  //   input.value = filteringQuery;
-
-  //   if (!pokemons || !pokemons.length) {
-  //     return;
-  //   }
-  //   setPokemons(filterPokemons(input));
-  // };
-
-  // useEffect(handlePokemonsAndFilteringQueryChange, [filteringQuery, pokemons]);
+  useEffect(handlePokemonsAndFilteringQueryChange, [id, name, filteredPokemons]);
 
   const createQuery = () => {
-    // const { value = "" } = getElementById(NAME_INPUT_ID) as HTMLInputElement;
-    // const search = value === "" ? "" : `id=${value}`;
-    // history.push({
-    //   pathname: "/",
-    //   search,
-    // });
+    const { value = "" } = getElementById(NAME_INPUT_ID) as HTMLInputElement;
+
+    if (value === "") {
+      history.push("/");
+      return;
+    }
+    const search = !isNaN(+value) ? `id=${value}` : `name=${value}`;
+
+    history.push({
+      pathname: "/",
+      search,
+    });
   };
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
-    // e.preventDefault();
-    // createQuery();
+    e.preventDefault();
+    createQuery();
   };
 
   return (
