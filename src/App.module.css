@@ -48,6 +48,10 @@
   font-size: 11px;
 }
 
+[data-resolution="low res."] [alt$="pic"] {
+  image-rendering: pixelated;
+}
+
 [data-resolution="high res."] * {
   font-family: HdPokemonFont, arial, sans-serif;
 }
@@ -83,6 +87,10 @@
 
 [data-resolution="high res."] [id="res switch"] {
   font-size: 17px;
+}
+
+[data-resolution="high res."] [alt$="pic"] {
+  image-rendering: crisp-edges;
 }
 
 .container[data-theme="light"] {
