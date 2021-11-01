@@ -18,7 +18,7 @@
   height: 70px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
   .container > img {
     height: 30px;
     left: 50%;
@@ -53,17 +53,16 @@
     position: absolute;
     top: 15px;
     right: 5vw;
-    width: 50px;
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 801px) {
   .container > img {
     top: 12px;
   }
 
   .container > :nth-child(2) {
-    width: 55%;
+    width: 45%;
     margin: 15px auto 0 auto;
   }
 
@@ -88,7 +87,7 @@
 
   .container > :last-child {
     position: absolute;
-    right: 40px;
+    right: 15px;
     top: 35px;
   }
 }
