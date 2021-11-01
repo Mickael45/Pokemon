@@ -7,6 +7,7 @@
   display: grid;
   align-content: center;
   justify-content: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .container > :only-child {
@@ -14,4 +15,14 @@
   align-content: center;
   justify-content: center;
   justify-items: center;
+}
+
+@keyframes fadeIn {
+  0%,
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
