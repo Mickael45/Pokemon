@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { getRandomTransformAnimation } from "../../animations/transform/transform";
 import { capitalizeFirstLetter, formatNumberToMatchLength } from "../../../utils/stringManipulation";
@@ -10,11 +10,12 @@ import { usePokemonPic } from "../../../hooks/usePokemonPic";
 const Pokemon = ({ name, id, pixelImageUrl, hdImageUrl, types }: IBasicPokemon) => {
   const history = useHistory();
   const imageUrl = usePokemonPic(pixelImageUrl, hdImageUrl);
+  const [animation] = useState(getRandomTransformAnimation());
 
   const handleTagClick = () => history.push(`/details/${id}`);
 
   return (
-    <div className={[styles.container, getRandomTransformAnimation()].join(" ")}>
+    <div className={[styles.container, animation].join(" ")}>
       <ImageWithPlaceholder src={imageUrl} alt="pokemon pic" handleClick={handleTagClick} />
       <div>
         <div id="id" onClick={handleTagClick}>{`#${formatNumberToMatchLength(id)}`}</div>
