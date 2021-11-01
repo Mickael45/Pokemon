@@ -25,7 +25,7 @@ const App = () => {
 
   const handlePromiseResolution = (newPokemons: IBasicPokemon[]) => {
     setPokemons(newPokemons);
-    // setLoading(false);
+    setLoading(false);
   };
 
   const setErrorToSomethingWrongHappened = () => setError(SOMETHING_WRONG_HAPPENED);

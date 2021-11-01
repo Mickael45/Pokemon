@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import AppStyleContext from "../../../context/AppStyleContext";
 import styles from "./Page.module.css";
-import { HD, PIXEL_ART } from "../../../constants/Style";
+import { HIGH_RES, LOW_RES } from "../../../constants/Style";
 
 interface IProps {
   children: JSX.Element;
@@ -10,7 +10,7 @@ interface IProps {
 const Page = ({ children }: IProps) => {
   const { appStyle, setAppStyle } = useContext(AppStyleContext);
 
-  const getOppositeStyle = () => (appStyle === PIXEL_ART ? HD : PIXEL_ART);
+  const getOppositeStyle = () => (appStyle === LOW_RES ? HIGH_RES : LOW_RES);
 
   const handleClick = () => {
     setAppStyle(getOppositeStyle());
@@ -18,7 +18,7 @@ const Page = ({ children }: IProps) => {
 
   return (
     <div className={styles.container}>
-      <button onClick={handleClick}>{getOppositeStyle()}</button>
+      <button id="styleSwitch" onClick={handleClick}>{`Switch to: ${getOppositeStyle()}`}</button>
       {children}
     </div>
   );

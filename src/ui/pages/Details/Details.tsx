@@ -15,10 +15,10 @@ import PokemonTypes from "../../components/PokemonTypes/PokemonTypes";
 import PokemonWeaknesses from "../../components/PokemonWeaknesses/PokemonWeaknesses";
 import { SOMETHING_WRONG_HAPPENED } from "../../../constants/Errors";
 import ErrorScreenWrapper from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenWrapper";
-import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
 import LoadingContext from "../../../context/LoadingContext";
 import ErrorContext from "../../../context/ErrorContext";
 import { usePokemonPic } from "../../../hooks/usePokemonPic";
+import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
 interface Params {
   id: string;
 }
