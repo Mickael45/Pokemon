@@ -1,14 +1,12 @@
-body {
-  margin: 0;
-  min-height: 100vh;
+html {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
 }
 
 body,
-[id="loading-screen"],
-[id="error-screen"] {
-  background: rgba(236, 236, 236);
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+body > div[id="root"] {
+  margin: 0px;
+  min-height: 100%;
+  width: 100%;
 }

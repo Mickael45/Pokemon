@@ -11,7 +11,7 @@ const PreviousButton = ({ limit, value, handleClick }: IProps) => {
 
   const previousId = createPreviousId();
 
-  return <button onClick={handlePreviousButtonClick}>{`< #${previousId}`}</button>;
+  return <button id="id-nav-button" onClick={handlePreviousButtonClick}>{`< #${previousId}`}</button>;
 };
 
 export default PreviousButton;

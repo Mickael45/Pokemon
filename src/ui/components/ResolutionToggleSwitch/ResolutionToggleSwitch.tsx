@@ -1,17 +1,22 @@
 import { useContext } from "react";
-import { HIGH_RES, LOW_RES } from "../../../constants/Style";
-import AppStyleContext from "../../../context/AppStyleContext";
+import { HIGH_RESOLUTION, LOW_RESOLUTION } from "../../../constants/Resolution";
+import ResolutionContext from "../../../context/ResolutionContext";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
 const ResolutionToggleSwitch = () => {
-  const { appStyle, setAppStyle } = useContext(AppStyleContext);
+  const { resolution, setResolution } = useContext(ResolutionContext);
 
-  const getOppositeStyle = () => (appStyle === LOW_RES ? HIGH_RES : LOW_RES);
+  const getOppositeResolution = () => (resolution === LOW_RESOLUTION ? HIGH_RESOLUTION : LOW_RESOLUTION);
 
-  const handleClick = () => setAppStyle(getOppositeStyle());
+  const handleClick = () => setResolution(getOppositeResolution());
 
   return (
-    <ToggleSwitch onLabel={HIGH_RES} offLabel={LOW_RES} checked={appStyle === LOW_RES} handleClick={handleClick} />
+    <ToggleSwitch
+      onLabel={LOW_RESOLUTION}
+      offLabel={HIGH_RESOLUTION}
+      checked={resolution === HIGH_RESOLUTION}
+      handleClick={handleClick}
+    />
   );
 };
 

@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, memo } from "react";
 import Pokemon from "../../components/Pokemon/Pokemon";
 import Page from "../../templates/Page/Page";
 import FlexboxList from "../../templates/FlexboxList/FlexboxList";
@@ -10,10 +10,9 @@ import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper
 
 const POKEMON_STACK_SIZE = 12;
 
-const HomePage = () => {
+const HomePage = (props: any) => {
   const { getAllPokemons } = useContext(PokemonContext);
   const filteredPokemons = useFiltering();
-
   const [numberOfPokemonShown, setNumberOfPokemonShown] = useState(POKEMON_STACK_SIZE);
 
   const incrementNumberOfPokemonShown = () => setNumberOfPokemonShown(numberOfPokemonShown + POKEMON_STACK_SIZE);
@@ -41,4 +40,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default memo(HomePage);
