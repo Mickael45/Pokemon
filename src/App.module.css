@@ -99,3 +99,8 @@
 .container[data-theme="dark"] [id="type"] {
   color: white;
 }
+
+.container[data-theme="dark"] [id="id"],
+.container[data-theme="dark"] [id="id-details"] {
+  color: #cc0000;
+}

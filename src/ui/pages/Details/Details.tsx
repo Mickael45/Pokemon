@@ -69,7 +69,7 @@ const DetailsPage = () => {
             <div className={styles.container}>
               <div>
                 <h2>{capitalizeFirstLetter(name)}</h2>
-                <h3>{`#${id}`}</h3>
+                <h3 id="id-details">{`#${id}`}</h3>
               </div>
               <div>
                 <span>
