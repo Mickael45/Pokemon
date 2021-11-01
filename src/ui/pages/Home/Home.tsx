@@ -7,6 +7,7 @@ import ErrorScreenWrapper from "../../components/Wrappers/ErrorScreenWrapper/Err
 import PokemonContext from "../../../context/PokemonContext";
 import useFiltering from "../../../hooks/useFiltering";
 import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
+import ListSortingDropdown from "../../components/ListSortingDropdown/ListSortingDropdown";
 
 const POKEMON_STACK_SIZE = 12;
 
@@ -30,6 +31,7 @@ const HomePage = (props: any) => {
       <LoadingScreenWrapper>
         <Page>
           <div className={styles.container}>
+            <ListSortingDropdown />
             <FlexboxList hasReachedEnd={areThereMorePokemonsToShow()} showMore={incrementNumberOfPokemonShown}>
               {renderPokemons()}
             </FlexboxList>

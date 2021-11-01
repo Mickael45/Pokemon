@@ -2,4 +2,9 @@
   display: grid;
   justify-content: center;
   justify-items: center;
+  row-gap: 15px;
+}
+
+.container > :first-child {
+  justify-self: flex-end;
 }
