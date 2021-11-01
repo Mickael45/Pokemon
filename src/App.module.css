@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "PixelPokemonFont";
+  src: local("PixelPokemonFont"), url(./assets/fonts/pixelPokemonFont.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "HdPokemonFont";
+  src: local("HdPokemonFont"), url(./assets/fonts/hdPokemonFont.woff) format("woff");
+}
+
+@font-face {
+  font-family: "HdPokemonFont";
+  src: local("HdPokemonFont-bold"), url(./assets/fonts/hdPokemonFont-bold.woff) format("woff");
+  font-weight: bold;
+}
+
+[data-style="pixel-art"] * {
+  font-family: PixelPokemonFont;
+}
+
+[data-style="pixel-art"] [id="id"] {
+  font-size: 13px;
+}
+
+[data-style="pixel-art"] [id="type"] {
+  font-size: 10px;
+}
+
+[data-style="high-definition"] * {
+  font-family: HdPokemonFont, arial, sans-serif;
+}
+
+[data-style="high-definition"] h4 {
+  font-size: 20px;
+}
+
+[data-style="high-definition"] [id="id"] {
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+[data-style="high-definition"] [id="type"] {
+  font-size: 15px;
+}
+
+[data-style="high-definition"] [id="info"] {
+  font-size: 100%;
+}

@@ -18,6 +18,7 @@ import ErrorScreenWrapper from "../../components/Wrappers/ErrorScreenWrapper/Err
 import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
 import LoadingContext from "../../../context/LoadingContext";
 import ErrorContext from "../../../context/ErrorContext";
+import { usePokemonPic } from "../../../hooks/usePokemonPic";
 interface Params {
   id: string;
 }
@@ -27,8 +28,21 @@ const DetailsPage = () => {
   const { setLoading } = useContext(LoadingContext);
   const { setError } = useContext(ErrorContext);
   const [pokemon, setPokemon] = useState<IFullPokemon>(DEFAULT_POKEMON);
-  const { imageUrl, name, stats, height, weight, types, weaknesses, evolutionChain, abilities, description, category } =
-    pokemon;
+  const {
+    hdImageUrl,
+    pixelImageUrl,
+    name,
+    stats,
+    height,
+    weight,
+    types,
+    weaknesses,
+    evolutionChain,
+    abilities,
+    description,
+    category,
+  } = pokemon;
+  const imageUrl = usePokemonPic(pixelImageUrl, hdImageUrl);
   const color = getPokemonPrimaryTypeColor(types);
   const basicInfo = { description, height, weight, category, types, abilities, color };
 

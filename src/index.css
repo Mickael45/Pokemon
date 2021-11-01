@@ -1,16 +1,3 @@
-@font-face {
-  font-family: "PokemonFont";
-  src: local("PokemonFont"), url(./assets/fonts/pokemonFont.ttf) format("truetype");
-}
-
-[id="type"] {
-  font-size: 10px;
-}
-
-* {
-  font-family: PokemonFont;
-}
-
 body {
   margin: 0;
 }

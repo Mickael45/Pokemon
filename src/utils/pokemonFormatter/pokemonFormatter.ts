@@ -72,10 +72,11 @@ const createImageUrl = (id: number, imgType: PIC_TYPE = PIXELATED) => {
 
 export const formatToBasicPokemon = (pokemon: IPokemonResponseType): IBasicPokemon => {
   const { id, name, types } = pokemon;
-  const imageUrl = createImageUrl(id);
+  const pixelImageUrl = createImageUrl(id);
+  const hdImageUrl = createImageUrl(id, BASIC_PIC);
   const typesName = types.map(extractTypeName).join(",");
 
-  return { id, name, imageUrl, types: typesName };
+  return { id, name, pixelImageUrl, hdImageUrl, types: typesName };
 };
 
 export const formatToFullPokemon = (
@@ -90,10 +91,11 @@ export const formatToFullPokemon = (
   const description = extractPokemonDescription(pokemonSpeciesData);
   const category = extractPokemonCategory(pokemonSpeciesData);
   const abilities = extractAbilitiesFromPokemon(pokemon.abilities);
+  const hdImageUrl = createImageUrl(pokemon.id, FULL_PIC);
 
   return {
     ...pokemonBasicInfo,
-    imageUrl: createImageUrl(pokemon.id),
+    hdImageUrl,
     stats,
     weaknesses,
     height: height * 10,

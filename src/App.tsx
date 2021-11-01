@@ -6,17 +6,21 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ErrorScreen } from "./ui/components/ErrorScreen/ErrorScreen";
 import LoadingContext from "./context/LoadingContext";
 import ErrorContext from "./context/ErrorContext";
+import AppStyleContext from "./context/AppStyleContext";
 import PokemonContext from "./context/PokemonContext";
 import { SOMETHING_WRONG_HAPPENED } from "./constants/Errors";
 import { fetchAllPokemons } from "./services/fetchPokemons/fetchPokemons";
 import usePokemons from "./hooks/usePokemons";
 import NavigationBar from "./ui/components/NavigationBar/NavigationBar";
+import { PIXEL_ART } from "./constants/Style";
+import "./App.module.css";
 
 const renderErrorScreen = () => <ErrorScreen type="Page Not Found" />;
 
 const App = () => {
   const [filteredPokemons, pokemons, setPokemons] = usePokemons();
   const [loading, setLoading] = useState(true);
+  const [appStyle, setAppStyle] = useState<APP_STYLE>(PIXEL_ART);
   const [error, setError] = useState<ErrorType | null>(null);
 
   const handlePromiseResolution = (newPokemons: IBasicPokemon[]) => {
@@ -34,23 +38,25 @@ const App = () => {
   };
 
   return (
-    <>
+    <div data-style={appStyle}>
       <BrowserRouter>
-        <ErrorContext.Provider value={{ error, setError }}>
-          <LoadingContext.Provider value={{ loading, setLoading }}>
-            <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons, getAllPokemons }}>
-              <NavigationBar />
-              <Switch>
-                <Route path="/" exact component={HomePage} />
-                <Route path="/details/:id" component={DetailsPage} />
-                <Route path="/type-interactions" component={TypeInteractionsPage} />
-                <Route component={renderErrorScreen} />
-              </Switch>
-            </PokemonContext.Provider>
-          </LoadingContext.Provider>
-        </ErrorContext.Provider>
+        <AppStyleContext.Provider value={{ appStyle, setAppStyle }}>
+          <ErrorContext.Provider value={{ error, setError }}>
+            <LoadingContext.Provider value={{ loading, setLoading }}>
+              <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons, getAllPokemons }}>
+                <NavigationBar />
+                <Switch>
+                  <Route path="/" exact component={HomePage} />
+                  <Route path="/details/:id" component={DetailsPage} />
+                  <Route path="/type-interactions" component={TypeInteractionsPage} />
+                  <Route component={renderErrorScreen} />
+                </Switch>
+              </PokemonContext.Provider>
+            </LoadingContext.Provider>
+          </ErrorContext.Provider>
+        </AppStyleContext.Provider>
       </BrowserRouter>
-    </>
+    </div>
   );
 };
 

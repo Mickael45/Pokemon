@@ -30,7 +30,6 @@
 
 .container > :nth-child(2) > div {
   color: grey;
-  font-size: 13px;
 }
 
 .container > :nth-child(2) {

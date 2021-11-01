@@ -19,7 +19,7 @@ const BasicInfo = ({ color, height, weight, category, abilities, description }: 
   const renderInfo = (title: string, info: string | string[]) => (
     <div>
       <div>{title}</div>
-      <span>{info}</span>
+      <span id="info">{info}</span>
     </div>
   );
 

@@ -40,5 +40,4 @@
 }
 .container > :last-child > * > :nth-child(2) > :last-child {
   color: white;
-  font-size: 80%;
 }

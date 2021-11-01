@@ -5,16 +5,19 @@ import { capitalizeFirstLetter, formatNumberToMatchLength } from "../../../utils
 import ImageWithPlaceholder from "../ImageWithPlaceholder/ImageWithPlaceholder";
 import styles from "./Pokemon.module.css";
 import PokemonTypes from "../PokemonTypes/PokemonTypes";
+import { usePokemonPic } from "../../../hooks/usePokemonPic";
 
-const Pokemon = ({ name, imageUrl, id, types }: IBasicPokemon) => {
+const Pokemon = ({ name, id, pixelImageUrl, hdImageUrl, types }: IBasicPokemon) => {
   const history = useHistory();
+  const imageUrl = usePokemonPic(pixelImageUrl, hdImageUrl);
+
   const handleTagClick = () => history.push(`/details/${id}`);
 
   return (
     <div className={[styles.container, getRandomTransformAnimation()].join(" ")}>
       <ImageWithPlaceholder src={imageUrl} alt="pokemon pic" handleClick={handleTagClick} />
       <div>
-        <div onClick={handleTagClick}>{`#${formatNumberToMatchLength(id)}`}</div>
+        <div id="id" onClick={handleTagClick}>{`#${formatNumberToMatchLength(id)}`}</div>
         <h4 onClick={handleTagClick}>{`${capitalizeFirstLetter(name)}`}</h4>
       </div>
       <span>
