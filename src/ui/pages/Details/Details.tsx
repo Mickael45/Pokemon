@@ -72,21 +72,17 @@ const DetailsPage = () => {
                 <h3 id="id-details">{`#${id}`}</h3>
               </div>
               <div>
-                <span>
-                  <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
-                  <div>
-                    <Radar title="Stats" axisDataList={stats} color={color} />
-                  </div>
-                </span>
-                <span>
-                  <BasicInfo {...basicInfo} />
-                  <div>
-                    <h3>Types</h3>
-                    <PokemonTypes id={id} types={types} />
-                    <h3>Weaknesses</h3>
-                    <PokemonWeaknesses id={id} types={weaknesses} />
-                  </div>
-                </span>
+                <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
+                <BasicInfo {...basicInfo} />
+                <div>
+                  <Radar title="Stats" axisDataList={stats} color={color} />
+                </div>
+                <div>
+                  <h3>Types</h3>
+                  <PokemonTypes id={id} types={types} />
+                  <h3>Weaknesses</h3>
+                  <PokemonWeaknesses id={id} types={weaknesses} />
+                </div>
                 <EvolutionChain chain={evolutionChain} />
               </div>
             </div>

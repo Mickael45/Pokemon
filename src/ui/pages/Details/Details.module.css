@@ -45,14 +45,14 @@
   background-color: lightgrey;
 }
 
-.container > :nth-child(2) > :first-child > :last-child {
+.container > :nth-child(2) > :nth-child(3) > :last-child {
   background: white;
   text-align: center;
   border-radius: 10px;
   color: black;
 }
 
-.container > :nth-child(2) > :first-child > :last-child h3 {
+.container > :nth-child(2) > :nth-child(3) :last-child h3 {
   text-align: left;
   margin-left: 35px;
 }
