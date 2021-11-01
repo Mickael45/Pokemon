@@ -1,7 +1,4 @@
-import { useState } from "react";
-import HomePage from "./ui/pages/Home/Home";
-import DetailsPage from "./ui/pages/Details/Details";
-import TypeInteractionsPage from "./ui/pages/TypeInteractions/TypeInteractions";
+import { lazy, Suspense, useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ErrorScreen } from "./ui/components/ErrorScreen/ErrorScreen";
 import LoadingContext from "./context/LoadingContext";
@@ -10,12 +7,16 @@ import ResolutionContext from "./context/ResolutionContext";
 import ThemeContext from "./context/ThemeContext";
 import PokemonContext from "./context/PokemonContext";
 import { SOMETHING_WRONG_HAPPENED } from "./constants/Errors";
-import { LIGHT, DARK } from "./constants/Theme";
+import { DARK } from "./constants/Theme";
 import { LOW_RESOLUTION } from "./constants/Resolution";
 import { fetchAllPokemons } from "./services/fetchPokemons/fetchPokemons";
 import usePokemons from "./hooks/usePokemons";
 import NavigationBar from "./ui/components/NavigationBar/NavigationBar";
 import styles from "./App.module.css";
+
+const HomePage = lazy(() => import("./ui/pages/Home/Home"));
+const DetailsPage = lazy(() => import("./ui/pages/Details/Details"));
+const TypeInteractionsPage = lazy(() => import("./ui/pages/TypeInteractions/TypeInteractions"));
 
 const renderErrorScreen = () => <ErrorScreen type="Page Not Found" />;
 
@@ -48,13 +49,15 @@ const App = () => {
             <ErrorContext.Provider value={{ error, setError }}>
               <LoadingContext.Provider value={{ loading, setLoading }}>
                 <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons, getAllPokemons }}>
-                  <NavigationBar />
-                  <Switch>
-                    <Route path="/" exact component={HomePage} />
-                    <Route path="/details/:id" component={DetailsPage} />
-                    <Route path="/type-interactions" component={TypeInteractionsPage} />
-                    <Route component={renderErrorScreen} />
-                  </Switch>
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <NavigationBar />
+                    <Switch>
+                      <Route path="/" exact component={HomePage} />
+                      <Route path="/details/:id" component={DetailsPage} />
+                      <Route path="/type-interactions" component={TypeInteractionsPage} />
+                      <Route component={renderErrorScreen} />
+                    </Switch>
+                  </Suspense>
                 </PokemonContext.Provider>
               </LoadingContext.Provider>
             </ErrorContext.Provider>
