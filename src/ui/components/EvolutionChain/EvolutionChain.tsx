@@ -11,7 +11,7 @@ const EvolutionChain = ({ chain }: IProps) => {
 
   const renderEvolutionChain = () => (
     <div className={styles.container}>
-      <h3>Evolution Chain</h3>
+      <h4>Evolution Chain</h4>
       <div>{renderPokemons()}</div>
     </div>
   );

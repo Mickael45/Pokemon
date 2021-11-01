@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { PIXEL_ART } from "../constants/Style";
+import { LOW_RES } from "../constants/Style";
 
 interface IContextProps {
   appStyle: APP_STYLE;
@@ -7,6 +7,6 @@ interface IContextProps {
 }
 
 export default createContext<IContextProps>({
-  appStyle: PIXEL_ART,
+  appStyle: LOW_RES,
   setAppStyle: () => {},
 });

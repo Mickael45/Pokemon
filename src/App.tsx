@@ -11,21 +11,21 @@ import PokemonContext from "./context/PokemonContext";
 import { SOMETHING_WRONG_HAPPENED } from "./constants/Errors";
 import { fetchAllPokemons } from "./services/fetchPokemons/fetchPokemons";
 import usePokemons from "./hooks/usePokemons";
-import NavigationBar from "./ui/components/NavigationBar/NavigationBar";
-import { PIXEL_ART } from "./constants/Style";
+import { LOW_RES } from "./constants/Style";
 import "./App.module.css";
+import NavigationBar from "./ui/components/NavigationBar/NavigationBar";
 
 const renderErrorScreen = () => <ErrorScreen type="Page Not Found" />;
 
 const App = () => {
   const [filteredPokemons, pokemons, setPokemons] = usePokemons();
   const [loading, setLoading] = useState(true);
-  const [appStyle, setAppStyle] = useState<APP_STYLE>(PIXEL_ART);
+  const [appStyle, setAppStyle] = useState<APP_STYLE>(LOW_RES);
   const [error, setError] = useState<ErrorType | null>(null);
 
   const handlePromiseResolution = (newPokemons: IBasicPokemon[]) => {
     setPokemons(newPokemons);
-    setLoading(false);
+    // setLoading(false);
   };
 
   const setErrorToSomethingWrongHappened = () => setError(SOMETHING_WRONG_HAPPENED);

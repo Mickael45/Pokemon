@@ -20,14 +20,33 @@
 
 @media screen and (max-width: 1000px) {
   .container > img {
-    height: 40px;
+    height: 30px;
     left: 50%;
     transform: translateX(-50%);
   }
 
   .container > :last-child {
     width: 90%;
-    margin: 50px auto 0 auto;
+    margin: 40px auto 0 auto;
+  }
+
+  .arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 2px white solid;
+    border-bottom: 2px white solid;
+  }
+
+  .arrow:before {
+    width: 5px;
+    height: 5px;
+    margin: -3px 0 0 2px;
+    border-right: 1px white solid;
+    border-bottom: 1px white solid;
+  }
+
+  .container > :last-child > :last-child {
+    margin-top: 10px;
   }
 }
 
@@ -40,14 +59,29 @@
     width: 55%;
     margin: 15px auto 0 auto;
   }
+
+  .arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 3px white solid;
+    border-bottom: 3px white solid;
+  }
+
+  .arrow:before {
+    width: 10px;
+    height: 10px;
+    margin: -5px 0 0 5px;
+    border-right: 2px white solid;
+    border-bottom: 2px white solid;
+  }
+
+  .container > :last-child > :last-child {
+    margin-top: 20px;
+  }
 }
 
 .container > img:hover {
   cursor: pointer;
-}
-
-.container > :last-child > :last-child {
-  margin-top: 20px;
 }
 
 div.open {
@@ -71,28 +105,19 @@ div.open {
   transition: all 0.5s ease-out;
 }
 .arrow {
-  width: 20px;
-  height: 20px;
   margin: 0 auto;
   transform: rotate(45deg);
   border-left: none;
   border-top: none;
-  border-right: 3px white solid;
-  border-bottom: 3px white solid;
   transition: transform 0.5s;
 }
 
 .arrow:before {
   content: "";
   position: absolute;
-  margin: -5px 0 0 5px;
-  width: 10px;
-  height: 10px;
   top: 50%;
   border-left: none;
   border-top: none;
-  border-right: 2px white solid;
-  border-bottom: 2px white solid;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-name: arrow;

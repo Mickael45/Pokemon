@@ -1,2 +1,2 @@
-export const PIXEL_ART = "pixel-art";
-export const HD = "high-definition";
+export const LOW_RES = "low res.";
+export const HIGH_RES = "high res.";
