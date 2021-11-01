@@ -1,5 +1,6 @@
 export const DEFAULT_POKEMON = {
-  imageUrl: "",
+  pixelImageUrl: "",
+  hdImageUrl: "",
   name: "",
   types: "",
   height: 0,

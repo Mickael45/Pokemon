@@ -80,8 +80,9 @@ declare global {
   export interface IBasicPokemon {
     id: number;
     name: string;
-    imageUrl: string;
     types: string;
+    pixelImageUrl: string;
+    hdImageUrl: string;
   }
 
   export type IFullPokemon = IBasicPokemon & {

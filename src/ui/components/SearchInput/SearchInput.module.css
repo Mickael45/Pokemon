@@ -19,7 +19,3 @@
   height: 100%;
   outline: none;
 }
-
-.container input::placeholder {
-  font-size: min(11px, 1.5vh);
-}

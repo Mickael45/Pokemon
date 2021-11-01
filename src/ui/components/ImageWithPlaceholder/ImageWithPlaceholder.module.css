@@ -3,3 +3,7 @@
   width: 0;
   height: 0;
 }
+
+.img {
+  image-rendering: pixelated;
+}

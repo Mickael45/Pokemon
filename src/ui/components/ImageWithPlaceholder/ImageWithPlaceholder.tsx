@@ -17,7 +17,7 @@ const ImageWithPlaceholder = ({ src, alt, handleClick }: IProps) => {
     <img
       src={src}
       data-loaded={isLoaded}
-      className={!isLoaded ? styles.collapse : ""}
+      className={!isLoaded ? styles.collapse : styles.img}
       onLoad={handleImageLoadedEvent}
       onClick={handleClick}
       alt={alt}

@@ -3,10 +3,10 @@ import Pokemon from "../../components/Pokemon/Pokemon";
 import Page from "../../templates/Page/Page";
 import FlexboxList from "../../templates/FlexboxList/FlexboxList";
 import styles from "./Home.module.css";
-import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
 import ErrorScreenWrapper from "../../components/Wrappers/ErrorScreenWrapper/ErrorScreenWrapper";
 import PokemonContext from "../../../context/PokemonContext";
 import useFiltering from "../../../hooks/useFiltering";
+import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
 
 const POKEMON_STACK_SIZE = 12;
 

@@ -43,7 +43,7 @@ const TypesSelector = () => {
     const doesFilterTypeMatchWithType = (filterType: PokemonType | string) => filterType === type;
 
     const currentQueryTypes = filteringQuery.split(",");
-    const typeIndex = currentQueryTypes.findIndex(doesFilterTypeMatchWithType) || -1;
+    const typeIndex = currentQueryTypes.findIndex(doesFilterTypeMatchWithType);
 
     currentQueryTypes.splice(typeIndex, 1);
 

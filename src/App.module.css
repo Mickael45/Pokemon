@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "PixelPokemonFont";
+  src: local("PixelPokemonFont"), url(./assets/fonts/pixelPokemonFont.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "HdPokemonFont";
+  src: local("HdPokemonFont"), url(./assets/fonts/hdPokemonFont.woff) format("woff");
+}
+
+@font-face {
+  font-family: "HdPokemonFont";
+  src: local("HdPokemonFont-bold"), url(./assets/fonts/hdPokemonFont-bold.woff) format("woff");
+  font-weight: bold;
+}
+
+[data-style="low res."] * {
+  font-family: PixelPokemonFont;
+}
+
+[data-style="low res."] [id="id"] {
+  font-size: 13px;
+}
+
+[data-style="low res."] [id="type"] {
+  font-size: 10px;
+}
+
+[data-style="low res."] input::placeholder {
+  font-size: min(11px, 1.5vh);
+}
+[data-style="low res."] h4 {
+  font-size: 13px;
+}
+
+[data-style="low res."] [id="res switch"] {
+  font-size: 14px;
+}
+
+[data-style="high res."] * {
+  font-family: HdPokemonFont, arial, sans-serif;
+}
+
+[data-style="high res."] h4 {
+  font-size: 20px;
+}
+
+[data-style="high res."] h3 {
+  font-size: 25px;
+}
+
+[data-style="high res."] h2 {
+  font-size: 30px;
+}
+
+[data-style="high res."] [id="id"] {
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+[data-style="high res."] [id="type"] {
+  font-size: 15px;
+}
+
+[data-style="high res."] [id="info"] {
+  font-size: 100%;
+}
+
+[data-style="high res."] input::placeholder {
+  font-size: min(15px, 2vh);
+}
+
+[data-style="high res."] [id="res switch"] {
+  font-size: 19px;
+}

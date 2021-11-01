@@ -9,6 +9,11 @@ import TypesSelector from "../TypesSelector/TypesSelector";
 import SearchInput from "../SearchInput/SearchInput";
 import logo from "../../../assets/logo.svg";
 import styles from "./NavigationBar.module.css";
+import { useContext } from "react";
+import { LOW_RES, HIGH_RES } from "../../../constants/Style";
+import AppStyleContext from "../../../context/AppStyleContext";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import ResolutionToggleSwitch from "../ResolutionToggleSwitch/ResolutionToggleSwitch";
 
 const DRAWER_ELEMENT_ID = "drawerElementId";
 const ARROW_ELEMENT_ID = "arrowElementId";
@@ -51,6 +56,7 @@ const NavigationBar = () => {
           <div className={styles.arrow} id={ARROW_ELEMENT_ID} onClick={toggleDrawer} />
         </div>
       </div>
+      <ResolutionToggleSwitch />
     </nav>
   );
 };

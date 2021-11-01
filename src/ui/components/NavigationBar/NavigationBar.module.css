@@ -18,36 +18,82 @@
   height: 70px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
   .container > img {
-    height: 40px;
+    height: 30px;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  .container > :last-child {
+  .container > :nth-child(2) {
     width: 90%;
-    margin: 50px auto 0 auto;
+    margin: 40px auto 0 auto;
+  }
+
+  .arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 2px white solid;
+    border-bottom: 2px white solid;
+  }
+
+  .arrow:before {
+    width: 5px;
+    height: 5px;
+    margin: -3px 0 0 2px;
+    border-right: 1px white solid;
+    border-bottom: 1px white solid;
+  }
+
+  .container > :nth-child(2) > :last-child {
+    margin-top: 10px;
+  }
+
+  .container > :last-child {
+    position: absolute;
+    top: 15px;
+    right: 5vw;
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 801px) {
   .container > img {
-    top: 15px;
+    top: 12px;
+  }
+
+  .container > :nth-child(2) {
+    width: 45%;
+    margin: 15px auto 0 auto;
+  }
+
+  .arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 3px white solid;
+    border-bottom: 3px white solid;
+  }
+
+  .arrow:before {
+    width: 10px;
+    height: 10px;
+    margin: -5px 0 0 5px;
+    border-right: 2px white solid;
+    border-bottom: 2px white solid;
+  }
+
+  .container > :nth-child(2) > :last-child {
+    margin-top: 20px;
   }
 
   .container > :last-child {
-    width: 55%;
-    margin: 15px auto 0 auto;
+    position: absolute;
+    right: 15px;
+    top: 35px;
   }
 }
 
 .container > img:hover {
   cursor: pointer;
-}
-
-.container > :last-child > :last-child {
-  margin-top: 20px;
 }
 
 div.open {
@@ -71,28 +117,19 @@ div.open {
   transition: all 0.5s ease-out;
 }
 .arrow {
-  width: 20px;
-  height: 20px;
   margin: 0 auto;
   transform: rotate(45deg);
   border-left: none;
   border-top: none;
-  border-right: 3px white solid;
-  border-bottom: 3px white solid;
   transition: transform 0.5s;
 }
 
 .arrow:before {
   content: "";
   position: absolute;
-  margin: -5px 0 0 5px;
-  width: 10px;
-  height: 10px;
   top: 50%;
   border-left: none;
   border-top: none;
-  border-right: 2px white solid;
-  border-bottom: 2px white solid;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-name: arrow;
