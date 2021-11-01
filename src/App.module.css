@@ -29,9 +29,12 @@
 [data-style="low res."] input::placeholder {
   font-size: min(11px, 1.5vh);
 }
+[data-style="low res."] h4 {
+  font-size: 13px;
+}
 
-[data-style="low res."] button[id="styleSwitch"] {
-  font-size: 80%;
+[data-style="low res."] [id="res switch"] {
+  font-size: 14px;
 }
 
 [data-style="high res."] * {
@@ -65,4 +68,8 @@
 
 [data-style="high res."] input::placeholder {
   font-size: min(15px, 2vh);
+}
+
+[data-style="high res."] [id="res switch"] {
+  font-size: 19px;
 }

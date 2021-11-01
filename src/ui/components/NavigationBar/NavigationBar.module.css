@@ -25,7 +25,7 @@
     transform: translateX(-50%);
   }
 
-  .container > :last-child {
+  .container > :nth-child(2) {
     width: 90%;
     margin: 40px auto 0 auto;
   }
@@ -45,8 +45,15 @@
     border-bottom: 1px white solid;
   }
 
-  .container > :last-child > :last-child {
+  .container > :nth-child(2) > :last-child {
     margin-top: 10px;
+  }
+
+  .container > :last-child {
+    position: absolute;
+    top: 15px;
+    right: 5vw;
+    width: 50px;
   }
 }
 
@@ -55,7 +62,7 @@
     top: 15px;
   }
 
-  .container > :last-child {
+  .container > :nth-child(2) {
     width: 55%;
     margin: 15px auto 0 auto;
   }
@@ -75,8 +82,14 @@
     border-bottom: 2px white solid;
   }
 
-  .container > :last-child > :last-child {
+  .container > :nth-child(2) > :last-child {
     margin-top: 20px;
+  }
+
+  .container > :last-child {
+    position: absolute;
+    right: 40px;
+    top: 35px;
   }
 }
 
