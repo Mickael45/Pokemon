@@ -12,7 +12,7 @@
 .toggle + .toggleButton {
   display: block;
   width: 145px;
-  height: 30px;
+  height: 37px;
   cursor: pointer;
   user-select: none;
   backface-visibility: hidden;
@@ -28,7 +28,7 @@
   width: 100%;
   text-align: center;
   position: absolute;
-  line-height: 30px;
+  line-height: 37px;
   font-weight: bold;
 }
 
