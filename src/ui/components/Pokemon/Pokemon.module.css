@@ -3,6 +3,7 @@
   padding: 20px;
   border-radius: 5px;
   overflow-wrap: anywhere;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .container:hover {
