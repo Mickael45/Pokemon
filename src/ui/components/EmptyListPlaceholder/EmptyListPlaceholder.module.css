@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  justify-items: center;
+  row-gap: 10px;
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+}
+
+.container > img {
+  height: 200px;
+}

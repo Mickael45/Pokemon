@@ -9,7 +9,7 @@ interface IProps {
 const LoadingScreenWrapper = ({ children }: IProps) => {
   const { loading } = useContext(LoadingContext);
 
-  return !loading ? <PikachuLoader /> : children;
+  return loading ? <PikachuLoader /> : children;
 };
 
 export default LoadingScreenWrapper;
