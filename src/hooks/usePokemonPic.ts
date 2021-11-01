@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { LOW_RES } from "../constants/Style";
-import AppStyleContext from "../context/AppStyleContext";
+import ResolutionContext from "../context/ResolutionContext";
 
 export const usePokemonPic = (pixelImageUrl: string, hdImageUrl: string) => {
-  const { appStyle } = useContext(AppStyleContext);
+  const { resolution } = useContext(ResolutionContext);
 
-  return appStyle === LOW_RES ? pixelImageUrl : hdImageUrl;
+  return resolution === LOW_RES ? pixelImageUrl : hdImageUrl;
 };

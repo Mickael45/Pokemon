@@ -3,7 +3,7 @@ import { HIGH_RES, LOW_RES } from "../../../constants/Style";
 import ResolutionContext from "../../../context/ResolutionContext";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
-const ResolutionToggleSwitch = () => {
+const ThemeToggleSwitch = () => {
   const { resolution, setResolution } = useContext(ResolutionContext);
 
   const getOppositeResolution = () => (resolution === LOW_RES ? HIGH_RES : LOW_RES);
@@ -15,4 +15,4 @@ const ResolutionToggleSwitch = () => {
   );
 };
 
-export default ResolutionToggleSwitch;
+export default ThemeToggleSwitch;

@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ErrorScreen } from "./ui/components/ErrorScreen/ErrorScreen";
 import LoadingContext from "./context/LoadingContext";
 import ErrorContext from "./context/ErrorContext";
-import AppStyleContext from "./context/AppStyleContext";
+import ResolutionContext from "./context/ResolutionContext";
 import PokemonContext from "./context/PokemonContext";
 import { SOMETHING_WRONG_HAPPENED } from "./constants/Errors";
 import { fetchAllPokemons } from "./services/fetchPokemons/fetchPokemons";
@@ -20,7 +20,7 @@ const renderErrorScreen = () => <ErrorScreen type="Page Not Found" />;
 const App = () => {
   const [filteredPokemons, pokemons, setPokemons] = usePokemons();
   const [loading, setLoading] = useState(true);
-  const [appStyle, setAppStyle] = useState<APP_STYLE>(LOW_RES);
+  const [resolution, setResolution] = useState<APP_STYLE>(LOW_RES);
   const [error, setError] = useState<ErrorType | null>(null);
 
   const handlePromiseResolution = (newPokemons: IBasicPokemon[]) => {
@@ -38,9 +38,9 @@ const App = () => {
   };
 
   return (
-    <div data-style={appStyle}>
+    <div data-resolution={resolution}>
       <BrowserRouter>
-        <AppStyleContext.Provider value={{ appStyle, setAppStyle }}>
+        <ResolutionContext.Provider value={{ resolution, setResolution }}>
           <ErrorContext.Provider value={{ error, setError }}>
             <LoadingContext.Provider value={{ loading, setLoading }}>
               <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons, getAllPokemons }}>
@@ -54,7 +54,7 @@ const App = () => {
               </PokemonContext.Provider>
             </LoadingContext.Provider>
           </ErrorContext.Provider>
-        </AppStyleContext.Provider>
+        </ResolutionContext.Provider>
       </BrowserRouter>
     </div>
   );

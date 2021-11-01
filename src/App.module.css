@@ -14,62 +14,62 @@
   font-weight: bold;
 }
 
-[data-style="low res."] * {
+[data-resolution="low res."] * {
   font-family: PixelPokemonFont;
 }
 
-[data-style="low res."] [id="id"] {
+[data-resolution="low res."] [id="id"] {
   font-size: 13px;
 }
 
-[data-style="low res."] [id="type"] {
+[data-resolution="low res."] [id="type"] {
   font-size: 10px;
 }
 
-[data-style="low res."] input::placeholder {
+[data-resolution="low res."] input::placeholder {
   font-size: min(11px, 1.5vh);
 }
-[data-style="low res."] h4 {
+[data-resolution="low res."] h4 {
   font-size: 13px;
 }
 
-[data-style="low res."] [id="res switch"] {
+[data-resolution="low res."] [id="res switch"] {
   font-size: 14px;
 }
 
-[data-style="high res."] * {
+[data-resolution="high res."] * {
   font-family: HdPokemonFont, arial, sans-serif;
 }
 
-[data-style="high res."] h4 {
+[data-resolution="high res."] h4 {
   font-size: 20px;
 }
 
-[data-style="high res."] h3 {
+[data-resolution="high res."] h3 {
   font-size: 25px;
 }
 
-[data-style="high res."] h2 {
+[data-resolution="high res."] h2 {
   font-size: 30px;
 }
 
-[data-style="high res."] [id="id"] {
+[data-resolution="high res."] [id="id"] {
   font-size: 16px;
   font-weight: bolder;
 }
 
-[data-style="high res."] [id="type"] {
+[data-resolution="high res."] [id="type"] {
   font-size: 15px;
 }
 
-[data-style="high res."] [id="info"] {
+[data-resolution="high res."] [id="info"] {
   font-size: 100%;
 }
 
-[data-style="high res."] input::placeholder {
+[data-resolution="high res."] input::placeholder {
   font-size: min(15px, 2vh);
 }
 
-[data-style="high res."] [id="res switch"] {
+[data-resolution="high res."] [id="res switch"] {
   font-size: 19px;
 }
