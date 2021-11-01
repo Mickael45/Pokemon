@@ -14,6 +14,17 @@
   font-weight: bold;
 }
 
+.container {
+  min-height: 100vh;
+  padding-bottom: 20px;
+  transition: all 1s ease;
+}
+
+[id="loading-screen"],
+[id="error-screen"] {
+  background: rgba(236, 236, 236);
+}
+
 [data-resolution="low res."] * {
   font-family: PixelPokemonFont;
 }
@@ -72,4 +83,19 @@
 
 [data-resolution="high res."] [id="res switch"] {
   font-size: 19px;
+}
+
+.container[data-theme="light"] {
+  background: rgba(236, 236, 236);
+}
+
+.container[data-theme="dark"],
+.container[data-theme="dark"] [id="loading-screen"],
+.container[data-theme="dark"] [id="error-screen"] {
+  background: rgba(40, 40, 40);
+  color: white;
+}
+
+.container[data-theme="dark"] [id="type"] {
+  color: white;
 }

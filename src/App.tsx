@@ -10,12 +10,12 @@ import ResolutionContext from "./context/ResolutionContext";
 import ThemeContext from "./context/ThemeContext";
 import PokemonContext from "./context/PokemonContext";
 import { SOMETHING_WRONG_HAPPENED } from "./constants/Errors";
-import { LIGHT } from "./constants/Theme";
+import { LIGHT, DARK } from "./constants/Theme";
 import { LOW_RESOLUTION } from "./constants/Resolution";
 import { fetchAllPokemons } from "./services/fetchPokemons/fetchPokemons";
 import usePokemons from "./hooks/usePokemons";
 import NavigationBar from "./ui/components/NavigationBar/NavigationBar";
-import "./App.module.css";
+import styles from "./App.module.css";
 
 const renderErrorScreen = () => <ErrorScreen type="Page Not Found" />;
 
@@ -23,7 +23,7 @@ const App = () => {
   const [filteredPokemons, pokemons, setPokemons] = usePokemons();
   const [loading, setLoading] = useState(true);
   const [resolution, setResolution] = useState<RESOLUTION>(LOW_RESOLUTION);
-  const [theme, setTheme] = useState<THEME>(LIGHT);
+  const [theme, setTheme] = useState<THEME>(DARK);
   const [error, setError] = useState<ErrorType | null>(null);
 
   const handlePromiseResolution = (newPokemons: IBasicPokemon[]) => {
@@ -41,7 +41,7 @@ const App = () => {
   };
 
   return (
-    <div data-resolution={resolution}>
+    <div data-resolution={resolution} className={styles.container} data-theme={theme}>
       <BrowserRouter>
         <ResolutionContext.Provider value={{ resolution, setResolution }}>
           <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -49,7 +49,6 @@ const App = () => {
               <LoadingContext.Provider value={{ loading, setLoading }}>
                 <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons, getAllPokemons }}>
                   <NavigationBar />
-
                   <Switch>
                     <Route path="/" exact component={HomePage} />
                     <Route path="/details/:id" component={DetailsPage} />

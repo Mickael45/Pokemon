@@ -4,14 +4,11 @@
   height: 100%;
 }
 
-.container > :last-child {
+.container > :only-child {
+  height: 100%;
   max-width: 1000px;
   width: 90%;
   min-width: 340px;
   margin: 0 auto;
-  padding: 20px 0;
-}
-
-.container > :first-child {
-  height: 30px;
+  padding-top: 20px;
 }
