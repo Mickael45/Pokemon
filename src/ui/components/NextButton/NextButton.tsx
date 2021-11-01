@@ -11,7 +11,7 @@ const NextButton = ({ limit, value, handleClick }: IProps) => {
 
   const nextId = createNextId();
 
-  return <button onClick={handleNextButtonClick}>{`#${nextId} >`}</button>;
+  return <button id="id-nav-button" onClick={handleNextButtonClick}>{`#${nextId} >`}</button>;
 };
 
 export default NextButton;

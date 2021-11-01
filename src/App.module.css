@@ -104,3 +104,9 @@
 .container[data-theme="dark"] [id="id-details"] {
   color: #cc0000;
 }
+
+.container[data-theme="dark"] [id="id-nav-button"] {
+  border: 3px solid #ffde00;
+  background: #3b4cca;
+  color: #ffde00;
+}
