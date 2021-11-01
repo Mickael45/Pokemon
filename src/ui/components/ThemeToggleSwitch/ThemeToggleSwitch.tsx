@@ -1,18 +1,16 @@
 import { useContext } from "react";
-import { HIGH_RES, LOW_RES } from "../../../constants/Style";
-import ResolutionContext from "../../../context/ResolutionContext";
+import { LIGHT, DARK } from "../../../constants/Theme";
+import ThemeProvider from "../../../context/ThemeContext";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
 const ThemeToggleSwitch = () => {
-  const { resolution, setResolution } = useContext(ResolutionContext);
+  const { theme, setTheme } = useContext(ThemeProvider);
 
-  const getOppositeResolution = () => (resolution === LOW_RES ? HIGH_RES : LOW_RES);
+  const getOppositeTheme = () => (theme === LIGHT ? DARK : LIGHT);
 
-  const handleClick = () => setResolution(getOppositeResolution());
+  const handleClick = () => setTheme(getOppositeTheme());
 
-  return (
-    <ToggleSwitch onLabel={HIGH_RES} offLabel={LOW_RES} checked={resolution === LOW_RES} handleClick={handleClick} />
-  );
+  return <ToggleSwitch onLabel={LIGHT} offLabel={DARK} checked={theme === DARK} handleClick={handleClick} />;
 };
 
 export default ThemeToggleSwitch;

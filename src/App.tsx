@@ -7,22 +7,22 @@ import { ErrorScreen } from "./ui/components/ErrorScreen/ErrorScreen";
 import LoadingContext from "./context/LoadingContext";
 import ErrorContext from "./context/ErrorContext";
 import ResolutionContext from "./context/ResolutionContext";
+import ThemeContext from "./context/ThemeContext";
 import PokemonContext from "./context/PokemonContext";
 import { SOMETHING_WRONG_HAPPENED } from "./constants/Errors";
+import { LIGHT } from "./constants/Theme";
+import { LOW_RESOLUTION } from "./constants/Resolution";
 import { fetchAllPokemons } from "./services/fetchPokemons/fetchPokemons";
 import usePokemons from "./hooks/usePokemons";
-import { LOW_RES } from "./constants/Style";
-import "./App.module.css";
 import NavigationBar from "./ui/components/NavigationBar/NavigationBar";
-import ThemeContext from "./context/ThemeContext";
-import { LIGHT } from "./constants/Theme";
+import "./App.module.css";
 
 const renderErrorScreen = () => <ErrorScreen type="Page Not Found" />;
 
 const App = () => {
   const [filteredPokemons, pokemons, setPokemons] = usePokemons();
   const [loading, setLoading] = useState(true);
-  const [resolution, setResolution] = useState<APP_STYLE>(LOW_RES);
+  const [resolution, setResolution] = useState<RESOLUTION>(LOW_RESOLUTION);
   const [theme, setTheme] = useState<THEME>(LIGHT);
   const [error, setError] = useState<ErrorType | null>(null);
 
@@ -49,6 +49,7 @@ const App = () => {
               <LoadingContext.Provider value={{ loading, setLoading }}>
                 <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons, getAllPokemons }}>
                   <NavigationBar />
+
                   <Switch>
                     <Route path="/" exact component={HomePage} />
                     <Route path="/details/:id" component={DetailsPage} />

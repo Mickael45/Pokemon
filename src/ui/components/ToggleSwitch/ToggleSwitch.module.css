@@ -9,7 +9,7 @@
   display: none;
 }
 
-.toggle + .toggleButton {
+.toggleButton {
   display: block;
   width: 145px;
   height: 37px;
@@ -22,8 +22,8 @@
   color: #3b4cca;
 }
 
-.toggle + .toggleButton:after,
-.toggle + .toggleButton:before {
+.toggleButton:after,
+.toggleButton:before {
   display: inline-block;
   transition: all 0.2s ease;
   width: 100%;
@@ -33,23 +33,24 @@
   font-weight: bold;
 }
 
-.toggle + .toggleButton:after {
+.toggleButton:after {
   left: 100%;
   content: attr(data-tg-on);
 }
 
-.toggle + .toggleButton:before {
+.toggleButton:before {
   left: 0;
   content: attr(data-tg-off);
 }
 
-.toggle + .toggleButton:active:before {
+.toggleButton:active:before {
   left: -10%;
 }
 
 .toggle:checked + .toggleButton {
   background: #3b4cca;
   color: #ffde00;
+  overflow: hidden;
 }
 
 .toggle:checked + .toggleButton:before {

@@ -50,7 +50,6 @@
   }
 
   .container > :last-child {
-    position: absolute;
     top: 15px;
     right: 5vw;
   }
@@ -86,10 +85,18 @@
   }
 
   .container > :last-child {
-    position: absolute;
     right: 15px;
-    top: 35px;
+    top: 50%;
   }
+}
+
+.container > :last-child {
+  position: relative;
+  overflow: hidden;
+}
+
+.container > :last-child > :first-child {
+  margin-bottom: 5px;
 }
 
 .container > img:hover {

@@ -12,9 +12,9 @@ const ResolutionToggleSwitch = () => {
 
   return (
     <ToggleSwitch
-      onLabel={HIGH_RESOLUTION}
-      offLabel={LOW_RESOLUTION}
-      checked={resolution === LOW_RESOLUTION}
+      onLabel={LOW_RESOLUTION}
+      offLabel={HIGH_RESOLUTION}
+      checked={resolution === HIGH_RESOLUTION}
       handleClick={handleClick}
     />
   );
