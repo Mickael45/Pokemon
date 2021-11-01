@@ -45,7 +45,7 @@
 }
 
 [data-resolution="low res."] [id="res switch"] {
-  font-size: 14px;
+  font-size: 11px;
 }
 
 [data-resolution="high res."] * {
@@ -82,7 +82,7 @@
 }
 
 [data-resolution="high res."] [id="res switch"] {
-  font-size: 19px;
+  font-size: 17px;
 }
 
 .container[data-theme="light"] {

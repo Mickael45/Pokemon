@@ -69,7 +69,6 @@
 
 @media screen and (max-width: 800px) {
   .toggleButton {
-    font-size: 70% !important;
     width: 50px !important;
   }
 }

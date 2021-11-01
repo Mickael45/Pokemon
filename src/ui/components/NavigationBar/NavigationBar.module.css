@@ -1,8 +1,5 @@
 .container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  justify-items: center;
   width: 100%;
   padding: 20px 0;
   background: #cc0000;
@@ -49,9 +46,14 @@
     margin-top: 10px;
   }
 
-  .container > :last-child {
-    top: 15px;
+  .container > :nth-child(3) {
     right: 5vw;
+    top: 15px;
+  }
+
+  .container > :last-child {
+    left: 5vw;
+    top: 15px;
   }
 }
 
@@ -84,14 +86,20 @@
     margin-top: 20px;
   }
 
+  .container > :nth-child(3) {
+    right: 15px;
+    top: 15px;
+  }
+
   .container > :last-child {
     right: 15px;
-    top: 50%;
+    top: 70px;
   }
 }
 
-.container > :last-child {
-  position: relative;
+.container > :last-child,
+.container > :nth-child(3) {
+  position: absolute;
   overflow: hidden;
 }
 

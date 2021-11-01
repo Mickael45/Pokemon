@@ -53,10 +53,8 @@ const NavigationBar = () => {
           <div className={styles.arrow} id={ARROW_ELEMENT_ID} onClick={toggleDrawer} />
         </div>
       </div>
-      <div>
-        <ThemeToggleSwitch />
-        <ResolutionToggleSwitch />
-      </div>
+      <ThemeToggleSwitch />
+      <ResolutionToggleSwitch />
     </nav>
   );
 };
