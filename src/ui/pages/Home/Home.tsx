@@ -8,6 +8,7 @@ import PokemonContext from "../../../context/PokemonContext";
 import useFiltering from "../../../hooks/useFiltering";
 import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
 import ListSortingDropdown from "../../components/ListSortingDropdown/ListSortingDropdown";
+import EmptyListPlaceholder from "../../components/EmptyListPlaceholder/EmptyListPlaceholder";
 
 const POKEMON_STACK_SIZE = 12;
 
@@ -22,6 +23,20 @@ const HomePage = (props: any) => {
 
   const renderPokemons = () => filteredPokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 
+  const renderContent = () => {
+    if (!filteredPokemons.length) {
+      return <EmptyListPlaceholder />;
+    }
+    return (
+      <>
+        <ListSortingDropdown />
+        <FlexboxList hasReachedEnd={areThereMorePokemonsToShow()} showMore={incrementNumberOfPokemonShown}>
+          {renderPokemons()}
+        </FlexboxList>
+      </>
+    );
+  };
+
   const areThereMorePokemonsToShow = () => numberOfPokemonShown >= filteredPokemons.length;
 
   useEffect(getAllPokemons, []);
@@ -30,12 +45,7 @@ const HomePage = (props: any) => {
     <ErrorScreenWrapper>
       <LoadingScreenWrapper>
         <Page>
-          <div className={styles.container}>
-            <ListSortingDropdown />
-            <FlexboxList hasReachedEnd={areThereMorePokemonsToShow()} showMore={incrementNumberOfPokemonShown}>
-              {renderPokemons()}
-            </FlexboxList>
-          </div>
+          <div className={styles.container}>{renderContent()}</div>
         </Page>
       </LoadingScreenWrapper>
     </ErrorScreenWrapper>
