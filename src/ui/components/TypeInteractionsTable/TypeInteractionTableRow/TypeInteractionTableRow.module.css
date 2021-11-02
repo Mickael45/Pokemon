@@ -1,4 +1,35 @@
+.container {
+  display: grid;
+  align-content: center;
+  height: 100%;
+  margin-bottom: 50px;
+}
+
+.container,
+.container > :last-child {
+  transition: height 1s ease-out;
+}
+
 .container > :last-child {
   display: flex;
   flex-wrap: wrap;
+  align-content: center;
+  height: 0;
+  overflow: hidden;
+}
+
+.container > input {
+  display: none;
+}
+
+.container > input:checked + div {
+  height: 100%;
+  padding: 10px 0;
+}
+
+.container > label {
+  max-height: 40px;
+  border: 1px solid red;
+  padding: 10px;
+  border-radius: 10px;
 }

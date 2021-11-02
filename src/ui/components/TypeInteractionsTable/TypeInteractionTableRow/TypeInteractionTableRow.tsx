@@ -16,7 +16,8 @@ const TypeInteractionTableRow = ({ type, typeInteractions }: IProps) => {
 
   return (
     <div className={styles.container}>
-      <h3>{type.split(",").map(capitalizeFirstLetter).join(",")} (Weaknesses)</h3>
+      <label htmlFor={type}>{type.split(",").map(capitalizeFirstLetter).join(",")} (Weaknesses)</label>
+      <input id={type} type="checkbox" />
       <div>{renderDataTags()}</div>
     </div>
   );
