@@ -74,6 +74,10 @@ declare global {
     values: PokemonInteractionTypeHash[];
   }
 
+  export type InteractionType = {
+    type: PokemonType;
+    typeInteractions: PokemonInteractionType[];
+  };
   export interface PokemonInteractionType {
     type: PokemonType;
     effectiveness: DamageFactor;
