@@ -19,6 +19,7 @@ import LoadingContext from "../../../context/LoadingContext";
 import ErrorContext from "../../../context/ErrorContext";
 import { usePokemonPic } from "../../../hooks/usePokemonPic";
 import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
 interface Params {
   id: string;
 }
@@ -63,31 +64,34 @@ const DetailsPage = () => {
   return (
     <ErrorScreenWrapper>
       <LoadingScreenWrapper>
-        <Page>
-          <div>
-            <IdNavigation id={id} />
-            <div className={styles.container}>
-              <div>
-                <h2>{capitalizeFirstLetter(name)}</h2>
-                <h3 id="id-details">{`#${id}`}</h3>
-              </div>
-              <div>
-                <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
-                <BasicInfo {...basicInfo} />
+        <div>
+          <NavigationBar />
+          <Page>
+            <div>
+              <IdNavigation id={id} />
+              <div className={styles.container}>
                 <div>
-                  <Radar title="Stats" axisDataList={stats} color={color} />
+                  <h2>{capitalizeFirstLetter(name)}</h2>
+                  <h3 id="id-details">{`#${id}`}</h3>
                 </div>
                 <div>
-                  <h3>Types</h3>
-                  <PokemonTypes id={id} types={types} />
-                  <h3>Weaknesses</h3>
-                  <PokemonWeaknesses id={id} types={weaknesses} />
+                  <ImageWithPlaceholder src={imageUrl} alt={`${name}-pic`} />
+                  <BasicInfo {...basicInfo} />
+                  <div>
+                    <Radar title="Stats" axisDataList={stats} color={color} />
+                  </div>
+                  <div>
+                    <h3>Types</h3>
+                    <PokemonTypes id={id} types={types} />
+                    <h3>Weaknesses</h3>
+                    <PokemonWeaknesses id={id} types={weaknesses} />
+                  </div>
+                  <EvolutionChain chain={evolutionChain} />
                 </div>
-                <EvolutionChain chain={evolutionChain} />
               </div>
             </div>
-          </div>
-        </Page>
+          </Page>
+        </div>
       </LoadingScreenWrapper>
     </ErrorScreenWrapper>
   );

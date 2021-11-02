@@ -7,6 +7,7 @@ import useQueryParams from "../../../hooks/useQueryParams";
 import { convertTypeInteractionArrayToObj } from "../../../utils/pokemonTypes/convertors";
 import styles from "./TypeInteractions.module.css";
 import { filterByMonoType, filterByMultiType } from "../../../utils/pokemonTypes/filtering";
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
 
 const TypeInteractionsPage = () => {
   const filters = useQueryParams().map(({ value }) => value);
@@ -31,12 +32,15 @@ const TypeInteractionsPage = () => {
       : pokemonInteractionTypes.filter(isFilterIncludedInType).map(renderTypeInteractionTable);
 
   return (
-    <Page>
-      <div className={styles.container}>
-        <TypesSelector pathname="/type-interactions" />
-        {renderTypeInteractionTables()}
-      </div>
-    </Page>
+    <>
+      <NavigationBar />
+      <Page>
+        <div className={styles.container}>
+          <TypesSelector pathname="/type-interactions" />
+          {renderTypeInteractionTables()}
+        </div>
+      </Page>
+    </>
   );
 };
 

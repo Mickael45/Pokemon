@@ -11,7 +11,6 @@ import { DARK } from "./constants/Theme";
 import { LOW_RESOLUTION } from "./constants/Resolution";
 import { fetchAllPokemons } from "./services/fetchPokemons/fetchPokemons";
 import usePokemons from "./hooks/usePokemons";
-import NavigationBar from "./ui/components/NavigationBar/NavigationBar";
 import styles from "./App.module.css";
 import PikachuLoader from "./ui/components/PikachuLoader/PikachuLoader";
 
@@ -51,7 +50,6 @@ const App = () => {
               <LoadingContext.Provider value={{ loading, setLoading }}>
                 <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons, getAllPokemons }}>
                   <Suspense fallback={<PikachuLoader />}>
-                    <NavigationBar />
                     <Switch>
                       <Route path="/" exact component={HomePage} />
                       <Route path="/details/:id" component={DetailsPage} />

@@ -9,6 +9,7 @@ import useFiltering from "../../../hooks/useFiltering";
 import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
 import ListSortingDropdown from "../../components/ListSortingDropdown/ListSortingDropdown";
 import EmptyListPlaceholder from "../../components/EmptyListPlaceholder/EmptyListPlaceholder";
+import NavigationBar from "../../components/NavigationBar/NavigationBar";
 
 const POKEMON_STACK_SIZE = 12;
 
@@ -44,9 +45,12 @@ const HomePage = () => {
   return (
     <ErrorScreenWrapper>
       <LoadingScreenWrapper>
-        <Page>
-          <div className={styles.container}>{renderContent()}</div>
-        </Page>
+        <div>
+          <NavigationBar />
+          <Page>
+            <div className={styles.container}>{renderContent()}</div>
+          </Page>
+        </div>
       </LoadingScreenWrapper>
     </ErrorScreenWrapper>
   );
