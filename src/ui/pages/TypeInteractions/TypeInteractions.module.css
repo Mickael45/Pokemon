@@ -1,4 +1,5 @@
 .container {
-  display: grid;
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

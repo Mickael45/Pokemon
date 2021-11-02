@@ -1,8 +1,10 @@
 .container {
-  display: grid;
-  align-content: center;
-  height: 100%;
-  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 5px 40px 5px;
+  align-content: flex-start;
+  width: 320px;
+  text-align: center;
 }
 
 .container > :last-child {
@@ -19,12 +21,12 @@
 
 .container > input:checked + div {
   height: 100%;
-  padding: 10px 0;
 }
 
 .container > label {
   max-height: 40px;
-  border: 1px solid red;
+  width: 100%;
+  border: 3px solid;
   padding: 10px;
   border-radius: 10px;
 }

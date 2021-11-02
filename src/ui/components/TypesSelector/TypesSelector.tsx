@@ -63,7 +63,7 @@ const TypesSelector = () => {
     const search = types === "" ? "" : `types=${types}`;
 
     history.push({
-      pathname: "/",
+      pathname: "/type-interactions",
       search,
     });
   };

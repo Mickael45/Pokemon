@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getPokemonPrimaryTypeColor } from "../../../../utils/pokemonFormatter/pokemonFormatter";
 import { capitalizeFirstLetter } from "../../../../utils/stringManipulation";
 import PokemonType from "../../PokemonType/PokemonType";
 import styles from "./TypeInteractionTableRow.module.css";
@@ -15,13 +16,17 @@ const TypeInteractionTableRow = ({ type, typeInteractions }: IProps) => {
     <PokemonType key={type} type={type}>{` (x${effectiveness})`}</PokemonType>
   );
 
-  const renderDataTags = () => (checked ? typeInteractions.map(renderDataTag) : null);
+  const renderDataTags = () => typeInteractions.map(renderDataTag);
+
+  const color = getPokemonPrimaryTypeColor(type.split(",").reverse()[0]);
 
   const handleChange = () => setChecked(!checked);
 
   return (
     <div className={styles.container}>
-      <label htmlFor={type}>{type.split(",").map(capitalizeFirstLetter).join(",")} (Weaknesses)</label>
+      <label style={{ borderColor: color, background: color }} htmlFor={type}>
+        {type.split(",").map(capitalizeFirstLetter).join(",")}
+      </label>
       <input onChange={handleChange} id={type} type="checkbox" checked={checked} />
       <div>{renderDataTags()}</div>
     </div>
