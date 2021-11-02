@@ -1,7 +1,7 @@
 import { memo } from "react";
 import Page from "../../templates/Page/Page";
 import typeInteractionsData from "../../../constants/TypeInteractions.json";
-import TypeInteractionTableRow from "../../components/TypeInteractionsTable/TypeInteractionTableRow/TypeInteractionTableRow";
+import TypeInteractionTile from "../../components/TypeInteractionTile/TypeInteractionTile";
 import TypesSelector from "../../components/TypesSelector/TypesSelector";
 import useQueryParams from "../../../hooks/useQueryParams";
 import { convertTypeInteractionArrayToObj } from "../../../utils/pokemonTypes/convertors";
@@ -19,7 +19,7 @@ const TypeInteractionsPage = () => {
   const renderTypeInteractionTable = (interactionType: InteractionType) => {
     const { type, typeInteractions } = interactionType;
 
-    return <TypeInteractionTableRow key={type} type={type} typeInteractions={typeInteractions} />;
+    return <TypeInteractionTile key={type} type={type} typeInteractions={typeInteractions} />;
   };
 
   const isFilterIncludedInType = ({ type }: { type: PokemonType }) =>

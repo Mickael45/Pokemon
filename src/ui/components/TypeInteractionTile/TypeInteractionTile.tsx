@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { getPokemonPrimaryTypeColor } from "../../../../utils/pokemonFormatter/pokemonFormatter";
-import { capitalizeFirstLetter } from "../../../../utils/stringManipulation";
-import PokemonType from "../../PokemonType/PokemonType";
-import styles from "./TypeInteractionTableRow.module.css";
+import { getPokemonPrimaryTypeColor } from "../../../utils/pokemonFormatter/pokemonFormatter";
+import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
+import PokemonType from "../PokemonType/PokemonType";
+import styles from "./TypeInteractionTile.module.css";
 
 interface IProps {
   type: PokemonType;
   typeInteractions: PokemonInteractionType[];
 }
 
-const TypeInteractionTableRow = ({ type, typeInteractions }: IProps) => {
+const TypeInteractionTile = ({ type, typeInteractions }: IProps) => {
   const [checked, setChecked] = useState(false);
 
   const renderDataTag = ({ type, effectiveness }: any) => (
@@ -33,4 +33,4 @@ const TypeInteractionTableRow = ({ type, typeInteractions }: IProps) => {
   );
 };
 
-export default TypeInteractionTableRow;
+export default TypeInteractionTile;
