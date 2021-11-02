@@ -13,6 +13,7 @@ import { fetchAllPokemons } from "./services/fetchPokemons/fetchPokemons";
 import usePokemons from "./hooks/usePokemons";
 import NavigationBar from "./ui/components/NavigationBar/NavigationBar";
 import styles from "./App.module.css";
+import PikachuLoader from "./ui/components/PikachuLoader/PikachuLoader";
 
 const HomePage = lazy(() => import("./ui/pages/Home/Home"));
 const DetailsPage = lazy(() => import("./ui/pages/Details/Details"));
@@ -49,7 +50,7 @@ const App = () => {
             <ErrorContext.Provider value={{ error, setError }}>
               <LoadingContext.Provider value={{ loading, setLoading }}>
                 <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons, getAllPokemons }}>
-                  <Suspense fallback={<div>Loading...</div>}>
+                  <Suspense fallback={<PikachuLoader />}>
                     <NavigationBar />
                     <Switch>
                       <Route path="/" exact component={HomePage} />
