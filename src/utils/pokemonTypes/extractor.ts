@@ -1,2 +1,2 @@
-export const extractEffectiveness = (value: PokemonInteractionType): PokemonEffectivenessType =>
+export const extractEffectiveness = (value: PokemonInteractionTypeHash): PokemonEffectivenessType =>
   Object.values<PokemonEffectivenessType>(value)[0];

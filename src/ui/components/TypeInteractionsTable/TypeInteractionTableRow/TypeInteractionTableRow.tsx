@@ -1,26 +1,24 @@
-import { convertEffectivenessStringToDamageRatio } from "../../../../utils/pokemonTypes/convertors";
-import { extractEffectiveness } from "../../../../utils/pokemonTypes/extractor";
+import { capitalizeFirstLetter } from "../../../../utils/stringManipulation";
+import PokemonType from "../../PokemonType/PokemonType";
+import styles from "./TypeInteractionTableRow.module.css";
 
 interface IProps {
-  type: string;
-  values: PokemonInteractionType[];
+  type: PokemonType;
+  typeInteractions: PokemonInteractionType[];
 }
 
-const TypeInteractionTableRow = ({ type, values }: IProps) => {
-  const damageRatioArray = values.map(extractEffectiveness).map(convertEffectivenessStringToDamageRatio);
-
-  const renderDataTag = (value: string, index: number) => (
-    <td key={index} data-effectiveness={value}>
-      {value === "1" ? "" : value}
-    </td>
+const TypeInteractionTableRow = ({ type, typeInteractions }: IProps) => {
+  const renderDataTag = ({ type, effectiveness }: any) => (
+    <PokemonType key={type} type={type}>{` (x${effectiveness})`}</PokemonType>
   );
-  const renderDataTags = () => damageRatioArray.map(renderDataTag);
+
+  const renderDataTags = () => typeInteractions.map(renderDataTag);
 
   return (
-    <tr>
-      <th data-type="first-square">{type}</th>
-      {renderDataTags()}
-    </tr>
+    <div className={styles.container}>
+      <h3>{type.split(",").map(capitalizeFirstLetter).join(",")} (Weaknesses)</h3>
+      <div>{renderDataTags()}</div>
+    </div>
   );
 };
 

@@ -66,12 +66,17 @@ declare global {
     factor: DamageFactor;
   };
 
-  export type PokemonInteractionType = {
+  export type PokemonInteractionTypeHash = {
     [key: PokemonType]: PokemonEffectivenessType;
   };
   export interface IPokemonInteractionTypes {
-    key: string;
-    values: PokemonInteractionType[];
+    key: PokemonType | string;
+    values: PokemonInteractionTypeHash[];
+  }
+
+  export interface PokemonInteractionType {
+    type: PokemonType;
+    effectiveness: DamageFactor;
   }
   export interface IPokemonStat {
     label: string;
