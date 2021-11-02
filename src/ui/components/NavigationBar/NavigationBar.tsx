@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import {
   addClassToElement,
   doesElementContainClass,
@@ -17,6 +17,7 @@ const ARROW_ELEMENT_ID = "arrowElementId";
 
 const NavigationBar = () => {
   const history = useHistory();
+  const { pathname } = useLocation();
 
   const navigateHome = () => history.push("/");
 
@@ -41,17 +42,28 @@ const NavigationBar = () => {
     return doesElementContainClass(drawer, styles.open) ? closeDrawer(drawer, arrow) : openDrawer(drawer, arrow);
   };
 
+  const renderArrow = () => (
+    <div>
+      <div className={styles.arrow} id={ARROW_ELEMENT_ID} onClick={toggleDrawer} />
+    </div>
+  );
+
+  const renderTypeSelector = () =>
+    pathname !== "/type-interactions" ? (
+      <>
+        <div className={[styles.drawer, styles.close].join(" ")} id={DRAWER_ELEMENT_ID}>
+          <TypesSelector />
+        </div>
+        {renderArrow()}
+      </>
+    ) : null;
+
   return (
     <nav className={styles.container}>
       <img src={logo} alt="logo" onClick={navigateHome} />
       <div>
         <SearchInput />
-        <div className={[styles.drawer, styles.close].join(" ")} id={DRAWER_ELEMENT_ID}>
-          <TypesSelector />
-        </div>
-        <div>
-          <div className={styles.arrow} id={ARROW_ELEMENT_ID} onClick={toggleDrawer} />
-        </div>
+        {renderTypeSelector()}
       </div>
       <ThemeToggleSwitch />
       <ResolutionToggleSwitch />

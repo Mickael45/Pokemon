@@ -18,3 +18,8 @@ export const filterPokemonsById = (pokemons: IBasicPokemon[], id: string) => {
 
   return pokemons.filter(doesPokemonIdMatchWithId);
 };
+
+export const filterByMonoType = (filters: string[], type: PokemonType) =>
+  type.includes(`${filters},`) || type === filters[0];
+
+export const filterByMultiType = (filters: string[], type: PokemonType) => type.includes(filters.join(","));

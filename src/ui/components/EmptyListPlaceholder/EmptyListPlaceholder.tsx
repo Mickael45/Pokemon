@@ -3,13 +3,17 @@ import sleepyPikachu from "../../../assets/sleepy-pikachu.gif";
 import sleepyPikachuHd from "../../../assets/sleepy-pikachu-hd.gif";
 import { usePokemonPic } from "../../../hooks/usePokemonPic";
 
-const EmptyListPlaceholder = () => {
+interface IProps {
+  text: string;
+}
+
+const EmptyListPlaceholder = ({ text }: IProps) => {
   const gif = usePokemonPic(sleepyPikachu, sleepyPikachuHd);
 
   return (
     <div className={styles.container}>
       <img src={gif} alt="sleepy pikachu" />
-      No Pokemon found
+      {text}
     </div>
   );
 };

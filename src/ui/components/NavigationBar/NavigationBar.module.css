@@ -4,6 +4,7 @@
   padding: 20px 0;
   background: #cc0000;
   min-width: 60%;
+  min-height: 100px;
 }
 
 .container > img {

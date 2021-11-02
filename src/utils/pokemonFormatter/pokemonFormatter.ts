@@ -22,13 +22,13 @@ import {
 
 type PIC_TYPE = typeof BASIC_PIC | typeof FULL_PIC | typeof PIXELATED;
 
-const isVeryOrSuperEffectiveTypes = (value: PokemonInteractionType) => {
+const isVeryOrSuperEffectiveTypes = (value: PokemonInteractionTypeHash) => {
   const firstValue = Object.values(value)[0] as PokemonEffectivenessType;
 
   return firstValue === "very effective" || firstValue === "super effective";
 };
 
-const createWeaknessInteractionTypeObj = (value: PokemonInteractionType) => {
+const createWeaknessInteractionTypeObj = (value: PokemonInteractionTypeHash) => {
   const type = Object.keys(value)[0] as PokemonType;
   const interactionType = Object.values(value)[0] as PokemonEffectivenessType;
   const factor = EffectivenessTypeToDamageFactorHashMapType[interactionType];

@@ -12,7 +12,7 @@ import EmptyListPlaceholder from "../../components/EmptyListPlaceholder/EmptyLis
 
 const POKEMON_STACK_SIZE = 12;
 
-const HomePage = (props: any) => {
+const HomePage = () => {
   const { getAllPokemons } = useContext(PokemonContext);
   const filteredPokemons = useFiltering();
   const [numberOfPokemonShown, setNumberOfPokemonShown] = useState(POKEMON_STACK_SIZE);
@@ -25,7 +25,7 @@ const HomePage = (props: any) => {
 
   const renderContent = () => {
     if (!filteredPokemons.length) {
-      return <EmptyListPlaceholder />;
+      return <EmptyListPlaceholder text="No Pokemon Found..." />;
     }
     return (
       <>

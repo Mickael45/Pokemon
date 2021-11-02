@@ -40,6 +40,11 @@
   font-size: 13px;
 }
 
+[data-resolution="low res."] th,
+[data-resolution="low res."] td {
+  font-size: 11px;
+}
+
 [data-resolution="low res."] [id="type"] {
   font-size: 10px;
 }
@@ -47,6 +52,7 @@
 [data-resolution="low res."] input::placeholder {
   font-size: min(11px, 1.5vh);
 }
+
 [data-resolution="low res."] h4 {
   font-size: 13px;
 }
@@ -113,7 +119,9 @@
   color: white;
 }
 
-.container[data-theme="dark"] [id="type"] {
+.container[data-theme="dark"] [id="type"],
+.container[data-theme="dark"] td,
+.container[data-theme="dark"] th {
   color: white;
 }
 
