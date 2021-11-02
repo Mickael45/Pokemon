@@ -12,9 +12,13 @@ import {
 import styles from "./TypesSelector.module.css";
 import useFiltering from "../../../hooks/useFiltering";
 
+interface IProps {
+  pathname?: string;
+}
+
 const filteringOptions = Object.values(FilteringTypes);
 
-const TypesSelector = () => {
+const TypesSelector = ({ pathname = "/" }: IProps) => {
   const history = useHistory();
   const filteringQuery = usePokemonTypesFromQuery();
   const filteredPokemons = useFiltering();
@@ -63,7 +67,7 @@ const TypesSelector = () => {
     const search = types === "" ? "" : `types=${types}`;
 
     history.push({
-      pathname: "/type-interactions",
+      pathname,
       search,
     });
   };

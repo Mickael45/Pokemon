@@ -65,7 +65,7 @@ const TypeInteractionsPage = () => {
   return (
     <Page>
       <div className={styles.container}>
-        <TypesSelector />
+        <TypesSelector pathname="/type-interactions" />
         {renderTypeInteractionTables()}
       </div>
     </Page>
