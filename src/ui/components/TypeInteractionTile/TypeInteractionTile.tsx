@@ -12,7 +12,7 @@ interface IProps {
 const TypeInteractionTile = ({ type, typeInteractions }: IProps) => {
   const [checked, setChecked] = useState(false);
 
-  const renderDataTag = ({ type, effectiveness }: any) => (
+  const renderDataTag = ({ type, effectiveness }: PokemonInteractionType) => (
     <PokemonType key={type} type={type}>{` (x${effectiveness})`}</PokemonType>
   );
 

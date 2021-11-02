@@ -12,7 +12,7 @@ import EmptyListPlaceholder from "../../components/EmptyListPlaceholder/EmptyLis
 
 const POKEMON_STACK_SIZE = 12;
 
-const HomePage = (props: any) => {
+const HomePage = () => {
   const { getAllPokemons } = useContext(PokemonContext);
   const filteredPokemons = useFiltering();
   const [numberOfPokemonShown, setNumberOfPokemonShown] = useState(POKEMON_STACK_SIZE);

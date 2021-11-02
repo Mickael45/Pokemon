@@ -7,7 +7,7 @@ const findEnglishEntry = (entry: FlavorTextEntry | GeneraEntry) => entry.languag
 export const replaceBrokenName = (name: string) => brokenNamesMap[name] || name;
 
 export const revertPokemonNameToOriginal = (pokemon: IPokemonResponseType) => {
-  const entry = Object.entries(brokenNamesMap).find((entry: any) => pokemon.name === entry[1]);
+  const entry = Object.values(brokenNamesMap).find((entry: string) => pokemon.name === entry);
   const name = entry ? entry[0] : "";
 
   return name ? { ...pokemon, name } : pokemon;
