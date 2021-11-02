@@ -25,16 +25,20 @@ const TypeInteractionsPage = () => {
   const isFilterIncludedInType = ({ type }: { type: PokemonType }) =>
     filters.length === 1 ? filterByMonoType(filters, type) : filterByMultiType(filters, type);
 
-  const renderTypeInteractionTables = () =>
-    filters.length === 0
-      ? "Select"
-      : pokemonInteractionTypes.filter(isFilterIncludedInType).map(renderTypeInteractionTable);
+  const renderTypeInteractionTables = () => {
+    if (filters.length === 0) {
+      return "Select the type(s) you want to see the interactions for.";
+    }
+    const typeInteractions = pokemonInteractionTypes.filter(isFilterIncludedInType).map(renderTypeInteractionTable);
+
+    return typeInteractions.length === 0 ? "No interactions found for this type combination." : typeInteractions;
+  };
 
   return (
     <Page>
       <div className={styles.container}>
         <TypesSelector pathname="/type-interactions" />
-        {renderTypeInteractionTables()}
+        <div>{renderTypeInteractionTables()}</div>
       </div>
     </Page>
   );
