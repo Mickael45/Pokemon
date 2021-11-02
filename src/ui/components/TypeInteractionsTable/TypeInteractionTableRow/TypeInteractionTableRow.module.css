@@ -5,11 +5,6 @@
   margin-bottom: 50px;
 }
 
-.container,
-.container > :last-child {
-  transition: height 1s ease-out;
-}
-
 .container > :last-child {
   display: flex;
   flex-wrap: wrap;
