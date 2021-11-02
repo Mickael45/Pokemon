@@ -7,6 +7,7 @@ import useQueryParams from "../../../hooks/useQueryParams";
 import { convertTypeInteractionArrayToObj } from "../../../utils/pokemonTypes/convertors";
 import styles from "./TypeInteractions.module.css";
 import { filterByMonoType, filterByMultiType } from "../../../utils/pokemonTypes/filtering";
+import EmptyListPlaceholder from "../../components/EmptyListPlaceholder/EmptyListPlaceholder";
 
 const TypeInteractionsPage = () => {
   const filters = useQueryParams().map(({ value }) => value);
@@ -27,11 +28,15 @@ const TypeInteractionsPage = () => {
 
   const renderTypeInteractionTables = () => {
     if (filters.length === 0) {
-      return "Select the type(s) you want to see the interactions for.";
+      return <div className={styles.typeInteractions}>Select the type(s) you want to see the interactions for.</div>;
     }
     const typeInteractions = pokemonInteractionTypes.filter(isFilterIncludedInType).map(renderTypeInteractionTable);
 
-    return typeInteractions.length === 0 ? "No interactions found for this type combination." : typeInteractions;
+    return typeInteractions.length === 0 ? (
+      <EmptyListPlaceholder text="No interactions found for this type combination..." />
+    ) : (
+      <div className={styles.typeInteractions}>{typeInteractions}</div>
+    );
   };
 
   return (

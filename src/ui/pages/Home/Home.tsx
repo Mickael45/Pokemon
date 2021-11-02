@@ -25,7 +25,7 @@ const HomePage = () => {
 
   const renderContent = () => {
     if (!filteredPokemons.length) {
-      return <EmptyListPlaceholder />;
+      return <EmptyListPlaceholder text="No Pokemon Found..." />;
     }
     return (
       <>
