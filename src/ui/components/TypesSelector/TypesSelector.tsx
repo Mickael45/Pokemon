@@ -4,9 +4,11 @@ import { usePokemonTypesFromQuery } from "../../../hooks/useQueryParams";
 import PokemonType from "../PokemonType/PokemonType";
 import { useHistory } from "react-router-dom";
 import {
+  addChekedDatasetToElement,
   addClassToElement,
   doesElementContainClass,
   getElementByQuerySelector,
+  removeCheckedDatasetFromElement,
   removeClassFromElement,
 } from "../../../utils/domManipulation";
 import styles from "./TypesSelector.module.css";
@@ -25,10 +27,20 @@ const TypesSelector = ({ pathname = "/" }: IProps) => {
 
   const doesFilteringQueryIncludeType = (type: PokemonType) => filteringQuery.split(",").includes(type);
 
+  const setElementAsChecked = (element: HTMLSpanElement) => {
+    addClassToElement(element, styles.highlight);
+    addChekedDatasetToElement(element);
+  };
+
+  const setElementAsUnchecked = (element: HTMLSpanElement) => {
+    removeClassFromElement(element, styles.highlight);
+    removeCheckedDatasetFromElement(element);
+  };
+
   const applyStyle = (element: HTMLSpanElement) =>
     doesFilteringQueryIncludeType(element.dataset.type as PokemonType)
-      ? addClassToElement(element, styles.highlight)
-      : removeClassFromElement(element, styles.highlight);
+      ? setElementAsChecked(element)
+      : setElementAsUnchecked(element);
 
   const applySelectedStyleToSelectedTypes = () => {
     const getTypeElement = (type: PokemonType) => getElementByQuerySelector(`[data-type=${type}]`) as HTMLSpanElement;

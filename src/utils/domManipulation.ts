@@ -11,7 +11,15 @@ export const getDivClassesById = (id: string): DOMTokenList | null => {
 
 export const addClassToElement = (element: HTMLElement, style: string) => element.classList.add(style);
 
+export const addChekedDatasetToElement = (element: HTMLElement) => {
+  element.dataset.checked = "true";
+};
+
 export const removeClassFromElement = (element: HTMLElement, style: string) => element.classList.remove(style);
+
+export const removeCheckedDatasetFromElement = (element: HTMLElement) => {
+  element.dataset.checked = "false";
+};
 
 export const getElementByQuerySelector = (querySelector: string) =>
   document.querySelector(querySelector) as HTMLElement;

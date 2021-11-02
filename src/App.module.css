@@ -110,6 +110,10 @@
   background: rgba(236, 236, 236);
 }
 
+.container[data-theme="light"] [data-checked="true"] {
+  border-color: black;
+}
+
 .container[data-theme="dark"],
 .container[data-theme="dark"] select,
 .container[data-theme="dark"] form *,
@@ -134,4 +138,8 @@
   border: 3px solid #ffde00;
   background: #3b4cca;
   color: #ffde00;
+}
+
+.container[data-theme="dark"] [data-checked="true"] {
+  border-color: white;
 }

@@ -14,16 +14,13 @@ const PokemonType = ({ type, children = "", handleTypeClick }: IProps) => {
   const history = useHistory();
   const castedPokemonTypesColor = pokemonTypesColor as HashMap;
 
-  const handleClick = () => {
-    if (handleTypeClick) {
-      handleTypeClick(type);
-    } else {
-      history.push({
-        pathname: "/",
-        search: `types=${type}`,
-      });
-    }
-  };
+  const handleClick = () =>
+    handleTypeClick
+      ? handleTypeClick(type)
+      : history.push({
+          pathname: "/",
+          search: `types=${type}`,
+        });
 
   return (
     <span
