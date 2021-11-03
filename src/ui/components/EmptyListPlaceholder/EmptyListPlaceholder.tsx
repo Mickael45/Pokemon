@@ -11,7 +11,7 @@ const EmptyListPlaceholder = ({ text }: IProps) => {
 
   return (
     <div className={styles.container}>
-      <Image src={gif} alt="sleepy pikachu" placeholder="blur" blurDataURL={gif} layout="fill" />
+      <Image src={gif} alt="sleepy pikachu" placeholder="blur" blurDataURL={gif} height={300} width={300} />
       {text}
     </div>
   );

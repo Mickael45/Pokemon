@@ -13,7 +13,7 @@ export const ErrorScreen = ({ type }: IProps) => {
   return (
     <div id="error-screen" className={styles.container}>
       <div>
-        <Image src={gif} alt="surprised pikachu" layout="fill" />
+        <Image src={gif} alt="surprised pikachu" height={300} width={300} />
         <div>{ErrorTypeToMessageHashMap[type]}</div>
       </div>
     </div>

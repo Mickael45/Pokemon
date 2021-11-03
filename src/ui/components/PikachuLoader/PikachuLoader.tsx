@@ -40,7 +40,7 @@ const PikachuLoader = () => {
   return (
     <div id="loading-screen" className={styles.container}>
       <div>
-        <Image src={gif} alt="pika pika" layout="fill" />
+        <Image src={gif} alt="pika pika" placeholder="blur" blurDataURL={gif} height={150} width={205} />
         <AnimatedText text={loadingText} />
       </div>
     </div>

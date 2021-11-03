@@ -33,7 +33,7 @@ const App = ({ Component, pageProps }: AppProps) => {
               </PokemonContext.Provider>
             </LoadingContext.Provider>
           </ErrorContext.Provider>
-        </ThemeContext.Provider>{" "}
+        </ThemeContext.Provider>
       </ResolutionContext.Provider>
     </div>
   );
