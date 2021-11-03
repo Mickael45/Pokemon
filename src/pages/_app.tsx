@@ -2,7 +2,7 @@ import "../../styles/globals.css";
 import type { AppProps } from "next/app";
 import { useState } from "react";
 import { LOW_RESOLUTION } from "../constants/Resolution";
-import { DARK } from "../constants/Theme";
+import { LIGHT } from "../constants/Theme";
 import ErrorContext from "../context/ErrorContext";
 import LoadingContext from "../context/LoadingContext";
 import PokemonContext from "../context/PokemonContext";
@@ -16,7 +16,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   const [filteredPokemons, pokemons, setPokemons] = usePokemons();
   const [loading, setLoading] = useState(true);
   const [resolution, setResolution] = useState<RESOLUTION>(LOW_RESOLUTION);
-  const [theme, setTheme] = useState<THEME>(DARK);
+  const [theme, setTheme] = useState<THEME>(LIGHT);
   const [error, setError] = useState<ErrorType | null>(null);
 
   return (
