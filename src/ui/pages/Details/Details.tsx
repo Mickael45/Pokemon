@@ -82,6 +82,9 @@ const DetailsPage = () => {
                   <PokemonTypes id={id} types={types} />
                   <h3>Weaknesses</h3>
                   <PokemonWeaknesses id={id} types={weaknesses} />
+                  <div>
+                    To learn more about type interactions, click <a href="/type-interactions">here</a>:
+                  </div>
                 </div>
                 <EvolutionChain chain={evolutionChain} />
               </div>

@@ -114,6 +114,10 @@
   border-color: black;
 }
 
+.container[data-theme="light"] a {
+  color: #cc0000;
+}
+
 .container[data-theme="dark"],
 .container[data-theme="dark"] select,
 .container[data-theme="dark"] form *,
@@ -142,4 +146,8 @@
 
 .container[data-theme="dark"] [data-checked="true"] {
   border-color: white;
+}
+
+.container[data-theme="dark"] a {
+  color: #ffde00;
 }

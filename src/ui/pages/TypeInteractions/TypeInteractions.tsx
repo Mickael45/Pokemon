@@ -28,7 +28,7 @@ const TypeInteractionsPage = () => {
 
   const renderTypeInteractionTables = () => {
     if (filters.length === 0) {
-      return <div className={styles.typeInteractions}>Select the type(s) you want to see the interactions for.</div>;
+      return <div className={styles.typeInteractions}>Select the type(s) you want to see weaknesses for.</div>;
     }
     const typeInteractions = pokemonInteractionTypes.filter(isFilterIncludedInType).map(renderTypeInteractionTable);
 
