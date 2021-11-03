@@ -1,34 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![d28472afb9a391904f9eab67724b5431](https://user-images.githubusercontent.com/8859666/140185175-01d58c10-4737-49f1-9765-1fb47af66b46.png)
 
-## Getting Started
 
-First, run the development server:
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/8859666/140185140-c72ed85f-af91-4b33-a337-f9e18f694c17.gif)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Site available here https://www.my-pokedex.com/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Features
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+* Shows the list of the all the current Pokemons available.
+* The list can be sorted in 4 different ways, and filtered either by types, id or name
+* For each Pokemon you can access a details page giving more info about it (stats, evolution chain, etc...).
+* There's a page dedicated to type(s) interactions to learn more about each pokemon's type(s) weaknesses and resistances.
+* Dark/Light Theme toggle.
+* Low Resolution (gameboy style) / High resolution font and pictures toggle.
+* Totally responsive. All the features work nicely either on desktop or mobile phone.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+# Tooling used
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+* ReactJS (hooks + context API)
+* NextJS
+* D3JS
+* Typescript
+* Pure CSS
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
