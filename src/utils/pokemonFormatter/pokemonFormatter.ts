@@ -84,7 +84,7 @@ export const formatToFullPokemon = (
   evolutionChain: IBasicPokemon[],
   pokemonSpeciesData: Specie
 ): IFullPokemon => {
-  const { height, weight, name, id } = pokemon;
+  const { height, weight, id } = pokemon;
   const pokemonBasicInfo = formatToBasicPokemon(pokemon);
   const weaknesses = getPokemonWeaknesses(pokemonBasicInfo.types);
   const stats = extractStatsFromPokemon(pokemon);

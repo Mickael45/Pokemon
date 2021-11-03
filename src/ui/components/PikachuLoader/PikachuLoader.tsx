@@ -1,6 +1,5 @@
+import Image from "next/image";
 import { useState, useEffect } from "react";
-import pikachuGif from "../../../assets/running-pikachu.gif";
-import pikachuGifHD from "../../../assets/running-pikachu-hd.gif";
 import styles from "./PikachuLoader.module.css";
 import AnimatedText from "../AnimatedText/AnimatedText";
 import { usePokemonPic } from "../../../hooks/usePokemonPic";
@@ -16,7 +15,7 @@ const LoadingTexts = [
 
 const PikachuLoader = () => {
   const [loadingText, setLoadingText] = useState(LoadingTexts[0]);
-  const gif = usePokemonPic(pikachuGif, pikachuGifHD);
+  const gif = usePokemonPic("/images/running-pikachu.gif", "/images/running-pikachu-hd.gif");
 
   const generateNextIndex = () => {
     const areTextsTheSame = (text: string) => text === loadingText;
@@ -41,7 +40,7 @@ const PikachuLoader = () => {
   return (
     <div id="loading-screen" className={styles.container}>
       <div>
-        <img src={gif} alt="pika pika" />
+        <Image src={gif} alt="pika pika" layout="fill" />
         <AnimatedText text={loadingText} />
       </div>
     </div>

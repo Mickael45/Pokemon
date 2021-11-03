@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom";
+import { useRouter } from "next/router";
 import { MAX_POKEMON_ID_ALLOWED } from "../../../constants/FetchPokemons";
 import styles from "./IdNavigation.module.css";
 import PreviousButton from "../PreviousButton/PreviousButton";
@@ -10,9 +10,9 @@ interface IProps {
 }
 
 const IdNavigation = ({ id }: IProps) => {
-  const history = useHistory();
+  const router = useRouter();
 
-  const handleClick = (id: number) => history.push(`${DETAILS}${id}`);
+  const handleClick = (id: number) => router.push(`${DETAILS}${id}`);
 
   return (
     <div className={styles.container}>

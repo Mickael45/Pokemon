@@ -21,11 +21,11 @@
   justify-items: center;
 }
 
-.container > :last-child > * img {
-  border-radius: 110px;
-  border: 5px solid white;
-  background: #616161;
-  margin: 20px 0;
+.container > :last-child > * > :first-child {
+  border-radius: 110px !important;
+  border: 5px solid white !important;
+  background: #616161 !important;
+  margin: 20px 0 !important;
 }
 
 .container > :last-child > * > :nth-child(2) {

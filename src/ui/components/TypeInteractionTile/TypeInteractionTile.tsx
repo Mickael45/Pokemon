@@ -44,15 +44,14 @@ const TypeInteractionTile = ({ type, typeInteractions }: IProps) => {
 
   const color = getPokemonPrimaryTypeColor(type.split(",").reverse()[0]);
 
-  const handleChange = () => setChecked(!checked);
-
   return (
     <div className={styles.container}>
-      <label style={{ borderColor: color, background: color }} htmlFor={type}>
-        {type.split(",").map(capitalizeFirstLetter).join("/")}
-      </label>
-      <input onChange={handleChange} id={type} type="checkbox" checked={checked} />
-      <div>{renderTypes()}</div>
+      <details>
+        <summary style={{ borderColor: color, background: color }}>
+          {type.split(",").map(capitalizeFirstLetter).join("/")}
+        </summary>
+        <div>{renderTypes()}</div>
+      </details>
     </div>
   );
 };

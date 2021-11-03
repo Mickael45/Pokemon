@@ -1,4 +1,4 @@
-import { useHistory, useLocation } from "react-router-dom";
+import { useRouter } from "next/router";
 import {
   addClassToElement,
   doesElementContainClass,
@@ -7,7 +7,6 @@ import {
 } from "../../../utils/domManipulation";
 import TypesSelector from "../TypesSelector/TypesSelector";
 import SearchInput from "../SearchInput/SearchInput";
-import logo from "../../../assets/logo.svg";
 import styles from "./NavigationBar.module.css";
 import ResolutionToggleSwitch from "../ResolutionToggleSwitch/ResolutionToggleSwitch";
 import ThemeToggleSwitch from "../ThemeToggleSwitch/ThemeToggleSwitch";
@@ -18,10 +17,9 @@ const DRAWER_ELEMENT_ID = "drawerElementId";
 const ARROW_ELEMENT_ID = "arrowElementId";
 
 const NavigationBar = () => {
-  const history = useHistory();
-  const { pathname } = useLocation();
+  const router = useRouter();
 
-  const navigateHome = () => history.push(HOME);
+  const navigateHome = () => router.push(HOME);
 
   const openDrawer = (drawer: HTMLElement, arrow: HTMLElement) => {
     addClassToElement(drawer, styles.open);
@@ -51,7 +49,7 @@ const NavigationBar = () => {
   );
 
   const renderTypeSelector = () =>
-    pathname !== TYPE_INTERACTIONS ? (
+    !router.pathname.includes(TYPE_INTERACTIONS) ? (
       <>
         <div className={[styles.drawer, styles.close].join(" ")} id={DRAWER_ELEMENT_ID}>
           <TypesSelector />
@@ -63,7 +61,7 @@ const NavigationBar = () => {
 
   return (
     <nav className={styles.container}>
-      <img src={logo} alt="logo" onClick={navigateHome} />
+      <img src="/icons/logo.svg" alt="logo" onClick={navigateHome} />
       <div>
         <SearchInput />
         {renderTypeSelector()}

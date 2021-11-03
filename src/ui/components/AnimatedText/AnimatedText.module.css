@@ -1,14 +1,14 @@
-span {
+.container span {
   display: flex;
   flex-wrap: wrap;
   justify-items: space-around;
 }
 
-p[data-char=" "] {
+.container p[data-char=" "] {
   margin-left: 15px;
 }
 
-p {
+.container p {
   text-transform: uppercase;
 }
 

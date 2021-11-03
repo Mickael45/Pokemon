@@ -11,7 +11,8 @@ export const getDivClassesById = (id: string): DOMTokenList | null => {
 
 export const addClassToElement = (element: HTMLElement, style: string) => element.classList.add(style);
 
-export const addChekedDatasetToElement = (element: HTMLElement) => {
+export const addCheckedDatasetToElement = (element: HTMLElement) => {
+  console.log("ADDING");
   element.dataset.checked = "true";
 };
 
