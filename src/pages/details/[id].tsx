@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { TYPE_INTERACTIONS } from "../../constants/Routes";
-import Head from "next/head";
 import LoadingContext from "../../context/LoadingContext";
+import Header from "../../ui/components/Header/Header";
 import { usePokemonPic } from "../../hooks/usePokemonPic";
 import Image from "next/image";
 import { fetchAllPokemons, fetchPokemonDetailsByNameOrId } from "../../services/fetchPokemons/fetchPokemons";
@@ -44,14 +44,10 @@ const DetailsPage = ({
 
   return (
     <>
-      <Head>
-        <title>{`${capitalizeFirstLetter(name)} Information`}</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content={`Find out about ${name}'s stats, types, weaknesses and much more !`} />
-        <link rel="preload" href="/fonts/pixelPokemonFont.ttf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/hdPokemonFont.woff" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/hdPokemonFont-bold.woff" as="font" crossOrigin="" />
-      </Head>
+      <Header
+        title={`${capitalizeFirstLetter(name)}  Information`}
+        description={"{`Find out about ${name}'s stats, types, weaknesses and much more !`}"}
+      />
       <ErrorScreenWrapper>
         <LoadingScreenWrapper>
           <Page>

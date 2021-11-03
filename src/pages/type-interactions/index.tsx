@@ -1,6 +1,5 @@
 import React, { memo } from "react";
 import { TYPE_INTERACTIONS } from "../../constants/Routes";
-import Head from "next/head";
 import useQueryParams from "../../hooks/useQueryParams";
 import EmptyListPlaceholder from "../../ui/components/EmptyListPlaceholder/EmptyListPlaceholder";
 import TypeInteractionTile from "../../ui/components/TypeInteractionTile/TypeInteractionTile";
@@ -10,6 +9,7 @@ import { convertTypeInteractionArrayToObj } from "../../utils/pokemonTypes/conve
 import { filterByMonoType, filterByMultiType } from "../../utils/pokemonTypes/filtering";
 import typeInteractionsData from "../../constants/TypeInteractions.json";
 import styles from "./TypeInteractions.module.css";
+import Header from "../../ui/components/Header/Header";
 
 const TypeInteractionsPage = () => {
   const filters = useQueryParams().map(({ value }) => value);
@@ -40,15 +40,10 @@ const TypeInteractionsPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Type Interactions</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content="Learn more about which types pokemons are weak and resistant against !" />
-
-        <link rel="preload" href="/fonts/pixelPokemonFont.ttf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/hdPokemonFont.woff" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/hdPokemonFont-bold.woff" as="font" crossOrigin="" />
-      </Head>
+      <Header
+        title="Type Interactions"
+        description="Learn more about which types pokemons are weak and resistant against !"
+      />
       <Page>
         <div className={styles.container}>
           <TypesSelector pathname={TYPE_INTERACTIONS} />

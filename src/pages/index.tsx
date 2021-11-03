@@ -12,6 +12,7 @@ import styles from "./Home.module.css";
 import { fetchAllPokemons } from "../services/fetchPokemons/fetchPokemons";
 import LoadingContext from "../context/LoadingContext";
 import PokemonContext from "../context/PokemonContext";
+import Header from "../ui/components/Header/Header";
 
 interface IProps {
   pokemons: IBasicPokemon[];
@@ -60,19 +61,11 @@ const HomePage = ({ pokemons }: IProps) => {
 
   return (
     <>
-      <Head>
-        <title>Pokedex</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta
-          name="description"
-          content="Use the Advanced Search to explore Pokémon by type, weakness, Ability, and more! Search for a Pokémon by name
-          or using its National Pokédex number."
-        />
-
-        <link rel="preload" href="/fonts/pixelPokemonFont.ttf" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/hdPokemonFont.woff" as="font" crossOrigin="" />
-        <link rel="preload" href="/fonts/hdPokemonFont-bold.woff" as="font" crossOrigin="" />
-      </Head>
+      <Header
+        title="Pokedex"
+        description="Use the Advanced Search to explore Pokémon by type, weakness, Ability, and more! Search for a Pokémon by name
+        or using its National Pokédex number."
+      />
       <ErrorScreenWrapper>
         <LoadingScreenWrapper>
           <Page>
