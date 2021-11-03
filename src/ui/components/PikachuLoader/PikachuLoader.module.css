@@ -1,13 +1,12 @@
 .container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
+  position: relative;
+  text-align: center;
   display: grid;
-  align-content: center;
-  justify-content: center;
-  animation: fadeIn 1s ease-in-out;
+  justify-items: center;
+  top: 40vh;
+  transform: translateY(-50%);
+  display: grid;
+  row-gap: 30px;
 }
 
 .container > :only-child {

@@ -24,7 +24,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <ResolutionContext.Provider value={{ resolution, setResolution }}>
         <ThemeContext.Provider value={{ theme, setTheme }}>
           <ErrorContext.Provider value={{ error, setError }}>
-            <LoadingContext.Provider value={{ loading, setLoading }}>
+            <LoadingContext.Provider value={{ loading, setLoading: () => {} }}>
               <PokemonContext.Provider value={{ filteredPokemons, pokemons, setPokemons }}>
                 <>
                   <NavigationBar />
