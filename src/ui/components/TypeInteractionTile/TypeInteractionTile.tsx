@@ -15,7 +15,7 @@ const TypeInteractionTile = ({ type, typeInteractions }: IProps) => {
   const damageFactors = [FOUR, TWO, ONE, HALF, QUARTER, ZERO];
 
   const renderType = (interactionType: PokemonInteractionType) => {
-    return <PokemonType key={type} type={interactionType.type} />;
+    return <PokemonType key={interactionType.type} type={interactionType.type} />;
   };
 
   const renderTypesCategory = (categoryTypeInteractions: PokemonInteractionType[], index: number) => {
@@ -26,7 +26,7 @@ const TypeInteractionTile = ({ type, typeInteractions }: IProps) => {
     const types = categoryTypeInteractions.map(renderType);
 
     return (
-      <div>
+      <div key={damageFactors[index]}>
         {`x${damageFactors[index]} damage from:`}
         <div>{types}</div>
       </div>
