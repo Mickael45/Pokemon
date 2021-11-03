@@ -6,14 +6,12 @@ interface IProps {
   children: string;
 }
 
-const BanneredButton = ({ children }: IProps) => {
-  return (
-    <Link href={TYPE_INTERACTIONS}>
-      <a id="bannered-button" className={styles.container}>
-        {children}
-      </a>
-    </Link>
-  );
-};
+const BanneredButton = ({ children }: IProps) => (
+  <Link href={TYPE_INTERACTIONS}>
+    <a id="bannered-button" className={styles.container}>
+      {children}
+    </a>
+  </Link>
+);
 
 export default BanneredButton;
