@@ -9,6 +9,7 @@ import useFiltering from "../../../hooks/useFiltering";
 import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
 import ListSortingDropdown from "../../components/ListSortingDropdown/ListSortingDropdown";
 import EmptyListPlaceholder from "../../components/EmptyListPlaceholder/EmptyListPlaceholder";
+import BanneredButton from "../../components/BanneredButton/BanneredButton";
 
 const POKEMON_STACK_SIZE = 12;
 
@@ -31,7 +32,10 @@ const HomePage = () => {
     }
     return (
       <>
-        {renderSortDropdown()}
+        <div>
+          <BanneredButton>Type Interactions</BanneredButton>
+          {renderSortDropdown()}
+        </div>
         <FlexboxList hasReachedEnd={areThereMorePokemonsToShow()} showMore={incrementNumberOfPokemonShown}>
           {renderPokemons()}
         </FlexboxList>
