@@ -6,12 +6,6 @@
 }
 
 .container > :first-child {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.container > :first-child > :last-child {
   height: 35px;
+  justify-self: end;
 }

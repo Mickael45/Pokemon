@@ -9,7 +9,6 @@ import useFiltering from "../../../hooks/useFiltering";
 import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
 import ListSortingDropdown from "../../components/ListSortingDropdown/ListSortingDropdown";
 import EmptyListPlaceholder from "../../components/EmptyListPlaceholder/EmptyListPlaceholder";
-import BanneredButton from "../../components/BanneredButton/BanneredButton";
 
 const POKEMON_STACK_SIZE = 12;
 
@@ -24,7 +23,7 @@ const HomePage = () => {
 
   const renderPokemons = () => filteredPokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 
-  const renderSortDropdown = () => (filteredPokemons.length > 1 ? <ListSortingDropdown /> : null);
+  const renderSortDropdown = () => (filteredPokemons.length > 1 ? <ListSortingDropdown /> : <div />);
 
   const renderContent = () => {
     if (!filteredPokemons.length) {
@@ -32,10 +31,7 @@ const HomePage = () => {
     }
     return (
       <>
-        <div>
-          <BanneredButton>Type Interactions</BanneredButton>
-          {renderSortDropdown()}
-        </div>
+        {renderSortDropdown()}
         <FlexboxList hasReachedEnd={areThereMorePokemonsToShow()} showMore={incrementNumberOfPokemonShown}>
           {renderPokemons()}
         </FlexboxList>

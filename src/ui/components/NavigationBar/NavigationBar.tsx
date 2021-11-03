@@ -11,6 +11,7 @@ import logo from "../../../assets/logo.svg";
 import styles from "./NavigationBar.module.css";
 import ResolutionToggleSwitch from "../ResolutionToggleSwitch/ResolutionToggleSwitch";
 import ThemeToggleSwitch from "../ThemeToggleSwitch/ThemeToggleSwitch";
+import BanneredButton from "../BanneredButton/BanneredButton";
 
 const DRAWER_ELEMENT_ID = "drawerElementId";
 const ARROW_ELEMENT_ID = "arrowElementId";
@@ -53,6 +54,7 @@ const NavigationBar = () => {
       <>
         <div className={[styles.drawer, styles.close].join(" ")} id={DRAWER_ELEMENT_ID}>
           <TypesSelector />
+          <BanneredButton>Type Interactions</BanneredButton>
         </div>
         {renderArrow()}
       </>

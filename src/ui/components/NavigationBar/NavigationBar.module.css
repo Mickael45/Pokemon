@@ -122,6 +122,7 @@ div.open {
 .drawer {
   display: grid;
   justify-content: center;
+  justify-items: center;
   overflow: hidden;
   align-content: center;
 }
