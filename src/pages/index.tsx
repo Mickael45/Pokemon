@@ -34,20 +34,6 @@ const HomePage = ({ pokemons }: IProps) => {
 
   const renderSortDropdown = () => (filteredPokemons.length > 1 ? <ListSortingDropdown /> : <div />);
 
-  const renderContent = () => {
-    if (!filteredPokemons.length) {
-      return <EmptyListPlaceholder text="No Pokemon Found..." />;
-    }
-    return (
-      <>
-        {renderSortDropdown()}
-        <FlexboxList hasReachedEnd={areThereMorePokemonsToShow()} showMore={incrementNumberOfPokemonShown}>
-          {renderPokemons()}
-        </FlexboxList>
-      </>
-    );
-  };
-
   const areThereMorePokemonsToShow = () => numberOfPokemonShown >= filteredPokemons.length;
 
   const updatePokemons = () => {
@@ -59,6 +45,10 @@ const HomePage = ({ pokemons }: IProps) => {
 
   useEffect(updatePokemons, [pokemons]);
 
+  if (!filteredPokemons.length) {
+    return <EmptyListPlaceholder text="No Pokemon Found..." />;
+  }
+
   return (
     <>
       <Header
@@ -69,7 +59,12 @@ const HomePage = ({ pokemons }: IProps) => {
       <ErrorScreenWrapper>
         <LoadingScreenWrapper>
           <Page>
-            <div className={styles.container}>{renderContent()}</div>
+            <div className={styles.container}>
+              {renderSortDropdown()}
+              <FlexboxList hasReachedEnd={areThereMorePokemonsToShow()} showMore={incrementNumberOfPokemonShown}>
+                {renderPokemons()}
+              </FlexboxList>
+            </div>
           </Page>
         </LoadingScreenWrapper>
       </ErrorScreenWrapper>

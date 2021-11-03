@@ -8,10 +8,11 @@ interface IProps {
 
 const EmptyListPlaceholder = ({ text }: IProps) => {
   const gif = usePokemonPic("/images/sleepy-pikachu.gif", "/images/sleepy-pikachu-hd.gif");
+  const width = gif === "/images/sleepy-pikachu.gif" ? 200 : 350;
 
   return (
     <div className={styles.container}>
-      <Image src={gif} alt="sleepy pikachu" placeholder="blur" blurDataURL={gif} height={300} width={300} />
+      <Image src={gif} alt="sleepy pikachu" placeholder="blur" blurDataURL={gif} height={200} width={width} />
       {text}
     </div>
   );
