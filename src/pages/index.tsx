@@ -23,7 +23,7 @@ const POKEMON_STACK_SIZE = 12;
 const HomePage = ({ pokemons }: IProps) => {
   const filteredPokemons = useFiltering();
   const { setPokemons } = useContext(PokemonContext);
-  const { setLoading } = useContext(LoadingContext);
+  const { setLoading, loading } = useContext(LoadingContext);
   const [numberOfPokemonShown, setNumberOfPokemonShown] = useState(POKEMON_STACK_SIZE);
 
   const incrementNumberOfPokemonShown = () => setNumberOfPokemonShown(numberOfPokemonShown + POKEMON_STACK_SIZE);
@@ -45,7 +45,7 @@ const HomePage = ({ pokemons }: IProps) => {
 
   useEffect(updatePokemons, [pokemons]);
 
-  if (!filteredPokemons.length) {
+  if (!filteredPokemons.length && !loading) {
     return <EmptyListPlaceholder text="No Pokemon Found..." />;
   }
 
