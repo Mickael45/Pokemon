@@ -86,7 +86,7 @@
   background: rgba(236, 236, 236);
 }
 
-.container[data-theme="light"] [data-checked="true"] {
+.container[data-theme="light"] [id="type-interactions"] [data-checked="true"] {
   border-color: black;
 }
 
@@ -130,7 +130,7 @@
   color: #3b4cca;
 }
 
-.container[data-theme="dark"] [data-checked="true"] {
+.container[data-theme="dark"] [id="type-interactions"] [data-checked="true"] {
   border-color: white;
 }
 

@@ -15,6 +15,7 @@
   text-align: left;
   width: 100%;
   padding: 10px;
+  color: white;
 }
 
 .container details > :last-child {

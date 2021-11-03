@@ -45,7 +45,7 @@ const TypeInteractionsPage = () => {
         description="Learn more about which types pokemons are weak and resistant against !"
       />
       <Page>
-        <div className={styles.container}>
+        <div id="type-interactions" className={styles.container}>
           <TypesSelector pathname={TYPE_INTERACTIONS} />
           <div>{renderTypeInteractionTables()}</div>
         </div>
