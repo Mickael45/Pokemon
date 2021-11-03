@@ -49,7 +49,7 @@ const NavigationBar = () => {
   );
 
   const renderTypeSelector = () =>
-    !router.pathname.includes(TYPE_INTERACTIONS) ? (
+    router.pathname !== TYPE_INTERACTIONS ? (
       <>
         <div className={[styles.drawer, styles.close].join(" ")} id={DRAWER_ELEMENT_ID}>
           <TypesSelector />
