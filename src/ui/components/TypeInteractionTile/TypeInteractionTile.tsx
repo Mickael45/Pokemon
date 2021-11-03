@@ -37,7 +37,6 @@ const TypeInteractionTile = ({ type, typeInteractions }: IProps) => {
     const doesEffectivenessMatchWithDamageFactor = ({ effectiveness }: PokemonInteractionType) =>
       effectiveness === damageFactor;
 
-    console.log(typeInteractions.filter(doesEffectivenessMatchWithDamageFactor));
     return typeInteractions.filter(doesEffectivenessMatchWithDamageFactor);
   };
 
