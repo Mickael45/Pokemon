@@ -8,6 +8,7 @@ import { convertTypeInteractionArrayToObj } from "../../../utils/pokemonTypes/co
 import styles from "./TypeInteractions.module.css";
 import { filterByMonoType, filterByMultiType } from "../../../utils/pokemonTypes/filtering";
 import EmptyListPlaceholder from "../../components/EmptyListPlaceholder/EmptyListPlaceholder";
+import { TYPE_INTERACTIONS } from "../../../constants/Routes";
 
 const TypeInteractionsPage = () => {
   const filters = useQueryParams().map(({ value }) => value);
@@ -42,7 +43,7 @@ const TypeInteractionsPage = () => {
   return (
     <Page>
       <div className={styles.container}>
-        <TypesSelector pathname="/type-interactions" />
+        <TypesSelector pathname={TYPE_INTERACTIONS} />
         <div>{renderTypeInteractionTables()}</div>
       </div>
     </Page>

@@ -19,6 +19,7 @@ import LoadingContext from "../../../context/LoadingContext";
 import ErrorContext from "../../../context/ErrorContext";
 import { usePokemonPic } from "../../../hooks/usePokemonPic";
 import LoadingScreenWrapper from "../../components/Wrappers/LoadingScreenWrapper/LoadingScreenWrapper";
+import { TYPE_INTERACTIONS } from "../../../constants/Routes";
 interface Params {
   id: string;
 }
@@ -83,7 +84,7 @@ const DetailsPage = () => {
                   <h3>Weaknesses</h3>
                   <PokemonWeaknesses id={id} types={weaknesses} />
                   <div>
-                    To learn more about type interactions, click <a href="/type-interactions">here</a>:
+                    To learn more about type interactions, click <a href={TYPE_INTERACTIONS}>here</a>:
                   </div>
                 </div>
                 <EvolutionChain chain={evolutionChain} />

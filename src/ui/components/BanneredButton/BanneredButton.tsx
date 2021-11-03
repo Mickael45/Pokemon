@@ -1,4 +1,5 @@
 import styles from "./BanneredButton.module.css";
+import { TYPE_INTERACTIONS } from "../../../constants/Routes";
 
 interface IProps {
   children: string;
@@ -6,7 +7,7 @@ interface IProps {
 
 const BanneredButton = ({ children }: IProps) => {
   return (
-    <a id="bannered-button" href="type-interactions" className={styles.container}>
+    <a id="bannered-button" href={TYPE_INTERACTIONS} className={styles.container}>
       {children}
     </a>
   );

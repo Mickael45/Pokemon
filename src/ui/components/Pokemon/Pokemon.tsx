@@ -6,13 +6,14 @@ import ImageWithPlaceholder from "../ImageWithPlaceholder/ImageWithPlaceholder";
 import styles from "./Pokemon.module.css";
 import PokemonTypes from "../PokemonTypes/PokemonTypes";
 import { usePokemonPic } from "../../../hooks/usePokemonPic";
+import { DETAILS } from "../../../constants/Routes";
 
 const Pokemon = ({ name, id, pixelImageUrl, hdImageUrl, types }: IBasicPokemon) => {
   const history = useHistory();
   const imageUrl = usePokemonPic(pixelImageUrl, hdImageUrl);
   const [animation] = useState(getRandomTransformAnimation());
 
-  const handleTagClick = () => history.push(`/details/${id}`);
+  const handleTagClick = () => history.push(`${DETAILS}${id}`);
 
   return (
     <div className={[styles.container, animation].join(" ")}>

@@ -2,6 +2,7 @@ import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
 import styles from "./PokemonType.module.css";
 import pokemonTypesColor from "../../../constants/TypesColor.json";
 import { useHistory } from "react-router-dom";
+import { HOME } from "../../../constants/Routes";
 const { typeContainer } = styles;
 
 interface IProps {
@@ -18,7 +19,7 @@ const PokemonType = ({ type, children = "", handleTypeClick }: IProps) => {
     handleTypeClick
       ? handleTypeClick(type)
       : history.push({
-          pathname: "/",
+          pathname: HOME,
           search: `types=${type}`,
         });
 
