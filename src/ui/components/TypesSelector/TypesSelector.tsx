@@ -13,6 +13,7 @@ import {
 } from "../../../utils/domManipulation";
 import styles from "./TypesSelector.module.css";
 import useFiltering from "../../../hooks/useFiltering";
+import { HOME } from "../../../constants/Routes";
 
 interface IProps {
   pathname?: string;
@@ -20,7 +21,7 @@ interface IProps {
 
 const filteringOptions = Object.values(FilteringTypes);
 
-const TypesSelector = ({ pathname = "/" }: IProps) => {
+const TypesSelector = ({ pathname = HOME }: IProps) => {
   const history = useHistory();
   const filteringQuery = usePokemonTypesFromQuery();
   const filteredPokemons = useFiltering();

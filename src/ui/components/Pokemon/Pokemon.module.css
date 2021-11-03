@@ -25,7 +25,8 @@
   background-color: lightgrey;
 }
 
-.container > img:hover {
+.container img:hover,
+.container > :nth-child(2) {
   cursor: pointer;
 }
 

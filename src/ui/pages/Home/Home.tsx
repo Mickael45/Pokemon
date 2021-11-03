@@ -23,13 +23,15 @@ const HomePage = () => {
 
   const renderPokemons = () => filteredPokemons.slice(0, numberOfPokemonShown).map(renderPokemon);
 
+  const renderSortDropdown = () => (filteredPokemons.length > 1 ? <ListSortingDropdown /> : <div />);
+
   const renderContent = () => {
     if (!filteredPokemons.length) {
       return <EmptyListPlaceholder text="No Pokemon Found..." />;
     }
     return (
       <>
-        <ListSortingDropdown />
+        {renderSortDropdown()}
         <FlexboxList hasReachedEnd={areThereMorePokemonsToShow()} showMore={incrementNumberOfPokemonShown}>
           {renderPokemons()}
         </FlexboxList>

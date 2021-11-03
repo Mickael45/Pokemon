@@ -11,6 +11,8 @@ import logo from "../../../assets/logo.svg";
 import styles from "./NavigationBar.module.css";
 import ResolutionToggleSwitch from "../ResolutionToggleSwitch/ResolutionToggleSwitch";
 import ThemeToggleSwitch from "../ThemeToggleSwitch/ThemeToggleSwitch";
+import BanneredButton from "../BanneredButton/BanneredButton";
+import { HOME, TYPE_INTERACTIONS } from "../../../constants/Routes";
 
 const DRAWER_ELEMENT_ID = "drawerElementId";
 const ARROW_ELEMENT_ID = "arrowElementId";
@@ -19,7 +21,7 @@ const NavigationBar = () => {
   const history = useHistory();
   const { pathname } = useLocation();
 
-  const navigateHome = () => history.push("/");
+  const navigateHome = () => history.push(HOME);
 
   const openDrawer = (drawer: HTMLElement, arrow: HTMLElement) => {
     addClassToElement(drawer, styles.open);
@@ -49,10 +51,11 @@ const NavigationBar = () => {
   );
 
   const renderTypeSelector = () =>
-    pathname !== "/type-interactions" ? (
+    pathname !== TYPE_INTERACTIONS ? (
       <>
         <div className={[styles.drawer, styles.close].join(" ")} id={DRAWER_ELEMENT_ID}>
           <TypesSelector />
+          <BanneredButton>Type Interactions</BanneredButton>
         </div>
         {renderArrow()}
       </>

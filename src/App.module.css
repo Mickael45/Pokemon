@@ -114,6 +114,14 @@
   border-color: black;
 }
 
+.container[data-theme="light"] a {
+  color: #cc0000;
+}
+
+.container[data-theme="light"] [id="bannered-button"] {
+  color: #3b4cca;
+}
+
 .container[data-theme="dark"],
 .container[data-theme="dark"] select,
 .container[data-theme="dark"] form *,
@@ -134,12 +142,22 @@
   color: #cc0000;
 }
 
-.container[data-theme="dark"] [id="id-nav-button"] {
+.container[data-theme="dark"] [id="id-nav-button"],
+.container[data-theme="dark"] [id="bannered-button"] {
   border: 3px solid #ffde00;
   background: #3b4cca;
   color: #ffde00;
 }
 
+.container[data-theme="dark"] [id="bannered-button"]:before {
+  background: #ffde00;
+  color: #3b4cca;
+}
+
 .container[data-theme="dark"] [data-checked="true"] {
   border-color: white;
+}
+
+.container[data-theme="dark"] a {
+  color: #ffde00;
 }

@@ -5,6 +5,7 @@ import { getElementById } from "../../../utils/domManipulation";
 import useFiltering from "../../../hooks/useFiltering";
 import { usePokemonIdFromQuery, usePokemonNameFromQuery } from "../../../hooks/useQueryParams";
 import styles from "./SearchInput.module.css";
+import { HOME } from "../../../constants/Routes";
 
 const NAME_INPUT_ID = "nameInputId";
 
@@ -26,13 +27,13 @@ const SearchInput = () => {
     const { value = "" } = getElementById(NAME_INPUT_ID) as HTMLInputElement;
 
     if (value === "") {
-      history.push("/");
+      history.push(HOME);
       return;
     }
     const search = !isNaN(+value) ? `id=${value}` : `name=${value}`;
 
     history.push({
-      pathname: "/",
+      pathname: HOME,
       search,
     });
   };

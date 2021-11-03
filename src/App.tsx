@@ -14,6 +14,7 @@ import usePokemons from "./hooks/usePokemons";
 import NavigationBar from "./ui/components/NavigationBar/NavigationBar";
 import styles from "./App.module.css";
 import PikachuLoader from "./ui/components/PikachuLoader/PikachuLoader";
+import { DETAILS, HOME, TYPE_INTERACTIONS } from "./constants/Routes";
 
 const HomePage = lazy(() => import("./ui/pages/Home/Home"));
 const DetailsPage = lazy(() => import("./ui/pages/Details/Details"));
@@ -53,9 +54,9 @@ const App = () => {
                   <Suspense fallback={<PikachuLoader />}>
                     <NavigationBar />
                     <Switch>
-                      <Route path="/" exact component={HomePage} />
-                      <Route path="/details/:id" component={DetailsPage} />
-                      <Route path="/type-interactions" component={TypeInteractionsPage} />
+                      <Route path={HOME} exact component={HomePage} />
+                      <Route path={`${DETAILS}:id`} component={DetailsPage} />
+                      <Route path={TYPE_INTERACTIONS} component={TypeInteractionsPage} />
                       <Route component={renderErrorScreen} />
                     </Switch>
                   </Suspense>

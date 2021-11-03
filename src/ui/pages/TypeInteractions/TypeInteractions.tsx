@@ -8,6 +8,7 @@ import { convertTypeInteractionArrayToObj } from "../../../utils/pokemonTypes/co
 import styles from "./TypeInteractions.module.css";
 import { filterByMonoType, filterByMultiType } from "../../../utils/pokemonTypes/filtering";
 import EmptyListPlaceholder from "../../components/EmptyListPlaceholder/EmptyListPlaceholder";
+import { TYPE_INTERACTIONS } from "../../../constants/Routes";
 
 const TypeInteractionsPage = () => {
   const filters = useQueryParams().map(({ value }) => value);
@@ -28,7 +29,7 @@ const TypeInteractionsPage = () => {
 
   const renderTypeInteractionTables = () => {
     if (filters.length === 0) {
-      return <div className={styles.typeInteractions}>Select the type(s) you want to see the interactions for.</div>;
+      return <div className={styles.typeInteractions}>Select the type(s) you want to see weaknesses for.</div>;
     }
     const typeInteractions = pokemonInteractionTypes.filter(isFilterIncludedInType).map(renderTypeInteractionTable);
 
@@ -42,7 +43,7 @@ const TypeInteractionsPage = () => {
   return (
     <Page>
       <div className={styles.container}>
-        <TypesSelector pathname="/type-interactions" />
+        <TypesSelector pathname={TYPE_INTERACTIONS} />
         <div>{renderTypeInteractionTables()}</div>
       </div>
     </Page>
