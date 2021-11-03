@@ -1,6 +1,5 @@
 import styles from "./EmptyListPlaceholder.module.css";
-import sleepyPikachu from "../../../assets/sleepy-pikachu.gif";
-import sleepyPikachuHd from "../../../assets/sleepy-pikachu-hd.gif";
+import Image from "next/image";
 import { usePokemonPic } from "../../../hooks/usePokemonPic";
 
 interface IProps {
@@ -8,11 +7,11 @@ interface IProps {
 }
 
 const EmptyListPlaceholder = ({ text }: IProps) => {
-  const gif = usePokemonPic(sleepyPikachu, sleepyPikachuHd);
+  const gif = usePokemonPic("/images/sleepy-pikachu.gif", "/images/sleepy-pikachu-hd.gif");
 
   return (
     <div className={styles.container}>
-      <img src={gif} alt="sleepy pikachu" />
+      <Image src={gif} alt="sleepy pikachu" placeholder="blur" blurDataURL={gif} layout="fill" />
       {text}
     </div>
   );

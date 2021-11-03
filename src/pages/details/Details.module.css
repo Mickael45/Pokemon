@@ -9,11 +9,6 @@
   justify-content: space-around;
 }
 
-.container img {
-  height: 100%;
-  width: 100%;
-}
-
 .container > :nth-child(2) > :not(:last-child) {
   display: grid;
   width: 45%;
@@ -34,15 +29,6 @@
     row-gap: 50px;
     align-content: space-around;
   }
-}
-
-.container [id="placeholder"] {
-  max-width: 450px;
-  height: 450px;
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  background-color: lightgrey;
 }
 
 .container > :nth-child(2) > :nth-child(3) > :last-child {

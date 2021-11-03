@@ -10,22 +10,13 @@
   box-shadow: 0px 0px 15px 5px rgb(164, 164, 164);
 }
 
-.container img[data-loaded="true"] {
+.container > :first-child {
   width: 200px;
   height: 200px;
   top: 0;
 }
 
-.container div[id="placeholder"] {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  width: 200px;
-  height: 200px;
-  background-color: lightgrey;
-}
-
-.container img:hover,
+.container > :first-child:hover,
 .container > :nth-child(2) {
   cursor: pointer;
 }

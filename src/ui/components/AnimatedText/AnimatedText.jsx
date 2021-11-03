@@ -38,7 +38,7 @@ const AnimatedText = ({ text }) => {
     return text.split(" ").map(renderWordTags);
   };
 
-  return <span>{renderTextCharacters()}</span>;
+  return <span className={styles.container}>{renderTextCharacters()}</span>;
 };
 
 export default memo(AnimatedText);

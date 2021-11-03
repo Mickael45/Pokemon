@@ -23,7 +23,7 @@ const statLabelMapper: HashMap = {
 };
 
 export const extractStatsFromPokemon = ({ stats }: IPokemonResponseType) => {
-  const formatStatLabel = (statLabel: string) => capitalizeFirstLetter(statLabelMapper[statLabel.replaceAll("-", " ")]);
+  const formatStatLabel = (statLabel: string) => capitalizeFirstLetter(statLabelMapper[statLabel.replace("-", " ")]);
 
   const createStatObj = ({ base_stat, stat }: Stat) => ({
     label: formatStatLabel(stat.name),
@@ -35,7 +35,7 @@ export const extractStatsFromPokemon = ({ stats }: IPokemonResponseType) => {
 
 export const extractAbilitiesFromPokemon = (abilities: Ability[]) => {
   const isAbilityVisible = (ability: Ability) => !ability.is_hidden;
-  const formatAbilityName = ({ ability }: Ability) => capitalizeFirstLetter(ability.name.replaceAll("-", " "));
+  const formatAbilityName = ({ ability }: Ability) => capitalizeFirstLetter(ability.name.replace("-", " "));
 
   return abilities.filter(isAbilityVisible).map(formatAbilityName);
 };

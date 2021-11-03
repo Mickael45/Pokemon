@@ -1,7 +1,6 @@
+import Image from "next/image";
 import { ErrorTypeToMessageHashMap } from "../../../constants/ErrorTypeToMessageHashMap";
 import { usePokemonPic } from "../../../hooks/usePokemonPic";
-import surprisedPikachu from "../../../assets/surprised-pikachu.png";
-import surprisedPikachuHd from "../../../assets/surprised-pikachu-hd.png";
 import styles from "./ErrorScreen.module.css";
 
 interface IProps {
@@ -9,12 +8,12 @@ interface IProps {
 }
 
 export const ErrorScreen = ({ type }: IProps) => {
-  const gif = usePokemonPic(surprisedPikachu, surprisedPikachuHd);
+  const gif = usePokemonPic("/images/surprised-pikachu.png", "/images/surprised-pikachu-hd.png");
 
   return (
     <div id="error-screen" className={styles.container}>
       <div>
-        <img src={gif} alt="surprised pikachu" />
+        <Image src={gif} alt="surprised pikachu" layout="fill" />
         <div>{ErrorTypeToMessageHashMap[type]}</div>
       </div>
     </div>

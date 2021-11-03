@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import * as FilteringTypes from "../../../constants/Types";
 import { usePokemonTypesFromQuery } from "../../../hooks/useQueryParams";
 import PokemonType from "../PokemonType/PokemonType";
-import { useHistory } from "react-router-dom";
+import { useRouter } from "next/router";
 import {
-  addChekedDatasetToElement,
+  addCheckedDatasetToElement,
   addClassToElement,
   doesElementContainClass,
   getElementByQuerySelector,
@@ -22,7 +22,7 @@ interface IProps {
 const filteringOptions = Object.values(FilteringTypes);
 
 const TypesSelector = ({ pathname = HOME }: IProps) => {
-  const history = useHistory();
+  const router = useRouter();
   const filteringQuery = usePokemonTypesFromQuery();
   const filteredPokemons = useFiltering();
 
@@ -30,7 +30,7 @@ const TypesSelector = ({ pathname = HOME }: IProps) => {
 
   const setElementAsChecked = (element: HTMLSpanElement) => {
     addClassToElement(element, styles.highlight);
-    addChekedDatasetToElement(element);
+    addCheckedDatasetToElement(element);
   };
 
   const setElementAsUnchecked = (element: HTMLSpanElement) => {
@@ -50,7 +50,6 @@ const TypesSelector = ({ pathname = HOME }: IProps) => {
     if (!typeElements) {
       return;
     }
-
     typeElements.forEach(applyStyle);
   };
 
@@ -79,7 +78,7 @@ const TypesSelector = ({ pathname = HOME }: IProps) => {
     const types = doesElementContainClass(element, styles.highlight) ? removeTypeFromQuery(type) : addTypeToQuery(type);
     const search = types === "" ? "" : `types=${types}`;
 
-    history.push({
+    router.push({
       pathname,
       search,
     });
@@ -87,7 +86,7 @@ const TypesSelector = ({ pathname = HOME }: IProps) => {
 
   const handleTypeClick = (type: PokemonType) => {
     const typeElement = getElementByQuerySelector(`[data-type=${type}]`);
-
+    console.log("Click handled");
     return typeElement ? createQuery(type, typeElement) : null;
   };
 

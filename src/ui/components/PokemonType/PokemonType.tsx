@@ -1,7 +1,7 @@
 import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
 import styles from "./PokemonType.module.css";
 import pokemonTypesColor from "../../../constants/TypesColor.json";
-import { useHistory } from "react-router-dom";
+import { useRouter } from "next/router";
 import { HOME } from "../../../constants/Routes";
 const { typeContainer } = styles;
 
@@ -12,13 +12,13 @@ interface IProps {
 }
 
 const PokemonType = ({ type, children = "", handleTypeClick }: IProps) => {
-  const history = useHistory();
+  const router = useRouter();
   const castedPokemonTypesColor = pokemonTypesColor as HashMap;
 
   const handleClick = () =>
     handleTypeClick
       ? handleTypeClick(type)
-      : history.push({
+      : router.push({
           pathname: HOME,
           search: `types=${type}`,
         });
