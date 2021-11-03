@@ -16,11 +16,6 @@
   font-size: 13px;
 }
 
-.container[data-resolution="low res."] th,
-.container[data-resolution="low res."] td {
-  font-size: 11px;
-}
-
 .container[data-resolution="low res."] [id="type"] {
   font-size: 10px;
 }
@@ -107,9 +102,8 @@
   color: white;
 }
 
-.container[data-theme="dark"] [id="type"],
-.container[data-theme="dark"] td,
-.container[data-theme="dark"] th {
+.container[data-theme="dark"] [id="types-interaction-details"],
+.container[data-theme="dark"] [id="type"] {
   color: white;
 }
 

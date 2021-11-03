@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { getPokemonPrimaryTypeColor } from "../../../utils/pokemonFormatter/pokemonFormatter";
 import { capitalizeFirstLetter } from "../../../utils/stringManipulation";
 import PokemonType from "../PokemonType/PokemonType";
@@ -11,7 +10,6 @@ interface IProps {
 }
 
 const TypeInteractionTile = ({ type, typeInteractions }: IProps) => {
-  const [checked, setChecked] = useState(false);
   const damageFactors = [FOUR, TWO, ONE, HALF, QUARTER, ZERO];
 
   const renderType = (interactionType: PokemonInteractionType) => {
@@ -50,7 +48,7 @@ const TypeInteractionTile = ({ type, typeInteractions }: IProps) => {
         <summary style={{ borderColor: color, background: color }}>
           {type.split(",").map(capitalizeFirstLetter).join("/")}
         </summary>
-        <div>{renderTypes()}</div>
+        <div id="types-interaction-details">{renderTypes()}</div>
       </details>
     </div>
   );
