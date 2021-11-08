@@ -1,20 +1,20 @@
 {
     "prod": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-pokedex-prod-104941-authRole",
-            "UnauthRoleArn": "arn:aws:iam::792103942857:role/amplify-pokedex-prod-104941-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::792103942857:role/amplify-pokedex-prod-104941-authRole",
+            "AuthRoleName": "amplify-pokedex-prod-111229-authRole",
+            "UnauthRoleArn": "arn:aws:iam::792103942857:role/amplify-pokedex-prod-111229-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::792103942857:role/amplify-pokedex-prod-111229-authRole",
             "Region": "eu-west-1",
-            "DeploymentBucketName": "amplify-pokedex-prod-104941-deployment",
-            "UnauthRoleName": "amplify-pokedex-prod-104941-unauthRole",
-            "StackName": "amplify-pokedex-prod-104941",
-            "StackId": "arn:aws:cloudformation:eu-west-1:792103942857:stack/amplify-pokedex-prod-104941/8a3d40a0-3d54-11ec-8c53-0a529906b035",
-            "AmplifyAppId": "d32nex7crygwxl"
+            "DeploymentBucketName": "amplify-pokedex-prod-111229-deployment",
+            "UnauthRoleName": "amplify-pokedex-prod-111229-unauthRole",
+            "StackName": "amplify-pokedex-prod-111229",
+            "StackId": "arn:aws:cloudformation:eu-west-1:792103942857:stack/amplify-pokedex-prod-111229/62ffdae0-407c-11ec-a89e-02ef5087e469",
+            "AmplifyAppId": "d17i2h4oebn9hf"
         },
         "categories": {
             "hosting": {
                 "amplifyhosting": {
-                    "appId": "d32nex7crygwxl",
+                    "appId": "d17i2h4oebn9hf",
                     "type": "cicd"
                 }
             }

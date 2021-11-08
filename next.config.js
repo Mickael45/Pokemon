@@ -3,7 +3,5 @@ module.exports = {
   reactStrictMode: true,
   images: {
     domains: ["raw.githubusercontent.com", "assets.pokemon.com"],
-    loader: "imgix",
-    path: "https://noop/",
   },
 };
