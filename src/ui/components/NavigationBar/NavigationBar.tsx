@@ -52,6 +52,7 @@ const NavigationBar = () => {
     router.pathname !== TYPE_INTERACTIONS ? (
       <>
         <div className={[styles.drawer, styles.close].join(" ")} id={DRAWER_ELEMENT_ID}>
+          <p>Filter Pokemons by type:</p>
           <TypesSelector />
           <BanneredButton>Type Interactions</BanneredButton>
         </div>

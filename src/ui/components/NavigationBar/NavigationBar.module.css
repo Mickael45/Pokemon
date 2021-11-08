@@ -127,6 +127,11 @@ div.open {
   align-content: center;
 }
 
+.drawer > :first-child {
+  margin: 30px 0;
+  color: white;
+}
+
 .close {
   visibility: collapse;
   opacity: 0;
