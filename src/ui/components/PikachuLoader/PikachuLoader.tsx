@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import styles from "./PikachuLoader.module.css";
 import AnimatedText from "../AnimatedText/AnimatedText";
@@ -40,7 +39,7 @@ const PikachuLoader = () => {
   return (
     <div id="loading-screen" className={styles.container}>
       <div>
-        <Image src={gif} alt="pika pika" placeholder="blur" blurDataURL={gif} height={150} width={205} />
+        <img src={gif} alt="pika pika" />
         <AnimatedText text={loadingText} />
       </div>
     </div>
