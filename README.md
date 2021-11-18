@@ -1,5 +1,7 @@
-![Screenshot 2021-11-18 at 22 56 04](https://user-images.githubusercontent.com/8859666/142503260-ee67da75-3c5e-48bd-af80-7dc6c4bdeeb1.png)
+![d28472afb9a391904f9eab67724b5431](https://user-images.githubusercontent.com/8859666/140185175-01d58c10-4737-49f1-9765-1fb47af66b46.png)
 
+
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/8859666/140185140-c72ed85f-af91-4b33-a337-f9e18f694c17.gif)
 
 Site available here https://www.my-pokedex.com/
 
