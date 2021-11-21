@@ -19,10 +19,11 @@ const createSvg = (id: string) =>
   select(id)
     .append("svg")
     .attr("id", `${id}Chart`)
-    .attr("width", SVG_WIDTH)
+    .attr("max-width", SVG_WIDTH)
+    .attr("width", "100%")
     .attr("height", SVG_HEIGHT)
-    .append("g")
     .attr("transform", `translate(${TRANSLATE_X}, ${TRANSLATE_Y})`)
+    .append("g")
     .attr("viewBox", `0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`);
 
 const createBorders = (svg: D3SVGElement, axisDataList: AxisData[]) => {
